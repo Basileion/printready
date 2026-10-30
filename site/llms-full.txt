@@ -18,6 +18,6 @@ These are pipeline validation meshes, not AI generator outputs.
 Real AI-generator leaderboard scores are coming soon after free-tier generator runs.
 
 ## Contact / status
-Site: https://printready.pages.dev
+Site: https://basileion.github.io/printready
 Owner: Kurt Waibel
 Newsletter signup: coming soon (disabled)

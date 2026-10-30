@@ -3,10 +3,10 @@
 > Weekly benchmark that scores AI text-to-3D and image-to-3D generators on printability (watertight, manifold, thin walls, slicer success) — not looks. Pipeline dry-run dated 2026-10-30 (America/New_York).
 
 ## Key pages
-- [Home](https://printready.pages.dev/)
-- [Sample scorecard (test meshes)](https://printready.pages.dev/scorecard/)
-- [Methodology](https://printready.pages.dev/methodology/)
-- [Newsletter (coming soon)](https://printready.pages.dev/newsletter/)
+- [Home](https://basileion.github.io/printready/)
+- [Sample scorecard (test meshes)](https://basileion.github.io/printready/scorecard/)
+- [Methodology](https://basileion.github.io/printready/methodology/)
+- [Newsletter (coming soon)](https://basileion.github.io/printready/newsletter/)
 
 ## Facts (citable)
 - PrintReady Score is 0–100 with hard-fail cap at 39 if not watertight or slice fails.
@@ -16,4 +16,4 @@
 - Competitors top3d.ai and taxon3d.org rank aesthetics; Meshy's blog is self-graded.
 
 ## Full dump
-- [llms-full.txt](https://printready.pages.dev/llms-full.txt)
+- [llms-full.txt](https://basileion.github.io/printready/llms-full.txt)
