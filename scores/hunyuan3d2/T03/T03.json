@@ -1,0 +1,68 @@
+{
+  "id": "T03",
+  "source": "gens/hunyuan3d2/T03.glb",
+  "scored_at": "2026-10-30T16:32:10.622734-04:00",
+  "timezone_note": "America/New_York (box-local)",
+  "normalize_longest_mm": 50.0,
+  "applied_scale": 25.444552019524032,
+  "extents_mm": [
+    50.0,
+    46.891674880898066,
+    16.618813214156226
+  ],
+  "faces": 713900,
+  "vertices": 188278,
+  "checks": {
+    "watertight": false,
+    "is_volume": false,
+    "is_manifold": false,
+    "nonmanifold_edge_count": 1,
+    "self_intersection_count": 0,
+    "broken_faces": 0,
+    "body_count": 1,
+    "thin_wall_min_mm": null,
+    "slice_success": true,
+    "print_time_s": 4413,
+    "support_volume_mm3": 0.0,
+    "filament_mm3": 6960.0
+  },
+  "slice": {
+    "attempted": true,
+    "success": true,
+    "returncode": 0,
+    "gcode_path": "/tmp/pr_slice_vt0maj8y/slice_out/plate_1.gcode",
+    "stderr_tail": "tation:-0.7071 -0.0000 -0.7071, cost:1583.1,\t2.0,\t1.8,\t5.7,\t57.8,\t0.0,\t567.2\norientation:-0.0000 -0.7071 -0.7071, cost:1463.4,\t7.1,\t3.6,\t10.6,\t103.1,\t0.0,\t201.4\norientation: 0.7071 -0.0000 -0.7071, cost:1594.5,\t1.8,\t1.4,\t5.3,\t60.9,\t0.0,\t633.0\norientation:-0.0000  0.7071 -0.7071, cost:1469.0,\t6.8,\t3.8,\t10.4,\t98.5,\t0.0,\t208.3\norientation:-0.0000 -0.0000 -1.0000, cost:828.1,\t640.6,\t1187.1,\t101.2,\t151.0,\t0.0,\t1.5\nbest:-0.000074  0.001359 -0.999999, costs:811.2,\t661.2,\t1191.5,\t102.9,\t150.5,\t0.0,\t1.4\n"
+  },
+  "score": {
+    "score": 39.0,
+    "partial": {
+      "watertight": 0.0,
+      "manifold": 0.0,
+      "nonmanifold_edges": 5.0,
+      "self_intersections": 10,
+      "thin_walls": 5.0,
+      "slice_success": 20,
+      "print_time": 5,
+      "support_volume": 10
+    },
+    "hard_fail": true,
+    "weights": {
+      "watertight": 20,
+      "manifold": 15,
+      "nonmanifold_edges": 10,
+      "self_intersections": 10,
+      "thin_walls": 10,
+      "slice_success": 20,
+      "print_time": 5,
+      "support_volume": 10
+    }
+  },
+  "preview_png": "renders/hunyuan3d2/T03.png",
+  "slicer": {
+    "name": "OrcaSlicer",
+    "version": "2.4.2",
+    "machine": "Bambu Lab A1 0.4 nozzle.json",
+    "process": "0.20mm Standard @BBL A1.json",
+    "filament": "Generic PLA @BBL A1.json"
+  }
+}

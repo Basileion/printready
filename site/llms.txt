@@ -4,7 +4,7 @@
 
 ## Key pages
 - [Home](https://basileion.github.io/printready/)
-- [Sample scorecard (test meshes)](https://basileion.github.io/printready/scorecard/)
+- [Scorecard: Hunyuan3D-2 + test meshes](https://basileion.github.io/printready/scorecard/)
 - [Methodology](https://basileion.github.io/printready/methodology/)
 - [Newsletter (coming soon)](https://basileion.github.io/printready/newsletter/)
 
@@ -12,7 +12,7 @@
 - PrintReady Score is 0–100 with hard-fail cap at 39 if not watertight or slice fails.
 - Meshes normalized to 50 mm longest edge before thin-wall + slice checks.
 - Phase-1 slicer: OrcaSlicer 2.4.2, Bambu Lab A1 0.4 mm nozzle, 0.20 mm Standard, Generic PLA.
-- Sample scorecard currently shows control/broken test meshes; real AI-generator weekly scores coming soon.
+- 2026-10-30: first real AI scores. 0 of 6 raw Hunyuan3D-2 meshes (prompts T01–T06) were watertight; all scored 39/100 (hard-fail cap); 6 of 6 still sliced in OrcaSlicer 2.4.2. Other generators next.
 - Competitors top3d.ai and taxon3d.org rank aesthetics; Meshy's blog is self-graded.
 
 ## Full dump

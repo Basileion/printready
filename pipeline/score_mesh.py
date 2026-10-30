@@ -76,6 +76,9 @@ def count_nonmanifold_edges(mesh: trimesh.Trimesh) -> int:
     return int(np.sum(counts != 2))
 
 
+MAX_OVERLAP_PARTS = 40
+
+
 def self_intersection_count(mesh: trimesh.Trimesh) -> int | None:
     """Return 0/1-ish intersection signal; None if undetermined."""
     try:
@@ -90,6 +93,10 @@ def self_intersection_count(mesh: trimesh.Trimesh) -> int | None:
     # Multi-body overlap: split and check pairwise bounding-box + volume overlap
     try:
         parts = mesh.split(only_watertight=False)
+        # Raw AI meshes can have 100k+ loose fragments; pairwise checks are O(n^2).
+        # Cap overlap test to the largest MAX_OVERLAP_PARTS bodies (by face count).
+        if len(parts) > MAX_OVERLAP_PARTS:
+            parts = sorted(parts, key=lambda q: len(q.faces), reverse=True)[:MAX_OVERLAP_PARTS]
         if len(parts) >= 2:
             hits = 0
             for i in range(len(parts)):
@@ -438,6 +445,7 @@ def score_file(path: Path, out_scores: Path, out_renders: Path, skip_slice: bool
             "nonmanifold_edge_count": int(nm_count),
             "self_intersection_count": si,
             "broken_faces": broken,
+            "body_count": int(mesh.body_count) if hasattr(mesh, "body_count") else None,
             "thin_wall_min_mm": tmin,
             "slice_success": bool(slice_info.get("success")),
             "print_time_s": slice_info.get("print_time_s"),

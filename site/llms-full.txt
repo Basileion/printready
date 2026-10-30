@@ -15,7 +15,15 @@ These are pipeline validation meshes, not AI generator outputs.
 - n02_open_cube: 39 hard-fail (not watertight)
 - n03_internal_wall: 39 hard-fail (non-manifold)
 
-Real AI-generator leaderboard scores are coming soon after free-tier generator runs.
+## First real AI-generator results (2026-10-30 ET): Hunyuan3D-2
+Pipeline: locked prompt -> FLUX.1-schnell reference image (seed 1234) -> Hunyuan3D-2 public Hugging Face Space (seed 1234, 30 steps, octree 256). Raw output, no repair.
+- T01 Coffee mug with handle: score 39/100, watertight no, slice ok
+- T02 Low-poly fox figurine: score 39/100, watertight no, slice ok
+- T03 M8 hex nut with threads: score 39/100, watertight no, slice ok
+- T04 Phone stand with slot: score 39/100, watertight no, slice ok
+- T05 3-slot business card holder: score 39/100, watertight no, slice ok
+- T06 Planter pot with drainage hole: score 39/100, watertight no, slice ok
+Summary: 0/6 watertight, 6/6 sliced. Meshy, Tripo, Hitem3D, Rodin, TRELLIS next.
 
 ## Contact / status
 Site: https://basileion.github.io/printready

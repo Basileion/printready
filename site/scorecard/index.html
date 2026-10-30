@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sample scorecard (test meshes) — PrintReady AI</title>
-  <meta name="description" content="TEST MESHES ONLY: pipeline dry-run PrintReady Scores for control and broken meshes. Real AI-generator weekly scores coming soon." />
+  <title>Hunyuan3D-2 printability scores + test meshes — PrintReady AI</title>
+  <meta name="description" content="First real scores: 0 of 6 raw Hunyuan3D-2 meshes were watertight (all 39/100), though all 6 sliced in OrcaSlicer. Plus scorer validation on control and broken test meshes." />
   <meta name="robots" content="index,follow" />
   <link rel="stylesheet" href="../css/site.css" />
   <link rel="canonical" href="https://basileion.github.io/printready/scorecard/" />
   <meta property="og:url" content="https://basileion.github.io/printready/scorecard/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="PrintReady AI" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Sample scorecard (test meshes)","url":"https://basileion.github.io/printready/scorecard/","description":"PrintReady pipeline dry-run scores for control and broken test meshes. Real AI-generator scores coming soon.","isPartOf":{"@id":"https://basileion.github.io/printready/#website"},"dateModified":"2026-10-30"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"PrintReady scorecard: Hunyuan3D-2 + test meshes","url":"https://basileion.github.io/printready/scorecard/","description":"2026-10-30: 0 of 6 raw Hunyuan3D-2 meshes watertight (score 39/100 each); 6 of 6 sliced in OrcaSlicer 2.4.2. Plus control and broken test meshes.","isPartOf":{"@id":"https://basileion.github.io/printready/#website"},"dateModified":"2026-10-30"}</script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -31,15 +31,93 @@
   </header>
 
   <main id="main" class="wrap section">
-    <p class="eyebrow">Pipeline dry-run · 2026-10-30 ET</p>
-    <h1>Sample scorecard <span class="tag" style="font-size:14px;vertical-align:middle">TEST MESHES</span></h1>
-    <div class="notice" role="status" style="margin:16px 0 24px;max-width:48rem">
-      <strong>Test meshes only.</strong> These rows validate the scorer (controls + deliberate failures).
-      They are <em>not</em> outputs from Meshy, Tripo, Rodin, Hunyuan3D, Trellis, or Hitem3D.
-      <strong>Real AI-generator scores are coming soon.</strong>
-    </div>
-    <p class="lede">Scores below come from the local trimesh + OrcaSlicer pipeline so you can trust the rubric before week&nbsp;1 ships.</p>
+    <h1>Scorecard</h1>
+    <section aria-labelledby="real-h" style="margin:8px 0 48px">
+      <p class="eyebrow">First real AI outputs · scored 2026-10-30 ET</p>
+      <h2 id="real-h">Hunyuan3D-2: 0 of 6 raw meshes were watertight</h2>
+      <ul class="lede" style="margin:8px 0 16px">
+        <li><strong>6/6</strong> still sliced in OrcaSlicer, but <strong>0/6</strong> were watertight, so every one hits the hard-fail cap (39/100).</li>
+        <li>Raw output, no repair: locked prompts T01–T06 from our prompt set → FLUX.1-schnell reference image (seed 1234) → Hunyuan3D-2 public Space (seed 1234, 30 steps).</li>
+        <li>One open-source generator so far. Meshy, Tripo, Hitem3D, Rodin and TRELLIS come next on the same prompts.</li>
+      </ul>
+      <div class="table-wrap" role="region" aria-label="Hunyuan3D-2 PrintReady scores" tabindex="0">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Preview</th><th scope="col">Prompt</th><th scope="col">Generator</th><th scope="col" class="num">Score</th>
+              <th scope="col">Watertight</th><th scope="col" class="num">NM edges</th><th scope="col">Slice</th><th scope="col" class="num">Est. time</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><img class="thumb" src="../img/hy2_T01.png" alt="Hunyuan3D-2 output for T01: Coffee mug with handle" width="56" height="56" loading="lazy" /></td>
+            <td>T01 · Coffee mug with handle</td>
+            <td><span class="tag">Hunyuan3D-2</span></td>
+            <td class="num"><span class="score score-bad">39</span></td>
+            <td>no</td>
+            <td class="num">3</td>
+            <td>ok†</td>
+            <td class="num">1h 35m</td>
+          </tr>
+          <tr>
+            <td><img class="thumb" src="../img/hy2_T02.png" alt="Hunyuan3D-2 output for T02: Low-poly fox figurine" width="56" height="56" loading="lazy" /></td>
+            <td>T02 · Low-poly fox figurine</td>
+            <td><span class="tag">Hunyuan3D-2</span></td>
+            <td class="num"><span class="score score-bad">39</span></td>
+            <td>no</td>
+            <td class="num">7</td>
+            <td>ok†</td>
+            <td class="num">58m</td>
+          </tr>
+          <tr>
+            <td><img class="thumb" src="../img/hy2_T03.png" alt="Hunyuan3D-2 output for T03: M8 hex nut with threads" width="56" height="56" loading="lazy" /></td>
+            <td>T03 · M8 hex nut with threads</td>
+            <td><span class="tag">Hunyuan3D-2</span></td>
+            <td class="num"><span class="score score-bad">39</span></td>
+            <td>no</td>
+            <td class="num">1</td>
+            <td>ok†</td>
+            <td class="num">1h 14m</td>
+          </tr>
+          <tr>
+            <td><img class="thumb" src="../img/hy2_T04.png" alt="Hunyuan3D-2 output for T04: Phone stand with slot" width="56" height="56" loading="lazy" /></td>
+            <td>T04 · Phone stand with slot</td>
+            <td><span class="tag">Hunyuan3D-2</span></td>
+            <td class="num"><span class="score score-bad">39</span></td>
+            <td>no</td>
+            <td class="num">3</td>
+            <td>ok†</td>
+            <td class="num">1h 20m</td>
+          </tr>
+          <tr>
+            <td><img class="thumb" src="../img/hy2_T05.png" alt="Hunyuan3D-2 output for T05: 3-slot business card holder" width="56" height="56" loading="lazy" /></td>
+            <td>T05 · 3-slot business card holder</td>
+            <td><span class="tag">Hunyuan3D-2</span></td>
+            <td class="num"><span class="score score-bad">39</span></td>
+            <td>no</td>
+            <td class="num">6</td>
+            <td>ok†</td>
+            <td class="num">32m</td>
+          </tr>
+          <tr>
+            <td><img class="thumb" src="../img/hy2_T06.png" alt="Hunyuan3D-2 output for T06: Planter pot with drainage hole" width="56" height="56" loading="lazy" /></td>
+            <td>T06 · Planter pot with drainage hole</td>
+            <td><span class="tag">Hunyuan3D-2</span></td>
+            <td class="num"><span class="score score-bad">39</span></td>
+            <td>no</td>
+            <td class="num">9</td>
+            <td>ok†</td>
+            <td class="num">2h 21m</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
+    <h2>Scorer validation (test meshes)</h2>
+    <div class="notice" role="status" style="margin:16px 0 24px;max-width:48rem">
+      <strong>Test meshes below</strong> validate the scorer (controls + deliberate failures). They are not AI-generator outputs.
+    </div>
     <div class="table-wrap" role="region" aria-label="Sample PrintReady scores" tabindex="0">
       <table>
         <thead>
@@ -131,13 +209,14 @@
     <p class="muted" style="font-size:13px;margin-top:12px">
       * Two watertight bodies that overlap — self-intersection penalty applied.<br />
       † Slicer can still emit G-code for some broken meshes; hard-fail cap still applies when not watertight.<br />
-      Also scored at 100 (not shown with thumbs): pd_cylinder, pd_icosphere.
+      Also scored at 100 (not shown with thumbs): pd_cylinder, pd_icosphere.<br />
+      Hunyuan3D-2 rows: meshes normalized to 50&nbsp;mm longest edge; OrcaSlicer 2.4.2, Bambu Lab A1 0.4&nbsp;mm, 0.20&nbsp;mm Standard, Generic PLA.
     </p>
 
     <div class="band" style="margin-top:48px">
       <div>
-        <h2>Next: score real AI generators</h2>
-        <p>Needs Kurt’s free-tier signups (Meshy / Tripo / Hi3D) or HF Spaces runs — see APPROVALS.md. No accounts created this hour.</p>
+        <h2>Next: Meshy, Tripo, Hitem3D, Rodin, TRELLIS</h2>
+        <p>Same locked prompts, same slicer profile, raw output scored before any repair.</p>
       </div>
       <a class="btn btn-ghost" href="../methodology/">Read methodology</a>
     </div>
