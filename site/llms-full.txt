@@ -37,3 +37,7 @@ Scores CSV: https://basileion.github.io/printready/data/scores.csv
 Scores JSON: https://basileion.github.io/printready/data/scores.json
 Raw Hunyuan3D-2 meshes (gzipped GLB) + SHA256SUMS + reference images: https://basileion.github.io/printready/data/
 License: CC BY 4.0 for scores; meshes under Tencent Hunyuan 3D 2.0 Community License.
+
+## Positioning and limits (updated 2026-10-30)
+Other AI-mesh printability benchmarks exist: PrintCheck, 3dtoolwiki, Topoheal, and Meshy's own benchmark. PrintReady AI focuses on locked prompts, one FDM profile (Bambu Lab A1, OrcaSlicer 2.4.2, PLA), open CC BY 4.0 data, and weekly re-runs. Meshy's built-in printability check covers Meshy output only.
+Current limits: one generator scored (Hunyuan3D-2, prompts T01-T06); hollow-skin and orientation checks are on the rubric roadmap; no upload-your-own-file checker yet. For functional parts with tolerances, CAD remains the better tool.

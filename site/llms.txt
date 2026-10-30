@@ -15,7 +15,8 @@
 - Index-degenerate / zero-area export-padding faces are dropped before watertight checks (reported as export padding, not holes).
 - Phase-1 slicer: OrcaSlicer 2.4.2, Bambu Lab A1 0.4 mm nozzle, 0.20 mm Standard, Generic PLA.
 - 2026-10-30: Hunyuan3D-2 prompts T01–T06 — 5 of 6 watertight after padding cleanup (scores 100/100); T05 not watertight (39/100); 6 of 6 sliced. Other generators next.
-- Competitors top3d.ai and taxon3d.org rank aesthetics; Meshy's blog is self-graded.
+- Other AI-mesh printability benchmarks exist (PrintCheck, 3dtoolwiki, Topoheal, Meshy's own benchmark). PrintReady AI's focus: locked prompts, one FDM Bambu A1 / OrcaSlicer PLA profile, open CC BY data, weekly re-runs. Meshy's built-in printability check covers Meshy output only.
+- Limits as of 2026-10-30: one generator scored (Hunyuan3D-2, 6 prompts); no hollow-skin or orientation check yet; no upload-your-own-file checker yet.
 
 ## Full dump
 - [llms-full.txt](https://basileion.github.io/printready/llms-full.txt)
