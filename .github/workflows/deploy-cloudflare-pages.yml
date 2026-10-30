@@ -1,23 +1,27 @@
 name: Deploy Cloudflare Pages
 on:
+  workflow_dispatch:
   push:
     branches: [main]
-  workflow_dispatch:
 jobs:
   deploy:
+    if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
       deployments: write
     steps:
       - uses: actions/checkout@v4
-      - name: Deploy to Cloudflare Pages
+      - name: Create project if missing (requires Pages Write)
+        continue-on-error: true
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages project create printready --production-branch=main
+      - name: Deploy site/
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy site --project-name=printready --commit-dirty=true
-        continue-on-error: true
-      - name: Note if Pages project missing
-        if: failure()
-        run: echo "Create Pages project 'printready' in CF dashboard (Git: Basileion/printready, root site/) or grant Pages Write on the API token."
