@@ -1,0 +1,139 @@
+{
+  "scored_at": "2026-10-30T16:53:34.023297-04:00",
+  "timezone": "America/New_York",
+  "note": "Re-scored 2026-10-30 after dropping export-padding (index-degenerate) faces before watertight checks. Slice metrics reused from prior OrcaSlicer runs.",
+  "results": [
+    {
+      "id": "T01",
+      "score": 100.0,
+      "hard_fail": false,
+      "watertight": true,
+      "nm_edges": 0,
+      "thin_mm": 1.3959302050801268,
+      "self_intersect": 0,
+      "slice": true,
+      "print_time_s": 5716,
+      "export_padding_faces": 512138,
+      "partial": {
+        "watertight": 20,
+        "manifold": 15,
+        "nonmanifold_edges": 10,
+        "self_intersections": 10,
+        "thin_walls": 10,
+        "slice_success": 20,
+        "print_time": 5,
+        "support_volume": 10
+      }
+    },
+    {
+      "id": "T02",
+      "score": 100.0,
+      "hard_fail": false,
+      "watertight": true,
+      "nm_edges": 0,
+      "thin_mm": 2.2003207247339858,
+      "self_intersect": 0,
+      "slice": true,
+      "print_time_s": 3453,
+      "export_padding_faces": 182526,
+      "partial": {
+        "watertight": 20,
+        "manifold": 15,
+        "nonmanifold_edges": 10,
+        "self_intersections": 10,
+        "thin_walls": 10,
+        "slice_success": 20,
+        "print_time": 5,
+        "support_volume": 10
+      }
+    },
+    {
+      "id": "T03",
+      "score": 100.0,
+      "hard_fail": false,
+      "watertight": true,
+      "nm_edges": 0,
+      "thin_mm": 4.906702822932401,
+      "self_intersect": 0,
+      "slice": true,
+      "print_time_s": 4413,
+      "export_padding_faces": 337344,
+      "partial": {
+        "watertight": 20,
+        "manifold": 15,
+        "nonmanifold_edges": 10,
+        "self_intersections": 10,
+        "thin_walls": 10,
+        "slice_success": 20,
+        "print_time": 5,
+        "support_volume": 10
+      }
+    },
+    {
+      "id": "T04",
+      "score": 100.0,
+      "hard_fail": false,
+      "watertight": true,
+      "nm_edges": 0,
+      "thin_mm": 1.8138537561571912,
+      "self_intersect": 0,
+      "slice": true,
+      "print_time_s": 4798,
+      "export_padding_faces": 368170,
+      "partial": {
+        "watertight": 20,
+        "manifold": 15,
+        "nonmanifold_edges": 10,
+        "self_intersections": 10,
+        "thin_walls": 10,
+        "slice_success": 20,
+        "print_time": 5,
+        "support_volume": 10
+      }
+    },
+    {
+      "id": "T05",
+      "score": 39.0,
+      "hard_fail": true,
+      "watertight": false,
+      "nm_edges": 2,
+      "thin_mm": null,
+      "self_intersect": 0,
+      "slice": true,
+      "print_time_s": 1924,
+      "export_padding_faces": 4,
+      "partial": {
+        "watertight": 0.0,
+        "manifold": 0.0,
+        "nonmanifold_edges": 5.0,
+        "self_intersections": 10,
+        "thin_walls": 5.0,
+        "slice_success": 20,
+        "print_time": 5,
+        "support_volume": 10
+      }
+    },
+    {
+      "id": "T06",
+      "score": 100.0,
+      "hard_fail": false,
+      "watertight": true,
+      "nm_edges": 0,
+      "thin_mm": 1.8434816470188016,
+      "self_intersect": 0,
+      "slice": true,
+      "print_time_s": 8473,
+      "export_padding_faces": 962096,
+      "partial": {
+        "watertight": 20,
+        "manifold": 15,
+        "nonmanifold_edges": 10,
+        "self_intersections": 10,
+        "thin_walls": 10,
+        "slice_success": 20,
+        "print_time": 5,
+        "support_volume": 10
+      }
+    }
+  ]
+}

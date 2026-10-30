@@ -1,7 +1,7 @@
 {
   "id": "T02",
-  "source": "gens/hunyuan3d2/T02.glb",
-  "scored_at": "2026-10-30T16:31:31.572979-04:00",
+  "source": "/workspace/printready/gens/hunyuan3d2/T02.glb",
+  "scored_at": "2026-10-30T16:53:00.114617-04:00",
   "timezone_note": "America/New_York (box-local)",
   "normalize_longest_mm": 50.0,
   "applied_scale": 25.54633383233592,
@@ -10,42 +10,50 @@
     50.0,
     21.537743571343366
   ],
-  "faces": 431364,
+  "faces": 248838,
   "vertices": 124419,
+  "export_padding": {
+    "faces_before": 431364,
+    "faces_after": 248838,
+    "export_padding_faces": 182526
+  },
   "checks": {
-    "watertight": false,
-    "is_volume": false,
-    "is_manifold": false,
-    "nonmanifold_edge_count": 7,
+    "watertight": true,
+    "is_volume": true,
+    "is_manifold": true,
+    "nonmanifold_edge_count": 0,
     "self_intersection_count": 0,
-    "broken_faces": 12,
+    "broken_faces": 0,
     "body_count": 1,
-    "thin_wall_min_mm": null,
+    "thin_wall_min_mm": 2.2003207247339858,
     "slice_success": true,
     "print_time_s": 3453,
     "support_volume_mm3": 0.0,
-    "filament_mm3": 3660.0
+    "filament_mm3": 3660.0,
+    "export_padding_faces": 182526,
+    "faces_before_padding_drop": 431364
   },
   "slice": {
     "attempted": true,
     "success": true,
     "returncode": 0,
     "gcode_path": "/tmp/pr_slice_919crqfd/slice_out/plate_1.gcode",
-    "stderr_tail": ".0\norientation:-0.7071 -0.0000 -0.7071, cost:966.1,\t0.6,\t0.1,\t3.1,\t119.7,\t0.0,\t752.7\norientation:-0.0000 -0.7071 -0.7071, cost:1004.1,\t0.3,\t0.1,\t2.1,\t66.3,\t0.0,\t1127.9\norientation: 0.7071 -0.0000 -0.7071, cost:1077.7,\t1.4,\t1.1,\t4.7,\t183.2,\t0.0,\t507.1\norientation:-0.0000  0.7071 -0.7071, cost:1023.3,\t0.8,\t0.7,\t3.6,\t42.3,\t0.0,\t659.7\norientation:-0.0000 -0.0000 -1.0000, cost:1188.7,\t0.6,\t0.2,\t3.2,\t335.6,\t0.0,\t918.5\nbest:-0.001324  0.999999  0.000281, costs:385.6,\t27.6,\t247.9,\t21.0,\t83.5,\t0.0,\t10.1\n"
+    "stderr_tail": "reused from prior run (geometry unchanged; slicers already drop export padding)",
+    "reused": true
   },
   "score": {
-    "score": 39.0,
+    "score": 100.0,
     "partial": {
-      "watertight": 0.0,
-      "manifold": 0.0,
-      "nonmanifold_edges": 0.0,
+      "watertight": 20,
+      "manifold": 15,
+      "nonmanifold_edges": 10,
       "self_intersections": 10,
-      "thin_walls": 5.0,
+      "thin_walls": 10,
       "slice_success": 20,
       "print_time": 5,
       "support_volume": 10
     },
-    "hard_fail": true,
+    "hard_fail": false,
     "weights": {
       "watertight": 20,
       "manifold": 15,
@@ -57,7 +65,7 @@
       "support_volume": 10
     }
   },
-  "preview_png": "renders/hunyuan3d2/T02.png",
+  "preview_png": "/workspace/printready/renders/hunyuan3d2/T02.png",
   "slicer": {
     "name": "OrcaSlicer",
     "version": "2.4.2",

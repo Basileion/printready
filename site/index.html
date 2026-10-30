@@ -15,7 +15,7 @@
   <meta property="og:description" content="Weekly printability benchmark for AI 3D generators — watertight, manifold, thin walls, slicer success." />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://basileion.github.io/printready/#website","name":"PrintReady AI","url":"https://basileion.github.io/printready/","description":"Weekly benchmark that scores AI text-to-3D and image-to-3D generators on printability — watertight, manifold, thin walls, and slicer success.","inLanguage":"en","publisher":{"@id":"https://basileion.github.io/printready/#org"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://basileion.github.io/printready/#org","name":"PrintReady AI","url":"https://basileion.github.io/printready/","description":"Vendor-neutral AI mesh printability benchmark."}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does PrintReady AI score?","acceptedAnswer":{"@type":"Answer","text":"Printability of AI-generated 3D meshes: watertight, manifold, non-manifold edges, self-intersections, thin walls, OrcaSlicer slice success, print time, and support volume. Not visual beauty."}},{"@type":"Question","name":"What is on the sample scorecard today?","acceptedAnswer":{"@type":"Answer","text":"First real AI scores (2026-10-30): 0 of 6 raw Hunyuan3D-2 meshes were watertight, all 39/100, though all 6 sliced. Plus pipeline test meshes. More generators next."}},{"@type":"Question","name":"What slicer profile is used?","acceptedAnswer":{"@type":"Answer","text":"OrcaSlicer 2.4.2 with Bambu Lab A1 0.4 mm nozzle, 0.20 mm Standard process, Generic PLA. Meshes are normalized to 50 mm longest edge."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does PrintReady AI score?","acceptedAnswer":{"@type":"Answer","text":"Printability of AI-generated 3D meshes: watertight, manifold, non-manifold edges, self-intersections, thin walls, OrcaSlicer slice success, print time, and support volume. Not visual beauty."}},{"@type":"Question","name":"What is on the sample scorecard today?","acceptedAnswer":{"@type":"Answer","text":"First real AI scores (2026-10-30): 5 of 6 Hunyuan3D-2 meshes were watertight after export-padding cleanup (100/100); T05 hard-fails at 39/100. All 6 sliced. Plus pipeline test meshes. More generators next."}},{"@type":"Question","name":"What slicer profile is used?","acceptedAnswer":{"@type":"Answer","text":"OrcaSlicer 2.4.2 with Bambu Lab A1 0.4 mm nozzle, 0.20 mm Standard process, Generic PLA. Meshes are normalized to 50 mm longest edge."}}]}</script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -35,9 +35,6 @@
   </header>
 
   <main id="main">
-    <div class="wrap" style="padding-top:12px">
-      <div class="notice" role="status">Public preview on GitHub Pages. Cloudflare Pages (<code>printready.pages.dev</code>) needs a one-time dashboard create — API token is Pages Read-only. See <code>DEPLOY.md</code>.</div>
-    </div>
 
     <section class="wrap hero">
       <div>
@@ -59,16 +56,16 @@
           <li>Hard-fail cap at 39 if not watertight</li>
         </ul>
       </div>
-      <aside class="card" aria-label="Pipeline proof from local dry-run">
-        <p class="eyebrow">Phase-1 pipeline proof · 2026-10-30</p>
+      <aside class="card" aria-label="First real AI scores summary">
+        <p class="eyebrow">First real AI scores · 2026-10-30</p>
         <div class="kpi-grid">
-          <div class="kpi"><b>100</b><span>Closed cube PrintReady Score</span></div>
-          <div class="kpi"><b>39</b><span>Open mesh hard-fail (capped)</span></div>
-          <div class="kpi"><b>90</b><span>0.25&nbsp;mm plate (thin-wall hit)</span></div>
-          <div class="kpi"><b>9</b><span>Meshes scored end-to-end</span></div>
+          <div class="kpi"><b>5/6</b><span>Hunyuan3D-2 watertight</span></div>
+          <div class="kpi"><b>100</b><span>Top Hunyuan scores (T01–T04, T06)</span></div>
+          <div class="kpi"><b>39</b><span>T05 hard-fail (not watertight)</span></div>
+          <div class="kpi"><b>6/6</b><span>Sliced in OrcaSlicer</span></div>
         </div>
         <p class="muted" style="margin:16px 0 0;font-size:12px">
-          Pipeline proof from trimesh + OrcaSlicer 2.4.2 on test meshes, plus the first real AI run: <strong>0 of 6 raw Hunyuan3D-2 meshes were watertight</strong>.
+          Pipeline proof from trimesh + OrcaSlicer 2.4.2 on test meshes, plus the first real AI run: <strong>5 of 6 Hunyuan3D-2 meshes watertight</strong> (100/100) after export-padding cleanup; T05 at 39.
         </p>
       </aside>
     </section>
@@ -76,7 +73,7 @@
     <section class="wrap section">
       <div class="section-head">
         <h2>You’re overpaying in repair time</h2>
-        <p class="muted">Makers paste a prompt, download a glamorous mesh, then burn an evening fixing non-manifold edges. Loss aversion, quantified.</p>
+        <p class="muted">Makers paste a prompt, download a glamorous mesh, then burn an evening fixing non-manifold edges.</p>
       </div>
       <div class="grid-3">
         <article class="card feature">
@@ -89,7 +86,7 @@
         </article>
         <article class="card feature">
           <h3>Built to compound</h3>
-          <p>Programmatic “Meshy vs Tripo for 3D printing” pages + a Friday newsletter — once Kurt approves publish.</p>
+          <p>Programmatic “Meshy vs Tripo for 3D printing” pages plus a Friday newsletter of scores and the failure of the week.</p>
         </article>
       </div>
     </section>
@@ -119,10 +116,10 @@
     <section class="wrap">
       <div class="band">
         <div>
-          <h2>Get the first public week when it ships</h2>
-          <p>Newsletter placeholder only — no form backend until Kurt approves a provider. Reciprocity first: free methodology + sample scores before any ask.</p>
+          <h2>Friday scores are coming</h2>
+          <p>Free methodology and the sample scorecard are live now. Newsletter signup opens soon — no email collected yet.</p>
         </div>
-        <a class="btn btn-primary" href="newsletter/">Reserve the list</a>
+        <a class="btn btn-primary" href="newsletter/">Newsletter coming soon</a>
       </div>
     </section>
   </main>
@@ -132,7 +129,7 @@
       <div>
         <a class="brand" href="index.html">Print<span>Ready</span> AI</a>
         <p class="muted" style="margin-top:12px;font-size:14px;max-width:28rem">
-          Vendor-neutral weekly printability benchmark for AI 3D generators. Vendor-neutral printability benchmark. Sample scorecard = test meshes; AI-generator weeks coming soon.
+          Vendor-neutral weekly printability benchmark for AI 3D generators. First real scores: Hunyuan3D-2 on locked prompts T01–T06.
         </p>
       </div>
       <div>
@@ -146,9 +143,9 @@
       <div>
         <h3>Status</h3>
         <ul>
-          <li>Live · GitHub Pages (CF Pages pending token Write)</li>
-          <li><a href="https://basileion.github.io/printready/">printready.pages.dev</a></li>
-          <li>Owner: Kurt Waibel</li>
+          <li>Live on GitHub Pages</li>
+          <li><a href="https://basileion.github.io/printready/">basileion.github.io/printready</a></li>
+          <li><a href="https://github.com/Basileion/printready">Source on GitHub</a></li>
         </ul>
       </div>
     </div>

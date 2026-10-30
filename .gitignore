@@ -6,3 +6,10 @@ orca_dl.log
 00000.log
 wrangler.toml
 .node*
+
+# Ops / private (copies under /workspace/printready-ops)
+DEPLOY.md
+APPROVALS.md
+DOMAINS.md
+PLAN.md
+PROGRESS.txt

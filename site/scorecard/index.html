@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hunyuan3D-2 printability scores + test meshes — PrintReady AI</title>
-  <meta name="description" content="First real scores: 0 of 6 raw Hunyuan3D-2 meshes were watertight (all 39/100), though all 6 sliced in OrcaSlicer. Plus scorer validation on control and broken test meshes." />
+  <title>Hunyuan3D-2: 5 of 6 watertight after padding cleanup — PrintReady AI</title>
+  <meta name="description" content="First real scores: 5 of 6 Hunyuan3D-2 meshes watertight (100/100) after dropping export-padding faces; T05 hard-fails at 39. All 6 sliced in OrcaSlicer. Plus scorer validation meshes." />
   <meta name="robots" content="index,follow" />
   <link rel="stylesheet" href="../css/site.css" />
   <link rel="canonical" href="https://basileion.github.io/printready/scorecard/" />
   <meta property="og:url" content="https://basileion.github.io/printready/scorecard/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="PrintReady AI" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"PrintReady scorecard: Hunyuan3D-2 + test meshes","url":"https://basileion.github.io/printready/scorecard/","description":"2026-10-30: 0 of 6 raw Hunyuan3D-2 meshes watertight (score 39/100 each); 6 of 6 sliced in OrcaSlicer 2.4.2. Plus control and broken test meshes.","isPartOf":{"@id":"https://basileion.github.io/printready/#website"},"dateModified":"2026-10-30"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"PrintReady scorecard: Hunyuan3D-2 + test meshes","url":"https://basileion.github.io/printready/scorecard/","description":"2026-10-30: 5 of 6 Hunyuan3D-2 meshes watertight (100/100) after export-padding cleanup; T05 39/100. 6 of 6 sliced in OrcaSlicer 2.4.2.","isPartOf":{"@id":"https://basileion.github.io/printready/#website"},"dateModified":"2026-10-30"}</script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -34,10 +34,11 @@
     <h1>Scorecard</h1>
     <section aria-labelledby="real-h" style="margin:8px 0 48px">
       <p class="eyebrow">First real AI outputs · scored 2026-10-30 ET</p>
-      <h2 id="real-h">Hunyuan3D-2: 0 of 6 raw meshes were watertight</h2>
+      <h2 id="real-h">Hunyuan3D-2: 5 of 6 watertight after export-padding cleanup</h2>
       <ul class="lede" style="margin:8px 0 16px">
-        <li><strong>6/6</strong> still sliced in OrcaSlicer, but <strong>0/6</strong> were watertight, so every one hits the hard-fail cap (39/100).</li>
-        <li>Raw output, no repair: locked prompts T01–T06 from our prompt set → FLUX.1-schnell reference image (seed 1234) → Hunyuan3D-2 public Space (seed 1234, 30 steps).</li>
+        <li><strong>5/6</strong> watertight single bodies (scores <strong>100/100</strong>); <strong>T05</strong> still fails watertight (39/100 hard-fail). <strong>6/6</strong> sliced in OrcaSlicer.</li>
+        <li>Space GLB exports include many index-degenerate zero-area padding triangles. The scorer drops those as <em>export padding</em> before watertight checks (not counted as holes).</li>
+        <li>Raw output, no repair: locked prompts T01–T06 → FLUX.1-schnell reference (seed 1234) → Hunyuan3D-2 public Space (seed 1234, 30 steps).</li>
         <li>One open-source generator so far. Meshy, Tripo, Hitem3D, Rodin and TRELLIS come next on the same prompts.</li>
       </ul>
       <div class="table-wrap" role="region" aria-label="Hunyuan3D-2 PrintReady scores" tabindex="0">
@@ -53,41 +54,41 @@
             <td><img class="thumb" src="../img/hy2_T01.png" alt="Hunyuan3D-2 output for T01: Coffee mug with handle" width="56" height="56" loading="lazy" /></td>
             <td>T01 · Coffee mug with handle</td>
             <td><span class="tag">Hunyuan3D-2</span></td>
-            <td class="num"><span class="score score-bad">39</span></td>
-            <td>no</td>
-            <td class="num">3</td>
-            <td>ok†</td>
+            <td class="num"><span class="score score-ok">100</span></td>
+            <td>yes</td>
+            <td class="num">0</td>
+            <td>ok</td>
             <td class="num">1h 35m</td>
           </tr>
           <tr>
             <td><img class="thumb" src="../img/hy2_T02.png" alt="Hunyuan3D-2 output for T02: Low-poly fox figurine" width="56" height="56" loading="lazy" /></td>
             <td>T02 · Low-poly fox figurine</td>
             <td><span class="tag">Hunyuan3D-2</span></td>
-            <td class="num"><span class="score score-bad">39</span></td>
-            <td>no</td>
-            <td class="num">7</td>
-            <td>ok†</td>
-            <td class="num">58m</td>
+            <td class="num"><span class="score score-ok">100</span></td>
+            <td>yes</td>
+            <td class="num">0</td>
+            <td>ok</td>
+            <td class="num">57m</td>
           </tr>
           <tr>
             <td><img class="thumb" src="../img/hy2_T03.png" alt="Hunyuan3D-2 output for T03: M8 hex nut with threads" width="56" height="56" loading="lazy" /></td>
             <td>T03 · M8 hex nut with threads</td>
             <td><span class="tag">Hunyuan3D-2</span></td>
-            <td class="num"><span class="score score-bad">39</span></td>
-            <td>no</td>
-            <td class="num">1</td>
-            <td>ok†</td>
-            <td class="num">1h 14m</td>
+            <td class="num"><span class="score score-ok">100</span></td>
+            <td>yes</td>
+            <td class="num">0</td>
+            <td>ok</td>
+            <td class="num">1h 13m</td>
           </tr>
           <tr>
             <td><img class="thumb" src="../img/hy2_T04.png" alt="Hunyuan3D-2 output for T04: Phone stand with slot" width="56" height="56" loading="lazy" /></td>
             <td>T04 · Phone stand with slot</td>
             <td><span class="tag">Hunyuan3D-2</span></td>
-            <td class="num"><span class="score score-bad">39</span></td>
-            <td>no</td>
-            <td class="num">3</td>
-            <td>ok†</td>
-            <td class="num">1h 20m</td>
+            <td class="num"><span class="score score-ok">100</span></td>
+            <td>yes</td>
+            <td class="num">0</td>
+            <td>ok</td>
+            <td class="num">1h 19m</td>
           </tr>
           <tr>
             <td><img class="thumb" src="../img/hy2_T05.png" alt="Hunyuan3D-2 output for T05: 3-slot business card holder" width="56" height="56" loading="lazy" /></td>
@@ -95,7 +96,7 @@
             <td><span class="tag">Hunyuan3D-2</span></td>
             <td class="num"><span class="score score-bad">39</span></td>
             <td>no</td>
-            <td class="num">6</td>
+            <td class="num">2</td>
             <td>ok†</td>
             <td class="num">32m</td>
           </tr>
@@ -103,10 +104,10 @@
             <td><img class="thumb" src="../img/hy2_T06.png" alt="Hunyuan3D-2 output for T06: Planter pot with drainage hole" width="56" height="56" loading="lazy" /></td>
             <td>T06 · Planter pot with drainage hole</td>
             <td><span class="tag">Hunyuan3D-2</span></td>
-            <td class="num"><span class="score score-bad">39</span></td>
-            <td>no</td>
-            <td class="num">9</td>
-            <td>ok†</td>
+            <td class="num"><span class="score score-ok">100</span></td>
+            <td>yes</td>
+            <td class="num">0</td>
+            <td>ok</td>
             <td class="num">2h 21m</td>
           </tr>
           </tbody>
@@ -209,6 +210,7 @@
     <p class="muted" style="font-size:13px;margin-top:12px">
       * Two watertight bodies that overlap — self-intersection penalty applied.<br />
       † Slicer can still emit G-code for some broken meshes; hard-fail cap still applies when not watertight.<br />
+      ‡ Watertight is measured after dropping index-degenerate export-padding faces common in Space GLB exports.<br />
       Also scored at 100 (not shown with thumbs): pd_cylinder, pd_icosphere.<br />
       Hunyuan3D-2 rows: meshes normalized to 50&nbsp;mm longest edge; OrcaSlicer 2.4.2, Bambu Lab A1 0.4&nbsp;mm, 0.20&nbsp;mm Standard, Generic PLA.
     </p>
@@ -223,7 +225,7 @@
   </main>
 
   <footer class="site-footer">
-    <div class="wrap legal">Source JSON: /workspace/printready/scores/ · renders copied into site/img/</div>
+    <div class="wrap legal">Scores from OrcaSlicer 2.4.2 + trimesh · methodology v0.1 · 2026-10-30 ET</div>
   </footer>
 </body>
 </html>

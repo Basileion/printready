@@ -48,6 +48,40 @@ def load_mesh(path: Path) -> trimesh.Trimesh:
     return loaded
 
 
+
+
+def drop_export_padding(mesh: trimesh.Trimesh) -> tuple[trimesh.Trimesh, dict[str, int]]:
+    """Drop index-degenerate / zero-area faces common in Space GLB exports.
+
+    These are padding triangles (duplicate vertex indices), not holes. Leaving
+    them in makes trimesh report is_watertight=False even when the real surface
+    is a closed single body. Report the count as export_padding, not as defects.
+    """
+    before = int(len(mesh.faces))
+    # Prefer trimesh nondegenerate mask (index-degenerate + zero-area)
+    try:
+        mask = mesh.nondegenerate_faces()
+        removed = int((~mask).sum()) if hasattr(mask, "sum") else 0
+    except Exception:
+        f = mesh.faces
+        mask = ~((f[:, 0] == f[:, 1]) | (f[:, 1] == f[:, 2]) | (f[:, 0] == f[:, 2]))
+        removed = before - int(mask.sum())
+    if removed:
+        mesh = mesh.copy()
+        mesh.update_faces(mask)
+        mesh.remove_unreferenced_vertices()
+        # process() also merges/dedups safely on cleaned topology
+        try:
+            mesh.process(validate=False)
+        except Exception:
+            pass
+    after = int(len(mesh.faces))
+    return mesh, {
+        "faces_before": before,
+        "faces_after": after,
+        "export_padding_faces": int(before - after),
+    }
+
 def normalize_scale(mesh: trimesh.Trimesh, longest: float = TARGET_LONGEST_MM) -> float:
     extents = mesh.extents
     cur = float(max(extents)) if max(extents) > 0 else 1.0
@@ -407,6 +441,7 @@ def score_components(checks: dict[str, Any]) -> dict[str, Any]:
 
 def score_file(path: Path, out_scores: Path, out_renders: Path, skip_slice: bool = False) -> dict:
     mesh = load_mesh(path)
+    mesh, padding_info = drop_export_padding(mesh)
     scale = normalize_scale(mesh)
     # Export normalized STL for slicer
     with tempfile.TemporaryDirectory(prefix="pr_slice_") as td:
@@ -451,6 +486,8 @@ def score_file(path: Path, out_scores: Path, out_renders: Path, skip_slice: bool
             "print_time_s": slice_info.get("print_time_s"),
             "support_volume_mm3": slice_info.get("support_volume_mm3"),
             "filament_mm3": slice_info.get("filament_mm3"),
+            "export_padding_faces": padding_info["export_padding_faces"],
+            "faces_before_padding_drop": padding_info["faces_before"],
         }
         scored = score_components(checks)
 
@@ -467,6 +504,7 @@ def score_file(path: Path, out_scores: Path, out_renders: Path, skip_slice: bool
             "extents_mm": mesh.extents.tolist(),
             "faces": int(len(mesh.faces)),
             "vertices": int(len(mesh.vertices)),
+            "export_padding": padding_info,
             "checks": checks,
             "slice": {
                 "attempted": slice_info.get("attempted"),

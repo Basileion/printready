@@ -1,7 +1,7 @@
 {
   "id": "T05",
-  "source": "gens/hunyuan3d2/T05.glb",
-  "scored_at": "2026-10-30T15:53:11.550573-04:00",
+  "source": "/workspace/printready/gens/hunyuan3d2/T05.glb",
+  "scored_at": "2026-10-30T16:53:17.873549-04:00",
   "timezone_note": "America/New_York (box-local)",
   "normalize_longest_mm": 50.0,
   "applied_scale": 25.5012263291718,
@@ -10,34 +10,43 @@
     32.22282650330203,
     19.83913625568933
   ],
-  "faces": 318408,
+  "faces": 318404,
   "vertices": 159176,
+  "export_padding": {
+    "faces_before": 318408,
+    "faces_after": 318404,
+    "export_padding_faces": 4
+  },
   "checks": {
     "watertight": false,
     "is_volume": false,
     "is_manifold": false,
-    "nonmanifold_edge_count": 6,
+    "nonmanifold_edge_count": 2,
     "self_intersection_count": 0,
-    "broken_faces": 10,
+    "broken_faces": 6,
+    "body_count": 1,
     "thin_wall_min_mm": null,
     "slice_success": true,
     "print_time_s": 1924,
     "support_volume_mm3": 0.0,
-    "filament_mm3": 1240.0
+    "filament_mm3": 1240.0,
+    "export_padding_faces": 4,
+    "faces_before_padding_drop": 318408
   },
   "slice": {
     "attempted": true,
     "success": true,
     "returncode": 0,
     "gcode_path": "/tmp/pr_slice__tc309xv/slice_out/plate_1.gcode",
-    "stderr_tail": "0\norientation:-0.7071 -0.0000 -0.7071, cost:1532.8,\t0.8,\t0.7,\t3.6,\t32.8,\t0.0,\t997.8\norientation:-0.0000 -0.7071 -0.7071, cost:2358.9,\t4.9,\t12.5,\t8.8,\t77.7,\t0.0,\t395.7\norientation: 0.7071 -0.0000 -0.7071, cost:1538.7,\t1.3,\t1.3,\t4.6,\t23.0,\t0.0,\t732.4\norientation:-0.0000  0.7071 -0.7071, cost:1928.8,\t30.7,\t22.7,\t22.2,\t74.7,\t0.0,\t70.9\norientation:-0.0000 -0.0000 -1.0000, cost:1506.6,\t1.0,\t15.4,\t4.0,\t1260.5,\t0.0,\t591.2\nbest:0.001306 0.999885 0.015129, costs:984.9,\t437.2,\t869.8,\t83.6,\t182.2,\t0.0,\t2.6\n"
+    "stderr_tail": "reused from prior run (geometry unchanged; slicers already drop export padding)",
+    "reused": true
   },
   "score": {
     "score": 39.0,
     "partial": {
       "watertight": 0.0,
       "manifold": 0.0,
-      "nonmanifold_edges": 0.0,
+      "nonmanifold_edges": 5.0,
       "self_intersections": 10,
       "thin_walls": 5.0,
       "slice_success": 20,
@@ -56,7 +65,7 @@
       "support_volume": 10
     }
   },
-  "preview_png": "renders/hunyuan3d2/T05.png",
+  "preview_png": "/workspace/printready/renders/hunyuan3d2/T05.png",
   "slicer": {
     "name": "OrcaSlicer",
     "version": "2.4.2",

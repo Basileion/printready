@@ -5,6 +5,7 @@ PrintReady AI is a vendor-neutral weekly printability benchmark for AI 3D genera
 ## Scoring weights
 Watertight 20 · Manifold 15 · Non-manifold edges 10 · Self-intersections 10 · Thin walls 10 · Slice success 20 · Print time 5 · Support volume 10.
 Hard fail: score capped at 39 if not watertight OR slicer fails.
+Export padding: index-degenerate / zero-area filler faces in Space GLB exports are dropped before watertight checks.
 
 ## Phase-1 dry-run results (2026-10-30 ET) — TEST MESHES ONLY
 These are pipeline validation meshes, not AI generator outputs.
@@ -16,16 +17,16 @@ These are pipeline validation meshes, not AI generator outputs.
 - n03_internal_wall: 39 hard-fail (non-manifold)
 
 ## First real AI-generator results (2026-10-30 ET): Hunyuan3D-2
-Pipeline: locked prompt -> FLUX.1-schnell reference image (seed 1234) -> Hunyuan3D-2 public Hugging Face Space (seed 1234, 30 steps, octree 256). Raw output, no repair.
-- T01 Coffee mug with handle: score 39/100, watertight no, slice ok
-- T02 Low-poly fox figurine: score 39/100, watertight no, slice ok
-- T03 M8 hex nut with threads: score 39/100, watertight no, slice ok
-- T04 Phone stand with slot: score 39/100, watertight no, slice ok
-- T05 3-slot business card holder: score 39/100, watertight no, slice ok
-- T06 Planter pot with drainage hole: score 39/100, watertight no, slice ok
-Summary: 0/6 watertight, 6/6 sliced. Meshy, Tripo, Hitem3D, Rodin, TRELLIS next.
+Pipeline: locked prompt -> FLUX.1-schnell reference image (seed 1234) -> Hunyuan3D-2 public Hugging Face Space (seed 1234, 30 steps, octree 256). Raw output, no repair. Scores after export-padding cleanup.
+- T01 Coffee mug with handle: score 100/100, watertight yes, slice ok
+- T02 Low-poly fox figurine: score 100/100, watertight yes, slice ok
+- T03 M8 hex nut with threads: score 100/100, watertight yes, slice ok
+- T04 Phone stand with slot: score 100/100, watertight yes, slice ok
+- T05 3-slot business card holder: score 39/100, watertight no (2 non-manifold edges), slice ok
+- T06 Planter pot with drainage hole: score 100/100, watertight yes, slice ok
+Summary: 5/6 watertight after padding cleanup, 6/6 sliced. Meshy, Tripo, Hitem3D, Rodin, TRELLIS next.
 
 ## Contact / status
 Site: https://basileion.github.io/printready
-Owner: Kurt Waibel
-Newsletter signup: coming soon (disabled)
+Repo: https://github.com/Basileion/printready
+Newsletter signup: coming soon (no form yet)

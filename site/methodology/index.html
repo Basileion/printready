@@ -42,7 +42,7 @@
           <tr><th>Check</th><th class="num">Weight</th><th>Pass bar</th></tr>
         </thead>
         <tbody>
-          <tr><td>Watertight</td><td class="num">20</td><td>trimesh <code>is_watertight</code></td></tr>
+          <tr><td>Watertight</td><td class="num">20</td><td>trimesh <code>is_watertight</code> after dropping index-degenerate export-padding faces</td></tr>
           <tr><td>Manifold</td><td class="num">15</td><td>Every edge shared by exactly 2 faces</td></tr>
           <tr><td>Non-manifold edge count</td><td class="num">10</td><td>0 ideal; soft penalty ≤5</td></tr>
           <tr><td>Self-intersections</td><td class="num">10</td><td>0 overlapping bodies / faces</td></tr>
@@ -61,7 +61,10 @@
       <li>Process: 0.20&nbsp;mm Standard @BBL A1</li>
       <li>Filament: Generic PLA @BBL A1</li>
     </ul>
-    <p>Exact profile files ship next to score JSON under <code>/workspace/printready/scores/</code> on the build box.</p>
+    <p>Profile names are recorded in each score JSON. Prompt pack and slicer versions are frozen per weekly archive.</p>
+
+    <h2>Export padding (not holes)</h2>
+    <p>Some generator Space GLB exports include large numbers of index-degenerate, zero-area filler triangles. Those are reported as <strong>export padding</strong> and removed before watertight and manifold checks. They are not treated as holes.</p>
 
     <h2>What we do not score (yet)</h2>
     <p>Texture beauty, game-engine retopo, multi-color painting, or “looks cool on Sketchfab.” Those are someone else’s leaderboard.</p>
@@ -73,7 +76,7 @@
   </main>
 
   <footer class="site-footer">
-    <div class="wrap legal">PrintReady AI · printready.pages.dev · methodology v0.1 · 2026-10-30 ET</div>
+    <div class="wrap legal">PrintReady AI · methodology v0.1 · 2026-10-30 ET</div>
   </footer>
 </body>
 </html>
