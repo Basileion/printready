@@ -1,0 +1,23 @@
+# PrintReady AI — full brief
+
+PrintReady AI is a vendor-neutral weekly printability benchmark for AI 3D generators (Meshy, Tripo, Rodin/Hyper3D, Hunyuan3D, Trellis, Hitem3D/Hi3D).
+
+## Scoring weights
+Watertight 20 · Manifold 15 · Non-manifold edges 10 · Self-intersections 10 · Thin walls 10 · Slice success 20 · Print time 5 · Support volume 10.
+Hard fail: score capped at 39 if not watertight OR slicer fails.
+
+## Phase-1 dry-run results (2026-10-30 ET) — TEST MESHES ONLY
+These are pipeline validation meshes, not AI generator outputs.
+- n01_closed_cube: 100 (control)
+- pd_capsule / pd_cylinder / pd_icosphere / pd_torus: 100 (controls)
+- n05_thin_plate: 90 (0.25 mm thin-wall penalty)
+- n04_intersecting_tets: 90 (self-intersection penalty)
+- n02_open_cube: 39 hard-fail (not watertight)
+- n03_internal_wall: 39 hard-fail (non-manifold)
+
+Real AI-generator leaderboard scores are coming soon after free-tier generator runs.
+
+## Contact / status
+Site: https://printready.pages.dev
+Owner: Kurt Waibel
+Newsletter signup: coming soon (disabled)

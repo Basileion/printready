@@ -1,0 +1,8 @@
+.venv/
+tools/
+__pycache__/
+*.pyc
+orca_dl.log
+00000.log
+wrangler.toml
+.node*

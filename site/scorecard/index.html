@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en" data-product="printready" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sample scorecard (test meshes) — PrintReady AI</title>
+  <meta name="description" content="TEST MESHES ONLY: pipeline dry-run PrintReady Scores for control and broken meshes. Real AI-generator weekly scores coming soon." />
+  <meta name="robots" content="index,follow" />
+  <link rel="stylesheet" href="../css/site.css" />
+  <link rel="canonical" href="https://printready.pages.dev/scorecard/" />
+  <meta property="og:url" content="https://printready.pages.dev/scorecard/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PrintReady AI" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Sample scorecard (test meshes)","url":"https://printready.pages.dev/scorecard/","description":"PrintReady pipeline dry-run scores for control and broken test meshes. Real AI-generator scores coming soon.","isPartOf":{"@id":"https://printready.pages.dev/#website"},"dateModified":"2026-10-30"}</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="../index.html">Print<span>Ready</span> AI</a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="./" aria-current="page">Sample scorecard</a></li>
+          <li><a href="../methodology/">Methodology</a></li>
+          <li><a href="../newsletter/">Newsletter</a></li>
+        </ul>
+      </nav>
+      <span class="pill" style="background:var(--ds-pos-soft);color:var(--ds-pos)">Live · pages.dev</span>
+    </div>
+  </header>
+
+  <main id="main" class="wrap section">
+    <p class="eyebrow">Pipeline dry-run · 2026-10-30 ET</p>
+    <h1>Sample scorecard <span class="tag" style="font-size:14px;vertical-align:middle">TEST MESHES</span></h1>
+    <div class="notice" role="status" style="margin:16px 0 24px;max-width:48rem">
+      <strong>Test meshes only.</strong> These rows validate the scorer (controls + deliberate failures).
+      They are <em>not</em> outputs from Meshy, Tripo, Rodin, Hunyuan3D, Trellis, or Hitem3D.
+      <strong>Real AI-generator scores are coming soon.</strong>
+    </div>
+    <p class="lede">Scores below come from the local trimesh + OrcaSlicer pipeline so you can trust the rubric before week&nbsp;1 ships.</p>
+
+    <div class="table-wrap" role="region" aria-label="Sample PrintReady scores" tabindex="0">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Preview</th>
+            <th scope="col">Mesh</th>
+            <th scope="col">Type</th>
+            <th scope="col" class="num">Score</th>
+            <th scope="col">Watertight</th>
+            <th scope="col" class="num">NM edges</th>
+            <th scope="col">Slice</th>
+            <th scope="col" class="num">Est. time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img class="thumb" src="../img/n01_closed_cube.png" alt="" /></td>
+            <td>n01_closed_cube</td>
+            <td><span class="tag">control</span></td>
+            <td class="num"><span class="score score-ok">100</span></td>
+            <td>yes</td>
+            <td class="num">0</td>
+            <td>ok</td>
+            <td class="num">5h 21m</td>
+          </tr>
+          <tr>
+            <td><img class="thumb" src="../img/pd_capsule.png" alt="" /></td>
+            <td>pd_capsule</td>
+            <td><span class="tag">control</span></td>
+            <td class="num"><span class="score score-ok">100</span></td>
+            <td>yes</td>
+            <td class="num">0</td>
+            <td>ok</td>
+            <td class="num">51m</td>
+          </tr>
+          <tr>
+            <td><img class="thumb" src="../img/pd_torus.png" alt="" /></td>
+            <td>pd_torus</td>
+            <td><span class="tag">control</span></td>
+            <td class="num"><span class="score score-ok">100</span></td>
+            <td>yes</td>
+            <td class="num">0</td>
+            <td>ok</td>
+            <td class="num">1h 17m</td>
+          </tr>
+          <tr>
+            <td><img class="thumb" src="../img/n05_thin_plate.png" alt="" /></td>
+            <td>n05_thin_plate</td>
+            <td><span class="tag">thin wall</span></td>
+            <td class="num"><span class="score score-mid">90</span></td>
+            <td>yes</td>
+            <td class="num">0</td>
+            <td>ok</td>
+            <td class="num">12m</td>
+          </tr>
+          <tr>
+            <td><img class="thumb" src="../img/n04_intersecting_tets.png" alt="" width="56" height="56" /></td>
+            <td>n04_intersecting_tets</td>
+            <td><span class="tag">self-intersect</span></td>
+            <td class="num"><span class="score score-mid">90</span></td>
+            <td>yes*</td>
+            <td class="num">0</td>
+            <td>ok</td>
+            <td class="num">1h 57m</td>
+          </tr>
+          <tr>
+            <td><img class="thumb" src="../img/n02_open_cube.png" alt="" /></td>
+            <td>n02_open_cube</td>
+            <td><span class="tag">broken</span></td>
+            <td class="num"><span class="score score-bad">39</span></td>
+            <td>no</td>
+            <td class="num">4</td>
+            <td>ok†</td>
+            <td class="num">5h 21m</td>
+          </tr>
+          <tr>
+            <td><img class="thumb" src="../img/n03_internal_wall.png" alt="" width="56" height="56" /></td>
+            <td>n03_internal_wall</td>
+            <td><span class="tag">non-manifold</span></td>
+            <td class="num"><span class="score score-bad">39</span></td>
+            <td>no</td>
+            <td class="num">5</td>
+            <td>ok†</td>
+            <td class="num">5h 21m</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="muted" style="font-size:13px;margin-top:12px">
+      * Two watertight bodies that overlap — self-intersection penalty applied.<br />
+      † Slicer can still emit G-code for some broken meshes; hard-fail cap still applies when not watertight.<br />
+      Also scored at 100 (not shown with thumbs): pd_cylinder, pd_icosphere.
+    </p>
+
+    <div class="band" style="margin-top:48px">
+      <div>
+        <h2>Next: score real AI generators</h2>
+        <p>Needs Kurt’s free-tier signups (Meshy / Tripo / Hi3D) or HF Spaces runs — see APPROVALS.md. No accounts created this hour.</p>
+      </div>
+      <a class="btn btn-ghost" href="../methodology/">Read methodology</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap legal">Source JSON: /workspace/printready/scores/ · renders copied into site/img/</div>
+  </footer>
+</body>
+</html>

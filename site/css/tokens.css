@@ -1,0 +1,96 @@
+/* design-standard v1 — premium finance-grade tokens (cost-conscious buyers)
+   Fonts: Inter + Source Serif 4 (SIL OFL). Self-host or system fallbacks. */
+
+@font-face{
+  font-family:"Source Serif";
+  src:url("/assets/fonts/serif.woff2") format("woff2");
+  font-weight:400 700;
+  font-display:swap;
+}
+@font-face{
+  font-family:"Inter";
+  src:url("/assets/fonts/inter.woff2") format("woff2");
+  font-weight:400 700;
+  font-display:swap;
+}
+
+:root{
+  /* Spacing — 4pt base */
+  --ds-s1:4px; --ds-s2:8px; --ds-s3:16px; --ds-s4:24px;
+  --ds-s5:32px; --ds-s6:48px; --ds-s7:64px; --ds-s8:96px;
+  --ds-max:1200px; --ds-r:10px; --ds-r-sm:6px;
+
+  /* Type */
+  --ds-f-sans:"Inter",ui-sans-serif,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --ds-f-serif:"Source Serif",Georgia,"Times New Roman",serif;
+  --ds-f-mono:ui-monospace,"SF Mono",Menlo,"DejaVu Sans Mono",monospace;
+  --ds-t-xs:12px; --ds-t-sm:14px; --ds-t-md:16px; --ds-t-lg:18px;
+  --ds-t-xl:24px; --ds-t-2xl:32px; --ds-t-3xl:44px; --ds-t-4xl:60px;
+
+  /* Color — warm paper / deep ink / value accent (teal) + alert */
+  --ds-bg:#f7f5f0; --ds-surface:#ffffff; --ds-surface-2:#fbfaf6; --ds-surface-3:#f1eee7;
+  --ds-ink:#141821; --ds-ink-2:#3a404c; --ds-mut:#5f6673;
+  --ds-line:#e6e2d9; --ds-line-2:#d6d1c5;
+  --ds-acc:#0b6e4f; --ds-acc-ink:#ffffff; --ds-acc-soft:#e7f2ed; --ds-acc-line:#b7d9cb;
+  --ds-pos:#1f6b4f; --ds-pos-soft:#e7f2ec;
+  --ds-warn:#8a5a00; --ds-warn-soft:#f8efdc;
+  --ds-neg:#a12a2a; --ds-neg-soft:#f8e8e8;
+  --ds-focus:#2b59c3;
+  --ds-shadow:0 1px 2px rgba(20,24,33,.04),0 4px 16px rgba(20,24,33,.05);
+
+  --ds-ease:cubic-bezier(.2,.7,.2,1);
+  --ds-dur:180ms;
+  color-scheme:light;
+}
+
+:root[data-theme=dark],
+:root[data-t=dark]{
+  --ds-bg:#0e1117; --ds-surface:#151a22; --ds-surface-2:#1a2029; --ds-surface-3:#212834;
+  --ds-ink:#ecebe6; --ds-ink-2:#c6c8cc; --ds-mut:#9aa1ad;
+  --ds-line:#262d38; --ds-line-2:#333b48;
+  --ds-acc:#6fcf9f; --ds-acc-ink:#0a1a12; --ds-acc-soft:#142a21; --ds-acc-line:#2a4a3a;
+  --ds-pos:#6fcf9f; --ds-pos-soft:#142a21;
+  --ds-warn:#e3b45f; --ds-warn-soft:#2b2312;
+  --ds-neg:#f07178; --ds-neg-soft:#2a1518;
+  --ds-focus:#8fb0ff;
+  --ds-shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+  color-scheme:dark;
+}
+
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme=light]):not([data-t=light]){
+    --ds-bg:#0e1117; --ds-surface:#151a22; --ds-surface-2:#1a2029; --ds-surface-3:#212834;
+    --ds-ink:#ecebe6; --ds-ink-2:#c6c8cc; --ds-mut:#9aa1ad;
+    --ds-line:#262d38; --ds-line-2:#333b48;
+    --ds-acc:#6fcf9f; --ds-acc-ink:#0a1a12; --ds-acc-soft:#142a21; --ds-acc-line:#2a4a3a;
+    --ds-pos:#6fcf9f; --ds-pos-soft:#142a21;
+    --ds-warn:#e3b45f; --ds-warn-soft:#2b2312;
+    --ds-neg:#f07178; --ds-neg-soft:#2a1518;
+    --ds-focus:#8fb0ff;
+    --ds-shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+    color-scheme:dark;
+  }
+}
+
+/* Product accent overrides (optional on <html data-product>) */
+:root[data-product=o11y]{ --ds-acc:#4f46e5; --ds-acc-soft:#eef0ff; --ds-acc-line:#c7c9f5; --ds-acc-ink:#fff; }
+:root[data-product=o11y][data-t=dark],
+:root[data-product=o11y][data-theme=dark]{ --ds-acc:#8b8bff; --ds-acc-soft:#1a1a2e; --ds-acc-line:#3a3a6a; --ds-acc-ink:#0a0a14; }
+:root[data-product=vps]{ --ds-acc:#8a2b36; --ds-acc-soft:#f6eaeb; --ds-acc-line:#e7c9cd; --ds-acc-ink:#fff; }
+:root[data-product=vps][data-theme=dark]{ --ds-acc:#e0848f; --ds-acc-soft:#2a1a1f; --ds-acc-line:#4a2a31; --ds-acc-ink:#1a0d10; }
+:root[data-product=ratecard]{ --ds-acc:#0b6e4f; --ds-acc-soft:#e7f2ed; --ds-acc-line:#b7d9cb; --ds-acc-ink:#fff; }
+
+/* Motion */
+@media (prefers-reduced-motion:reduce){
+  :root{ --ds-dur:0.01ms; }
+  *,*::before,*::after{ animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important; }
+}
+
+/* PrintReady product accent — filament teal / plate orange soft */
+:root[data-product=printready]{
+  --ds-acc:#0b6e4f; --ds-acc-soft:#e7f2ed; --ds-acc-line:#b7d9cb; --ds-acc-ink:#ffffff;
+}
+:root[data-product=printready][data-theme=dark],
+:root[data-product=printready][data-t=dark]{
+  --ds-acc:#6fcf9f; --ds-acc-soft:#142a21; --ds-acc-line:#2a4a3a; --ds-acc-ink:#0a1a12;
+}

@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en" data-product="printready" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PrintReady AI — Does that AI mesh actually print?</title>
+  <meta name="description" content="Weekly benchmark that scores AI text-to-3D and image-to-3D generators on printability: watertight, manifold, thin walls, and slicer success — not pretty renders." />
+  <meta name="robots" content="index,follow" />
+  <link rel="stylesheet" href="css/site.css" />
+  <link rel="canonical" href="https://printready.pages.dev/" />
+  <meta property="og:url" content="https://printready.pages.dev/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PrintReady AI" />
+  <meta property="og:title" content="PrintReady AI — Does that AI mesh actually print?" />
+  <meta property="og:description" content="Weekly printability benchmark for AI 3D generators — watertight, manifold, thin walls, slicer success." />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://printready.pages.dev/#website","name":"PrintReady AI","url":"https://printready.pages.dev/","description":"Weekly benchmark that scores AI text-to-3D and image-to-3D generators on printability — watertight, manifold, thin walls, and slicer success.","inLanguage":"en","publisher":{"@id":"https://printready.pages.dev/#org"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://printready.pages.dev/#org","name":"PrintReady AI","url":"https://printready.pages.dev/","description":"Vendor-neutral AI mesh printability benchmark."}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does PrintReady AI score?","acceptedAnswer":{"@type":"Answer","text":"Printability of AI-generated 3D meshes: watertight, manifold, non-manifold edges, self-intersections, thin walls, OrcaSlicer slice success, print time, and support volume. Not visual beauty."}},{"@type":"Question","name":"What is on the sample scorecard today?","acceptedAnswer":{"@type":"Answer","text":"Pipeline test meshes (controls and deliberate failures) from 2026-10-30. Real AI-generator weekly scores are coming soon."}},{"@type":"Question","name":"What slicer profile is used?","acceptedAnswer":{"@type":"Answer","text":"OrcaSlicer 2.4.2 with Bambu Lab A1 0.4 mm nozzle, 0.20 mm Standard process, Generic PLA. Meshes are normalized to 50 mm longest edge."}}]}</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html">Print<span>Ready</span> AI</a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="scorecard/">Sample scorecard</a></li>
+          <li><a href="methodology/">Methodology</a></li>
+          <li><a href="newsletter/">Newsletter</a></li>
+        </ul>
+      </nav>
+      <span class="pill" style="background:var(--ds-pos-soft);color:var(--ds-pos)">Live · pages.dev</span>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="wrap hero">
+      <div>
+        <p class="eyebrow">Weekly AI → printability benchmark</p>
+        <h1>Pretty GLBs still fail the slicer. We score the ones that don’t.</h1>
+        <p class="lede">
+          PrintReady AI runs the same prompts through Meshy, Tripo, Rodin, Hunyuan3D, Trellis, and Hitem3D —
+          then grades <strong>watertight</strong>, <strong>manifold</strong>, <strong>thin walls</strong>, and
+          <strong>OrcaSlicer success</strong>. Competitors rank looks. We rank what lands on a Bambu plate.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="scorecard/">See the sample scorecard</a>
+          <a class="btn btn-ghost" href="methodology/">How scoring works</a>
+        </div>
+        <ul class="trust">
+          <li>Same locked prompts every week</li>
+          <li>Vendor-neutral · reproducible JSON</li>
+          <li>0.4&nbsp;mm nozzle · 0.2&nbsp;mm layer · PLA</li>
+          <li>Hard-fail cap at 39 if not watertight</li>
+        </ul>
+      </div>
+      <aside class="card" aria-label="Pipeline proof from local dry-run">
+        <p class="eyebrow">Phase-1 pipeline proof · 2026-10-30</p>
+        <div class="kpi-grid">
+          <div class="kpi"><b>100</b><span>Closed cube PrintReady Score</span></div>
+          <div class="kpi"><b>39</b><span>Open mesh hard-fail (capped)</span></div>
+          <div class="kpi"><b>90</b><span>0.25&nbsp;mm plate (thin-wall hit)</span></div>
+          <div class="kpi"><b>9</b><span>Meshes scored end-to-end</span></div>
+        </div>
+        <p class="muted" style="margin:16px 0 0;font-size:12px">
+          Pipeline proof from trimesh + OrcaSlicer 2.4.2 on <strong>test meshes</strong>. Weekly AI-generator leaderboard coming soon.
+        </p>
+      </aside>
+    </section>
+
+    <section class="wrap section">
+      <div class="section-head">
+        <h2>You’re overpaying in repair time</h2>
+        <p class="muted">Makers paste a prompt, download a glamorous mesh, then burn an evening fixing non-manifold edges. Loss aversion, quantified.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card feature">
+          <h3>Looks leaderboards lie</h3>
+          <p>top3d.ai and taxon3d.org optimize for beauty. Meshy’s blog grades itself. None of them ask: will this slice?</p>
+        </article>
+        <article class="card feature">
+          <h3>One promise</h3>
+          <p>A PrintReady Score (0–100) you can reproduce from published prompts, meshes, and the slicer profile JSON.</p>
+        </article>
+        <article class="card feature">
+          <h3>Built to compound</h3>
+          <p>Programmatic “Meshy vs Tripo for 3D printing” pages + a Friday newsletter — once Kurt approves publish.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap section">
+      <div class="section-head">
+        <h2>Sample failures the scorer already catches</h2>
+        <p class="muted">From the local dry-run — deliberate broken meshes + clean controls.</p>
+      </div>
+      <div class="gallery">
+        <figure class="card">
+          <img src="img/n01_closed_cube.png" width="400" height="400" alt="Preview render of a closed cube mesh that scored 100" />
+          <figcaption><span class="score score-ok">100</span> Closed cube — control pass</figcaption>
+        </figure>
+        <figure class="card">
+          <img src="img/n02_open_cube.png" width="400" height="400" alt="Preview of an open cube mesh that hard-failed" />
+          <figcaption><span class="score score-bad">39</span> Open cube — not watertight</figcaption>
+        </figure>
+        <figure class="card">
+          <img src="img/n05_thin_plate.png" width="400" height="400" alt="Preview of a thin 0.25 millimeter plate" />
+          <figcaption><span class="score score-mid">90</span> 0.25&nbsp;mm plate — thin-wall penalty</figcaption>
+        </figure>
+      </div>
+      <p style="margin-top:24px"><a class="btn btn-primary" href="scorecard/">Full sample scorecard →</a></p>
+    </section>
+
+    <section class="wrap">
+      <div class="band">
+        <div>
+          <h2>Get the first public week when it ships</h2>
+          <p>Newsletter placeholder only — no form backend until Kurt approves a provider. Reciprocity first: free methodology + sample scores before any ask.</p>
+        </div>
+        <a class="btn btn-primary" href="newsletter/">Reserve the list</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <a class="brand" href="index.html">Print<span>Ready</span> AI</a>
+        <p class="muted" style="margin-top:12px;font-size:14px;max-width:28rem">
+          Vendor-neutral weekly printability benchmark for AI 3D generators. Vendor-neutral printability benchmark. Sample scorecard = test meshes; AI-generator weeks coming soon.
+        </p>
+      </div>
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="scorecard/">Sample scorecard</a></li>
+          <li><a href="methodology/">Methodology</a></li>
+          <li><a href="newsletter/">Newsletter</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Status</h3>
+        <ul>
+          <li>Live · free Cloudflare Pages</li>
+          <li><a href="https://printready.pages.dev/">printready.pages.dev</a></li>
+          <li>Owner: Kurt Waibel</li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap legal">Honest claims only. Affiliate disclosures will appear before any paid links go live.</div>
+  </footer>
+</body>
+</html>

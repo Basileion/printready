@@ -1,0 +1,115 @@
+{
+  "scored_at": "2026-10-30T14:56:30.122867-04:00",
+  "timezone": "America/New_York",
+  "slicer": "OrcaSlicer 2.4.2 / BBL A1 0.4 / 0.20mm / Generic PLA",
+  "results": [
+    {
+      "id": "n01_closed_cube",
+      "score": 100.0,
+      "hard_fail": false,
+      "watertight": true,
+      "nm_edges": 0,
+      "thin_mm": 50.0,
+      "self_intersect": 0,
+      "slice": true,
+      "print_time_s": 19288,
+      "preview": "/workspace/printready/renders/n01_closed_cube.png"
+    },
+    {
+      "id": "n02_open_cube",
+      "score": 39.0,
+      "hard_fail": true,
+      "watertight": false,
+      "nm_edges": 4,
+      "thin_mm": null,
+      "self_intersect": null,
+      "slice": true,
+      "print_time_s": 19288,
+      "preview": "/workspace/printready/renders/n02_open_cube.png"
+    },
+    {
+      "id": "n03_internal_wall",
+      "score": 39.0,
+      "hard_fail": true,
+      "watertight": false,
+      "nm_edges": 5,
+      "thin_mm": null,
+      "self_intersect": 0,
+      "slice": true,
+      "print_time_s": 19288,
+      "preview": "/workspace/printready/renders/n03_internal_wall.png"
+    },
+    {
+      "id": "n04_intersecting_tets",
+      "score": 90.0,
+      "hard_fail": false,
+      "watertight": true,
+      "nm_edges": 0,
+      "thin_mm": 8.24786098842322,
+      "self_intersect": 1,
+      "slice": true,
+      "print_time_s": 7042,
+      "preview": "/workspace/printready/renders/n04_intersecting_tets.png"
+    },
+    {
+      "id": "n05_thin_plate",
+      "score": 90.0,
+      "hard_fail": false,
+      "watertight": true,
+      "nm_edges": 0,
+      "thin_mm": 0.2500000037252903,
+      "self_intersect": 0,
+      "slice": true,
+      "print_time_s": 706,
+      "preview": "/workspace/printready/renders/n05_thin_plate.png"
+    },
+    {
+      "id": "pd_capsule",
+      "score": 100.0,
+      "hard_fail": false,
+      "watertight": true,
+      "nm_edges": 0,
+      "thin_mm": 18.727415236635093,
+      "self_intersect": 0,
+      "slice": true,
+      "print_time_s": 3066,
+      "preview": "/workspace/printready/renders/pd_capsule.png"
+    },
+    {
+      "id": "pd_cylinder",
+      "score": 100.0,
+      "hard_fail": false,
+      "watertight": true,
+      "nm_edges": 0,
+      "thin_mm": 39.91435627864139,
+      "self_intersect": 0,
+      "slice": true,
+      "print_time_s": 10636,
+      "preview": "/workspace/printready/renders/pd_cylinder.png"
+    },
+    {
+      "id": "pd_icosphere",
+      "score": 100.0,
+      "hard_fail": false,
+      "watertight": true,
+      "nm_edges": 0,
+      "thin_mm": 49.77658007142415,
+      "self_intersect": 0,
+      "slice": true,
+      "print_time_s": 10734,
+      "preview": "/workspace/printready/renders/pd_icosphere.png"
+    },
+    {
+      "id": "pd_torus",
+      "score": 100.0,
+      "hard_fail": false,
+      "watertight": true,
+      "nm_edges": 0,
+      "thin_mm": 12.366976764363354,
+      "self_intersect": 0,
+      "slice": true,
+      "print_time_s": 4613,
+      "preview": "/workspace/printready/renders/pd_torus.png"
+    }
+  ]
+}

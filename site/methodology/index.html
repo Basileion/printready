@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en" data-product="printready" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Methodology — PrintReady AI</title>
+  <meta name="description" content="How PrintReady Score is calculated: watertight, manifold, thin walls, OrcaSlicer slice success, print time, and support volume." />
+  <meta name="robots" content="index,follow" />
+  <link rel="stylesheet" href="../css/site.css" />
+  <link rel="canonical" href="https://printready.pages.dev/methodology/" />
+  <meta property="og:url" content="https://printready.pages.dev/methodology/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PrintReady AI" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"PrintReady AI Methodology","url":"https://printready.pages.dev/methodology/","description":"How PrintReady Score (0–100) is calculated, including hard-fail rules and slicer profile.","isPartOf":{"@id":"https://printready.pages.dev/#website"},"dateModified":"2026-10-30"}</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="../index.html">Print<span>Ready</span> AI</a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../scorecard/">Sample scorecard</a></li>
+          <li><a href="./" aria-current="page">Methodology</a></li>
+          <li><a href="../newsletter/">Newsletter</a></li>
+        </ul>
+      </nav>
+      <span class="pill" style="background:var(--ds-pos-soft);color:var(--ds-pos)">Live · pages.dev</span>
+    </div>
+  </header>
+
+  <main id="main" class="wrap section prose">
+    <p class="eyebrow">Reproducible scoring</p>
+    <h1>Methodology</h1>
+    <p>Every mesh is normalized so its longest bounding-box edge is <strong>50&nbsp;mm</strong>, then scored 0–100. Hard fail: if the mesh is not watertight <em>or</em> the slicer fails, the score is capped at <strong>39</strong>.</p>
+
+    <h2>Weight table</h2>
+    <div class="table-wrap">
+      <table class="weight-table">
+        <thead>
+          <tr><th>Check</th><th class="num">Weight</th><th>Pass bar</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Watertight</td><td class="num">20</td><td>trimesh <code>is_watertight</code></td></tr>
+          <tr><td>Manifold</td><td class="num">15</td><td>Every edge shared by exactly 2 faces</td></tr>
+          <tr><td>Non-manifold edge count</td><td class="num">10</td><td>0 ideal; soft penalty ≤5</td></tr>
+          <tr><td>Self-intersections</td><td class="num">10</td><td>0 overlapping bodies / faces</td></tr>
+          <tr><td>Thin walls</td><td class="num">10</td><td>≥0.8&nbsp;mm at normalized scale</td></tr>
+          <tr><td>Slice success</td><td class="num">20</td><td>OrcaSlicer emits G-code (exit 0)</td></tr>
+          <tr><td>Print time</td><td class="num">5</td><td>Soft — vs week median when live</td></tr>
+          <tr><td>Support volume</td><td class="num">10</td><td>Lower is better; soft</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Slicer profile (phase 1)</h2>
+    <ul>
+      <li>OrcaSlicer <strong>2.4.2</strong></li>
+      <li>Machine: Bambu Lab A1 · 0.4&nbsp;mm nozzle</li>
+      <li>Process: 0.20&nbsp;mm Standard @BBL A1</li>
+      <li>Filament: Generic PLA @BBL A1</li>
+    </ul>
+    <p>Exact profile files ship next to score JSON under <code>/workspace/printready/scores/</code> on the build box.</p>
+
+    <h2>What we do not score (yet)</h2>
+    <p>Texture beauty, game-engine retopo, multi-color painting, or “looks cool on Sketchfab.” Those are someone else’s leaderboard.</p>
+
+    <h2>Authority &amp; freshness</h2>
+    <p>Prompt pack versioned (v0.1). Pipeline dry-run dated <strong>2026-10-30</strong> (America/New_York). Live weekly archives will freeze prompts + raw meshes so anyone can re-score.</p>
+
+    <p style="margin-top:32px"><a class="btn btn-ghost" href="../scorecard/">View sample scorecard</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap legal">PrintReady AI · printready.pages.dev · methodology v0.1 · 2026-10-30 ET</div>
+  </footer>
+</body>
+</html>
