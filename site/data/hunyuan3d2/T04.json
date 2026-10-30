@@ -1,0 +1,79 @@
+{
+ "id": "T04",
+ "source": "meshes/hunyuan3d2/T04.glb.gz",
+ "scored_at": "2026-10-30T16:53:15.069261-04:00",
+ "timezone_note": "America/New_York (box-local)",
+ "normalize_longest_mm": 50.0,
+ "applied_scale": 25.550993213730173,
+ "extents_mm": [
+  25.876651864836028,
+  50.0,
+  43.78843355528211
+ ],
+ "faces": 420226,
+ "vertices": 210115,
+ "export_padding": {
+  "faces_before": 788396,
+  "faces_after": 420226,
+  "export_padding_faces": 368170
+ },
+ "checks": {
+  "watertight": true,
+  "is_volume": true,
+  "is_manifold": true,
+  "nonmanifold_edge_count": 0,
+  "self_intersection_count": 0,
+  "broken_faces": 0,
+  "body_count": 1,
+  "thin_wall_min_mm": 1.8138537561571912,
+  "slice_success": true,
+  "print_time_s": 4798,
+  "support_volume_mm3": 0.0,
+  "filament_mm3": 6460.0,
+  "export_padding_faces": 368170,
+  "faces_before_padding_drop": 788396
+ },
+ "slice": {
+  "attempted": true,
+  "success": true,
+  "returncode": 0,
+  "stderr_tail": "reused from prior run (geometry unchanged; slicers already drop export padding)",
+  "reused": true
+ },
+ "score": {
+  "score": 100.0,
+  "partial": {
+   "watertight": 20,
+   "manifold": 15,
+   "nonmanifold_edges": 10,
+   "self_intersections": 10,
+   "thin_walls": 10,
+   "slice_success": 20,
+   "print_time": 5,
+   "support_volume": 10
+  },
+  "hard_fail": false,
+  "weights": {
+   "watertight": 20,
+   "manifold": 15,
+   "nonmanifold_edges": 10,
+   "self_intersections": 10,
+   "thin_walls": 10,
+   "slice_success": 20,
+   "print_time": 5,
+   "support_volume": 10
+  }
+ },
+ "preview_png": null,
+ "slicer": {
+  "name": "OrcaSlicer",
+  "version": "2.4.2",
+  "machine": "Bambu Lab A1 0.4 nozzle.json",
+  "process": "0.20mm Standard @BBL A1.json",
+  "filament": "Generic PLA @BBL A1.json"
+ },
+ "source_sha256_uncompressed": "0c03cb566f7d467b9b1742802fba0f849bbc1086fb09436896a111fa5b5fb58f",
+ "generator": "Hunyuan3D-2 (public HF Space tencent/Hunyuan3D-2, shape only, seed 1234, steps 30, guidance 5.0, octree 256)",
+ "reference_image": "ref-images/T04.webp",
+ "prompt": "A phone stand with a slot for a phone, minimal modern design, solid plastic"
+}

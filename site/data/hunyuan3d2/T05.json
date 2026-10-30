@@ -1,0 +1,79 @@
+{
+ "id": "T05",
+ "source": "meshes/hunyuan3d2/T05.glb.gz",
+ "scored_at": "2026-10-30T16:53:17.873549-04:00",
+ "timezone_note": "America/New_York (box-local)",
+ "normalize_longest_mm": 50.0,
+ "applied_scale": 25.5012263291718,
+ "extents_mm": [
+  50.0,
+  32.22282650330203,
+  19.83913625568933
+ ],
+ "faces": 318404,
+ "vertices": 159176,
+ "export_padding": {
+  "faces_before": 318408,
+  "faces_after": 318404,
+  "export_padding_faces": 4
+ },
+ "checks": {
+  "watertight": false,
+  "is_volume": false,
+  "is_manifold": false,
+  "nonmanifold_edge_count": 2,
+  "self_intersection_count": 0,
+  "broken_faces": 6,
+  "body_count": 1,
+  "thin_wall_min_mm": null,
+  "slice_success": true,
+  "print_time_s": 1924,
+  "support_volume_mm3": 0.0,
+  "filament_mm3": 1240.0,
+  "export_padding_faces": 4,
+  "faces_before_padding_drop": 318408
+ },
+ "slice": {
+  "attempted": true,
+  "success": true,
+  "returncode": 0,
+  "stderr_tail": "reused from prior run (geometry unchanged; slicers already drop export padding)",
+  "reused": true
+ },
+ "score": {
+  "score": 39.0,
+  "partial": {
+   "watertight": 0.0,
+   "manifold": 0.0,
+   "nonmanifold_edges": 5.0,
+   "self_intersections": 10,
+   "thin_walls": 5.0,
+   "slice_success": 20,
+   "print_time": 5,
+   "support_volume": 10
+  },
+  "hard_fail": true,
+  "weights": {
+   "watertight": 20,
+   "manifold": 15,
+   "nonmanifold_edges": 10,
+   "self_intersections": 10,
+   "thin_walls": 10,
+   "slice_success": 20,
+   "print_time": 5,
+   "support_volume": 10
+  }
+ },
+ "preview_png": null,
+ "slicer": {
+  "name": "OrcaSlicer",
+  "version": "2.4.2",
+  "machine": "Bambu Lab A1 0.4 nozzle.json",
+  "process": "0.20mm Standard @BBL A1.json",
+  "filament": "Generic PLA @BBL A1.json"
+ },
+ "source_sha256_uncompressed": "880043a086d688eb26ee2a4f16a1de6ee3f107732c9512efc9a635253aa89982",
+ "generator": "Hunyuan3D-2 (public HF Space tencent/Hunyuan3D-2, shape only, seed 1234, steps 30, guidance 5.0, octree 256)",
+ "reference_image": "ref-images/T05.webp",
+ "prompt": "A desktop business card holder with three vertical slots, solid, printable"
+}

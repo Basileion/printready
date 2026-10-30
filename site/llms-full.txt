@@ -30,3 +30,10 @@ Summary: 5/6 watertight after padding cleanup, 6/6 sliced. Meshy, Tripo, Hitem3D
 Site: https://basileion.github.io/printready
 Repo: https://github.com/Basileion/printready
 Newsletter signup: coming soon (no form yet)
+
+
+## Open data (2026-10-30)
+Scores CSV: https://basileion.github.io/printready/data/scores.csv
+Scores JSON: https://basileion.github.io/printready/data/scores.json
+Raw Hunyuan3D-2 meshes (gzipped GLB) + SHA256SUMS + reference images: https://basileion.github.io/printready/data/
+License: CC BY 4.0 for scores; meshes under Tencent Hunyuan 3D 2.0 Community License.

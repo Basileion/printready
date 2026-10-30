@@ -1,0 +1,79 @@
+{
+ "id": "T03",
+ "source": "meshes/hunyuan3d2/T03.glb.gz",
+ "scored_at": "2026-10-30T16:53:09.406245-04:00",
+ "timezone_note": "America/New_York (box-local)",
+ "normalize_longest_mm": 50.0,
+ "applied_scale": 25.444552019524032,
+ "extents_mm": [
+  50.0,
+  46.891674880898066,
+  16.618813214156226
+ ],
+ "faces": 376556,
+ "vertices": 188278,
+ "export_padding": {
+  "faces_before": 713900,
+  "faces_after": 376556,
+  "export_padding_faces": 337344
+ },
+ "checks": {
+  "watertight": true,
+  "is_volume": true,
+  "is_manifold": true,
+  "nonmanifold_edge_count": 0,
+  "self_intersection_count": 0,
+  "broken_faces": 0,
+  "body_count": 1,
+  "thin_wall_min_mm": 4.906702822932401,
+  "slice_success": true,
+  "print_time_s": 4413,
+  "support_volume_mm3": 0.0,
+  "filament_mm3": 6960.0,
+  "export_padding_faces": 337344,
+  "faces_before_padding_drop": 713900
+ },
+ "slice": {
+  "attempted": true,
+  "success": true,
+  "returncode": 0,
+  "stderr_tail": "reused from prior run (geometry unchanged; slicers already drop export padding)",
+  "reused": true
+ },
+ "score": {
+  "score": 100.0,
+  "partial": {
+   "watertight": 20,
+   "manifold": 15,
+   "nonmanifold_edges": 10,
+   "self_intersections": 10,
+   "thin_walls": 10,
+   "slice_success": 20,
+   "print_time": 5,
+   "support_volume": 10
+  },
+  "hard_fail": false,
+  "weights": {
+   "watertight": 20,
+   "manifold": 15,
+   "nonmanifold_edges": 10,
+   "self_intersections": 10,
+   "thin_walls": 10,
+   "slice_success": 20,
+   "print_time": 5,
+   "support_volume": 10
+  }
+ },
+ "preview_png": null,
+ "slicer": {
+  "name": "OrcaSlicer",
+  "version": "2.4.2",
+  "machine": "Bambu Lab A1 0.4 nozzle.json",
+  "process": "0.20mm Standard @BBL A1.json",
+  "filament": "Generic PLA @BBL A1.json"
+ },
+ "source_sha256_uncompressed": "fb7bd1887789ded8856cea47175ef736de88b9bfca14701f798e2534d59b5234",
+ "generator": "Hunyuan3D-2 (public HF Space tencent/Hunyuan3D-2, shape only, seed 1234, steps 30, guidance 5.0, octree 256)",
+ "reference_image": "ref-images/T03.webp",
+ "prompt": "A hexagonal mechanical nut, M8 size proportions, clean threads, printable"
+}

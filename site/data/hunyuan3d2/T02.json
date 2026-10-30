@@ -1,0 +1,79 @@
+{
+ "id": "T02",
+ "source": "meshes/hunyuan3d2/T02.glb.gz",
+ "scored_at": "2026-10-30T16:53:00.114617-04:00",
+ "timezone_note": "America/New_York (box-local)",
+ "normalize_longest_mm": 50.0,
+ "applied_scale": 25.54633383233592,
+ "extents_mm": [
+  46.97198149748711,
+  50.0,
+  21.537743571343366
+ ],
+ "faces": 248838,
+ "vertices": 124419,
+ "export_padding": {
+  "faces_before": 431364,
+  "faces_after": 248838,
+  "export_padding_faces": 182526
+ },
+ "checks": {
+  "watertight": true,
+  "is_volume": true,
+  "is_manifold": true,
+  "nonmanifold_edge_count": 0,
+  "self_intersection_count": 0,
+  "broken_faces": 0,
+  "body_count": 1,
+  "thin_wall_min_mm": 2.2003207247339858,
+  "slice_success": true,
+  "print_time_s": 3453,
+  "support_volume_mm3": 0.0,
+  "filament_mm3": 3660.0,
+  "export_padding_faces": 182526,
+  "faces_before_padding_drop": 431364
+ },
+ "slice": {
+  "attempted": true,
+  "success": true,
+  "returncode": 0,
+  "stderr_tail": "reused from prior run (geometry unchanged; slicers already drop export padding)",
+  "reused": true
+ },
+ "score": {
+  "score": 100.0,
+  "partial": {
+   "watertight": 20,
+   "manifold": 15,
+   "nonmanifold_edges": 10,
+   "self_intersections": 10,
+   "thin_walls": 10,
+   "slice_success": 20,
+   "print_time": 5,
+   "support_volume": 10
+  },
+  "hard_fail": false,
+  "weights": {
+   "watertight": 20,
+   "manifold": 15,
+   "nonmanifold_edges": 10,
+   "self_intersections": 10,
+   "thin_walls": 10,
+   "slice_success": 20,
+   "print_time": 5,
+   "support_volume": 10
+  }
+ },
+ "preview_png": null,
+ "slicer": {
+  "name": "OrcaSlicer",
+  "version": "2.4.2",
+  "machine": "Bambu Lab A1 0.4 nozzle.json",
+  "process": "0.20mm Standard @BBL A1.json",
+  "filament": "Generic PLA @BBL A1.json"
+ },
+ "source_sha256_uncompressed": "3c782ececed9d86449c8612b2985aaef85e5d12afdeecb0e3f73865f37f0c30b",
+ "generator": "Hunyuan3D-2 (public HF Space tencent/Hunyuan3D-2, shape only, seed 1234, steps 30, guidance 5.0, octree 256)",
+ "reference_image": "ref-images/T02.webp",
+ "prompt": "A low-poly fox figurine standing on four legs, solid, 3D printable, no base"
+}

@@ -6,6 +6,7 @@
 - [Home](https://basileion.github.io/printready/)
 - [Scorecard: Hunyuan3D-2 + test meshes](https://basileion.github.io/printready/scorecard/)
 - [Methodology](https://basileion.github.io/printready/methodology/)
+- [Open data: CSV/JSON scores + raw meshes, CC BY 4.0](https://basileion.github.io/printready/data/)
 - [Newsletter (coming soon)](https://basileion.github.io/printready/newsletter/)
 
 ## Facts (citable)

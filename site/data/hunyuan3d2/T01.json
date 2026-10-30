@@ -1,0 +1,79 @@
+{
+ "id": "T01",
+ "source": "meshes/hunyuan3d2/T01.glb.gz",
+ "scored_at": "2026-10-30T16:52:54.402913-04:00",
+ "timezone_note": "America/New_York (box-local)",
+ "normalize_longest_mm": 50.0,
+ "applied_scale": 25.42850040922732,
+ "extents_mm": [
+  50.0,
+  42.42830943647883,
+  36.36914274455121
+ ],
+ "faces": 718294,
+ "vertices": 359147,
+ "export_padding": {
+  "faces_before": 1230432,
+  "faces_after": 718294,
+  "export_padding_faces": 512138
+ },
+ "checks": {
+  "watertight": true,
+  "is_volume": true,
+  "is_manifold": true,
+  "nonmanifold_edge_count": 0,
+  "self_intersection_count": 0,
+  "broken_faces": 0,
+  "body_count": 1,
+  "thin_wall_min_mm": 1.3959302050801268,
+  "slice_success": true,
+  "print_time_s": 5716,
+  "support_volume_mm3": 0.0,
+  "filament_mm3": 8750.0,
+  "export_padding_faces": 512138,
+  "faces_before_padding_drop": 1230432
+ },
+ "slice": {
+  "attempted": true,
+  "success": true,
+  "returncode": 0,
+  "stderr_tail": "reused from prior run (geometry unchanged; slicers already drop export padding)",
+  "reused": true
+ },
+ "score": {
+  "score": 100.0,
+  "partial": {
+   "watertight": 20,
+   "manifold": 15,
+   "nonmanifold_edges": 10,
+   "self_intersections": 10,
+   "thin_walls": 10,
+   "slice_success": 20,
+   "print_time": 5,
+   "support_volume": 10
+  },
+  "hard_fail": false,
+  "weights": {
+   "watertight": 20,
+   "manifold": 15,
+   "nonmanifold_edges": 10,
+   "self_intersections": 10,
+   "thin_walls": 10,
+   "slice_success": 20,
+   "print_time": 5,
+   "support_volume": 10
+  }
+ },
+ "preview_png": null,
+ "slicer": {
+  "name": "OrcaSlicer",
+  "version": "2.4.2",
+  "machine": "Bambu Lab A1 0.4 nozzle.json",
+  "process": "0.20mm Standard @BBL A1.json",
+  "filament": "Generic PLA @BBL A1.json"
+ },
+ "source_sha256_uncompressed": "1976aa20e3de0b8eff88d1b4592348e3d2e721abcd4623c85ced432319ee8237",
+ "generator": "Hunyuan3D-2 (public HF Space tencent/Hunyuan3D-2, shape only, seed 1234, steps 30, guidance 5.0, octree 256)",
+ "reference_image": "ref-images/T01.webp",
+ "prompt": "A simple coffee mug with a handle, solid ceramic style, no texture, watertight printable model"
+}

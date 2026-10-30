@@ -1,0 +1,79 @@
+{
+ "id": "T06",
+ "source": "meshes/hunyuan3d2/T06.glb.gz",
+ "scored_at": "2026-10-30T16:53:34.023297-04:00",
+ "timezone_note": "America/New_York (box-local)",
+ "normalize_longest_mm": 50.0,
+ "applied_scale": 25.516325949445445,
+ "extents_mm": [
+  47.834396446662,
+  50.0,
+  47.89739633709698
+ ],
+ "faces": 984964,
+ "vertices": 492484,
+ "export_padding": {
+  "faces_before": 1947060,
+  "faces_after": 984964,
+  "export_padding_faces": 962096
+ },
+ "checks": {
+  "watertight": true,
+  "is_volume": true,
+  "is_manifold": true,
+  "nonmanifold_edge_count": 0,
+  "self_intersection_count": 0,
+  "broken_faces": 0,
+  "body_count": 1,
+  "thin_wall_min_mm": 1.8434816470188016,
+  "slice_success": true,
+  "print_time_s": 8473,
+  "support_volume_mm3": 0.0,
+  "filament_mm3": 14130.0,
+  "export_padding_faces": 962096,
+  "faces_before_padding_drop": 1947060
+ },
+ "slice": {
+  "attempted": true,
+  "success": true,
+  "returncode": 0,
+  "stderr_tail": "reused from prior run (geometry unchanged; slicers already drop export padding)",
+  "reused": true
+ },
+ "score": {
+  "score": 100.0,
+  "partial": {
+   "watertight": 20,
+   "manifold": 15,
+   "nonmanifold_edges": 10,
+   "self_intersections": 10,
+   "thin_walls": 10,
+   "slice_success": 20,
+   "print_time": 5,
+   "support_volume": 10
+  },
+  "hard_fail": false,
+  "weights": {
+   "watertight": 20,
+   "manifold": 15,
+   "nonmanifold_edges": 10,
+   "self_intersections": 10,
+   "thin_walls": 10,
+   "slice_success": 20,
+   "print_time": 5,
+   "support_volume": 10
+  }
+ },
+ "preview_png": null,
+ "slicer": {
+  "name": "OrcaSlicer",
+  "version": "2.4.2",
+  "machine": "Bambu Lab A1 0.4 nozzle.json",
+  "process": "0.20mm Standard @BBL A1.json",
+  "filament": "Generic PLA @BBL A1.json"
+ },
+ "source_sha256_uncompressed": "5881e061f3416b4cf27f64a48e80cfa9bc43e237c590d1d72a14b56479853fce",
+ "generator": "Hunyuan3D-2 (public HF Space tencent/Hunyuan3D-2, shape only, seed 1234, steps 30, guidance 5.0, octree 256)",
+ "reference_image": "ref-images/T06.webp",
+ "prompt": "A small planter pot with drainage hole in the bottom center, cylindrical"
+}
