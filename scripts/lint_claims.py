@@ -36,6 +36,9 @@ BANNED = [
     # RT-20261031-109: stale once 2+ generators are live; cadence is planned, not yet weekly
     r"once a second generator is scored",
     r"weekly benchmark that scores",
+    # RT-20261031-105: the Hunyuan3D-2.1 plate was a background-removal artifact in our input, not a model trait
+    r"came with a built-in ground plate",
+    r"\b4 of 6 include a thin (?:square )?ground plate",
 ]
 OPS_TEXT = re.compile(r"\b(programmatic|built to compound|GEO|SEO)\b|Live \u00b7 GitHub Pages|Live on GitHub Pages")
 
@@ -90,6 +93,9 @@ def rubric_errors(text_by_ctx):
     scores = {}
     for r in csv.DictReader(open(SITE / "data" / "scores.csv")):
         scores.setdefault(r["prompt_id"], set()).add(float(r["score"]))  # any scored generator's value
+    if (SITE / "data" / "retests.csv").exists():  # RT-20261031-105: published re-test rows also back citations
+        for r in csv.DictReader(open(SITE / "data" / "retests.csv")):
+            scores.setdefault(r["prompt_id"], set()).add(float(r["score"]))
     for rel, ctx, text in text_by_ctx:
         cur = " ".join(x for x in re.split(r"(?<=[.!?])\s+|\n+", text) if not HISTORY.search(re.sub(r"\(v0\.1 [\d.]+\)", "", x)))
         for rx in (r"\b(T0\d) (\d+(?:\.\d+)?)\b(?! ?mm)", r"\b(T0\d)[^:\n]{0,40}: v0\.2 score (\d+(?:\.\d+)?)"):

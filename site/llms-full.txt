@@ -33,13 +33,13 @@ Summary: 5/6 watertight after padding cleanup, 6/6 sliced; 1/6 score 100 on v0.2
 
 ## AI-generator results: Hunyuan3D-2.1 (rubric v0.2, scored 2026-10-31 ET)
 Pipeline: same FLUX.1-schnell reference images (seed 1234) -> tencent/Hunyuan3D-2.1 public Hugging Face Space, shape model hunyuan3d-dit-v2-1 (seed 1234, 30 steps, guidance 5.0, octree 256, shape only). Raw output, no repair.
-- T01 Coffee mug: v0.2 score 81.7/100, watertight yes, tree support 5.1% of extrusion, bed contact 2485.4 mm2, hull fill 7.6%, wall p5 0.293 mm; includes a thin square ground plate
+- T01 Coffee mug: v0.2 score 81.7/100, watertight yes, tree support 5.1% of extrusion, bed contact 2485.4 mm2, hull fill 7.6%, wall p5 0.293 mm; original run included a thin square plate (input artifact, see correction)
 - T02 Fox figurine: v0.2 score 83.2/100, watertight yes, tree support 29.3% of extrusion, bed contact 13.4 mm2, hull fill 34.3%, wall p5 1.942 mm
 - T03 Hex nut: v0.2 score 96.7/100, watertight yes, tree support 9.9% of extrusion, bed contact 67.8 mm2, hull fill 89.5%, wall p5 2.437 mm; long hex prism lying on its side
-- T04 Phone stand: v0.2 score 81.6/100, watertight yes, tree support 0% of extrusion, bed contact 2488 mm2, hull fill 7.4%, wall p5 0.289 mm; includes a thin square ground plate
-- T05 Card holder: v0.2 score 73.8/100, watertight yes, tree support 26.6% of extrusion, bed contact 2482.4 mm2, hull fill 6.5%, wall p5 0.3 mm; includes a thin square ground plate
-- T06 Planter pot: v0.2 score 82.3/100, watertight yes, tree support 0% of extrusion, bed contact 2482.5 mm2, hull fill 8.4%, wall p5 0.29 mm; includes a thin square ground plate
-Summary: 6/6 watertight single bodies, 0 hard fails, 6/6 sliced. On T01, T04, T05 and T06 the mesh includes a thin square ground plate (about 0.3 mm thick at 50 mm scale) that fails the 0.4 mm wall check and lowers hull fill; you would cut it off before printing. Both scored models are open-source Tencent models; this is not a cross-vendor comparison. Meshy, Tripo, Hitem3D, Rodin, TRELLIS queued (not yet scored).
+- T04 Phone stand: v0.2 score 81.6/100, watertight yes, tree support 0% of extrusion, bed contact 2488 mm2, hull fill 7.4%, wall p5 0.289 mm; original run included a thin square plate (input artifact, see correction)
+- T05 Card holder: v0.2 score 73.8/100, watertight yes, tree support 26.6% of extrusion, bed contact 2482.4 mm2, hull fill 6.5%, wall p5 0.3 mm; original run included a thin square plate (input artifact, see correction)
+- T06 Planter pot: v0.2 score 82.3/100, watertight yes, tree support 0% of extrusion, bed contact 2482.5 mm2, hull fill 8.4%, wall p5 0.29 mm; original run included a thin square plate (input artifact, see correction)
+Summary: 6/6 watertight single bodies, 0 hard fails, 6/6 sliced. Correction 2026-10-31: the thin square plate on T01, T04, T05 and T06 in the original run was an input artifact (the Space's built-in background removal kept the off-white image frame), not a model trait. Re-test with locally matted RGBA input (rembg isnet-general-use, Space removal off), same seed 1234 and settings: plate gone on all 4; T01 86.6, T04 98.2, T05 72.2, T06 95.6; all 4 watertight single bodies. Published table keeps the original protocol until all generators are re-run with matted inputs. Both scored models are open-source Tencent models; this is not a cross-vendor comparison. Meshy, Tripo, Hitem3D, Rodin, TRELLIS queued (not yet scored).
 
 ## Contact / status
 Site: https://basileion.github.io/printready

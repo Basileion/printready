@@ -22,3 +22,7 @@
 {"id": "T04", "gen": "meshy6lite", "ok": true, "secs": null, "note": "Meshy 6 Lite free plan, untextured image-to-3D, 60 free credits ($0); refs from refpng/T0N.png (from samples/images/T0N.webp)", "ts": "2026-10-31T14:52:05-04:00"}
 {"id": "T05", "gen": "meshy6lite", "ok": true, "secs": null, "note": "Meshy 6 Lite free plan, untextured image-to-3D, 60 free credits ($0); refs from refpng/T0N.png (from samples/images/T0N.webp)", "ts": "2026-10-31T14:52:05-04:00"}
 {"id": "T06", "gen": "meshy6lite", "ok": true, "secs": null, "note": "Meshy 6 Lite free plan, untextured image-to-3D, 60 free credits ($0); refs from refpng/T0N.png (from samples/images/T0N.webp)", "ts": "2026-10-31T14:52:05-04:00"}
+{"id": "T01", "gen": "hunyuan3d21_matted", "ok": true, "secs": 20, "input": "rgba_rembg_isnet", "rembg_in_space": false, "ts": "2026-10-31T17:36:07-0400"}
+{"id": "T04", "gen": "hunyuan3d21_matted", "ok": true, "secs": 18, "input": "rgba_rembg_isnet", "rembg_in_space": false, "ts": "2026-10-31T17:36:25-0400"}
+{"id": "T05", "gen": "hunyuan3d21_matted", "ok": true, "secs": 17, "input": "rgba_rembg_isnet", "rembg_in_space": false, "ts": "2026-10-31T17:36:43-0400"}
+{"id": "T06", "gen": "hunyuan3d21_matted", "ok": true, "secs": 18, "input": "rgba_rembg_isnet", "rembg_in_space": false, "ts": "2026-10-31T17:37:01-0400"}
