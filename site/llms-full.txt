@@ -56,7 +56,14 @@ License: CC BY 4.0 for scores; meshes under Tencent Hunyuan 3D 2.0 / 2.1 Communi
 
 ## Positioning and limits (updated 2026-10-31)
 Other AI-mesh printability benchmarks exist: PrintCheck, 3dtoolwiki, Topoheal, and Meshy's own benchmark. PrintReady AI focuses on locked prompts, one FDM profile (Bambu Lab A1, OrcaSlicer 2.4.2, PLA), open CC BY 4.0 data, and weekly re-runs. Meshy's built-in printability check covers Meshy output only.
-Current limits: two open-source models from one vendor scored (Hunyuan3D-2 and Hunyuan3D-2.1, prompts T01-T06); print time is reported but not scored; no upload-your-own-file checker yet. For functional parts with tolerances, CAD remains the better tool.
+Current limits: two open-source models from one vendor scored (Hunyuan3D-2 and Hunyuan3D-2.1, prompts T01-T06); print time is reported but not scored; the free file checker (/check/) runs geometry checks only, no slicing. For functional parts with tolerances, CAD remains the better tool.
+
+## Free file checker (added 2026-10-31)
+URL: https://basileion.github.io/printready/check/
+Input: STL (binary or ASCII), OBJ, GLB, self-contained .gltf. Parsed and checked with JavaScript in the browser; the file is never uploaded. Draco/meshopt-compressed GLBs are not supported (re-export uncompressed or as STL).
+Checks: watertight (every edge shared by exactly 2 faces); non-manifold edge count = edges not shared by exactly 2 faces (rubric v0.2: 0 full points, 1-5 half, >5 zero); zero-area / index-degenerate faces (dropped first, as the scorer's export-padding rule); connected parts and parts starting >0.2 mm above the bed; inconsistent winding / inside-out normals; volume (watertight only); bed contact = down-facing area within 0.2 mm of the bed (rubric v0.2: <=10 mm2 zero, >=100 mm2 full); fit on a Bambu A1 bed (256 x 256 x 256 mm). Units and up axis are selectable (defaults: STL/OBJ mm and Z-up, GLB meters and Y-up; unit-less AI exports are scaled to 50 mm like the benchmark).
+Validation (2026-10-31): on the 12 published Hunyuan3D-2 and Hunyuan3D-2.1 meshes scaled to 50 mm, the browser checker matches the scorer's watertight, non-manifold edge count, body count, export-padding count and bed contact exactly.
+Not checked in the browser: wall thickness, self-intersections, hull fill, overhangs/tree supports, slice success. Geometry checks only, not a slicer run.
 
 ## Costs
 - [What it costs to get a printable AI 3D model](https://basileion.github.io/printready/costs/): plan prices, free tiers, vendor-stated cost per model and commercial-use terms copied from each vendor pricing page on 2026-10-31 (CSV: https://basileion.github.io/printready/data/costs.csv). Cost per model is allowance divided by price, not cost per printable model; only the open-source Hunyuan3D-2 and Hunyuan3D-2.1 are scored so far, the paid tools are queued.

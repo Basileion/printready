@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en" data-product="printready" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Free STL printability checker: is your AI model watertight? — PrintReady AI</title>
+  <meta name="description" content="Drop an STL, OBJ or GLB and see in seconds if it's watertight, manifold, in one piece, sits flat and fits a Bambu A1. Runs in your browser; your file never leaves it. Free, no signup." />
+  <meta name="robots" content="index,follow" />
+  <link rel="stylesheet" href="../css/site.css" />
+  <link rel="alternate" type="application/atom+xml" title="PrintReady AI scorecard updates" href="https://basileion.github.io/printready/feed.xml" />
+  <link rel="canonical" href="https://basileion.github.io/printready/check/" />
+  <meta property="og:url" content="https://basileion.github.io/printready/check/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PrintReady AI" />
+  <meta property="og:title" content="Free STL printability checker: is your AI model watertight?" />
+  <meta property="og:description" content="Drop an STL, OBJ or GLB: watertight, non-manifold edges, loose parts, flipped normals, bed contact and Bambu A1 fit in seconds. 100% in your browser, nothing uploaded." />
+  <meta property="og:image" content="https://basileion.github.io/printready/img/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="PrintReady AI: Does that AI mesh actually print?" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Free STL printability checker: is your AI model watertight?" />
+  <meta name="twitter:description" content="Drop an STL, OBJ or GLB: watertight, non-manifold edges, loose parts, flipped normals, bed contact and Bambu A1 fit in seconds. 100% in your browser, nothing uploaded." />
+  <meta name="twitter:image" content="https://basileion.github.io/printready/img/og.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"PrintReady AI STL printability checker","url":"https://basileion.github.io/printready/check/","applicationCategory":"DesignApplication","operatingSystem":"Any (runs in a web browser)","browserRequirements":"Requires JavaScript; WebGL for the 3D preview","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free in-browser geometry check for STL, OBJ and GLB/glTF files: watertight, non-manifold edges, zero-area faces, separate parts, flipped normals, volume, bed contact and Bambu A1 (256 mm) bed fit. Files are processed locally and never uploaded. Geometry checks only, not a slicer run.","featureList":["Watertight check (every edge shared by exactly 2 faces)","Non-manifold edge count (rubric v0.2 thresholds)","Zero-area face count","Separate parts and floating parts","Flipped or inconsistent normals","Volume","Bed contact area","Bambu A1 bed fit"],"isPartOf":{"@id":"https://basileion.github.io/printready/#website"},"dateModified":"2026-10-31"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is my STL file uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. The checker reads the file with JavaScript inside your browser tab. The file and its name are never sent to a server; the page only counts anonymous events like 'a check finished' with the overall pass, warn or fail."}},{"@type":"Question","name":"Does a pass mean my model will print?","acceptedAnswer":{"@type":"Answer","text":"No. These are geometry checks only (watertight, non-manifold edges, loose parts, normals, bed contact, bed fit), not a slicer run. Thin walls, self-intersections, overhangs and supports are not checked here. The PrintReady AI benchmark also slices every mesh in OrcaSlicer 2.4.2 on a Bambu A1 / PLA profile."}},{"@type":"Question","name":"Are these the same checks the PrintReady benchmark runs?","acceptedAnswer":{"@type":"Answer","text":"For watertight, non-manifold edge count, part count, zero-area faces and bed contact, yes: on the 12 published Hunyuan3D-2 and Hunyuan3D-2.1 benchmark meshes, scaled to 50 mm, this checker gives the same numbers as the benchmark scorer (rubric v0.2, checked 2026-10-31). Wall thickness, hull fill, tree supports and slice success need the full pipeline and are not in the browser checker."}}]}</script>
+  <script src="../js/grow.js" defer></script>
+  <style>
+    .drop{display:grid;place-items:center;text-align:center;gap:10px;padding:var(--ds-s5) var(--ds-s4);border:2px dashed var(--ds-line-2);border-radius:var(--ds-r);background:var(--ds-surface);cursor:pointer;transition:border-color var(--ds-dur) var(--ds-ease),background var(--ds-dur) var(--ds-ease)}
+    .drop:hover,.drop.over{border-color:var(--ds-acc);background:var(--ds-acc-soft)}
+    .drop strong{font-size:var(--ds-t-lg)}
+    .drop input{position:absolute;width:1px;height:1px;opacity:0}
+    .opts{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:end;margin:var(--ds-s3) 0}
+    .opts label{display:grid;gap:4px}
+    .opts select,.opts input[type=number]{min-height:40px;padding:0 10px;border:1px solid var(--ds-line-2);border-radius:var(--ds-r-sm);background:var(--ds-surface);color:var(--ds-ink);font:inherit;font-size:var(--ds-t-sm);max-width:100%}
+    .opts input[type=number]{width:6.5rem}
+    .samples{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:var(--ds-s3);font-size:var(--ds-t-sm)}
+    .samples .btn{min-height:36px;padding:0 12px}
+    .status{margin:var(--ds-s3) 0 0;font-size:var(--ds-t-sm);color:var(--ds-ink-2);min-height:1.6em}
+    .res-grid{display:grid;gap:var(--ds-s4);grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}
+    @media (max-width:860px){.res-grid{grid-template-columns:minmax(0,1fr)}}
+    .verdict-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:var(--ds-s3)}
+    .vlist{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+    .vlist li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 10px;padding:12px;border:1px solid var(--ds-line);border-radius:var(--ds-r-sm);background:var(--ds-surface)}
+    .vlist b{font-size:var(--ds-t-sm)}
+    .vlist p{grid-column:2;margin:0;font-size:var(--ds-t-sm);color:var(--ds-ink-2);overflow-wrap:anywhere}
+    .vlist .fix{color:var(--ds-ink)}
+    .badge{display:inline-flex;justify-content:center;min-width:3.6rem;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:3px 8px;border-radius:999px;align-self:start}
+    .b-pass{background:var(--ds-pos-soft);color:var(--ds-pos)}
+    .b-warn{background:var(--ds-warn-soft);color:var(--ds-warn)}
+    .b-fail{background:var(--ds-neg-soft);color:var(--ds-neg)}
+    .viewer{position:relative;width:100%;aspect-ratio:4/3;max-height:460px;border:1px solid var(--ds-line);border-radius:var(--ds-r);background:var(--ds-surface-2);overflow:hidden}
+    .viewer canvas{width:100%;height:100%;display:block;touch-action:none;cursor:grab}
+    .viewer .legend{position:absolute;left:8px;bottom:8px;font-size:11px;background:var(--ds-surface);border:1px solid var(--ds-line);border-radius:6px;padding:3px 8px;color:var(--ds-ink-2)}
+    .stats{width:100%;margin-top:var(--ds-s3)}
+    .stats td{padding:6px 10px}
+    .notchecked{font-size:var(--ds-t-sm);color:var(--ds-ink-2)}
+    .after{margin-top:var(--ds-s5)}
+    #results{scroll-margin-top:72px}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="../">Print<span>Ready</span> AI</a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="../">Home</a></li>
+          <li><a href="../scorecard/">Scorecard</a></li>
+          <li><a href="./" aria-current="page">Check a file</a></li>
+          <li><a href="../costs/">Costs</a></li>
+          <li><a href="../data/">Data</a></li>
+          <li><a href="../methodology/">Methodology</a></li>
+          <li><a href="../newsletter/">Newsletter</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap section">
+    <p class="eyebrow">Free tool · no signup</p>
+    <h1>Is your STL watertight? Check it in seconds.</h1>
+    <p class="lede">Drop an STL, OBJ or GLB from any AI generator (or anywhere else). You get pass / warn / fail on the problems that make prints fail, plus the one-line fix in Blender or MeshLab. <strong>Your file never leaves your browser.</strong></p>
+
+    <div class="card">
+      <label class="drop" id="drop" for="file">
+        <input id="file" type="file" accept=".stl,.obj,.glb,.gltf" />
+        <strong>Drop a .stl, .obj or .glb here</strong>
+        <span class="muted" style="font-size:14px">or tap to pick a file · binary/ASCII STL, OBJ, GLB, self-contained .gltf</span>
+        <span class="btn btn-primary" aria-hidden="true">Choose a file</span>
+      </label>
+      <div class="samples">
+        <span class="muted">No file handy? Try a real AI mesh from our benchmark:</span>
+        <button class="btn btn-ghost" type="button" data-sample="../data/meshes/hunyuan3d2/T05.glb.gz" data-sid="hy2_T05">Hunyuan3D-2 T05 (2.1 MB)</button>
+        <button class="btn btn-ghost" type="button" data-sample="../data/meshes/hunyuan3d21/T03.glb.gz" data-sid="hy21_T03">Hunyuan3D-2.1 T03 (1.3 MB)</button>
+      </div>
+      <div class="opts">
+        <label for="units">Size / units
+          <select id="units">
+            <option value="auto">Auto (STL/OBJ = mm, GLB = m)</option>
+            <option value="mm">File units are mm</option>
+            <option value="cm">File units are cm</option>
+            <option value="m">File units are m</option>
+            <option value="in">File units are inches</option>
+            <option value="target">Resize longest edge to…</option>
+          </select>
+        </label>
+        <label for="target">Longest edge (mm)
+          <input id="target" type="number" min="1" max="5000" step="1" value="50" disabled />
+        </label>
+        <label for="up">Up axis
+          <select id="up">
+            <option value="auto">Auto (GLB = Y-up, STL/OBJ = Z-up)</option>
+            <option value="Z">Z is up</option>
+            <option value="Y">Y is up</option>
+            <option value="X">X is up</option>
+          </select>
+        </label>
+      </div>
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+    </div>
+
+    <section id="results" class="section" hidden aria-label="Check results">
+      <div class="res-grid">
+        <div>
+          <div class="verdict-head"><span class="badge" id="overall-badge">–</span><h2 id="overall-title" style="margin:0;font-size:var(--ds-t-xl)">Results</h2></div>
+          <ul class="vlist" id="vlist"></ul>
+          <p class="notchecked" style="margin-top:var(--ds-s3)"><strong>Not checked here:</strong> wall thickness, self-intersections, overhangs and supports, slicing. Geometry checks only, not a slicer run; our benchmark scores also slice in OrcaSlicer on a Bambu A1 / PLA profile. <a href="../methodology/">How the benchmark scores</a>.</p>
+        </div>
+        <div>
+          <div class="viewer" id="viewer"><canvas id="gl" aria-label="3D preview of your model. Drag to rotate, scroll to zoom."></canvas><span class="legend" id="legend">Drag to rotate</span></div>
+          <table class="stats" id="stats"><tbody></tbody></table>
+        </div>
+      </div>
+
+      <div class="band after">
+        <div>
+          <h2>Which AI generators hand you files like this?</h2>
+          <p>Every Friday: printability scores for AI 3D generators on the same locked prompts, and the failure of the week. Two open-source models are scored so far; more are queued. Free.</p>
+          <form class="form" action="https://app.kit.com/forms/10124123/subscriptions" method="post" style="margin-top:12px">
+            <label for="email_address">Email</label>
+            <input id="email_address" type="email" name="email_address" required placeholder="you@example.com" autocomplete="email" />
+            <button class="btn btn-primary" type="submit" data-grow="newsletter_submit">Get Friday scores</button>
+          </form>
+          <p class="form-note" style="margin-top:12px">You’ll get a confirmation email to finish signup (double opt-in). Free; unsubscribe anytime. Sent via Kit. <a href="/printready/privacy/">Privacy</a>.</p>
+        </div>
+        <a class="btn btn-ghost" href="../scorecard/">See how AI generators score →</a>
+      </div>
+    </section>
+
+    <section class="section prose" id="faq">
+      <h2>Questions</h2>
+      <h3>Is my file uploaded?</h3>
+      <p>No. It’s read by JavaScript in this tab. The file and its name never reach a server. We only count anonymous events (“a file was checked”, overall pass/warn/fail), no cookies.</p>
+      <h3>Does a pass mean it will print?</h3>
+      <p>No. These are geometry checks only, not a slicer run. Thin walls, self-intersections, overhangs and supports aren’t checked here. Our <a href="../scorecard/">benchmark scores</a> also slice every mesh in OrcaSlicer 2.4.2 on a Bambu A1 / PLA profile.</p>
+      <h3>Are these the same checks you run on AI generators?</h3>
+      <p>Partly, and exactly where it says so. Watertight, non-manifold edge count, part count, zero-area (export padding) faces and bed contact use the same definitions and thresholds as <a href="../methodology/">rubric v0.2</a>. On the 12 published Hunyuan3D-2 and Hunyuan3D-2.1 benchmark meshes, scaled to 50 mm (“Resize longest edge to 50”), this page gives the same numbers as our scorer. Wall thickness, hull fill, tree supports and slice success need the full pipeline.</p>
+      <h3>“I just budget 20 minutes in Blender per model.”</h3>
+      <p>Fair. This tells you in seconds whether those 20 minutes are needed, and which menu to open. Clean files go straight to the slicer.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap legal">No dark patterns · free newsletter · sample scorecard is free · Privacy: cookieless page-view and link-click counts only, no cookies or personal data · <a href="/printready/privacy/">Privacy</a> · <a href="/printready/terms/">Terms</a> · <a href="mailto:basileion.ops@gmail.com">Contact</a></div>
+  </footer>
+
+  <script src="check.js" defer></script>
+</body>
+</html>

@@ -5,6 +5,7 @@
 ## Key pages
 - [Home](https://basileion.github.io/printready/)
 - [Scorecard: Hunyuan3D-2, Hunyuan3D-2.1 + test meshes](https://basileion.github.io/printready/scorecard/)
+- [Free STL/OBJ/GLB printability checker (runs in your browser, nothing uploaded)](https://basileion.github.io/printready/check/)
 - [Methodology](https://basileion.github.io/printready/methodology/)
 - [Open data: CSV/JSON scores + raw meshes, CC BY 4.0](https://basileion.github.io/printready/data/)
 - [Rubric change log: v0.2 (2026-10-31) weights and re-scores](https://basileion.github.io/printready/methodology/#changelog)
@@ -21,7 +22,9 @@
 - 2026-10-31 (rubric v0.2): Hunyuan3D-2 prompts T01–T06 score T01 98.2, T02 86.9, T03 89.8, T04 100, T05 26.9, T06 91.7; 5 of 6 watertight, T05 not (hard fail); 6 of 6 sliced. v0.1 (2026-10-30) gave five 100 and T05 39; kept at data/scores_v0.1.csv. Meshy, Tripo, Rodin, TRELLIS and Hitem3D are queued, not yet scored.
 - Other AI-mesh printability benchmarks exist (PrintCheck, 3dtoolwiki, Topoheal, Meshy's own benchmark). PrintReady AI's focus: locked prompts, one FDM Bambu A1 / OrcaSlicer PLA profile, open CC BY data, weekly re-runs. Meshy's built-in printability check covers Meshy output only.
 - 2026-10-31 (rubric v0.2): Hunyuan3D-2.1 (tencent/Hunyuan3D-2.1 Space) scores T01 81.7, T02 83.2, T03 96.7, T04 81.6, T05 73.8, T06 82.3; 6 of 6 watertight, 0 hard fails; 4 of 6 (T01, T04, T05, T06) include a thin square ground plate under the object.
-- Limits as of 2026-10-31: two open-source Tencent models scored (Hunyuan3D-2 and Hunyuan3D-2.1, 6 prompts each), no cross-vendor comparison yet; print time not scored yet; no upload-your-own-file checker yet.
+- Limits as of 2026-10-31: two open-source Tencent models scored (Hunyuan3D-2 and Hunyuan3D-2.1, 6 prompts each), no cross-vendor comparison yet; print time not scored yet; the free file checker at /check/ runs geometry checks only (no slicing, no wall thickness).
+
+- Free file checker (2026-10-31): https://basileion.github.io/printready/check/ checks STL (binary/ASCII), OBJ and GLB/glTF in the browser (file never uploaded): watertight, non-manifold edge count (rubric v0.2: 0 full, 1-5 half, >5 zero), zero-area faces, separate and floating parts, flipped normals, volume, bed contact (<=10 mm2 zero, >=100 mm2 full) and Bambu A1 256 mm bed fit. On the 12 published Hunyuan3D-2/2.1 meshes scaled to 50 mm it reproduces the scorer's watertight, non-manifold, part-count, padding and bed-contact numbers. Not a slicer run.
 
 ## Costs
 - [What it costs to get a printable AI 3D model](https://basileion.github.io/printready/costs/): plan prices, free tiers, vendor-stated cost per model and commercial-use terms copied from each vendor pricing page on 2026-10-31 (CSV: https://basileion.github.io/printready/data/costs.csv). Cost per model is allowance divided by price, not cost per printable model; only the open-source Hunyuan3D-2 and Hunyuan3D-2.1 are scored so far, the paid tools are queued.
