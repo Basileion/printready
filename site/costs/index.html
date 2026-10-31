@@ -122,7 +122,20 @@
       </table>
     </div>
     <p style="margin-top:16px">Download this table: <a href="../data/costs.csv" data-grow="data_download">CSV</a> · <a href="../data/costs.json" data-grow="data_download">JSON</a> (CC BY 4.0). Prices change often; we re-check before each scorecard update and date every change.</p>
-    <p>Want scores when Tripo, Hitem3D, Rodin, TRELLIS or Meshy 7.1 land? <a href="../feed.xml" data-grow="rss">Follow the scorecard feed (RSS, no email)</a>.</p>
+    <div class="band" style="margin-top:32px" id="get-scores">
+      <div>
+        <h2>Before you buy credits: get the scores first</h2>
+        <p>We email you when Meshy 7.1, Tripo, Hitem3D, Rodin or TRELLIS printability scores land, so you can see which generator gives printable files before you pay.</p>
+      </div>
+      <div style="display:grid;gap:10px;min-width:min(100%,18rem)">
+        <form class="form" style="max-width:none;display:flex;flex-wrap:wrap;gap:8px;align-items:stretch" action="https://app.kit.com/forms/10124123/subscriptions" method="post" aria-label="Get an email when new printability scores land">
+          <label class="skip" for="costs-email">Email</label>
+          <input id="costs-email" type="email" name="email_address" required placeholder="you@example.com" autocomplete="email" style="flex:1 1 10rem;min-width:10rem" />
+          <button class="btn btn-primary" type="submit" data-grow="newsletter_submit">Email me the scores</button>
+        </form>
+        <p class="form-note" style="margin:0">Confirmation email required (double opt-in). Free; unsubscribe anytime. Sent via Kit. <a href="/printready/privacy/">Privacy</a>. No email? <a href="../feed.xml" data-grow="rss">Follow the RSS feed</a>.</p>
+      </div>
+    </div>
     <p><small>No affiliate links on this page. Not affiliated with any vendor listed. Spot an outdated price? Open an issue on <a href="https://github.com/Basileion/printready/issues" data-grow="github">GitHub</a>.</small></p>
   </main>
   <footer class="site-footer">
