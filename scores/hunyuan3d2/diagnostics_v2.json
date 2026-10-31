@@ -1,0 +1,116 @@
+[
+ {
+  "id": "T01",
+  "extents_mm": [
+   50.0,
+   42.43,
+   36.37
+  ],
+  "volume_mm3": 9179.7,
+  "hull_volume_mm3": 47699.8,
+  "hull_fill_pct": 19.2,
+  "first_layer_mm2_as_sliced_z_up": 103.4,
+  "first_layer_mm2_gltf_y_up": 317.8,
+  "gltf_up_axis": "Y",
+  "sliced_up_axis": "Z",
+  "ray_wall": {
+   "p5_mm": 1.283,
+   "median_mm": 1.666
+  }
+ },
+ {
+  "id": "T02",
+  "extents_mm": [
+   46.97,
+   50.0,
+   21.54
+  ],
+  "volume_mm3": 6744.9,
+  "hull_volume_mm3": 18931.4,
+  "hull_fill_pct": 35.6,
+  "first_layer_mm2_as_sliced_z_up": 20.0,
+  "first_layer_mm2_gltf_y_up": 21.6,
+  "gltf_up_axis": "Y",
+  "sliced_up_axis": "Z",
+  "ray_wall": {
+   "p5_mm": 2.199,
+   "median_mm": 8.793
+  }
+ },
+ {
+  "id": "T03",
+  "extents_mm": [
+   50.0,
+   46.89,
+   16.62
+  ],
+  "volume_mm3": 16102.0,
+  "hull_volume_mm3": 26042.2,
+  "hull_fill_pct": 61.8,
+  "first_layer_mm2_as_sliced_z_up": 395.8,
+  "first_layer_mm2_gltf_y_up": 38.8,
+  "gltf_up_axis": "Y",
+  "sliced_up_axis": "Z",
+  "ray_wall": {
+   "p5_mm": 4.813,
+   "median_mm": 12.648
+  }
+ },
+ {
+  "id": "T04",
+  "extents_mm": [
+   25.88,
+   50.0,
+   43.79
+  ],
+  "volume_mm3": 9673.4,
+  "hull_volume_mm3": 30473.3,
+  "hull_fill_pct": 31.7,
+  "first_layer_mm2_as_sliced_z_up": 6.9,
+  "first_layer_mm2_gltf_y_up": 612.3,
+  "gltf_up_axis": "Y",
+  "sliced_up_axis": "Z",
+  "ray_wall": {
+   "p5_mm": 1.823,
+   "median_mm": 3.522
+  }
+ },
+ {
+  "id": "T05",
+  "extents_mm": [
+   50.0,
+   32.22,
+   19.84
+  ],
+  "volume_mm3": null,
+  "hull_volume_mm3": 18237.4,
+  "hull_fill_pct": null,
+  "first_layer_mm2_as_sliced_z_up": 20.9,
+  "first_layer_mm2_gltf_y_up": 49.0,
+  "gltf_up_axis": "Y",
+  "sliced_up_axis": "Z",
+  "ray_wall": {
+   "p5_mm": null,
+   "median_mm": null
+  }
+ },
+ {
+  "id": "T06",
+  "extents_mm": [
+   47.83,
+   50.0,
+   47.9
+  ],
+  "volume_mm3": 16567.9,
+  "hull_volume_mm3": 75608.0,
+  "hull_fill_pct": 21.9,
+  "first_layer_mm2_as_sliced_z_up": 58.3,
+  "first_layer_mm2_gltf_y_up": 133.0,
+  "gltf_up_axis": "Y",
+  "sliced_up_axis": "Z",
+  "ray_wall": {
+   "p5_mm": 1.848,
+   "median_mm": 2.043
+  }
+ }
+]

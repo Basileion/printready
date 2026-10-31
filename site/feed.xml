@@ -5,8 +5,15 @@
   <link rel="self" href="https://basileion.github.io/printready/feed.xml" />
   <link rel="alternate" href="https://basileion.github.io/printready/" />
   <id>https://basileion.github.io/printready/</id>
-  <updated>2026-10-31T05:45:00Z</updated>
+  <updated>2026-10-31T06:50:00Z</updated>
   <author><name>PrintReady AI</name></author>
+  <entry>
+    <title>Rubric v2 diagnostics: hull fill, wall thickness, bed contact (and an orientation issue we found)</title>
+    <link rel="alternate" href="https://basileion.github.io/printready/methodology/#v2-diagnostics" />
+    <id>https://basileion.github.io/printready/methodology/#v2-diagnostics-2026-10-31</id>
+    <updated>2026-10-31T06:50:00Z</updated>
+    <summary>Measured hollow-skin, wall-thickness and first-layer checks on the 6 Hunyuan3D-2 meshes. v0.1 sliced with Z-up while glTF is Y-up; v0.2 will cut slice weight to 5 and re-score in Y-up.</summary>
+  </entry>
   <entry>
     <title>Open data: CSV/JSON scores and raw Hunyuan3D-2 meshes (CC BY 4.0)</title>
     <link rel="alternate" href="https://basileion.github.io/printready/data/" />

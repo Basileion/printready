@@ -65,6 +65,26 @@
       </table>
     </div>
 
+    <h2 id="v2-diagnostics">Rubric v2 diagnostics (preview, 2026-10-31)</h2>
+    <p>Public benchmarks found that almost every AI mesh slices, so slice success says little. Rubric v2 measures the defects makers actually hit. These numbers are <strong>measured, not yet scored</strong>: v0.1 scores above are unchanged.</p>
+    <ul>
+      <li><strong>Hull fill %</strong>: mesh volume ÷ convex-hull volume. Very low values flag hollow skins.</li>
+      <li><strong>Ray wall p5</strong>: 5th-percentile inward ray thickness from 400 surface samples (mm, 50&nbsp;mm scale).</li>
+      <li><strong>First-layer area</strong>: downward faces within 0.2&nbsp;mm of the bed, in mm². Shown for the Z-up pose v0.1 sliced and the glTF Y-up pose.</li>
+    </ul>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Hunyuan3D-2 prompt</th><th class="num">Hull fill</th><th class="num">Ray wall p5 (mm)</th><th class="num">Bed area, Z-up (mm²)</th><th class="num">Bed area, Y-up (mm²)</th></tr></thead>
+        <tbody><tr><td>T01 Coffee mug</td><td class="num">19.2%</td><td class="num">1.283</td><td class="num">103.4</td><td class="num">317.8</td></tr><tr><td>T02 Fox figurine</td><td class="num">35.6%</td><td class="num">2.199</td><td class="num">20.0</td><td class="num">21.6</td></tr><tr><td>T03 Hex nut</td><td class="num">61.8%</td><td class="num">4.813</td><td class="num">395.8</td><td class="num">38.8</td></tr><tr><td>T04 Phone stand</td><td class="num">31.7%</td><td class="num">1.823</td><td class="num">6.9</td><td class="num">612.3</td></tr><tr><td>T05 Card holder</td><td class="num">—</td><td class="num">—</td><td class="num">20.9</td><td class="num">49.0</td></tr><tr><td>T06 Planter pot</td><td class="num">21.9%</td><td class="num">1.848</td><td class="num">58.3</td><td class="num">133.0</td></tr></tbody>
+      </table>
+    </div>
+    <p><strong>Open issue we found:</strong> v0.1 sliced every mesh with Z as up, but glTF files use Y-up. On 5 of 6 prompts the Y-up pose has more bed contact (phone stand: 612 vs 6.9&nbsp;mm²), so some v0.1 slices were likely of a model on its side. T05 is not a closed volume, so fill and wall are blank. Raw values: <a href="../data/diagnostics_v2.json">diagnostics_v2.json</a>.</p>
+    <h3>Rubric change log</h3>
+    <ul>
+      <li><strong>2026-10-31</strong>: v2 diagnostics published (measurement only).</li>
+      <li><strong>Planned v0.2</strong>: slice success 20 → 5 points; the freed 15 go to hull fill, wall thickness and first-layer contact; slicing switches to Y-up with auto-orient. All prompts get re-scored and v0.1 stays archived.</li>
+    </ul>
+
     <h2>Slicer profile (phase 1)</h2>
     <ul>
       <li>OrcaSlicer <strong>2.4.2</strong></li>
@@ -87,7 +107,7 @@
   </main>
 
   <footer class="site-footer">
-    <div class="wrap legal">PrintReady AI · methodology v0.1 · 2026-10-30 ET</div>
+    <div class="wrap legal">PrintReady AI · methodology v0.1 (+v2 diagnostics) · 2026-10-31 ET</div>
   </footer>
 </body>
 </html>
