@@ -41,7 +41,7 @@ def ops_text_errors():
     errs = []
     for f in SITE.rglob("*.html"):
         html = f.read_text(errors="ignore")
-        html = re.sub(r"<(script|style)[^>]*>.*?</\\1>", " ", html, flags=re.S | re.I)
+        html = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", html, flags=re.S | re.I)
         body = re.sub(r"<head>.*?</head>", " ", html, flags=re.S | re.I)
         txt = re.sub(r"<[^>]+>", " ", body)
         for m in OPS_TEXT.finditer(txt):
