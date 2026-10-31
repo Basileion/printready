@@ -12,7 +12,7 @@ ROWS = [
       license="Tencent Hunyuan 3D 2.0 Community License: royalty-free, but not licensed in the EU, UK or South Korea",
       source="https://huggingface.co/tencent/Hunyuan3D-2/blob/main/LICENSE"),
  dict(tool="Meshy", status="Queued, not scored yet", scored=False,
-      entry="Pro $20/mo ($10 first month for new users); 1,000 credits, up to 100 assets", free="100 credits/month, low queue priority; downloads capped at 10 Meshy 6 Lite models/month (Pro: unlimited)",
+      entry="Pro $20/mo ($10 first month for new users); 1,000 credits, up to 100 assets", free="100 credits/month (20 per Meshy 7.1 image-to-3D, the default), low queue priority. Pricing page says 10 Meshy 6 Lite downloads/month, but in our 2026-10-31 test on a free account the GLB download opened a Pro paywall; a day-5 check-in reward grants 1 download. Pro: unlimited",
       per_model="About $0.20 per asset at $20 ($0.10 in the $10 first month)", basis="Vendor's 'up to 100 assets' ÷ price; not print success",
       license="Free: CC BY 4.0 (sell with credit to Meshy). Paid: you own the assets", source="https://www.meshy.ai/pricing"),
  dict(tool="Tripo", status="Queued, not scored yet", scored=False,
