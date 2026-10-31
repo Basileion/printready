@@ -42,7 +42,6 @@
           <li><a href="newsletter/">Newsletter</a></li>
         </ul>
       </nav>
-      <span class="pill" style="background:var(--ds-pos-soft);color:var(--ds-pos)">Live · GitHub Pages</span>
     </div>
   </header>
 
@@ -61,6 +60,12 @@
           <a class="btn btn-primary" href="scorecard/">See the sample scorecard</a>
           <a class="btn btn-ghost" href="costs/">What each plan costs</a>
         </div>
+        <form class="form" style="max-width:30rem;display:flex;flex-wrap:wrap;gap:8px;align-items:stretch;margin-top:12px" action="https://app.kit.com/forms/10124123/subscriptions" method="post" aria-label="Get the weekly scores by email">
+          <label class="skip" for="hero-email">Email</label>
+          <input id="hero-email" type="email" name="email_address" required placeholder="you@example.com" autocomplete="email" style="flex:1 1 10rem;min-width:10rem" />
+          <button class="btn btn-primary" type="submit" data-grow="newsletter_submit">Get Friday scores</button>
+        </form>
+        <p class="form-note" style="margin:4px 0 0">Know which generator prints before you buy credits. Free, double opt-in, unsubscribe anytime. Or follow by <a href="feed.xml">RSS</a>.</p>
         <ul class="trust">
           <li>Same locked prompts every week</li>
           <li>Vendor-neutral · <a href="data/">open CSV/JSON + raw meshes</a></li>
@@ -97,8 +102,8 @@
           <p>A PrintReady Score (0–100) you can reproduce from published prompts, meshes, and the slicer profile JSON.</p>
         </article>
         <article class="card feature">
-          <h3>Built to compound</h3>
-          <p>Planned: head-to-head generator pages once more than one generator is scored, plus a Friday newsletter of scores and the failure of the week.</p>
+          <h3>Compare before you buy credits</h3>
+          <p>Weekly scores per generator, by email on Fridays or via <a href="feed.xml">RSS</a>. Head-to-head pages are planned once a second generator is scored.</p>
         </article>
       </div>
     </section>

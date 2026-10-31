@@ -34,6 +34,21 @@ BANNED = [
     r"added weekly",
     r"which generators need that cleanup and which don",
 ]
+OPS_TEXT = re.compile(r"\b(programmatic|built to compound|GEO|SEO)\b|Live \u00b7 GitHub Pages")
+
+
+def ops_text_errors():
+    errs = []
+    for f in SITE.rglob("*.html"):
+        html = f.read_text(errors="ignore")
+        html = re.sub(r"<(script|style)[^>]*>.*?</\\1>", " ", html, flags=re.S | re.I)
+        body = re.sub(r"<head>.*?</head>", " ", html, flags=re.S | re.I)
+        txt = re.sub(r"<[^>]+>", " ", body)
+        for m in OPS_TEXT.finditer(txt):
+            errs.append(f"{f.relative_to(SITE)} ops/internal jargon in visible text: '{m.group(0)}'")
+    return errs
+
+
 STALE_V01 = [r"slice success 20\b", r"5 of 6[^.]{0,60}100/100", r"\(scores? 100/100\)"]
 HISTORY = re.compile(r"v0\.1|history|was\b|older", re.I)
 
@@ -113,7 +128,7 @@ def main():
     if not scored:
         print("lint_claims: no generators found in site/data/scores.csv", file=sys.stderr)
         return 1
-    errors = []
+    errors = ops_text_errors()
     texts = []
     for rel, ctx, text, err in contexts():
         if text:
