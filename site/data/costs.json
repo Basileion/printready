@@ -1,6 +1,6 @@
 {
  "checked_et": "2026-10-31",
- "note": "Plan prices copied from each vendor's pricing page. Cost per model = vendor allowance ÷ price, NOT cost per printable model; only Hunyuan3D-2 and Hunyuan3D-2.1 are scored so far.",
+ "note": "Plan prices copied from each vendor's pricing page. Cost per model = vendor allowance ÷ price, NOT cost per printable model; scored so far: Hunyuan3D-2, Hunyuan3D-2.1 and Meshy 6 Lite (free plan, not flagship 7.1).",
  "license": "CC BY 4.0",
  "rows": [
   {
@@ -16,14 +16,14 @@
   },
   {
    "tool": "Meshy",
-   "status": "Queued, not scored yet",
+   "status": "Scored: Meshy 6 Lite free plan (not flagship 7.1); T01 99.5 … T05 39",
    "entry": "Pro $20/mo ($10 first month for new users); 1,000 credits, up to 100 assets",
    "free": "100 credits/month (20 per Meshy 7.1 image-to-3D, the default), low queue priority. Free plan: 10 untextured Meshy 6 Lite downloads/month (help.meshy.ai). Meshy 6/7/7.1 (the default) and textured models need Pro to download — our 2026-10-31 free-account test used Meshy 7.1 and hit that Pro paywall. Pro: unlimited",
    "per_model": "About $0.20 per asset at $20 ($0.10 in the $10 first month)",
    "basis": "Vendor's 'up to 100 assets' ÷ price; not print success",
    "license": "Free: CC BY 4.0 (sell with credit to Meshy). Paid: you own the assets",
    "source": "https://www.meshy.ai/pricing",
-   "scored": false
+   "scored": true
   },
   {
    "tool": "Tripo",

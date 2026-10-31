@@ -1,0 +1,18 @@
+=== scoring T01 14:50:48 ===
+T01 99.5 {"watertight": 20, "manifold": 15, "nonmanifold_edges": 10.0, "self_intersections": 10.0, "wall_thickness_p5": 10.0, "slice_success": 5, "tree_support": 9.47, "hull_fill": 10.0, "bed_contact": 10.0, "print_time": 0.0}
+rc=0 14:50:52
+=== scoring T02 14:50:52 ===
+T02 80.5 {"watertight": 20, "manifold": 15, "nonmanifold_edges": 10.0, "self_intersections": 10.0, "wall_thickness_p5": 10.0, "slice_success": 5, "tree_support": 0.53, "hull_fill": 10.0, "bed_contact": 0.0, "print_time": 0.0}
+rc=0 14:50:55
+=== scoring T03 14:50:55 ===
+T03 80.0 {"watertight": 20, "manifold": 15, "nonmanifold_edges": 10.0, "self_intersections": 10.0, "wall_thickness_p5": 0.0, "slice_success": 5, "tree_support": 0.0, "hull_fill": 10.0, "bed_contact": 10.0, "print_time": 0.0}
+rc=0 14:51:03
+=== scoring T04 14:51:03 ===
+T04 81.2 {"watertight": 20, "manifold": 15, "nonmanifold_edges": 10.0, "self_intersections": 10.0, "wall_thickness_p5": 4.0, "slice_success": 5, "tree_support": 0.7, "hull_fill": 6.53, "bed_contact": 10.0, "print_time": 0.0}
+rc=0 14:51:06
+=== scoring T05 14:51:06 ===
+T05 39.0 {"watertight": 20, "manifold": 15, "nonmanifold_edges": 10.0, "self_intersections": 10.0, "wall_thickness_p5": 0.0, "slice_success": 0.0, "tree_support": 0.0, "hull_fill": 0.93, "bed_contact": 10.0, "print_time": 0.0}
+rc=0 14:51:09
+=== scoring T06 14:51:09 ===
+T06 86.9 {"watertight": 20, "manifold": 15, "nonmanifold_edges": 10.0, "self_intersections": 10.0, "wall_thickness_p5": 10.0, "slice_success": 5, "tree_support": 1.4, "hull_fill": 10.0, "bed_contact": 5.51, "print_time": 0.0}
+rc=0 14:51:12

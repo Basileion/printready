@@ -5,8 +5,15 @@
   <link rel="self" href="https://basileion.github.io/printready/feed.xml" />
   <link rel="alternate" href="https://basileion.github.io/printready/" />
   <id>https://basileion.github.io/printready/</id>
-  <updated>2026-10-31T17:15:00Z</updated>
+  <updated>2026-10-31T18:55:00Z</updated>
   <author><name>PrintReady AI</name></author>
+  <entry>
+    <title>First cross-vendor score: Meshy 6 Lite (free plan) on the same 6 prompts</title>
+    <link rel="alternate" href="https://basileion.github.io/printready/scorecard/#m6l-h" />
+    <id>https://basileion.github.io/printready/scorecard/#m6l-2026-10-31</id>
+    <updated>2026-10-31T18:55:00Z</updated>
+    <summary>Meshy 6 Lite (Meshy free plan, untextured image-to-3D, 60 free credits, $0 — not flagship Meshy 7.1) scored on rubric v0.2: T01 99.5, T02 80.5, T03 80.0, T04 81.2, T05 39.0, T06 86.9. 6 of 6 watertight; T05 slice hard-fail (Orca exit 156). Mean ~77.9 trails Hunyuan3D-2 (~82.3) and Hunyuan3D-2.1 (~83.2); T01 nearly matches Hunyuan3D-2. Three-generator render grid on the scorecard. Tripo, Hitem3D, Rodin, TRELLIS and Meshy 7.1 are queued.</summary>
+  </entry>
   <entry>
     <title>Second generator scored: Hunyuan3D-2.1 on the same 6 prompts (6 of 6 watertight, 4 with a ground plate)</title>
     <link rel="alternate" href="https://basileion.github.io/printready/scorecard/#h21-h" />
