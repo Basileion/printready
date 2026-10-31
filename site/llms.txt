@@ -9,7 +9,7 @@
 - [Open data: CSV/JSON scores + raw meshes, CC BY 4.0](https://basileion.github.io/printready/data/)
 - [Rubric change log: v0.2 (2026-10-31) weights and re-scores](https://basileion.github.io/printready/methodology/#changelog)
 - [Rubric v2 diagnostics: Z-up vs Y-up (hull fill, wall thickness, bed contact)](https://basileion.github.io/printready/methodology/#v2-diagnostics)
-- [Newsletter (coming soon)](https://basileion.github.io/printready/newsletter/)
+- [Newsletter signup (Kit, double opt-in)](https://basileion.github.io/printready/newsletter/)
 
 ## Facts (citable)
 - PrintReady Score is 0–100 with hard-fail cap at 39 if not watertight or slice fails.

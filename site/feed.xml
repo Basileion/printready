@@ -5,8 +5,15 @@
   <link rel="self" href="https://basileion.github.io/printready/feed.xml" />
   <link rel="alternate" href="https://basileion.github.io/printready/" />
   <id>https://basileion.github.io/printready/</id>
-  <updated>2026-10-31T10:44:00Z</updated>
+  <updated>2026-10-31T11:20:00Z</updated>
   <author><name>PrintReady AI</name></author>
+  <entry>
+    <title>Newsletter signup is open (Kit, double opt-in)</title>
+    <link rel="alternate" href="https://basileion.github.io/printready/newsletter/" />
+    <id>https://basileion.github.io/printready/newsletter/#2026-10-31-kit</id>
+    <updated>2026-10-31T11:20:00Z</updated>
+    <summary>PrintReady Weekly signup is live: Friday printability scores and the failure of the week. Free Kit form with confirmation email (double opt-in). RSS and GitHub Watch still work with no email.</summary>
+  </entry>
   <entry>
     <title>Rubric v0.2: real tree supports, hollow skin, bed contact; all 6 Hunyuan3D-2 prompts re-scored</title>
     <link rel="alternate" href="https://basileion.github.io/printready/methodology/#changelog" />

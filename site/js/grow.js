@@ -41,10 +41,15 @@
   }
   send("page_view");
   document.addEventListener("click", function (ev) {
-    var a = ev.target && ev.target.closest && ev.target.closest("a[href]");
-    if (!a) return;
-    var c = label(a);
-    if (c) send("cta_click", c);
+    var el = ev.target && ev.target.closest && ev.target.closest("a[href], button[type=submit][data-grow], input[type=submit][data-grow]");
+    if (!el) return;
+    if (el.tagName === "A") {
+      var c = label(el);
+      if (c) send("cta_click", c);
+      return;
+    }
+    var g = el.getAttribute("data-grow");
+    if (g) send("cta_click", g);
   }, true);
   window.grow = { track: send };
 })();

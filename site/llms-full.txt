@@ -34,7 +34,7 @@ Summary: 5/6 watertight after padding cleanup, 6/6 sliced; 1/6 score 100 on v0.2
 ## Contact / status
 Site: https://basileion.github.io/printready
 Repo: https://github.com/Basileion/printready
-Newsletter signup: coming soon (no form yet)
+Newsletter signup: live at /newsletter/ (Kit form 10124123, double opt-in; confirm via email)
 
 
 ## Open data (updated 2026-10-31)

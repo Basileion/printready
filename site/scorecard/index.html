@@ -258,9 +258,17 @@
     <div class="band" style="margin-top:48px">
       <div>
         <h2>Queued: Meshy, Tripo, Hitem3D, Rodin, TRELLIS</h2>
-        <p>Same locked prompts, same slicer profile, raw output scored before any repair.</p>
+        <p>Same locked prompts, same slicer profile, raw output scored before any repair. Get Friday scores by email, or follow with no account.</p>
       </div>
-      <div><a class="btn btn-primary" href="../feed.xml">Get new scores (RSS)</a> <a class="btn btn-ghost" href="../data/">Download the data</a></div>
+      <div style="display:grid;gap:10px;min-width:min(100%,18rem)">
+        <form class="form" style="max-width:none;display:flex;flex-wrap:wrap;gap:8px;align-items:stretch" action="https://app.kit.com/forms/10124123/subscriptions" method="post">
+          <label class="skip" for="sc-email">Email</label>
+          <input id="sc-email" type="email" name="email_address" required placeholder="you@example.com" autocomplete="email" style="flex:1 1 10rem;min-width:10rem" />
+          <button class="btn btn-primary" type="submit" data-grow="newsletter_submit">Get Friday scores</button>
+        </form>
+        <p class="form-note" style="margin:0">Confirmation email required (double opt-in). Free; unsubscribe anytime. Sent via Kit.</p>
+        <div><a class="btn btn-ghost" href="../feed.xml">RSS</a> <a class="btn btn-ghost" href="../data/">Download the data</a> <a class="btn btn-ghost" href="../newsletter/">Newsletter page</a></div>
+      </div>
     </div>
   </main>
 
