@@ -1,0 +1,73 @@
+{
+ "checked_et": "2026-10-31",
+ "note": "Plan prices copied from each vendor's pricing page. Cost per model = vendor allowance ÷ price, NOT cost per printable model; only Hunyuan3D-2 is scored so far.",
+ "license": "CC BY 4.0",
+ "rows": [
+  {
+   "tool": "Hunyuan3D-2 (Tencent, open weights)",
+   "status": "Scored: 5 of 6 watertight",
+   "entry": "$0 (public Hugging Face Space or self-hosted GPU)",
+   "free": "Free; the public Space is rate-limited",
+   "per_model": "$0 on the public Space (what we used)",
+   "basis": "Our own run: 6 locked prompts, 0 credits spent",
+   "license": "Tencent Hunyuan 3D 2.0 Community License: royalty-free, but not licensed in the EU, UK or South Korea",
+   "source": "https://huggingface.co/tencent/Hunyuan3D-2/blob/main/LICENSE",
+   "scored": true
+  },
+  {
+   "tool": "Meshy",
+   "status": "Queued, not scored yet",
+   "entry": "Pro $20/mo ($10 first month for new users); 1,000 credits, up to 100 assets",
+   "free": "100 credits/month, low queue priority",
+   "per_model": "About $0.20 per asset at $20 ($0.10 in the $10 first month)",
+   "basis": "Vendor's 'up to 100 assets' ÷ price; not print success",
+   "license": "Free: CC BY 4.0 (sell with credit to Meshy). Paid: you own the assets",
+   "source": "https://www.meshy.ai/pricing",
+   "scored": false
+  },
+  {
+   "tool": "Tripo",
+   "status": "Queued, not scored yet",
+   "entry": "Pro $20/mo billed annually ($240/yr); 3,000 credits ≈ 200 models",
+   "free": "200 credits/month ≈ 13 models, limited exports",
+   "per_model": "$0.16 per model (vendor's own figure, annual Pro)",
+   "basis": "Vendor-stated; not print success",
+   "license": "Free: public models, non-commercial use. Pro: private, commercial use",
+   "source": "https://www.tripo3d.ai/pricing",
+   "scored": false
+  },
+  {
+   "tool": "Rodin (Hyper3D)",
+   "status": "Queued, not scored yet",
+   "entry": "Creator $30/mo, or $24/mo billed yearly ($288); about 60 models",
+   "free": "Generate and preview free; pay by result when you confirm; 10 private assets",
+   "per_model": "About $0.50 per model at $30/mo ($0.40 yearly)",
+   "basis": "Vendor's 'about 60 models' ÷ price; not print success",
+   "license": "Paid plans: unlimited export and any use. Free: no 'any use' grant listed",
+   "source": "https://hyper3d.ai/pricing",
+   "scored": false
+  },
+  {
+   "tool": "Hitem3D (Hi3D)",
+   "status": "Queued, not scored yet",
+   "entry": "Pro 1,000 credits/month (dollar price not shown in the page's static HTML; check the page)",
+   "free": "100 credits, lifetime (up to 10 v2.1 geometry models)",
+   "per_model": "Not computed (no dollar price we could read)",
+   "basis": "v2.1 geometry = 10 credits; v3.0 Quality = 30 credits",
+   "license": "Not stated on the pricing page",
+   "source": "https://www.hitem3d.ai/pricing",
+   "scored": false
+  },
+  {
+   "tool": "PrintPal",
+   "status": "Not queued yet (added to the watch list 2026-10-31)",
+   "entry": "Pro $10/mo ($8/mo billed annually); 200 generations/month",
+   "free": "10 photo-to-3D generations/month, Draft quality, STL + OBJ export",
+   "per_model": "About $0.05 per generation at $10",
+   "basis": "Vendor's 200 generations ÷ price; not print success",
+   "license": "Free: personal, non-commercial. Pro/Studio: sell prints and files",
+   "source": "https://printpal.io/3dgenerator",
+   "scored": false
+  }
+ ]
+}

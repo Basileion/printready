@@ -41,3 +41,6 @@ License: CC BY 4.0 for scores; meshes under Tencent Hunyuan 3D 2.0 Community Lic
 ## Positioning and limits (updated 2026-10-30)
 Other AI-mesh printability benchmarks exist: PrintCheck, 3dtoolwiki, Topoheal, and Meshy's own benchmark. PrintReady AI focuses on locked prompts, one FDM profile (Bambu Lab A1, OrcaSlicer 2.4.2, PLA), open CC BY 4.0 data, and weekly re-runs. Meshy's built-in printability check covers Meshy output only.
 Current limits: one generator scored (Hunyuan3D-2, prompts T01-T06); hollow-skin and orientation checks are on the rubric roadmap; no upload-your-own-file checker yet. For functional parts with tolerances, CAD remains the better tool.
+
+## Costs
+- [What it costs to get a printable AI 3D model](https://basileion.github.io/printready/costs/): plan prices, free tiers, vendor-stated cost per model and commercial-use terms copied from each vendor pricing page on 2026-10-31 (CSV: https://basileion.github.io/printready/data/costs.csv). Cost per model is allowance divided by price, not cost per printable model; only Hunyuan3D-2 is scored so far, the paid tools are queued.

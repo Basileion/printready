@@ -33,6 +33,7 @@
     if (/\.(csv|json|glb|gz|txt)$|SHA256SUMS/i.test(h) && /data\//.test(h)) return "data_download";
     if (/(^|\/)data\/?$/.test(h)) return "data_page";
     if (/scorecard\/?$/.test(h)) return "scorecard";
+    if (/costs\/?$/.test(h)) return "costs";
     if (/methodology/.test(h)) return "methodology";
     if (/newsletter/.test(h)) return "newsletter";
     if (/^https?:/.test(h) && h.indexOf(location.host) < 0) { try { return "out:" + new URL(h).hostname; } catch (e) { return "out"; } }

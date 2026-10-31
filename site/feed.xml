@@ -5,8 +5,15 @@
   <link rel="self" href="https://basileion.github.io/printready/feed.xml" />
   <link rel="alternate" href="https://basileion.github.io/printready/" />
   <id>https://basileion.github.io/printready/</id>
-  <updated>2026-10-31T06:50:00Z</updated>
+  <updated>2026-10-31T09:55:00Z</updated>
   <author><name>PrintReady AI</name></author>
+  <entry>
+    <title>What it costs to get a printable AI 3D model (prices checked 2026-10-31)</title>
+    <link rel="alternate" href="https://basileion.github.io/printready/costs/" />
+    <id>https://basileion.github.io/printready/costs/#2026-10-31</id>
+    <updated>2026-10-31T09:55:00Z</updated>
+    <summary>Plan prices, free-tier limits, vendor-stated cost per model and commercial-use terms, copied from each vendor's pricing page. Only Hunyuan3D-2 is scored so far; the paid tools are queued.</summary>
+  </entry>
   <entry>
     <title>Rubric v2 diagnostics: hull fill, wall thickness, bed contact (and an orientation issue we found)</title>
     <link rel="alternate" href="https://basileion.github.io/printready/methodology/#v2-diagnostics" />
