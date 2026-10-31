@@ -1,5 +1,7 @@
 /* PrintReady AI /check/ page: UI + tiny WebGL viewer. Parsing/analysis runs in a Web Worker (../js/meshcheck.js).
- * Nothing is uploaded. Beacon events carry only the file extension and the overall verdict (no names, no sizes). */
+ * Nothing is uploaded. Beacon events carry only the file extension and the overall verdict (no names, no sizes).
+ * Sent as cta_click with cta check_file_loaded:<ext> / check_result:<pass|warn|fail>:<ext> / check_sample:<id> / check_error,
+ * because the shared ingest Worker only accepts a fixed event list. */
 (function () {
   "use strict";
   var $ = function (id) { return document.getElementById(id); };
@@ -11,7 +13,7 @@
     if (worker) return worker;
     worker = new Worker("../js/meshcheck.js");
     worker.onmessage = onResult;
-    worker.onerror = function (e) { busy = false; setStatus("Could not read this file: " + (e.message || "worker error"), true); track("calculator_use", "check_error"); };
+    worker.onerror = function (e) { busy = false; setStatus("Could not read this file: " + (e.message || "worker error"), true); track("cta_click", "check_error"); };
     return worker;
   }
   function setStatus(t, err) { status.textContent = t; status.style.color = err ? "var(--ds-neg)" : ""; }
@@ -30,7 +32,7 @@
     ext = (name.split(".").pop() || "").toLowerCase();
     if (["stl", "obj", "glb", "gltf"].indexOf(ext) < 0) { setStatus("Unsupported file type. Use .stl, .obj, .glb or .gltf.", true); return; }
     autoScaled = false; sentResult = false; haveMesh = true;
-    track("calculator_use", "check_file_loaded:" + ext);
+    track("cta_click", "check_file_loaded:" + ext);
     setStatus("Checking " + label + " in your browser…");
     run(buf, name);
   }
@@ -48,7 +50,7 @@
     b.addEventListener("click", function () {
       var url = b.getAttribute("data-sample"), sid = b.getAttribute("data-sid");
       setStatus("Downloading sample mesh from this site…");
-      track("calculator_use", "check_sample:" + sid);
+      track("cta_click", "check_sample:" + sid);
       fetch(url).then(function (r) {
         if (!r.ok) throw new Error("HTTP " + r.status);
         if (/\.gz$/.test(url) && typeof DecompressionStream === "function") return new Response(r.body.pipeThrough(new DecompressionStream("gzip"))).arrayBuffer();
@@ -67,7 +69,7 @@
   function onResult(ev) {
     busy = false;
     var d = ev.data;
-    if (!d.ok) { setStatus(d.error, true); track("calculator_use", "check_error"); return; }
+    if (!d.ok) { setStatus(d.error, true); track("cta_click", "check_error"); return; }
     var r = d.result, L = Math.max.apply(null, r.dimsMm);
     if (unitsSel.value === "auto" && !autoScaled && (L > 1000 || L < 1)) { autoScaled = true; run(); return; }
     setStatus((autoScaled ? "The file’s size looks unit-less (common for AI exports), so we scaled its longest edge to 50 mm, like our benchmark. Change it under Size / units. " : "") +
@@ -90,7 +92,7 @@
     rows.forEach(function (rw) { var tr = document.createElement("tr"); tr.innerHTML = "<td></td><td class='num'></td>"; tr.children[0].textContent = rw[0]; tr.children[1].textContent = rw[1]; tb.appendChild(tr); });
     $("results").hidden = false;
     try { viewer(d.preview, r); } catch (e) { $("viewer").hidden = true; }
-    if (!sentResult) { sentResult = true; track("calculator_use", "check_result:" + r.overall + ":" + ext); $("results").scrollIntoView({ behavior: "smooth", block: "start" }); }
+    if (!sentResult) { sentResult = true; track("cta_click", "check_result:" + r.overall + ":" + ext); $("results").scrollIntoView({ behavior: "smooth", block: "start" }); }
   }
 
   /* ---------- minimal WebGL viewer ---------- */

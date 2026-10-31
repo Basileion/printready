@@ -1,6 +1,8 @@
 /* PrintReady AI: tiny cookieless event beacon (page views + key clicks).
  * No cookies, no personal data. Sends site, event, path, link label, UTM tags and referrer host.
- * Endpoint: https://growth-ingest.basileion-ops.workers.dev */
+ * Endpoint: https://growth-ingest.basileion-ops.workers.dev
+ * Beacon body is JSON sent as text/plain (CORS-safelisted, no preflight): an application/json Blob
+ * triggered a credentialed preflight that the endpoint rejects, so Chrome dropped every beacon. */
 (function () {
   var ENDPOINT = "https://growth-ingest.basileion-ops.workers.dev";
   var SITE = "printready";
@@ -22,7 +24,7 @@
       utm_source: u.utm_source || "", utm_medium: u.utm_medium || "", utm_campaign: u.utm_campaign || "",
       referrer: document.referrer || "", test: isTest
     });
-    try { if (navigator.sendBeacon && navigator.sendBeacon(ENDPOINT, new Blob([body], { type: "application/json" }))) return; } catch (e) {}
+    try { if (navigator.sendBeacon && navigator.sendBeacon(ENDPOINT, new Blob([body], { type: "text/plain;charset=UTF-8" }))) return; } catch (e) {}
     try { fetch(ENDPOINT, { method: "POST", body: body, headers: { "Content-Type": "application/json" }, keepalive: true, credentials: "omit" }); } catch (e) {}
   }
   function label(a) {
