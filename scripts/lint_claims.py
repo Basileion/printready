@@ -42,8 +42,9 @@ PROMISE = re.compile(r"affiliate pick|X-vs-Y|#1 generator", re.I)
 
 def promise_errors():
     import csv as _c
-    gens = {r.get("generator") for r in _c.DictReader(open(SITE / "data" / "scores.csv"))}
-    if len(gens) >= 2:
+    # count generator FAMILIES (vendors), not versions: Hunyuan3D-2 + Hunyuan3D-2.1 is still one vendor,
+    # so "#1 generator"/"X-vs-Y"/"affiliate pick" stay banned until 2+ different vendors are scored.
+    if len(scored_generators()) >= 2:
         return []
     errs = []
     for f in SITE.rglob("*.html"):
@@ -83,14 +84,16 @@ def rubric_errors(text_by_ctx):
         nums = [int(x) for x in re.findall(r'<td class="num">(?:<strong>)?(\d+)', m.group(2))]
         if sorted(nums[:-1]) != sorted(w.values()) or nums[-1] != 100:
             errs.append(f"methodology weights {nums} != scores.json {sorted(w.values())} (+total 100)")
-    scores = {r["prompt_id"]: float(r["score"]) for r in csv.DictReader(open(SITE / "data" / "scores.csv"))}
+    scores = {}
+    for r in csv.DictReader(open(SITE / "data" / "scores.csv")):
+        scores.setdefault(r["prompt_id"], set()).add(float(r["score"]))  # any scored generator's value
     for rel, ctx, text in text_by_ctx:
         cur = " ".join(x for x in re.split(r"(?<=[.!?])\s+|\n+", text) if not HISTORY.search(re.sub(r"\(v0\.1 [\d.]+\)", "", x)))
         for rx in (r"\b(T0\d) (\d+(?:\.\d+)?)\b(?! ?mm)", r"\b(T0\d)[^:\n]{0,40}: v0\.2 score (\d+(?:\.\d+)?)"):
             for mm in re.finditer(rx, cur):
                 pid, val = mm.group(1), float(mm.group(2))
-                if pid in scores and val != scores[pid]:
-                    errs.append(f"{rel} [{ctx}] cites {pid} {val}, scores.csv has {scores[pid]}")
+                if pid in scores and val not in scores[pid]:
+                    errs.append(f"{rel} [{ctx}] cites {pid} {val}, scores.csv has {sorted(scores[pid])}")
         for sent in re.split(r"(?<=[.!?])\s+|\n+", text):
             for rx in STALE_V01:
                 if re.search(rx, sent, re.I) and not HISTORY.search(sent):

@@ -1,0 +1,10 @@
+T01 81.7 {"watertight": 20, "manifold": 15, "nonmanifold_edges": 10.0, "self_intersections": 10.0, "wall_thickness_p5": 0.0, "slice_success": 5, "tree_support": 9.97, "hull_fill": 1.73, "bed_contact": 10.0, "print_time": 0.0}
+T01 rc=0 12:42:07
+T03 96.7 {"watertight": 20, "manifold": 15, "nonmanifold_edges": 10.0, "self_intersections": 10.0, "wall_thickness_p5": 10.0, "slice_success": 5, "tree_support": 8.37, "hull_fill": 10.0, "bed_contact": 8.31, "print_time": 0.0}
+T03 rc=0 12:42:11
+T05 73.8 {"watertight": 20, "manifold": 15, "nonmanifold_edges": 10.0, "self_intersections": 10.0, "wall_thickness_p5": 0.0, "slice_success": 5, "tree_support": 2.8, "hull_fill": 1.0, "bed_contact": 10.0, "print_time": 0.0}
+T05 rc=0 12:42:16
+T06 82.3 {"watertight": 20, "manifold": 15, "nonmanifold_edges": 10.0, "self_intersections": 10.0, "wall_thickness_p5": 0.0, "slice_success": 5, "tree_support": 10.0, "hull_fill": 2.27, "bed_contact": 10.0, "print_time": 0.0}
+T06 rc=0 12:42:20
+T02 rc=0 12:43:13
+T04 rc=0 12:43:17

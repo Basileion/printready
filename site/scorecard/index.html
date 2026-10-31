@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hunyuan3D-2: 5 of 6 watertight after padding cleanup — PrintReady AI</title>
-  <meta name="description" content="Rubric v0.2 (2026-10-31): Hunyuan3D-2 scores T01 98.2, T02 86.9, T03 89.8, T04 100, T05 26.9, T06 91.7 with real tree supports, hollow-skin, wall and bed-contact checks in the glTF Y-up pose. v0.1 scores kept as history." />
+  <title>Hunyuan3D-2 vs 2.1: printability scores on 6 locked prompts — PrintReady AI</title>
+  <meta name="description" content="Rubric v0.2 (2026-10-31), 6 locked prompts, glTF Y-up pose, real tree supports. Hunyuan3D-2: T01 98.2, T02 86.9, T03 89.8, T04 100, T05 26.9, T06 91.7. Hunyuan3D-2.1: 6 of 6 watertight; 4 of 6 include a thin ground plate. v0.1 kept as history." />
   <meta name="robots" content="index,follow" />
   <link rel="stylesheet" href="../css/site.css" />
   <link rel="alternate" type="application/atom+xml" title="PrintReady AI scorecard updates" href="https://basileion.github.io/printready/feed.xml" />
@@ -12,17 +12,17 @@
   <meta property="og:url" content="https://basileion.github.io/printready/scorecard/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="PrintReady AI" />
-  <meta property="og:title" content="Hunyuan3D-2: 5 of 6 watertight after padding cleanup — PrintReady AI" />
-  <meta property="og:description" content="Rubric v0.2 (2026-10-31): Hunyuan3D-2 scores T01 98.2, T02 86.9, T03 89.8, T04 100, T05 26.9, T06 91.7 with real tree supports, hollow-skin, wall and bed-contact checks in the glTF Y-up pose. v0.1 scores kept as history." />
+  <meta property="og:title" content="Hunyuan3D-2 vs 2.1: printability scores on 6 locked prompts — PrintReady AI" />
+  <meta property="og:description" content="Rubric v0.2 (2026-10-31), 6 locked prompts, glTF Y-up pose, real tree supports. Hunyuan3D-2: T01 98.2, T02 86.9, T03 89.8, T04 100, T05 26.9, T06 91.7. Hunyuan3D-2.1: 6 of 6 watertight; 4 of 6 include a thin ground plate. v0.1 kept as history." />
   <meta property="og:image" content="https://basileion.github.io/printready/img/og.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="PrintReady AI: Does that AI mesh actually print? Hunyuan3D-2 scored 5 of 6 watertight." />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Hunyuan3D-2: 5 of 6 watertight after padding cleanup — PrintReady AI" />
-  <meta name="twitter:description" content="Rubric v0.2 (2026-10-31): Hunyuan3D-2 scores T01 98.2, T02 86.9, T03 89.8, T04 100, T05 26.9, T06 91.7 with real tree supports, hollow-skin, wall and bed-contact checks in the glTF Y-up pose. v0.1 scores kept as history." />
+  <meta name="twitter:title" content="Hunyuan3D-2 vs 2.1: printability scores on 6 locked prompts — PrintReady AI" />
+  <meta name="twitter:description" content="Rubric v0.2 (2026-10-31), 6 locked prompts, glTF Y-up pose, real tree supports. Hunyuan3D-2: T01 98.2, T02 86.9, T03 89.8, T04 100, T05 26.9, T06 91.7. Hunyuan3D-2.1: 6 of 6 watertight; 4 of 6 include a thin ground plate. v0.1 kept as history." />
   <meta name="twitter:image" content="https://basileion.github.io/printready/img/og.png" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"PrintReady scorecard: Hunyuan3D-2 + test meshes","url":"https://basileion.github.io/printready/scorecard/","description":"Rubric v0.2 (2026-10-31): Hunyuan3D-2 scores T01 98.2, T02 86.9, T03 89.8, T04 100, T05 26.9, T06 91.7 with real tree supports, hollow-skin, wall and bed-contact checks in the glTF Y-up pose. v0.1 scores kept as history.","isPartOf":{"@id":"https://basileion.github.io/printready/#website"},"dateModified":"2026-10-30"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"PrintReady scorecard: Hunyuan3D-2, Hunyuan3D-2.1 + test meshes","url":"https://basileion.github.io/printready/scorecard/","description":"Rubric v0.2 (2026-10-31), 6 locked prompts, glTF Y-up pose, real tree supports. Hunyuan3D-2: T01 98.2, T02 86.9, T03 89.8, T04 100, T05 26.9, T06 91.7. Hunyuan3D-2.1: 6 of 6 watertight; 4 of 6 include a thin ground plate. v0.1 kept as history.","isPartOf":{"@id":"https://basileion.github.io/printready/#website"},"dateModified":"2026-10-31"}</script>
   <script src="../js/grow.js" defer></script>
 </head>
 <body>
@@ -53,7 +53,7 @@
         <li>v0.2 slices with real <strong>tree supports</strong> in the glTF <strong>Y-up</strong> pose: the fox needs 24.3% of its plastic as support, the planter 30%. The nut stands on its edge as delivered (38.8&nbsp;mm² bed contact). <a href="../methodology/#changelog">Rubric change log</a>.</li>
         <li>Space GLB exports include many index-degenerate zero-area padding triangles. The scorer drops those as <em>export padding</em> before watertight checks (not counted as holes).</li>
         <li>Raw output, no repair: locked prompts T01–T06 → FLUX.1-schnell reference (seed 1234) → Hunyuan3D-2 public Space (seed 1234, 30 steps).</li>
-        <li>One open-source generator so far. Meshy, Tripo, Hitem3D, Rodin and TRELLIS are queued for the same prompts (paid generators need a budget OK).</li>
+        <li>Second open-source generator, <a href="#h21-h">Hunyuan3D-2.1</a>, scored below on the same prompts (2026-10-31). Meshy, Tripo, Hitem3D, Rodin and TRELLIS are queued.</li>
       </ul>
       <div class="table-wrap" role="region" aria-label="Hunyuan3D-2 PrintReady scores" tabindex="0">
         <table>
@@ -91,7 +91,7 @@
             <td class="num">1h 16m</td>
           </tr>
           <tr>
-            <td><img class="thumb" src="../img/hy2_T03.png" alt="Hunyuan3D-2 output for T03: M8 hex nut with threads" width="56" height="56" loading="lazy" /></td>
+            <td><img class="thumb" src="../img/hy2_T03.png" alt="Hunyuan3D-2 output for T03: M8 hex nut with threads, standing on its edge" width="56" height="56" loading="lazy" /></td>
             <td>T03 · M8 hex nut with threads</td>
             <td><span class="tag">Hunyuan3D-2</span></td>
             <td class="num"><span class="score score-mid">89.8</span></td>
@@ -141,6 +141,113 @@
             <td class="num">21.9%</td>
             <td class="num">1.848</td>
             <td class="num">3h 43m</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+
+    <section aria-labelledby="h21-h" style="margin:8px 0 48px">
+      <p class="eyebrow">Rubric v0.2 · scored 2026-10-31 ET · second generator</p>
+      <h2 id="h21-h">Hunyuan3D-2.1: 6 of 6 watertight, but 4 of 6 came with a built-in ground plate</h2>
+      <figure style="margin:8px 0 16px">
+        <img src="../img/hy2_vs_hy21_T01-T06.png" alt="Side-by-side shaded renders in the glTF Y-up pose, prompts T01 to T06. Top row Hunyuan3D-2: mug, fox, hex nut standing on edge, phone stand, card holder, planter. Bottom row Hunyuan3D-2.1: the mug, phone stand, card holder and planter each sit on a thin square plate; the fox has no plate; the nut is a long hex prism lying on its side." width="1230" height="400" loading="lazy" style="width:100%;height:auto;border:1px solid var(--line,#ddd);border-radius:8px" />
+        <figcaption class="muted" style="font-size:13px">Same FLUX.1-schnell reference images (seed 1234), same settings. Renders of the raw GLBs in the glTF Y-up pose used for scoring.</figcaption>
+      </figure>
+      <ul class="lede" style="margin:8px 0 16px">
+        <li>Scores: T01 81.7, T02 83.2, T03 96.7, T04 81.6, T05 73.8, T06 82.3. <strong>6/6</strong> watertight single bodies, <strong>0</strong> hard fails, <strong>6/6</strong> sliced.</li>
+        <li>The catch: on T01, T04, T05 and T06 the mesh includes a thin square plate (about 0.3&nbsp;mm thick at 50&nbsp;mm scale) under the object. It fills the bed (about 2,480&nbsp;mm² contact), fails the 0.4&nbsp;mm wall check and drops hull fill to 6.5–8.4%. Scaled to 50&nbsp;mm, the plate is the long edge, so the object on it is small. You would cut the plate off before printing.</li>
+        <li>T03 came out as a long hex prism lying on its side, not a flat nut; it still scores highest here (96.7), because the rubric checks printability, not whether the shape matches the prompt.</li>
+        <li>Raw output, no repair: same reference images → <a href="https://huggingface.co/spaces/tencent/Hunyuan3D-2.1">tencent/Hunyuan3D-2.1</a> public Space, shape model hunyuan3d-dit-v2-1 (seed 1234, 30 steps, guidance 5.0, octree 256), shape only.</li>
+        <li>Both scored models are open-source models from the same vendor (Tencent). This is not a buying guide yet; Meshy, Tripo, Hitem3D, Rodin and TRELLIS are queued for the same prompts.</li>
+      </ul>
+      <div class="table-wrap" role="region" aria-label="Hunyuan3D-2.1 PrintReady scores" tabindex="0">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Preview</th><th scope="col">Prompt</th><th scope="col">Generator</th><th scope="col" class="num">Score v0.2</th><th scope="col" class="num">v0.1</th>
+              <th scope="col">Watertight</th><th scope="col" class="num">Tree support</th><th scope="col" class="num">Bed contact mm²</th><th scope="col" class="num">Hull fill</th><th scope="col" class="num">Wall p5 mm</th><th scope="col" class="num">Est. time (n/a pts)</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><img class="thumb" src="../img/hy21_T01.png" alt="Hunyuan3D-2.1 output for T01: Coffee mug with handle, standing on a thin square ground plate" width="56" height="56" loading="lazy" /></td>
+            <td>T01 · Coffee mug with handle</td>
+            <td><span class="tag">Hunyuan3D-2.1</span></td>
+            <td class="num"><span class="score score-mid">81.7</span></td>
+            <td class="num muted">—</td>
+            <td>yes</td>
+            <td class="num">5.1%</td>
+            <td class="num">2485.4</td>
+            <td class="num">7.6%</td>
+            <td class="num">0.293</td>
+            <td class="num">25m</td>
+          </tr>
+          <tr>
+            <td><img class="thumb" src="../img/hy21_T02.png" alt="Hunyuan3D-2.1 output for T02: Low-poly fox figurine" width="56" height="56" loading="lazy" /></td>
+            <td>T02 · Low-poly fox figurine</td>
+            <td><span class="tag">Hunyuan3D-2.1</span></td>
+            <td class="num"><span class="score score-mid">83.2</span></td>
+            <td class="num muted">—</td>
+            <td>yes</td>
+            <td class="num">29.3%</td>
+            <td class="num">13.4</td>
+            <td class="num">34.3%</td>
+            <td class="num">1.942</td>
+            <td class="num">50m</td>
+          </tr>
+          <tr>
+            <td><img class="thumb" src="../img/hy21_T03.png" alt="Hunyuan3D-2.1 output for T03: M8 hex nut with threads, a long hex prism lying on its side" width="56" height="56" loading="lazy" /></td>
+            <td>T03 · M8 hex nut with threads</td>
+            <td><span class="tag">Hunyuan3D-2.1</span></td>
+            <td class="num"><span class="score score-ok">96.7</span></td>
+            <td class="num muted">—</td>
+            <td>yes</td>
+            <td class="num">9.9%</td>
+            <td class="num">67.8</td>
+            <td class="num">89.5%</td>
+            <td class="num">2.437</td>
+            <td class="num">50m</td>
+          </tr>
+          <tr>
+            <td><img class="thumb" src="../img/hy21_T04.png" alt="Hunyuan3D-2.1 output for T04: Phone stand with slot, standing on a thin square ground plate" width="56" height="56" loading="lazy" /></td>
+            <td>T04 · Phone stand with slot</td>
+            <td><span class="tag">Hunyuan3D-2.1</span></td>
+            <td class="num"><span class="score score-mid">81.6</span></td>
+            <td class="num muted">—</td>
+            <td>yes</td>
+            <td class="num">0%</td>
+            <td class="num">2488</td>
+            <td class="num">7.4%</td>
+            <td class="num">0.289</td>
+            <td class="num">23m</td>
+          </tr>
+          <tr>
+            <td><img class="thumb" src="../img/hy21_T05.png" alt="Hunyuan3D-2.1 output for T05: 3-slot business card holder, standing on a thin square ground plate" width="56" height="56" loading="lazy" /></td>
+            <td>T05 · 3-slot business card holder</td>
+            <td><span class="tag">Hunyuan3D-2.1</span></td>
+            <td class="num"><span class="score score-mid">73.8</span></td>
+            <td class="num muted">—</td>
+            <td>yes</td>
+            <td class="num">26.6%</td>
+            <td class="num">2482.4</td>
+            <td class="num">6.5%</td>
+            <td class="num">0.3</td>
+            <td class="num">30m</td>
+          </tr>
+          <tr>
+            <td><img class="thumb" src="../img/hy21_T06.png" alt="Hunyuan3D-2.1 output for T06: Planter pot with drainage hole, standing on a thin square ground plate" width="56" height="56" loading="lazy" /></td>
+            <td>T06 · Planter pot with drainage hole</td>
+            <td><span class="tag">Hunyuan3D-2.1</span></td>
+            <td class="num"><span class="score score-mid">82.3</span></td>
+            <td class="num muted">—</td>
+            <td>yes</td>
+            <td class="num">0%</td>
+            <td class="num">2482.5</td>
+            <td class="num">8.4%</td>
+            <td class="num">0.29</td>
+            <td class="num">23m</td>
           </tr>
           </tbody>
         </table>
@@ -252,7 +359,7 @@
       † Slicer can still emit G-code for some broken meshes; hard-fail cap still applies when not watertight.<br />
       ‡ Watertight is measured after dropping index-degenerate export-padding faces common in Space GLB exports.<br />
       Also scored (not shown with thumbs): pd_cylinder 100, pd_icosphere 89.1 on v0.2 (both 100 on v0.1). Round controls lose bed-contact points in v0.2 because a sphere or torus has no flat base.<br />
-      Hunyuan3D-2 rows: meshes normalized to 50&nbsp;mm longest edge, rotated from glTF Y-up to Z-up, auto-orient off; OrcaSlicer 2.4.2, Bambu Lab A1 0.4&nbsp;mm, 0.20&nbsp;mm Standard + tree(auto) supports at 45°, Generic PLA. Tree support = support extrusion ÷ all extrusion. v0.1 history: <a href="../data/scores_v0.1.csv">scores_v0.1.csv</a>.
+      Hunyuan3D-2 and Hunyuan3D-2.1 rows: meshes normalized to 50&nbsp;mm longest edge, rotated from glTF Y-up to Z-up, auto-orient off; OrcaSlicer 2.4.2, Bambu Lab A1 0.4&nbsp;mm, 0.20&nbsp;mm Standard + tree(auto) supports at 45°, Generic PLA. Tree support = support extrusion ÷ all extrusion. v0.1 history: <a href="../data/scores_v0.1.csv">scores_v0.1.csv</a>.
     </p>
 
     <div class="band" style="margin-top:48px">

@@ -37,7 +37,7 @@ ROWS = [
       license="Free: personal, non-commercial. Pro/Studio: sell prints and files", source="https://printpal.io/3dgenerator"),
 ]
 FIELDS = ["tool","status","entry","free","per_model","basis","license","source"]
-(SITE/"data"/"costs.json").write_text(json.dumps({"checked_et": CHECKED, "note": "Plan prices copied from each vendor's pricing page. Cost per model = vendor allowance ÷ price, NOT cost per printable model; only Hunyuan3D-2 is scored so far.", "license": "CC BY 4.0", "rows": [{k: r[k] for k in FIELDS+["scored"]} for r in ROWS]}, indent=1, ensure_ascii=False)+"\n")
+(SITE/"data"/"costs.json").write_text(json.dumps({"checked_et": CHECKED, "note": "Plan prices copied from each vendor's pricing page. Cost per model = vendor allowance ÷ price, NOT cost per printable model; only Hunyuan3D-2 and Hunyuan3D-2.1 are scored so far.", "license": "CC BY 4.0", "rows": [{k: r[k] for k in FIELDS+["scored"]} for r in ROWS]}, indent=1, ensure_ascii=False)+"\n")
 with open(SITE/"data"/"costs.csv","w",newline="") as f:
     w=csv.writer(f); w.writerow(FIELDS+["checked_et"])
     for r in ROWS: w.writerow([r[k] for k in FIELDS]+[CHECKED])
@@ -52,7 +52,7 @@ rows="\n".join(f"""          <tr>
             <td><a href="{e(r['source'])}" rel="nofollow noopener">{"license" if "LICENSE" in r["source"] else ("credit guide" if "makerworld" in r["source"] else "pricing page")}</a></td>
           </tr>""" for r in ROWS)
 title="What it costs to get a printable AI 3D model (2026 prices) — PrintReady AI"
-desc=f"Plan prices, free-tier limits, cost per model and commercial-use terms for AI 3D generators, copied from each vendor's pricing page on {CHECKED}. Only Hunyuan3D-2 is scored for printability so far; the paid tools are queued."
+desc=f"Plan prices, free-tier limits, cost per model and commercial-use terms for AI 3D generators, copied from each vendor's pricing page on {CHECKED}. Only two open-source Tencent models (Hunyuan3D-2 and Hunyuan3D-2.1) are scored for printability so far; the paid tools are queued."
 ld={"@context":"https://schema.org","@type":"Dataset","name":"AI 3D generator plan prices and licenses for 3D printing","url":"https://basileion.github.io/printready/costs/","description":desc,"dateModified":CHECKED,"license":"https://creativecommons.org/licenses/by/4.0/","creator":{"@type":"Organization","name":"PrintReady AI","url":"https://basileion.github.io/printready/"},"distribution":[{"@type":"DataDownload","encodingFormat":"text/csv","contentUrl":"https://basileion.github.io/printready/data/costs.csv"},{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://basileion.github.io/printready/data/costs.json"}]}
 page=f"""<!doctype html>
 <html lang="en" data-product="printready" data-theme="light">
@@ -100,7 +100,7 @@ page=f"""<!doctype html>
     <h1>What it costs to get a printable AI 3D model</h1>
     <ul class="lede" style="margin:8px 0 16px">
       <li>Is it worth paying for credits? Here is what each plan costs, what the free tier gives you, and whether you can sell prints.</li>
-      <li><strong>Cost per model below is the vendor's allowance divided by the price.</strong> It is not cost per <em>printable</em> model. We only have printability scores for Hunyuan3D-2 so far (<a href="../scorecard/" data-grow="scorecard">5 of 6 watertight</a>); the paid tools are queued for the same locked prompts.</li>
+      <li><strong>Cost per model below is the vendor's allowance divided by the price.</strong> It is not cost per <em>printable</em> model. We only have printability scores for the open-source Hunyuan3D-2 and Hunyuan3D-2.1 so far (<a href="../scorecard/" data-grow="scorecard">5 of 6 and 6 of 6 watertight</a>); the paid tools are queued for the same locked prompts.</li>
       <li>Selling on Etsy or MakerWorld? Free tiers of Tripo and PrintPal are non-commercial; Meshy's free tier is CC BY 4.0 (credit Meshy). Read the license link before you sell.</li>
       <li>Own a Bambu printer? MakerWorld's MakerLab Image to 3D runs Tripo, Hitem3D, Hunyuan 3D, Meshy and Rodin with 2 free generations per account, then roughly $0.21 to $0.39 per generation on the $3 credit pack, with no subscription.</li>
     </ul>

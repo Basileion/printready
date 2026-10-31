@@ -1,6 +1,6 @@
 # PrintReady AI — full brief
 
-PrintReady AI is a vendor-neutral printability benchmark for AI 3D generators. So far one generator is scored: Hunyuan3D-2 on 6 locked prompts (T01-T06). Meshy, Tripo, Rodin/Hyper3D, TRELLIS and Hitem3D/Hi3D are queued, not yet scored (TRELLIS runs hit a free GPU quota; Meshy, Tripo and Rodin need paid plans).
+PrintReady AI is a vendor-neutral printability benchmark for AI 3D generators. So far two open-source Tencent models are scored: Hunyuan3D-2 and Hunyuan3D-2.1, each on 6 locked prompts (T01-T06). Meshy, Tripo, Rodin/Hyper3D, TRELLIS and Hitem3D/Hi3D are queued, not yet scored (TRELLIS runs hit a free GPU quota; Meshy, Tripo and Rodin need paid plans).
 
 ## Scoring weights (rubric v0.2, 2026-10-31)
 Watertight 20 · Manifold 15 · Non-manifold edges 10 · Self-intersections 10 · Wall thickness (ray p5) 10 · Hull fill (hollow skin) 10 · Bed contact (flat base, declared up-axis) 10 · Tree-support volume (real OrcaSlicer tree(auto) slice) 10 · Slice success 5 · Print time n/a (reported, not scored until a weekly median exists). Total 100.
@@ -31,6 +31,16 @@ Pipeline: locked prompt -> FLUX.1-schnell reference image (seed 1234) -> Hunyuan
 - T06 Planter pot: v0.2 score 91.7/100 (v0.1 100), watertight yes, tree support 30% of extrusion, bed contact 133 mm2, hull fill 21.9%
 Summary: 5/6 watertight after padding cleanup, 6/6 sliced; 1/6 score 100 on v0.2 (5/6 on v0.1). Meshy, Tripo, Hitem3D, Rodin, TRELLIS queued (not yet scored).
 
+## AI-generator results: Hunyuan3D-2.1 (rubric v0.2, scored 2026-10-31 ET)
+Pipeline: same FLUX.1-schnell reference images (seed 1234) -> tencent/Hunyuan3D-2.1 public Hugging Face Space, shape model hunyuan3d-dit-v2-1 (seed 1234, 30 steps, guidance 5.0, octree 256, shape only). Raw output, no repair.
+- T01 Coffee mug: v0.2 score 81.7/100, watertight yes, tree support 5.1% of extrusion, bed contact 2485.4 mm2, hull fill 7.6%, wall p5 0.293 mm; includes a thin square ground plate
+- T02 Fox figurine: v0.2 score 83.2/100, watertight yes, tree support 29.3% of extrusion, bed contact 13.4 mm2, hull fill 34.3%, wall p5 1.942 mm
+- T03 Hex nut: v0.2 score 96.7/100, watertight yes, tree support 9.9% of extrusion, bed contact 67.8 mm2, hull fill 89.5%, wall p5 2.437 mm; long hex prism lying on its side
+- T04 Phone stand: v0.2 score 81.6/100, watertight yes, tree support 0% of extrusion, bed contact 2488 mm2, hull fill 7.4%, wall p5 0.289 mm; includes a thin square ground plate
+- T05 Card holder: v0.2 score 73.8/100, watertight yes, tree support 26.6% of extrusion, bed contact 2482.4 mm2, hull fill 6.5%, wall p5 0.3 mm; includes a thin square ground plate
+- T06 Planter pot: v0.2 score 82.3/100, watertight yes, tree support 0% of extrusion, bed contact 2482.5 mm2, hull fill 8.4%, wall p5 0.29 mm; includes a thin square ground plate
+Summary: 6/6 watertight single bodies, 0 hard fails, 6/6 sliced. On T01, T04, T05 and T06 the mesh includes a thin square ground plate (about 0.3 mm thick at 50 mm scale) that fails the 0.4 mm wall check and lowers hull fill; you would cut it off before printing. Both scored models are open-source Tencent models; this is not a cross-vendor comparison. Meshy, Tripo, Hitem3D, Rodin, TRELLIS queued (not yet scored).
+
 ## Contact / status
 Site: https://basileion.github.io/printready
 Repo: https://github.com/Basileion/printready
@@ -41,15 +51,15 @@ Newsletter signup: live at /newsletter/ (Kit form 10124123, double opt-in; confi
 Scores CSV (v0.2): https://basileion.github.io/printready/data/scores.csv
 Scores CSV (v0.1 history): https://basileion.github.io/printready/data/scores_v0.1.csv
 Scores JSON: https://basileion.github.io/printready/data/scores.json
-Raw Hunyuan3D-2 meshes (gzipped GLB) + SHA256SUMS + reference images: https://basileion.github.io/printready/data/
-License: CC BY 4.0 for scores; meshes under Tencent Hunyuan 3D 2.0 Community License.
+Raw Hunyuan3D-2 and Hunyuan3D-2.1 meshes (gzipped GLB) + SHA256SUMS + reference images: https://basileion.github.io/printready/data/
+License: CC BY 4.0 for scores; meshes under Tencent Hunyuan 3D 2.0 / 2.1 Community Licenses.
 
 ## Positioning and limits (updated 2026-10-31)
 Other AI-mesh printability benchmarks exist: PrintCheck, 3dtoolwiki, Topoheal, and Meshy's own benchmark. PrintReady AI focuses on locked prompts, one FDM profile (Bambu Lab A1, OrcaSlicer 2.4.2, PLA), open CC BY 4.0 data, and weekly re-runs. Meshy's built-in printability check covers Meshy output only.
-Current limits: one generator scored (Hunyuan3D-2, prompts T01-T06); print time is reported but not scored; no upload-your-own-file checker yet. For functional parts with tolerances, CAD remains the better tool.
+Current limits: two open-source models from one vendor scored (Hunyuan3D-2 and Hunyuan3D-2.1, prompts T01-T06); print time is reported but not scored; no upload-your-own-file checker yet. For functional parts with tolerances, CAD remains the better tool.
 
 ## Costs
-- [What it costs to get a printable AI 3D model](https://basileion.github.io/printready/costs/): plan prices, free tiers, vendor-stated cost per model and commercial-use terms copied from each vendor pricing page on 2026-10-31 (CSV: https://basileion.github.io/printready/data/costs.csv). Cost per model is allowance divided by price, not cost per printable model; only Hunyuan3D-2 is scored so far, the paid tools are queued.
+- [What it costs to get a printable AI 3D model](https://basileion.github.io/printready/costs/): plan prices, free tiers, vendor-stated cost per model and commercial-use terms copied from each vendor pricing page on 2026-10-31 (CSV: https://basileion.github.io/printready/data/costs.csv). Cost per model is allowance divided by price, not cost per printable model; only the open-source Hunyuan3D-2 and Hunyuan3D-2.1 are scored so far, the paid tools are queued.
 - Price facts only, no printability scores (Meshy, Tripo, Rodin, Hitem3D and MakerLab engines are queued, not yet scored), checked 2026-10-31: MakerLab Image to 3D on MakerWorld gives 2 free generations per account, then 24 credits (Tripo AI 3.1 or Hitem3D 2.1), 28 (Hunyuan 3D 3.1) or 45 (Meshy 6 or Rodin Gen-2) at $3 per 350 credits, about $0.21, $0.24 or $0.39 per generation; Meshy (queued) free tier caps downloads at 10 Meshy 6 Lite models a month; Hitem3D (queued) Pro is $19.90/mo for 1,000 credits ($9.95/mo first year for new users) and its free tier is 100 trial credits, 'up to 7 models'.
 
 Disclosure (2026-10-31): scores are slicer- and geometry-measured (OrcaSlicer 2.4.2 + trimesh); nothing has been physically printed yet.
