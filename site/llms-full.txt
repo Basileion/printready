@@ -57,7 +57,7 @@ License: CC BY 4.0 for scores; meshes under Tencent Hunyuan 3D 2.0 / 2.1 Communi
 Meshy 6 Lite (2026-10-31, rubric v0.2): T01 99.5, T02 80.5, T03 80.0, T04 81.2, T05 39.0, T06 86.9 (free plan, not flagship 7.1).
 
 ## Positioning and limits (updated 2026-10-31)
-Other AI-mesh printability benchmarks exist: PrintCheck, 3dtoolwiki, Topoheal, and Meshy's own benchmark. PrintReady AI focuses on locked prompts, one FDM profile (Bambu Lab A1, OrcaSlicer 2.4.2, PLA), open CC BY 4.0 data, and weekly re-runs. Meshy's built-in printability check covers Meshy output only.
+Other AI-mesh printability benchmarks exist: PrintCheck, 3dtoolwiki, Topoheal, and Meshy's own benchmark. PrintReady AI focuses on locked prompts, one FDM profile (Bambu Lab A1, OrcaSlicer 2.4.2, PLA), open CC BY 4.0 data, and planned weekly re-runs (one run so far, Oct 30-31, 2026). Meshy's built-in printability check covers Meshy output only.
 Current limits: three generators, two vendors scored (Hunyuan3D-2, Hunyuan3D-2.1, Meshy 6 Lite free plan — not flagship 7.1; prompts T01-T06); Meshy 7.1, Tripo, Rodin, TRELLIS and Hitem3D are queued; print time is reported but not scored; the free file checker (/check/) runs geometry checks only, no slicing. For functional parts with tolerances, CAD remains the better tool.
 
 ## Free file checker (added 2026-10-31)

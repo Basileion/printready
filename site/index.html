@@ -22,7 +22,7 @@
   <meta name="twitter:image" content="https://basileion.github.io/printready/img/og.png" />
   <meta property="og:title" content="PrintReady AI — Does that AI mesh actually print?" />
   <meta property="og:description" content="Printability benchmark for AI 3D generators — watertight, wall thickness, hollow skin, bed contact, real tree supports." />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://basileion.github.io/printready/#website","name":"PrintReady AI","url":"https://basileion.github.io/printready/","description":"Weekly benchmark that scores AI text-to-3D and image-to-3D generators on printability — watertight, manifold, wall thickness, hollow skin, bed contact, tree-support volume and slicer success.","inLanguage":"en","publisher":{"@id":"https://basileion.github.io/printready/#org"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://basileion.github.io/printready/#website","name":"PrintReady AI","url":"https://basileion.github.io/printready/","description":"Benchmark (weekly re-runs planned) that scores AI text-to-3D and image-to-3D generators on printability — watertight, manifold, wall thickness, hollow skin, bed contact, tree-support volume and slicer success.","inLanguage":"en","publisher":{"@id":"https://basileion.github.io/printready/#org"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://basileion.github.io/printready/#org","name":"PrintReady AI","url":"https://basileion.github.io/printready/","description":"Vendor-neutral AI mesh printability benchmark."}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does PrintReady AI score?", "acceptedAnswer": {"@type": "Answer", "text": "Printability of AI-generated 3D meshes: watertight, manifold, non-manifold edges, self-intersections, ray wall thickness, hull fill (hollow skin), bed contact in the file's declared up-axis, OrcaSlicer tree-support volume and slice success (rubric v0.2, 2026-10-31). Print time is reported but not scored. Not visual beauty."}}, {"@type": "Question", "name": "What is on the sample scorecard today?", "acceptedAnswer": {"@type": "Answer", "text": "Rubric v0.2 (2026-10-31): Hunyuan3D-2 scores T01 98.2, T02 86.9, T03 89.8, T04 100, T05 26.9, T06 91.7. Hunyuan3D-2.1: T01 81.7, T02 83.2, T03 96.7, T04 81.6, T05 73.8, T06 82.3; 6 of 6 watertight, but 4 of 6 include a thin ground plate. Meshy 6 Lite (free plan, not flagship 7.1): T01 99.5, T02 80.5, T03 80.0, T04 81.2, T05 39.0, T06 86.9; 6 of 6 watertight, T05 slice hard-fail. Plus pipeline test meshes. More generators next."}}, {"@type": "Question", "name": "What slicer profile is used?", "acceptedAnswer": {"@type": "Answer", "text": "OrcaSlicer 2.4.2 with Bambu Lab A1 0.4 mm nozzle, 0.20 mm Standard process, Generic PLA, tree(auto) supports at 45 degrees. Meshes are normalized to 50 mm longest edge and sliced in their declared up-axis (glTF Y-up)."}}, {"@type": "Question", "name": "How is PrintReady AI different from Meshy's printability check?", "acceptedAnswer": {"@type": "Answer", "text": "Meshy's check covers Meshy output only. PrintReady AI scores raw meshes from any generator with one neutral rubric on the same locked prompts and a Bambu A1 / OrcaSlicer PLA profile, with open CSV/JSON data. Scored so far: Hunyuan3D-2, Hunyuan3D-2.1 and Meshy 6 Lite (free plan; not flagship 7.1); Tripo, Rodin, TRELLIS, Hitem3D and Meshy 7.1 are queued (paid generators need a budget OK)."}}, {"@type": "Question", "name": "Are there other AI mesh printability benchmarks?", "acceptedAnswer": {"@type": "Answer", "text": "Yes: PrintCheck, 3dtoolwiki, Topoheal and Meshy's own benchmark also test AI meshes. PrintReady AI focuses on locked prompts, a single FDM Bambu/Orca profile, open data, and a planned weekly re-run once more generators are scored. Scores are slicer- and geometry-measured (OrcaSlicer + trimesh); nothing has been physically printed yet."}}, {"@type": "Question", "name": "Is Meshy worth paying for if I just got a Bambu A1?", "acceptedAnswer": {"@type": "Answer", "text": "We scored free-plan Meshy 6 Lite (not flagship 7.1): T01 99.5, T02 80.5, T03 80.0, T04 81.2, T05 39.0, T06 86.9; mean ~77.9 vs Hunyuan3D-2 ~82.3 on the same 6 prompts. Meshy Pro is $20/mo, about $0.20 per asset by the vendor's 'up to 100 assets' (not per printable model); free is 100 credits/month and 10 untextured Meshy 6 Lite downloads/month — Meshy 7.x (the default) needs Pro to download (our 2026-10-31 free-account test on 7.1 hit that paywall; meshy.ai/pricing + help.meshy.ai free-plan article, read 2026-10-31). See basileion.github.io/printready/costs/."}}, {"@type": "Question", "name": "Can I sell prints of AI-generated 3D models?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the generator and plan. Free tiers of Tripo and PrintPal (queued, not yet scored) are non-commercial; Meshy's free tier (Meshy 6 Lite scored) is CC BY 4.0 (credit Meshy) and paid Meshy assets are yours; the Tencent Hunyuan 3D 2.0 and 2.1 Community Licenses are royalty-free but not licensed in the EU, UK or South Korea. Check each vendor's license before selling."}}]}</script>
   <script src="js/grow.js" defer></script>
@@ -39,7 +39,7 @@
           <li><a href="check/">Check a file</a></li>
           <li><a href="costs/">Costs</a></li>
           <li><a href="data/">Data</a></li>
-          <li><a href="methodology/">Methodology</a></li>
+          <li><a href="methodology/">Method</a></li>
           <li><a href="newsletter/">Newsletter</a></li>
         </ul>
       </nav>
@@ -55,22 +55,22 @@
         <p class="lede">
           Find out before you pay for credits or spend 20 minutes fixing it in Blender. Same prompts, raw output, sliced on a Bambu A1 / PLA profile.
         </p>
-        <p class="muted" style="margin:0 0 8px">
-          We score raw AI meshes on <strong>watertight</strong>, <strong>wall thickness</strong>, <strong>hollow skin</strong>,
-          <strong>bed contact</strong> and real <strong>OrcaSlicer tree supports</strong> on a Bambu A1 / PLA profile, with open data you can re-score.
-          So far: Hunyuan3D-2, Hunyuan3D-2.1 and Meshy 6 Lite (free plan, not flagship 7.1) on 6 locked prompts — first cross-vendor comparison. Tripo, Rodin, TRELLIS, Hitem3D and Meshy 7.1 are queued. Slicer-measured, not physically printed (yet).
-        </p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="scorecard/">See the sample scorecard</a>
-          <a class="btn btn-ghost" href="costs/">What each plan costs</a>
-          <a class="btn btn-ghost" href="check/">Check your own STL (free)</a>
-        </div>
         <form class="form" style="max-width:30rem;display:flex;flex-wrap:wrap;gap:8px;align-items:stretch;margin-top:12px" action="https://app.kit.com/forms/10124123/subscriptions" method="post" aria-label="Get the weekly scores by email">
           <label class="skip" for="hero-email">Email</label>
           <input id="hero-email" type="email" name="email_address" required placeholder="you@example.com" autocomplete="email" style="flex:1 1 10rem;min-width:10rem" />
           <button class="btn btn-primary" type="submit" data-grow="newsletter_submit">Get Friday scores</button>
         </form>
         <p class="form-note" style="margin:4px 0 0">Know which generator prints before you buy credits. Free, double opt-in, unsubscribe anytime (<a href="privacy/">privacy</a>). Or follow by <a href="feed.xml">RSS</a>.</p>
+        <div class="cta-row" style="margin-top:12px">
+          <a class="btn btn-primary" href="scorecard/">See the sample scorecard</a>
+          <a class="btn btn-ghost" href="costs/">What each plan costs</a>
+          <a class="btn btn-ghost" href="check/">Check your own STL (free)</a>
+        </div>
+        <p class="muted" style="margin:0 0 8px">
+          We score raw AI meshes on <strong>watertight</strong>, <strong>wall thickness</strong>, <strong>hollow skin</strong>,
+          <strong>bed contact</strong> and real <strong>OrcaSlicer tree supports</strong> on a Bambu A1 / PLA profile, with open data you can re-score.
+          So far: Hunyuan3D-2, Hunyuan3D-2.1 and Meshy 6 Lite (free plan, not flagship 7.1) on 6 locked prompts — first cross-vendor comparison. Tripo, Rodin, TRELLIS, Hitem3D and Meshy 7.1 are queued. Slicer-measured, not physically printed (yet).
+        </p>
         <ul class="trust">
           <li>Same 6 locked prompts for every generator</li>
           <li>Vendor-neutral · <a href="data/">open CSV/JSON + raw meshes</a></li>
@@ -196,7 +196,7 @@
         <ul>
           <li><a href="scorecard/">Scorecard</a></li>
           <li><a href="check/">Check a file (free)</a></li>
-          <li><a href="methodology/">Methodology</a></li>
+          <li><a href="methodology/">Method</a></li>
           <li><a href="newsletter/">Newsletter</a></li>
         </ul>
       </div>

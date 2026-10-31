@@ -33,6 +33,9 @@ BANNED = [
     r"through several generators",
     r"added weekly",
     r"which generators need that cleanup and which don",
+    # RT-20261031-109: stale once 2+ generators are live; cadence is planned, not yet weekly
+    r"once a second generator is scored",
+    r"weekly benchmark that scores",
 ]
 OPS_TEXT = re.compile(r"\b(programmatic|built to compound|GEO|SEO)\b|Live \u00b7 GitHub Pages|Live on GitHub Pages")
 
