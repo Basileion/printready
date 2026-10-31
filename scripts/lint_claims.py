@@ -5,6 +5,9 @@ Checks "claim contexts" (home hero, FAQ section, JSON-LD, meta/og/twitter descri
 llms.txt, llms-full.txt, feed.xml). Any sentence there that names a generator NOT present in
 site/data/scores.csv must also carry a future/queued qualifier (queued, next, planned, not yet ...).
 Also bans phrases that imply multi-generator testing is already live.
+Rubric checks (v0.2): scores.json weights sum to 100; methodology weight table matches scores.json;
+'T0x <score>' / 'T0x ...: v0.2 score <n>' citations in claim contexts match scores.csv; stale v0.1
+claims ('Slice success 20', '100/100' for 5 of 6) only allowed in sentences marked v0.1/history.
 
 Usage: python3 scripts/lint_claims.py   (exit 1 on violations). Runs in CI before Pages deploy.
 """
@@ -31,6 +34,37 @@ BANNED = [
     r"added weekly",
     r"which generators need that cleanup and which don",
 ]
+STALE_V01 = [r"slice success 20\b", r"5 of 6[^.]{0,60}100/100", r"\(scores? 100/100\)"]
+HISTORY = re.compile(r"v0\.1|history|was\b|older", re.I)
+
+
+def rubric_errors(text_by_ctx):
+    errs = []
+    j = json.loads((SITE / "data" / "scores.json").read_text())
+    w = j.get("weights") or {}
+    if sum(w.values()) != 100:
+        errs.append(f"scores.json weights sum to {sum(w.values())}, not 100")
+    meth = (SITE / "methodology" / "index.html").read_text(encoding="utf-8")
+    m = re.search(r'Weight table \(v([\d.]+)\)</h2>.*?<tbody>(.*?)</tbody>', meth, re.S)
+    if not m or m.group(1) != j.get("rubric"):
+        errs.append("methodology weight table version != scores.json rubric")
+    else:
+        nums = [int(x) for x in re.findall(r'<td class="num">(?:<strong>)?(\d+)', m.group(2))]
+        if sorted(nums[:-1]) != sorted(w.values()) or nums[-1] != 100:
+            errs.append(f"methodology weights {nums} != scores.json {sorted(w.values())} (+total 100)")
+    scores = {r["prompt_id"]: float(r["score"]) for r in csv.DictReader(open(SITE / "data" / "scores.csv"))}
+    for rel, ctx, text in text_by_ctx:
+        cur = " ".join(x for x in re.split(r"(?<=[.!?])\s+|\n+", text) if not HISTORY.search(re.sub(r"\(v0\.1 [\d.]+\)", "", x)))
+        for rx in (r"\b(T0\d) (\d+(?:\.\d+)?)\b(?! ?mm)", r"\b(T0\d)[^:\n]{0,40}: v0\.2 score (\d+(?:\.\d+)?)"):
+            for mm in re.finditer(rx, cur):
+                pid, val = mm.group(1), float(mm.group(2))
+                if pid in scores and val != scores[pid]:
+                    errs.append(f"{rel} [{ctx}] cites {pid} {val}, scores.csv has {scores[pid]}")
+        for sent in re.split(r"(?<=[.!?])\s+|\n+", text):
+            for rx in STALE_V01:
+                if re.search(rx, sent, re.I) and not HISTORY.search(sent):
+                    errs.append(f"{rel} [{ctx}] stale v0.1 claim without history marker: {' '.join(sent.split())[:140]}")
+    return errs
 # possessive vendor mentions ("Meshy's own check") are about the vendor's product, not our test claim
 POSSESSIVE = re.compile(
     r"(meshy|tripo|rodin|hitem3d)(?:'|’|&#x27;|&rsquo;)s\b"
@@ -80,7 +114,10 @@ def main():
         print("lint_claims: no generators found in site/data/scores.csv", file=sys.stderr)
         return 1
     errors = []
+    texts = []
     for rel, ctx, text, err in contexts():
+        if text:
+            texts.append((rel, ctx, text))
         if err:
             errors.append(f"{rel} [{ctx}] {err}")
             continue
@@ -93,6 +130,7 @@ def main():
             if unscored and not QUALIFIERS.search(sent):
                 errors.append(f"{rel} [{ctx}] names unscored {unscored} without queued/next qualifier: "
                               f"{' '.join(sent.split())[:160]}")
+    errors += rubric_errors(texts)
     if errors:
         print("lint_claims FAILED (scored: %s)" % ", ".join(sorted(scored)))
         for e in errors:

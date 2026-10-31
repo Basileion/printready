@@ -2,29 +2,34 @@
 
 PrintReady AI is a vendor-neutral printability benchmark for AI 3D generators. So far one generator is scored: Hunyuan3D-2 on 6 locked prompts (T01-T06). Meshy, Tripo, Rodin/Hyper3D, TRELLIS and Hitem3D/Hi3D are queued, not yet scored (TRELLIS runs hit a free GPU quota; Meshy, Tripo and Rodin need paid plans).
 
-## Scoring weights
-Watertight 20 · Manifold 15 · Non-manifold edges 10 · Self-intersections 10 · Thin walls 10 · Slice success 20 · Print time 5 · Support volume 10.
+## Scoring weights (rubric v0.2, 2026-10-31)
+Watertight 20 · Manifold 15 · Non-manifold edges 10 · Self-intersections 10 · Wall thickness (ray p5) 10 · Hull fill (hollow skin) 10 · Bed contact (flat base, declared up-axis) 10 · Tree-support volume (real OrcaSlicer tree(auto) slice) 10 · Slice success 5 · Print time n/a (reported, not scored until a weekly median exists). Total 100.
+Pose: glTF Y-up rotated to Z-up, auto-orient off.
+v0.1 weights (2026-10-30, history): Watertight 20 · Manifold 15 · Non-manifold edges 10 · Self-intersections 10 · Thin walls 10 · Slice success 20 · Print time 5 · Support volume 10. v0.1 sliced with supports off, so support and print time were full points for every mesh that sliced.
 Hard fail: score capped at 39 if not watertight OR slicer fails.
 Export padding: index-degenerate / zero-area filler faces in Space GLB exports are dropped before watertight checks.
 
-## Phase-1 dry-run results (2026-10-30 ET) — TEST MESHES ONLY
-These are pipeline validation meshes, not AI generator outputs.
-- n01_closed_cube: 100 (control)
-- pd_capsule / pd_cylinder / pd_icosphere / pd_torus: 100 (controls)
-- n05_thin_plate: 90 (0.25 mm thin-wall penalty)
-- n04_intersecting_tets: 90 (self-intersection penalty)
-- n02_open_cube: 39 hard-fail (not watertight)
-- n03_internal_wall: 39 hard-fail (non-manifold)
+## Test-mesh results (rubric v0.2, 2026-10-31 ET; v0.1 in brackets) — TEST MESHES ONLY
+These are pipeline validation meshes, not AI generator outputs. Round controls (sphere, torus, capsule) lose bed-contact points in v0.2 because they have no flat base.
+- n01_closed_cube: 100 [v0.1 100]
+- pd_capsule: 90.2 [v0.1 100]
+- pd_cylinder: 100 [v0.1 100]
+- pd_icosphere: 89.1 [v0.1 100]
+- pd_torus: 88.2 [v0.1 100]
+- n05_thin_plate: 90 [v0.1 90]
+- n04_intersecting_tets: 80 [v0.1 90]
+- n02_open_cube: 35 [v0.1 39]
+- n03_internal_wall: 30 [v0.1 39]
 
-## First real AI-generator results (2026-10-30 ET): Hunyuan3D-2
+## AI-generator results: Hunyuan3D-2 (rubric v0.2 re-score 2026-10-31 ET; first scored 2026-10-30)
 Pipeline: locked prompt -> FLUX.1-schnell reference image (seed 1234) -> Hunyuan3D-2 public Hugging Face Space (seed 1234, 30 steps, octree 256). Raw output, no repair. Scores after export-padding cleanup.
-- T01 Coffee mug with handle: score 100/100, watertight yes, slice ok
-- T02 Low-poly fox figurine: score 100/100, watertight yes, slice ok
-- T03 M8 hex nut with threads: score 100/100, watertight yes, slice ok
-- T04 Phone stand with slot: score 100/100, watertight yes, slice ok
-- T05 3-slot business card holder: score 39/100, watertight no (2 non-manifold edges), slice ok
-- T06 Planter pot with drainage hole: score 100/100, watertight yes, slice ok
-Summary: 5/6 watertight after padding cleanup, 6/6 sliced. Meshy, Tripo, Hitem3D, Rodin, TRELLIS queued (not yet scored).
+- T01 Coffee mug: v0.2 score 98.2/100 (v0.1 100), watertight yes, tree support 8.9% of extrusion, bed contact 317.8 mm2, hull fill 19.2%
+- T02 Fox figurine: v0.2 score 86.9/100 (v0.1 100), watertight yes, tree support 24.3% of extrusion, bed contact 21.6 mm2, hull fill 35.6%
+- T03 Hex nut: v0.2 score 89.8/100 (v0.1 100), watertight yes, tree support 23.3% of extrusion, bed contact 38.8 mm2, hull fill 61.8%
+- T04 Phone stand: v0.2 score 100/100 (v0.1 100), watertight yes, tree support 3.5% of extrusion, bed contact 612.3 mm2, hull fill 31.7%
+- T05 Card holder: v0.2 score 26.9/100 (v0.1 39), watertight no, tree support 53.8% of extrusion, bed contact 49 mm2, hull fill n/a
+- T06 Planter pot: v0.2 score 91.7/100 (v0.1 100), watertight yes, tree support 30% of extrusion, bed contact 133 mm2, hull fill 21.9%
+Summary: 5/6 watertight after padding cleanup, 6/6 sliced; 1/6 score 100 on v0.2 (5/6 on v0.1). Meshy, Tripo, Hitem3D, Rodin, TRELLIS queued (not yet scored).
 
 ## Contact / status
 Site: https://basileion.github.io/printready
@@ -32,15 +37,16 @@ Repo: https://github.com/Basileion/printready
 Newsletter signup: coming soon (no form yet)
 
 
-## Open data (2026-10-30)
-Scores CSV: https://basileion.github.io/printready/data/scores.csv
+## Open data (updated 2026-10-31)
+Scores CSV (v0.2): https://basileion.github.io/printready/data/scores.csv
+Scores CSV (v0.1 history): https://basileion.github.io/printready/data/scores_v0.1.csv
 Scores JSON: https://basileion.github.io/printready/data/scores.json
 Raw Hunyuan3D-2 meshes (gzipped GLB) + SHA256SUMS + reference images: https://basileion.github.io/printready/data/
 License: CC BY 4.0 for scores; meshes under Tencent Hunyuan 3D 2.0 Community License.
 
-## Positioning and limits (updated 2026-10-30)
+## Positioning and limits (updated 2026-10-31)
 Other AI-mesh printability benchmarks exist: PrintCheck, 3dtoolwiki, Topoheal, and Meshy's own benchmark. PrintReady AI focuses on locked prompts, one FDM profile (Bambu Lab A1, OrcaSlicer 2.4.2, PLA), open CC BY 4.0 data, and weekly re-runs. Meshy's built-in printability check covers Meshy output only.
-Current limits: one generator scored (Hunyuan3D-2, prompts T01-T06); hollow-skin and orientation checks are on the rubric roadmap; no upload-your-own-file checker yet. For functional parts with tolerances, CAD remains the better tool.
+Current limits: one generator scored (Hunyuan3D-2, prompts T01-T06); print time is reported but not scored; no upload-your-own-file checker yet. For functional parts with tolerances, CAD remains the better tool.
 
 ## Costs
 - [What it costs to get a printable AI 3D model](https://basileion.github.io/printready/costs/): plan prices, free tiers, vendor-stated cost per model and commercial-use terms copied from each vendor pricing page on 2026-10-31 (CSV: https://basileion.github.io/printready/data/costs.csv). Cost per model is allowance divided by price, not cost per printable model; only Hunyuan3D-2 is scored so far, the paid tools are queued.

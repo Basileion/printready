@@ -5,8 +5,15 @@
   <link rel="self" href="https://basileion.github.io/printready/feed.xml" />
   <link rel="alternate" href="https://basileion.github.io/printready/" />
   <id>https://basileion.github.io/printready/</id>
-  <updated>2026-10-31T09:55:00Z</updated>
+  <updated>2026-10-31T10:44:00Z</updated>
   <author><name>PrintReady AI</name></author>
+  <entry>
+    <title>Rubric v0.2: real tree supports, hollow skin, bed contact; all 6 Hunyuan3D-2 prompts re-scored</title>
+    <link rel="alternate" href="https://basileion.github.io/printready/methodology/#changelog" />
+    <id>https://basileion.github.io/printready/methodology/#changelog-v0.2-2026-10-31</id>
+    <updated>2026-10-31T10:44:00Z</updated>
+    <summary>Slice success cut from 20 to 5 points; support volume now from a real OrcaSlicer tree-support slice; print time not scored; new hull fill and bed contact checks, scored in the glTF Y-up pose. New scores (v0.1 kept as history): T01 98.2, T02 86.9, T03 89.8, T04 100, T05 26.9, T06 91.7.</summary>
+  </entry>
   <entry>
     <title>What it costs to get a printable AI 3D model (prices checked 2026-10-31)</title>
     <link rel="alternate" href="https://basileion.github.io/printready/costs/" />

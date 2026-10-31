@@ -1,23 +1,25 @@
 # PrintReady AI
 
-> Weekly benchmark that scores AI text-to-3D and image-to-3D generators on printability (watertight, manifold, thin walls, slicer success) — not looks. First real AI scores dated 2026-10-30 (America/New_York).
+> Weekly benchmark that scores AI text-to-3D and image-to-3D generators on printability (watertight, manifold, wall thickness, hollow skin, bed contact, real tree supports, slicer success) — not looks. Rubric v0.2 scores dated 2026-10-31 (America/New_York); first scores 2026-10-30.
 
 ## Key pages
 - [Home](https://basileion.github.io/printready/)
 - [Scorecard: Hunyuan3D-2 + test meshes](https://basileion.github.io/printready/scorecard/)
 - [Methodology](https://basileion.github.io/printready/methodology/)
 - [Open data: CSV/JSON scores + raw meshes, CC BY 4.0](https://basileion.github.io/printready/data/)
-- [Rubric v2 diagnostics (hull fill, wall thickness, bed contact), 2026-10-31](https://basileion.github.io/printready/methodology/#v2-diagnostics)
+- [Rubric change log: v0.2 (2026-10-31) weights and re-scores](https://basileion.github.io/printready/methodology/#changelog)
+- [Rubric v2 diagnostics: Z-up vs Y-up (hull fill, wall thickness, bed contact)](https://basileion.github.io/printready/methodology/#v2-diagnostics)
 - [Newsletter (coming soon)](https://basileion.github.io/printready/newsletter/)
 
 ## Facts (citable)
 - PrintReady Score is 0–100 with hard-fail cap at 39 if not watertight or slice fails.
-- Meshes normalized to 50 mm longest edge before thin-wall + slice checks.
+- Rubric v0.2 weights (sum 100): watertight 20 · manifold 15 · nonmanifold_edges 10 · self_intersections 10 · wall_thickness_p5 10 · slice_success 5 · tree_support 10 · hull_fill 10 · bed_contact 10 · print time n/a (reported, not scored).
+- Meshes normalized to 50 mm longest edge and scored/sliced in their declared up-axis (glTF Y-up), auto-orient off, tree(auto) supports at 45 deg.
 - Index-degenerate / zero-area export-padding faces are dropped before watertight checks (reported as export padding, not holes).
 - Phase-1 slicer: OrcaSlicer 2.4.2, Bambu Lab A1 0.4 mm nozzle, 0.20 mm Standard, Generic PLA.
-- 2026-10-30: Hunyuan3D-2 prompts T01–T06 — 5 of 6 watertight after padding cleanup (scores 100/100); T05 not watertight (39/100); 6 of 6 sliced. Meshy, Tripo, Rodin, TRELLIS and Hitem3D are queued, not yet scored.
+- 2026-10-31 (rubric v0.2): Hunyuan3D-2 prompts T01–T06 score T01 98.2, T02 86.9, T03 89.8, T04 100, T05 26.9, T06 91.7; 5 of 6 watertight, T05 not (hard fail); 6 of 6 sliced. v0.1 (2026-10-30) gave five 100 and T05 39; kept at data/scores_v0.1.csv. Meshy, Tripo, Rodin, TRELLIS and Hitem3D are queued, not yet scored.
 - Other AI-mesh printability benchmarks exist (PrintCheck, 3dtoolwiki, Topoheal, Meshy's own benchmark). PrintReady AI's focus: locked prompts, one FDM Bambu A1 / OrcaSlicer PLA profile, open CC BY data, weekly re-runs. Meshy's built-in printability check covers Meshy output only.
-- Limits as of 2026-10-30: one generator scored (Hunyuan3D-2, 6 prompts); no hollow-skin or orientation check yet; no upload-your-own-file checker yet.
+- Limits as of 2026-10-31: one generator scored (Hunyuan3D-2, 6 prompts); print time not scored yet; no upload-your-own-file checker yet.
 
 ## Costs
 - [What it costs to get a printable AI 3D model](https://basileion.github.io/printready/costs/): plan prices, free tiers, vendor-stated cost per model and commercial-use terms copied from each vendor pricing page on 2026-10-31 (CSV: https://basileion.github.io/printready/data/costs.csv). Cost per model is allowance divided by price, not cost per printable model; only Hunyuan3D-2 is scored so far, the paid tools are queued.

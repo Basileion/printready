@@ -13,7 +13,7 @@
       "self_intersect": 0,
       "slice": true,
       "print_time_s": 19288,
-      "preview": "/workspace/printready/renders/n01_closed_cube.png"
+      "preview": "renders/n01_closed_cube.png"
     },
     {
       "id": "n02_open_cube",
@@ -25,7 +25,7 @@
       "self_intersect": null,
       "slice": true,
       "print_time_s": 19288,
-      "preview": "/workspace/printready/renders/n02_open_cube.png"
+      "preview": "renders/n02_open_cube.png"
     },
     {
       "id": "n03_internal_wall",
@@ -37,7 +37,7 @@
       "self_intersect": 0,
       "slice": true,
       "print_time_s": 19288,
-      "preview": "/workspace/printready/renders/n03_internal_wall.png"
+      "preview": "renders/n03_internal_wall.png"
     },
     {
       "id": "n04_intersecting_tets",
@@ -49,7 +49,7 @@
       "self_intersect": 1,
       "slice": true,
       "print_time_s": 7042,
-      "preview": "/workspace/printready/renders/n04_intersecting_tets.png"
+      "preview": "renders/n04_intersecting_tets.png"
     },
     {
       "id": "n05_thin_plate",
@@ -61,7 +61,7 @@
       "self_intersect": 0,
       "slice": true,
       "print_time_s": 706,
-      "preview": "/workspace/printready/renders/n05_thin_plate.png"
+      "preview": "renders/n05_thin_plate.png"
     },
     {
       "id": "pd_capsule",
@@ -73,7 +73,7 @@
       "self_intersect": 0,
       "slice": true,
       "print_time_s": 3066,
-      "preview": "/workspace/printready/renders/pd_capsule.png"
+      "preview": "renders/pd_capsule.png"
     },
     {
       "id": "pd_cylinder",
@@ -85,7 +85,7 @@
       "self_intersect": 0,
       "slice": true,
       "print_time_s": 10636,
-      "preview": "/workspace/printready/renders/pd_cylinder.png"
+      "preview": "renders/pd_cylinder.png"
     },
     {
       "id": "pd_icosphere",
@@ -97,7 +97,7 @@
       "self_intersect": 0,
       "slice": true,
       "print_time_s": 10734,
-      "preview": "/workspace/printready/renders/pd_icosphere.png"
+      "preview": "renders/pd_icosphere.png"
     },
     {
       "id": "pd_torus",
@@ -109,7 +109,7 @@
       "self_intersect": 0,
       "slice": true,
       "print_time_s": 4613,
-      "preview": "/workspace/printready/renders/pd_torus.png"
+      "preview": "renders/pd_torus.png"
     }
   ]
 }

@@ -230,7 +230,7 @@ def _orca_env() -> dict[str, str]:
     return env
 
 
-def slice_with_orca(stl_path: Path, out_dir: Path) -> dict[str, Any]:
+def slice_with_orca(stl_path: Path, out_dir: Path, orient: bool = True, process: Path | None = None) -> dict[str, Any]:
     """Run OrcaSlicer CLI; return slice metrics."""
     result: dict[str, Any] = {
         "attempted": False,
@@ -256,12 +256,12 @@ def slice_with_orca(stl_path: Path, out_dir: Path) -> dict[str, Any]:
         "-a",
         str(ORCA_BIN),
         "--orient",
-        "1",
+        "1" if orient else "0",
         "--arrange",
         "1",
         "--ensure-on-bed",
         "--load-settings",
-        f"{MACHINE};{PROCESS}",
+        f"{MACHINE};{process or PROCESS}",
         "--slice",
         "0",
         "--outputdir",
@@ -360,6 +360,24 @@ def parse_gcode_metrics(gcode_path: Path) -> dict[str, Any]:
         out["support_volume_mm3"] = float(m.group(1))
     elif enable == 0:
         out["support_volume_mm3"] = 0.0
+    # v0.2: real support volume from extrusion inside '; FEATURE: Support*' blocks
+    # (relative E, M83; 1.75 mm filament; XY extrusion moves only). Only meaningful when enable_support=1.
+    if enable == 1:
+        area = 3.141592653589793 * (1.75 / 2) ** 2
+        feat, sup_e, tot_e = None, 0.0, 0.0
+        for line in text.splitlines():
+            if line.startswith("; FEATURE:"):
+                feat = line[10:].strip()
+            elif line[:3] in ("G1 ", "G2 ", "G3 "):
+                em = re.search(r"\bE(-?[\d.]+)", line)
+                if em:
+                    e = float(em.group(1))
+                    if e > 0 and (" X" in line or " Y" in line):  # skip pure unretracts
+                        tot_e += e
+                        if feat and feat.startswith("Support"):
+                            sup_e += e
+        out["support_volume_mm3"] = round(sup_e * area, 1)
+        out["extruded_volume_mm3"] = round(tot_e * area, 1)
     return out
 
 

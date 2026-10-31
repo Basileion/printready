@@ -1,0 +1,81 @@
+{
+ "id": "pd_capsule",
+ "source": "samples/pd_capsule.stl",
+ "rubric": "0.2",
+ "scored_at": "2026-10-31T06:42:32.657968-04:00",
+ "normalize_longest_mm": 50.0,
+ "extents_mm_z_up": [
+  18.75,
+  18.75,
+  50.0
+ ],
+ "faces": 4096,
+ "export_padding_faces": 0,
+ "checks": {
+  "up_axis_declared": "Z",
+  "scored_pose": "Z-up (declared)",
+  "watertight": true,
+  "is_manifold": true,
+  "nonmanifold_edge_count": 0,
+  "self_intersection_count": 0,
+  "body_count": 1,
+  "wall_thickness_p5_mm": 18.727,
+  "wall_thickness_median_mm": 18.727,
+  "volume_mm3": 12052.4,
+  "hull_volume_mm3": 12052.4,
+  "hull_fill_pct": 100.0,
+  "overhang_area_mm2": 150.8,
+  "overhang_pct": 5.12,
+  "bed_contact_mm2": 10.5,
+  "overhang_pct_by_axis_pose_info": {
+   "+X": 17.07,
+   "-X": 17.07,
+   "+Y": 17.07,
+   "-Y": 17.07,
+   "+Z": 5.12,
+   "-Z": 5.12
+  },
+  "bed_contact_mm2_v01_raw_z_up_info": 10.5,
+  "slice_success": true,
+  "print_time_s": 3958,
+  "support_volume_mm3": 189.9,
+  "extruded_volume_mm3": 4594.3,
+  "support_share_pct": 4.1
+ },
+ "score": {
+  "rubric": "0.2",
+  "score": 90.2,
+  "hard_fail": false,
+  "partial": {
+   "watertight": 20,
+   "manifold": 15,
+   "nonmanifold_edges": 10.0,
+   "self_intersections": 10.0,
+   "wall_thickness_p5": 10.0,
+   "slice_success": 5,
+   "tree_support": 10.0,
+   "hull_fill": 10.0,
+   "bed_contact": 0.21,
+   "print_time": 0.0
+  },
+  "weights": {
+   "watertight": 20,
+   "manifold": 15,
+   "nonmanifold_edges": 10,
+   "self_intersections": 10,
+   "wall_thickness_p5": 10,
+   "slice_success": 5,
+   "tree_support": 10,
+   "hull_fill": 10,
+   "bed_contact": 10,
+   "print_time": 0
+  }
+ },
+ "slice": {
+  "orient": "off (declared pose)",
+  "supports": "tree(auto), 45 deg",
+  "process": "0.20mm Standard @BBL A1 - tree supports.json",
+  "returncode": 0,
+  "stderr_tail": ""
+ }
+}

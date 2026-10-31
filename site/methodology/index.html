@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Methodology — PrintReady AI</title>
-  <meta name="description" content="How PrintReady Score is calculated: watertight, manifold, thin walls, OrcaSlicer slice success, print time, and support volume." />
+  <meta name="description" content="How PrintReady Score v0.2 is calculated: watertight, manifold, wall thickness, hollow skin, bed contact, real tree-support volume and slice success, in the declared up-axis." />
   <meta name="robots" content="index,follow" />
   <link rel="stylesheet" href="../css/site.css" />
   <link rel="alternate" type="application/atom+xml" title="PrintReady AI scorecard updates" href="https://basileion.github.io/printready/feed.xml" />
@@ -13,16 +13,16 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="PrintReady AI" />
   <meta property="og:title" content="Methodology — PrintReady AI" />
-  <meta property="og:description" content="How PrintReady Score is calculated: watertight, manifold, thin walls, OrcaSlicer slice success, print time, and support volume." />
+  <meta property="og:description" content="How PrintReady Score v0.2 is calculated: watertight, manifold, wall thickness, hollow skin, bed contact, real tree-support volume and slice success, in the declared up-axis." />
   <meta property="og:image" content="https://basileion.github.io/printready/img/og.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="PrintReady AI: Does that AI mesh actually print? Hunyuan3D-2 scored 5 of 6 watertight." />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Methodology — PrintReady AI" />
-  <meta name="twitter:description" content="How PrintReady Score is calculated: watertight, manifold, thin walls, OrcaSlicer slice success, print time, and support volume." />
+  <meta name="twitter:description" content="How PrintReady Score v0.2 is calculated: watertight, manifold, wall thickness, hollow skin, bed contact, real tree-support volume and slice success, in the declared up-axis." />
   <meta name="twitter:image" content="https://basileion.github.io/printready/img/og.png" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"PrintReady AI Methodology","url":"https://basileion.github.io/printready/methodology/","description":"How PrintReady Score (0–100) is calculated, including hard-fail rules and slicer profile.","isPartOf":{"@id":"https://basileion.github.io/printready/#website"},"dateModified":"2026-10-30"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"PrintReady AI Methodology","url":"https://basileion.github.io/printready/methodology/","description":"How PrintReady Score (0–100, rubric v0.2) is calculated, including weights, hard-fail rules, slicer profile and the rubric change log.","isPartOf":{"@id":"https://basileion.github.io/printready/#website"},"dateModified":"2026-10-31"}</script>
   <script src="../js/grow.js" defer></script>
 </head>
 <body>
@@ -46,9 +46,9 @@
   <main id="main" class="wrap section prose">
     <p class="eyebrow">Reproducible scoring</p>
     <h1>Methodology</h1>
-    <p>Every mesh is normalized so its longest bounding-box edge is <strong>50&nbsp;mm</strong>, then scored 0–100. Hard fail: if the mesh is not watertight <em>or</em> the slicer fails, the score is capped at <strong>39</strong>.</p>
+    <p>Rubric <strong>v0.2</strong> (since 2026-10-31). Every mesh is normalized so its longest bounding-box edge is <strong>50&nbsp;mm</strong>, turned to its declared up-axis (glTF/GLB files are Y-up; STL is Z-up), then scored 0–100. Hard fail: if the mesh is not watertight <em>or</em> the slicer fails, the score is capped at <strong>39</strong>.</p>
 
-    <h2>Weight table</h2>
+    <h2>Weight table (v0.2)</h2>
     <div class="table-wrap">
       <table class="weight-table">
         <thead>
@@ -57,18 +57,25 @@
         <tbody>
           <tr><td>Watertight</td><td class="num">20</td><td>trimesh <code>is_watertight</code> after dropping index-degenerate export-padding faces</td></tr>
           <tr><td>Manifold</td><td class="num">15</td><td>Every edge shared by exactly 2 faces</td></tr>
-          <tr><td>Non-manifold edge count</td><td class="num">10</td><td>0 ideal; soft penalty ≤5</td></tr>
+          <tr><td>Non-manifold edge count</td><td class="num">10</td><td>0 ideal; half points if ≤5</td></tr>
           <tr><td>Self-intersections</td><td class="num">10</td><td>0 overlapping bodies / faces</td></tr>
-          <tr><td>Thin walls</td><td class="num">10</td><td>≥0.8&nbsp;mm at normalized scale</td></tr>
-          <tr><td>Slice success</td><td class="num">20</td><td>OrcaSlicer emits G-code (exit 0)</td></tr>
-          <tr><td>Print time</td><td class="num">5</td><td>Soft — vs week median when live</td></tr>
-          <tr><td>Support volume</td><td class="num">10</td><td>Lower is better; soft</td></tr>
+          <tr><td>Wall thickness (ray p5)</td><td class="num">10</td><td>5th-percentile inward ray thickness, 400 seeded samples: ≥0.8&nbsp;mm full, ≥0.4&nbsp;mm 40%, else 0 (0 if not a closed volume)</td></tr>
+          <tr><td>Hull fill (hollow skin)</td><td class="num">10</td><td>Volume ÷ convex-hull volume: ≥20% full, ≤5% zero, linear between</td></tr>
+          <tr><td>Bed contact (flat base)</td><td class="num">10</td><td>Downward faces within 0.2&nbsp;mm of the bed in the declared pose: ≥100&nbsp;mm² full, ≤10&nbsp;mm² zero, log-linear between</td></tr>
+          <tr><td>Tree-support volume</td><td class="num">10</td><td>OrcaSlicer tree(auto) supports at 45°; support extrusion ÷ all extrusion: ≤5% full, ≥35% zero, linear between</td></tr>
+          <tr><td>Slice success</td><td class="num">5</td><td>OrcaSlicer emits G-code (exit 0)</td></tr>
+          <tr><td>Print time</td><td class="num">0 (n/a)</td><td>Reported, not scored until a weekly median exists</td></tr>
+          <tr><td><strong>Total</strong></td><td class="num"><strong>100</strong></td><td>Hard fail still caps at 39</td></tr>
         </tbody>
       </table>
     </div>
+    <p>Geometric overhang % (faces more than 45° past vertical, off the bed) is published in each JSON as a cross-check, not scored, because the slicer's real support volume measures the same thing more directly. Code: <a href="https://github.com/Basileion/printready/blob/main/pipeline/score_v02.py">pipeline/score_v02.py</a>.</p>
 
-    <h2 id="v2-diagnostics">Rubric v2 diagnostics (preview, 2026-10-31)</h2>
-    <p>Public benchmarks found that almost every AI mesh slices, so slice success says little. Rubric v2 measures the defects makers actually hit. These numbers are <strong>measured, not yet scored</strong>: v0.1 scores above are unchanged.</p>
+    <h3>v0.1 weights (history, 2026-10-30)</h3>
+    <p class="muted">Watertight 20 · Manifold 15 · Non-manifold edges 10 · Self-intersections 10 · Thin walls 10 · Slice success 20 · Print time 5 · Support volume 10. v0.1 sliced with supports off and auto-orient on, so support (10) and print time (5) were full points for every mesh that sliced. v0.1 scores stay downloadable: <a href="../data/scores_v0.1.csv">scores_v0.1.csv</a>.</p>
+
+    <h2 id="v2-diagnostics">Rubric v2 diagnostics: Z-up vs Y-up (2026-10-31)</h2>
+    <p>Public benchmarks found that almost every AI mesh slices, so slice success says little. These measurements were published first, then folded into the v0.2 score the same day. The table compares the pose v0.1 used (raw Z-up) with the declared glTF Y-up pose v0.2 scores.</p>
     <ul>
       <li><strong>Hull fill %</strong>: mesh volume ÷ convex-hull volume. Very low values flag hollow skins.</li>
       <li><strong>Ray wall p5</strong>: 5th-percentile inward ray thickness from 400 surface samples (mm, 50&nbsp;mm scale).</li>
@@ -80,18 +87,27 @@
         <tbody><tr><td>T01 Coffee mug</td><td class="num">19.2%</td><td class="num">1.283</td><td class="num">103.4</td><td class="num">317.8</td></tr><tr><td>T02 Fox figurine</td><td class="num">35.6%</td><td class="num">2.199</td><td class="num">20.0</td><td class="num">21.6</td></tr><tr><td>T03 Hex nut</td><td class="num">61.8%</td><td class="num">4.813</td><td class="num">395.8</td><td class="num">38.8</td></tr><tr><td>T04 Phone stand</td><td class="num">31.7%</td><td class="num">1.823</td><td class="num">6.9</td><td class="num">612.3</td></tr><tr><td>T05 Card holder</td><td class="num">—</td><td class="num">—</td><td class="num">20.9</td><td class="num">49.0</td></tr><tr><td>T06 Planter pot</td><td class="num">21.9%</td><td class="num">1.848</td><td class="num">58.3</td><td class="num">133.0</td></tr></tbody>
       </table>
     </div>
-    <p><strong>Open issue we found:</strong> v0.1 sliced every mesh with Z as up, but glTF files use Y-up. On 5 of 6 prompts the Y-up pose has more bed contact (phone stand: 612 vs 6.9&nbsp;mm²), so some v0.1 slices were likely of a model on its side. T05 is not a closed volume, so fill and wall are blank. Raw values: <a href="../data/diagnostics_v2.json">diagnostics_v2.json</a>.</p>
-    <h3>Rubric change log</h3>
+    <p><strong>Issue we found (fixed in v0.2):</strong> v0.1 took every mesh with Z as up, but glTF files use Y-up. On 5 of 6 prompts the Y-up pose has more bed contact (phone stand: 612 vs 6.9&nbsp;mm²), so some v0.1 slices were likely of a model on its side. T05 is not a closed volume, so fill and wall are blank. Raw values: <a href="../data/diagnostics_v2.json">diagnostics_v2.json</a>.</p>
+    <h3 id="changelog">Rubric change log</h3>
     <ul>
+      <li><strong>2026-10-31 · v0.2</strong>: slice success 20 → 5. Support volume now comes from a real OrcaSlicer tree(auto) slice (v0.1 sliced with supports off, so every mesh got 10/10). Print time 5 → n/a until a weekly median exists. New: hull fill 10, bed contact 10; thin walls now use ray p5. Meshes are scored and sliced in their declared up-axis (glTF Y-up) with auto-orient off. All 6 Hunyuan3D-2 prompts re-scored:
+        <ul><li>T01 Coffee mug: 100 → <strong>98.2</strong></li>
+<li>T02 Fox figurine: 100 → <strong>86.9</strong></li>
+<li>T03 Hex nut: 100 → <strong>89.8</strong></li>
+<li>T04 Phone stand: 100 → <strong>100</strong></li>
+<li>T05 Card holder: 39 → <strong>26.9</strong></li>
+<li>T06 Planter pot: 100 → <strong>91.7</strong></li></ul>
+        Closes red-team findings RT-20261031-23 and RT-20261030-30.</li>
       <li><strong>2026-10-31</strong>: v2 diagnostics published (measurement only).</li>
-      <li><strong>Planned v0.2</strong>: slice success 20 → 5 points; the freed 15 go to hull fill, wall thickness and first-layer contact; slicing switches to Y-up with auto-orient. All prompts get re-scored and v0.1 stays archived.</li>
+      <li><strong>2026-10-30 · v0.1</strong>: first rubric and first real scores (5 of 6 at 100, T05 39).</li>
     </ul>
 
-    <h2>Slicer profile (phase 1)</h2>
+    <h2>Slicer profile (v0.2)</h2>
     <ul>
       <li>OrcaSlicer <strong>2.4.2</strong></li>
       <li>Machine: Bambu Lab A1 · 0.4&nbsp;mm nozzle</li>
-      <li>Process: 0.20&nbsp;mm Standard @BBL A1</li>
+      <li>Process: 0.20&nbsp;mm Standard @BBL A1 + tree(auto) supports, 45° threshold (<a href="https://github.com/Basileion/printready/tree/main/pipeline/profiles">profile JSON</a>)</li>
+      <li>Pose: declared up-axis, auto-orient off</li>
       <li>Filament: Generic PLA @BBL A1</li>
     </ul>
     <p>Profile names are recorded in each score JSON. Prompt pack and slicer versions are frozen per weekly archive.</p>
@@ -103,13 +119,13 @@
     <p>Texture beauty, game-engine retopo, multi-color painting, or “looks cool on Sketchfab.” Those are someone else’s leaderboard.</p>
 
     <h2>Authority &amp; freshness</h2>
-    <p>Prompt pack versioned (v0.1). Pipeline dry-run dated <strong>2026-10-30</strong> (America/New_York). Raw meshes, hashes and per-prompt JSON are published on the <a href="../data/">open data page</a> so anyone can re-score.</p>
+    <p>Prompt pack versioned (v0.1). Rubric v0.2 re-score dated <strong>2026-10-31</strong> (America/New_York); first scores 2026-10-30. Raw meshes, hashes and per-prompt JSON are published on the <a href="../data/">open data page</a> so anyone can re-score.</p>
 
     <p style="margin-top:32px"><a class="btn btn-ghost" href="../scorecard/">View sample scorecard</a></p>
   </main>
 
   <footer class="site-footer">
-    <div class="wrap legal">PrintReady AI · methodology v0.1 (+v2 diagnostics) · 2026-10-31 ET · Privacy: cookieless page-view and link-click counts only, no cookies or personal data</div>
+    <div class="wrap legal">PrintReady AI · rubric v0.2 · 2026-10-31 ET · Privacy: cookieless page-view and link-click counts only, no cookies or personal data</div>
   </footer>
 </body>
 </html>

@@ -1,6 +1,6 @@
 {
   "id": "T06",
-  "source": "/workspace/printready/gens/hunyuan3d2/T06.glb",
+  "source": "gens/hunyuan3d2/T06.glb",
   "scored_at": "2026-10-30T16:53:34.023297-04:00",
   "timezone_note": "America/New_York (box-local)",
   "normalize_longest_mm": 50.0,
@@ -65,7 +65,7 @@
       "support_volume": 10
     }
   },
-  "preview_png": "/workspace/printready/renders/hunyuan3d2/T06.png",
+  "preview_png": "renders/hunyuan3d2/T06.png",
   "slicer": {
     "name": "OrcaSlicer",
     "version": "2.4.2",

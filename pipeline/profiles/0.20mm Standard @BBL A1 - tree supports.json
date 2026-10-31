@@ -1,0 +1,11 @@
+{
+	"type": "process",
+	"name": "0.20mm Standard @BBL A1 - tree supports",
+	"inherits": "0.20mm Standard @BBL A1",
+	"from": "User",
+	"instantiation": "true",
+	"enable_support": "1",
+	"support_type": "tree(auto)",
+	"support_threshold_angle": "45",
+	"compatible_printers": ["Bambu Lab A1 0.4 nozzle"]
+}
