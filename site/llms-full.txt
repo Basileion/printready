@@ -50,5 +50,6 @@ Current limits: one generator scored (Hunyuan3D-2, prompts T01-T06); print time 
 
 ## Costs
 - [What it costs to get a printable AI 3D model](https://basileion.github.io/printready/costs/): plan prices, free tiers, vendor-stated cost per model and commercial-use terms copied from each vendor pricing page on 2026-10-31 (CSV: https://basileion.github.io/printready/data/costs.csv). Cost per model is allowance divided by price, not cost per printable model; only Hunyuan3D-2 is scored so far, the paid tools are queued.
+- Price facts only, no printability scores (Meshy, Tripo, Rodin, Hitem3D and MakerLab engines are queued, not yet scored), checked 2026-10-31: MakerLab Image to 3D on MakerWorld gives 2 free generations per account, then 24 credits (Tripo AI 3.1 or Hitem3D 2.1), 28 (Hunyuan 3D 3.1) or 45 (Meshy 6 or Rodin Gen-2) at $3 per 350 credits, about $0.21, $0.24 or $0.39 per generation; Meshy (queued) free tier caps downloads at 10 Meshy 6 Lite models a month; Hitem3D (queued) Pro is $19.90/mo for 1,000 credits ($9.95/mo first year for new users) and its free tier is 100 trial credits, 'up to 7 models'.
 
 Disclosure (2026-10-31): scores are slicer- and geometry-measured (OrcaSlicer 2.4.2 + trimesh); nothing has been physically printed yet.

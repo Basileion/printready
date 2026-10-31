@@ -12,7 +12,7 @@ ROWS = [
       license="Tencent Hunyuan 3D 2.0 Community License: royalty-free, but not licensed in the EU, UK or South Korea",
       source="https://huggingface.co/tencent/Hunyuan3D-2/blob/main/LICENSE"),
  dict(tool="Meshy", status="Queued, not scored yet", scored=False,
-      entry="Pro $20/mo ($10 first month for new users); 1,000 credits, up to 100 assets", free="100 credits/month, low queue priority",
+      entry="Pro $20/mo ($10 first month for new users); 1,000 credits, up to 100 assets", free="100 credits/month, low queue priority; downloads capped at 10 Meshy 6 Lite models/month (Pro: unlimited)",
       per_model="About $0.20 per asset at $20 ($0.10 in the $10 first month)", basis="Vendor's 'up to 100 assets' ÷ price; not print success",
       license="Free: CC BY 4.0 (sell with credit to Meshy). Paid: you own the assets", source="https://www.meshy.ai/pricing"),
  dict(tool="Tripo", status="Queued, not scored yet", scored=False,
@@ -24,9 +24,13 @@ ROWS = [
       per_model="About $0.50 per model at $30/mo ($0.40 yearly)", basis="Vendor's 'about 60 models' ÷ price; not print success",
       license="Paid plans: unlimited export and any use. Free: no 'any use' grant listed", source="https://hyper3d.ai/pricing"),
  dict(tool="Hitem3D (Hi3D)", status="Queued, not scored yet", scored=False,
-      entry="Pro 1,000 credits/month (dollar price not shown in the page's static HTML; check the page)", free="100 credits, lifetime (up to 10 v2.1 geometry models)",
-      per_model="Not computed (no dollar price we could read)", basis="v2.1 geometry = 10 credits; v3.0 Quality = 30 credits",
+      entry="Pro $19.90/mo, 1,000 credits/month (new users: $9.95/mo for the first year, $119.40 billed annually)", free="100 trial credits, lifetime; vendor says 'try up to 7 models'",
+      per_model="About $0.20 per v2.1 geometry model at $19.90 (about $0.10 on the first-year offer)", basis="1,000 credits ÷ 10 credits per v2.1 geometry model; v3.0 Quality = 30 credits; not print success",
       license="Not stated on the pricing page", source="https://www.hitem3d.ai/pricing"),
+ dict(tool="Bambu MakerLab Image to 3D (MakerWorld)", status="Route to the engines above, not scored separately", scored=False,
+      entry="No plan: credit packs from $3 for 350 credits (1,000 for $8); credits never expire", free="2 free Image to 3D generations per account, shared across engines; they don't refill",
+      per_model="About $0.21 (Tripo 3.1 or Hitem3D 2.1, 24 credits), $0.24 (Hunyuan 3D 3.1, 28) or $0.39 (Meshy 6 or Rodin Gen-2, 45) per generation on the $3 pack", basis="Credits per generation from MakerWorld's credit guide × $3/350; charged at generation start, system failures refunded; not print success",
+      license="MakerWorld: the engine provider's terms decide for Image to 3D output; check the engine you pick", source="https://makerworld.com/en/makerlab-credit-full-guide"),
  dict(tool="PrintPal", status="Not queued yet (added to the watch list 2026-10-31)", scored=False,
       entry="Pro $10/mo ($8/mo billed annually); 200 generations/month", free="10 photo-to-3D generations/month, Draft quality, STL + OBJ export",
       per_model="About $0.05 per generation at $10", basis="Vendor's 200 generations ÷ price; not print success",
@@ -45,7 +49,7 @@ rows="\n".join(f"""          <tr>
             <td>{e(r['free'])}</td>
             <td>{e(r['per_model'])}<br><small>{e(r['basis'])}</small></td>
             <td>{e(r['license'])}</td>
-            <td><a href="{e(r['source'])}" rel="nofollow noopener">{"license" if "LICENSE" in r["source"] else "pricing page"}</a></td>
+            <td><a href="{e(r['source'])}" rel="nofollow noopener">{"license" if "LICENSE" in r["source"] else ("credit guide" if "makerworld" in r["source"] else "pricing page")}</a></td>
           </tr>""" for r in ROWS)
 title="What it costs to get a printable AI 3D model (2026 prices) — PrintReady AI"
 desc=f"Plan prices, free-tier limits, cost per model and commercial-use terms for AI 3D generators, copied from each vendor's pricing page on {CHECKED}. Only Hunyuan3D-2 is scored for printability so far; the paid tools are queued."
@@ -82,8 +86,9 @@ page=f"""<!doctype html>
       <nav aria-label="Primary">
         <ul class="nav-links">
           <li><a href="../">Home</a></li>
-          <li><a href="../scorecard/">Sample scorecard</a></li>
+          <li><a href="../scorecard/">Scorecard</a></li>
           <li><a href="./" aria-current="page">Costs</a></li>
+          <li><a href="../data/">Data</a></li>
           <li><a href="../methodology/">Methodology</a></li>
           <li><a href="../newsletter/">Newsletter</a></li>
         </ul>
@@ -97,6 +102,7 @@ page=f"""<!doctype html>
       <li>Is it worth paying for credits? Here is what each plan costs, what the free tier gives you, and whether you can sell prints.</li>
       <li><strong>Cost per model below is the vendor's allowance divided by the price.</strong> It is not cost per <em>printable</em> model. We only have printability scores for Hunyuan3D-2 so far (<a href="../scorecard/" data-grow="scorecard">5 of 6 watertight</a>); the paid tools are queued for the same locked prompts.</li>
       <li>Selling on Etsy or MakerWorld? Free tiers of Tripo and PrintPal are non-commercial; Meshy's free tier is CC BY 4.0 (credit Meshy). Read the license link before you sell.</li>
+      <li>Own a Bambu printer? MakerWorld's MakerLab Image to 3D runs Tripo, Hitem3D, Hunyuan 3D, Meshy and Rodin with 2 free generations per account, then roughly $0.21 to $0.39 per generation on the $3 credit pack, with no subscription.</li>
     </ul>
     <div class="table-wrap" role="region" aria-label="AI 3D generator costs and licenses" tabindex="0">
       <table>
@@ -113,7 +119,7 @@ page=f"""<!doctype html>
     <p><small>No affiliate links on this page. Not affiliated with any vendor listed. Spot an outdated price? Open an issue on <a href="https://github.com/Basileion/printready/issues" data-grow="github">GitHub</a>.</small></p>
   </main>
   <footer class="site-footer">
-    <div class="wrap legal">Prices checked {CHECKED} ET from vendor pricing pages · <a href="../data/">Open data (CSV/JSON, CC BY 4.0)</a> · Privacy: cookieless page-view and link-click counts only, no cookies or personal data</div>
+    <div class="wrap legal">Prices checked {CHECKED} ET from vendor pricing pages · <a href="../data/">Open data (CSV/JSON, CC BY 4.0)</a> · Privacy: cookieless page-view and link-click counts only, no cookies or personal data · <a href="/printready/privacy/">Privacy</a> · <a href="/printready/terms/">Terms</a> · <a href="mailto:basileion.ops@gmail.com">Contact</a></div>
   </footer>
 </body>
 </html>

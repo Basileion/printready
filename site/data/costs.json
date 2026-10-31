@@ -18,7 +18,7 @@
    "tool": "Meshy",
    "status": "Queued, not scored yet",
    "entry": "Pro $20/mo ($10 first month for new users); 1,000 credits, up to 100 assets",
-   "free": "100 credits/month, low queue priority",
+   "free": "100 credits/month, low queue priority; downloads capped at 10 Meshy 6 Lite models/month (Pro: unlimited)",
    "per_model": "About $0.20 per asset at $20 ($0.10 in the $10 first month)",
    "basis": "Vendor's 'up to 100 assets' ÷ price; not print success",
    "license": "Free: CC BY 4.0 (sell with credit to Meshy). Paid: you own the assets",
@@ -50,12 +50,23 @@
   {
    "tool": "Hitem3D (Hi3D)",
    "status": "Queued, not scored yet",
-   "entry": "Pro 1,000 credits/month (dollar price not shown in the page's static HTML; check the page)",
-   "free": "100 credits, lifetime (up to 10 v2.1 geometry models)",
-   "per_model": "Not computed (no dollar price we could read)",
-   "basis": "v2.1 geometry = 10 credits; v3.0 Quality = 30 credits",
+   "entry": "Pro $19.90/mo, 1,000 credits/month (new users: $9.95/mo for the first year, $119.40 billed annually)",
+   "free": "100 trial credits, lifetime; vendor says 'try up to 7 models'",
+   "per_model": "About $0.20 per v2.1 geometry model at $19.90 (about $0.10 on the first-year offer)",
+   "basis": "1,000 credits ÷ 10 credits per v2.1 geometry model; v3.0 Quality = 30 credits; not print success",
    "license": "Not stated on the pricing page",
    "source": "https://www.hitem3d.ai/pricing",
+   "scored": false
+  },
+  {
+   "tool": "Bambu MakerLab Image to 3D (MakerWorld)",
+   "status": "Route to the engines above, not scored separately",
+   "entry": "No plan: credit packs from $3 for 350 credits (1,000 for $8); credits never expire",
+   "free": "2 free Image to 3D generations per account, shared across engines; they don't refill",
+   "per_model": "About $0.21 (Tripo 3.1 or Hitem3D 2.1, 24 credits), $0.24 (Hunyuan 3D 3.1, 28) or $0.39 (Meshy 6 or Rodin Gen-2, 45) per generation on the $3 pack",
+   "basis": "Credits per generation from MakerWorld's credit guide × $3/350; charged at generation start, system failures refunded; not print success",
+   "license": "MakerWorld: the engine provider's terms decide for Image to 3D output; check the engine you pick",
+   "source": "https://makerworld.com/en/makerlab-credit-full-guide",
    "scored": false
   },
   {
