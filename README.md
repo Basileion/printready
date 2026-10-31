@@ -28,3 +28,11 @@ Index-degenerate export-padding faces are dropped before watertight checks.
 ## Notes
 
 The scorer reports Space-GLB zero-area filler triangles as **export padding**, not holes.
+
+## Claims lint
+
+`python3 scripts/lint_claims.py` fails if the home hero, FAQ, JSON-LD, meta/og descriptions,
+`llms*.txt` or `feed.xml` name a generator that isn't in `site/data/scores.csv` without a
+queued/next/planned qualifier, or use live multi-generator phrases ("runs the same prompts through",
+"several generators", "added weekly"). It runs in the GitHub Pages workflow before deploy, so a
+false claim blocks the deploy. Run it locally before pushing copy changes.

@@ -24,7 +24,7 @@
   <meta property="og:description" content="Weekly printability benchmark for AI 3D generators — watertight, manifold, thin walls, slicer success." />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://basileion.github.io/printready/#website","name":"PrintReady AI","url":"https://basileion.github.io/printready/","description":"Weekly benchmark that scores AI text-to-3D and image-to-3D generators on printability — watertight, manifold, thin walls, and slicer success.","inLanguage":"en","publisher":{"@id":"https://basileion.github.io/printready/#org"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://basileion.github.io/printready/#org","name":"PrintReady AI","url":"https://basileion.github.io/printready/","description":"Vendor-neutral AI mesh printability benchmark."}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does PrintReady AI score?","acceptedAnswer":{"@type":"Answer","text":"Printability of AI-generated 3D meshes: watertight, manifold, non-manifold edges, self-intersections, thin walls, OrcaSlicer slice success, print time, and support volume. Not visual beauty."}},{"@type":"Question","name":"What is on the sample scorecard today?","acceptedAnswer":{"@type":"Answer","text":"First real AI scores (2026-10-30): 5 of 6 Hunyuan3D-2 meshes were watertight after export-padding cleanup (100/100); T05 hard-fails at 39/100. All 6 sliced. Plus pipeline test meshes. More generators next."}},{"@type":"Question","name":"What slicer profile is used?","acceptedAnswer":{"@type":"Answer","text":"OrcaSlicer 2.4.2 with Bambu Lab A1 0.4 mm nozzle, 0.20 mm Standard process, Generic PLA. Meshes are normalized to 50 mm longest edge."}},{"@type":"Question","name":"How is PrintReady AI different from Meshy's printability check?","acceptedAnswer":{"@type":"Answer","text":"Meshy's check covers Meshy output only. PrintReady AI runs the same locked prompts through several generators and scores them with one neutral rubric on a Bambu A1 / OrcaSlicer PLA profile, with open CSV/JSON data."}},{"@type":"Question","name":"Are there other AI mesh printability benchmarks?","acceptedAnswer":{"@type":"Answer","text":"Yes: PrintCheck, 3dtoolwiki, Topoheal and Meshy's own benchmark also test AI meshes. PrintReady AI focuses on locked prompts, a single FDM Bambu/Orca profile, open data, and a weekly re-run."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does PrintReady AI score?","acceptedAnswer":{"@type":"Answer","text":"Printability of AI-generated 3D meshes: watertight, manifold, non-manifold edges, self-intersections, thin walls, OrcaSlicer slice success, print time, and support volume. Not visual beauty."}},{"@type":"Question","name":"What is on the sample scorecard today?","acceptedAnswer":{"@type":"Answer","text":"First real AI scores (2026-10-30): 5 of 6 Hunyuan3D-2 meshes were watertight after export-padding cleanup (100/100); T05 hard-fails at 39/100. All 6 sliced. Plus pipeline test meshes. More generators next."}},{"@type":"Question","name":"What slicer profile is used?","acceptedAnswer":{"@type":"Answer","text":"OrcaSlicer 2.4.2 with Bambu Lab A1 0.4 mm nozzle, 0.20 mm Standard process, Generic PLA. Meshes are normalized to 50 mm longest edge."}},{"@type":"Question","name":"How is PrintReady AI different from Meshy's printability check?","acceptedAnswer":{"@type":"Answer","text":"Meshy's check covers Meshy output only. PrintReady AI scores raw meshes from any generator with one neutral rubric on the same locked prompts and a Bambu A1 / OrcaSlicer PLA profile, with open CSV/JSON data. So far only Hunyuan3D-2 is scored (6 prompts); Meshy, Tripo, Rodin, TRELLIS and Hitem3D are queued (paid generators need a budget OK)."}},{"@type":"Question","name":"Are there other AI mesh printability benchmarks?","acceptedAnswer":{"@type":"Answer","text":"Yes: PrintCheck, 3dtoolwiki, Topoheal and Meshy's own benchmark also test AI meshes. PrintReady AI focuses on locked prompts, a single FDM Bambu/Orca profile, open data, and a weekly re-run."}}]}</script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -50,9 +50,9 @@
         <p class="eyebrow">Weekly AI → printability benchmark</p>
         <h1>Pretty GLBs still fail the slicer. We score the ones that don’t.</h1>
         <p class="lede">
-          PrintReady AI runs the same prompts through Meshy, Tripo, Rodin, Hunyuan3D, Trellis, and Hitem3D —
-          then grades <strong>watertight</strong>, <strong>manifold</strong>, <strong>thin walls</strong>, and
-          <strong>OrcaSlicer success</strong> on a Bambu A1 / PLA profile, with open data you can re-score.
+          PrintReady AI scores raw AI meshes on <strong>watertight</strong>, <strong>manifold</strong>,
+          <strong>thin walls</strong>, and <strong>OrcaSlicer success</strong> on a Bambu A1 / PLA profile, with open data you can re-score.
+          So far: Hunyuan3D-2 on 6 locked prompts. Meshy, Tripo, Rodin, TRELLIS and Hitem3D are queued.
         </p>
         <div class="cta-row">
           <a class="btn btn-primary" href="scorecard/">See the sample scorecard</a>
@@ -95,7 +95,7 @@
         </article>
         <article class="card feature">
           <h3>Built to compound</h3>
-          <p>Programmatic “Meshy vs Tripo for 3D printing” pages plus a Friday newsletter of scores and the failure of the week.</p>
+          <p>Planned: head-to-head generator pages once more than one generator is scored, plus a Friday newsletter of scores and the failure of the week.</p>
         </article>
       </div>
     </section>
@@ -109,11 +109,11 @@
       <div class="grid-3">
         <article class="card feature">
           <h3>“Meshy already has a printability check.”</h3>
-          <p>It does, and it’s useful. It only checks Meshy’s own output. We run the same locked prompts through several generators and score them with one neutral rubric, so you can compare before you pay for credits.</p>
+          <p>It does, and it’s useful. It only checks Meshy’s own output. We score every generator with one neutral rubric on the same locked prompts. Today that’s Hunyuan3D-2 only; Meshy, Tripo, Rodin, TRELLIS and Hitem3D are queued, so side-by-side comparisons are coming, not live yet.</p>
         </article>
         <article class="card feature">
           <h3>“I just budget 20 minutes in Blender per model.”</h3>
-          <p>Fair. The scorecard shows which generators need that cleanup and which don’t: non-manifold edges, holes, and walls under 0.4&nbsp;mm show up per prompt, per tool.</p>
+          <p>Fair. The scorecard shows where that cleanup is needed: non-manifold edges, holes, and walls under 0.4&nbsp;mm show up per prompt (Hunyuan3D-2 today, more generators as they’re added).</p>
         </article>
         <article class="card feature">
           <h3>“Can I check my own file?”</h3>

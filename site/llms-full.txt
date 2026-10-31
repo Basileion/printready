@@ -1,6 +1,6 @@
 # PrintReady AI — full brief
 
-PrintReady AI is a vendor-neutral weekly printability benchmark for AI 3D generators (Meshy, Tripo, Rodin/Hyper3D, Hunyuan3D, Trellis, Hitem3D/Hi3D).
+PrintReady AI is a vendor-neutral printability benchmark for AI 3D generators. So far one generator is scored: Hunyuan3D-2 on 6 locked prompts (T01-T06). Meshy, Tripo, Rodin/Hyper3D, TRELLIS and Hitem3D/Hi3D are queued, not yet scored (TRELLIS runs hit a free GPU quota; Meshy, Tripo and Rodin need paid plans).
 
 ## Scoring weights
 Watertight 20 · Manifold 15 · Non-manifold edges 10 · Self-intersections 10 · Thin walls 10 · Slice success 20 · Print time 5 · Support volume 10.
@@ -24,7 +24,7 @@ Pipeline: locked prompt -> FLUX.1-schnell reference image (seed 1234) -> Hunyuan
 - T04 Phone stand with slot: score 100/100, watertight yes, slice ok
 - T05 3-slot business card holder: score 39/100, watertight no (2 non-manifold edges), slice ok
 - T06 Planter pot with drainage hole: score 100/100, watertight yes, slice ok
-Summary: 5/6 watertight after padding cleanup, 6/6 sliced. Meshy, Tripo, Hitem3D, Rodin, TRELLIS next.
+Summary: 5/6 watertight after padding cleanup, 6/6 sliced. Meshy, Tripo, Hitem3D, Rodin, TRELLIS queued (not yet scored).
 
 ## Contact / status
 Site: https://basileion.github.io/printready
