@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PrintReady AI — Does that AI mesh actually print?</title>
-  <meta name="description" content="Weekly benchmark that scores AI text-to-3D and image-to-3D generators on printability: watertight, manifold, wall thickness, hollow skin, bed contact, tree-support volume and slicer success — not pretty renders." />
+  <meta name="description" content="Benchmark that scores AI text-to-3D and image-to-3D generators on printability: watertight, manifold, wall thickness, hollow skin, bed contact, tree-support volume and slicer success — not pretty renders." />
   <meta name="robots" content="index,follow" />
   <link rel="stylesheet" href="css/site.css" />
   <link rel="alternate" type="application/atom+xml" title="PrintReady AI scorecard updates" href="https://basileion.github.io/printready/feed.xml" />
@@ -18,13 +18,13 @@
   <meta property="og:image:alt" content="PrintReady AI: Does that AI mesh actually print? Hunyuan3D-2 scored 5 of 6 watertight." />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="PrintReady AI — Does that AI mesh actually print?" />
-  <meta name="twitter:description" content="Weekly benchmark that scores AI text-to-3D and image-to-3D generators on printability: watertight, manifold, wall thickness, hollow skin, bed contact, tree-support volume and slicer success — not pretty renders." />
+  <meta name="twitter:description" content="Benchmark that scores AI text-to-3D and image-to-3D generators on printability: watertight, manifold, wall thickness, hollow skin, bed contact, tree-support volume and slicer success — not pretty renders." />
   <meta name="twitter:image" content="https://basileion.github.io/printready/img/og.png" />
   <meta property="og:title" content="PrintReady AI — Does that AI mesh actually print?" />
-  <meta property="og:description" content="Weekly printability benchmark for AI 3D generators — watertight, wall thickness, hollow skin, bed contact, real tree supports." />
+  <meta property="og:description" content="Printability benchmark for AI 3D generators — watertight, wall thickness, hollow skin, bed contact, real tree supports." />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://basileion.github.io/printready/#website","name":"PrintReady AI","url":"https://basileion.github.io/printready/","description":"Weekly benchmark that scores AI text-to-3D and image-to-3D generators on printability — watertight, manifold, wall thickness, hollow skin, bed contact, tree-support volume and slicer success.","inLanguage":"en","publisher":{"@id":"https://basileion.github.io/printready/#org"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://basileion.github.io/printready/#org","name":"PrintReady AI","url":"https://basileion.github.io/printready/","description":"Vendor-neutral AI mesh printability benchmark."}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does PrintReady AI score?","acceptedAnswer":{"@type":"Answer","text":"Printability of AI-generated 3D meshes: watertight, manifold, non-manifold edges, self-intersections, ray wall thickness, hull fill (hollow skin), bed contact in the file's declared up-axis, OrcaSlicer tree-support volume and slice success (rubric v0.2, 2026-10-31). Print time is reported but not scored. Not visual beauty."}},{"@type":"Question","name":"What is on the sample scorecard today?","acceptedAnswer":{"@type":"Answer","text":"Rubric v0.2 (2026-10-31): Hunyuan3D-2 scores T01 98.2, T02 86.9, T03 89.8, T04 100, T05 26.9, T06 91.7. 5 of 6 are watertight; T05 is not and hard-fails. Under the older v0.1 rubric (2026-10-30) five scored 100 and T05 39; v0.1 is kept as history. Plus pipeline test meshes. More generators next."}},{"@type":"Question","name":"What slicer profile is used?","acceptedAnswer":{"@type":"Answer","text":"OrcaSlicer 2.4.2 with Bambu Lab A1 0.4 mm nozzle, 0.20 mm Standard process, Generic PLA, tree(auto) supports at 45 degrees. Meshes are normalized to 50 mm longest edge and sliced in their declared up-axis (glTF Y-up)."}},{"@type":"Question","name":"How is PrintReady AI different from Meshy's printability check?","acceptedAnswer":{"@type":"Answer","text":"Meshy's check covers Meshy output only. PrintReady AI scores raw meshes from any generator with one neutral rubric on the same locked prompts and a Bambu A1 / OrcaSlicer PLA profile, with open CSV/JSON data. So far only Hunyuan3D-2 is scored (6 prompts); Meshy, Tripo, Rodin, TRELLIS and Hitem3D are queued (paid generators need a budget OK)."}},{"@type":"Question","name":"Are there other AI mesh printability benchmarks?","acceptedAnswer":{"@type":"Answer","text":"Yes: PrintCheck, 3dtoolwiki, Topoheal and Meshy's own benchmark also test AI meshes. PrintReady AI focuses on locked prompts, a single FDM Bambu/Orca profile, open data, and a weekly re-run."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does PrintReady AI score?","acceptedAnswer":{"@type":"Answer","text":"Printability of AI-generated 3D meshes: watertight, manifold, non-manifold edges, self-intersections, ray wall thickness, hull fill (hollow skin), bed contact in the file's declared up-axis, OrcaSlicer tree-support volume and slice success (rubric v0.2, 2026-10-31). Print time is reported but not scored. Not visual beauty."}},{"@type":"Question","name":"What is on the sample scorecard today?","acceptedAnswer":{"@type":"Answer","text":"Rubric v0.2 (2026-10-31): Hunyuan3D-2 scores T01 98.2, T02 86.9, T03 89.8, T04 100, T05 26.9, T06 91.7. 5 of 6 are watertight; T05 is not and hard-fails. Under the older v0.1 rubric (2026-10-30) five scored 100 and T05 39; v0.1 is kept as history. Plus pipeline test meshes. More generators next."}},{"@type":"Question","name":"What slicer profile is used?","acceptedAnswer":{"@type":"Answer","text":"OrcaSlicer 2.4.2 with Bambu Lab A1 0.4 mm nozzle, 0.20 mm Standard process, Generic PLA, tree(auto) supports at 45 degrees. Meshes are normalized to 50 mm longest edge and sliced in their declared up-axis (glTF Y-up)."}},{"@type":"Question","name":"How is PrintReady AI different from Meshy's printability check?","acceptedAnswer":{"@type":"Answer","text":"Meshy's check covers Meshy output only. PrintReady AI scores raw meshes from any generator with one neutral rubric on the same locked prompts and a Bambu A1 / OrcaSlicer PLA profile, with open CSV/JSON data. So far only Hunyuan3D-2 is scored (6 prompts); Meshy, Tripo, Rodin, TRELLIS and Hitem3D are queued (paid generators need a budget OK)."}},{"@type":"Question","name":"Are there other AI mesh printability benchmarks?","acceptedAnswer":{"@type":"Answer","text":"Yes: PrintCheck, 3dtoolwiki, Topoheal and Meshy's own benchmark also test AI meshes. PrintReady AI focuses on locked prompts, a single FDM Bambu/Orca profile, open data, and a planned weekly re-run once more generators are scored. Scores are slicer- and geometry-measured (OrcaSlicer + trimesh); nothing has been physically printed yet."}}]}</script>
   <script src="js/grow.js" defer></script>
 </head>
 <body>
@@ -37,7 +37,7 @@
           <li><a href="./" aria-current="page">Home</a></li>
           <li><a href="scorecard/">Sample scorecard</a></li>
           <li><a href="costs/">Costs</a></li>
-          <li><a href="costs/">Costs &amp; licenses</a></li>
+          <li><a href="data/">Data</a></li>
           <li><a href="methodology/">Methodology</a></li>
           <li><a href="newsletter/">Newsletter</a></li>
         </ul>
@@ -49,12 +49,12 @@
 
     <section class="wrap hero">
       <div>
-        <p class="eyebrow">Weekly AI → printability benchmark</p>
+        <p class="eyebrow">AI mesh → printability benchmark · slicer-measured</p>
         <h1>Pretty GLBs still fail the slicer. We score the ones that don’t.</h1>
         <p class="lede">
           PrintReady AI scores raw AI meshes on <strong>watertight</strong>, <strong>wall thickness</strong>, <strong>hollow skin</strong>,
           <strong>bed contact</strong> and real <strong>OrcaSlicer tree supports</strong> on a Bambu A1 / PLA profile, with open data you can re-score.
-          So far: Hunyuan3D-2 on 6 locked prompts. Meshy, Tripo, Rodin, TRELLIS and Hitem3D are queued.
+          So far: Hunyuan3D-2 on 6 locked prompts. Meshy, Tripo, Rodin, TRELLIS and Hitem3D are queued. Slicer-measured, not physically printed (yet).
         </p>
         <div class="cta-row">
           <a class="btn btn-primary" href="scorecard/">See the sample scorecard</a>
@@ -67,7 +67,7 @@
         </form>
         <p class="form-note" style="margin:4px 0 0">Know which generator prints before you buy credits. Free, double opt-in, unsubscribe anytime. Or follow by <a href="feed.xml">RSS</a>.</p>
         <ul class="trust">
-          <li>Same locked prompts every week</li>
+          <li>Same 6 locked prompts for every generator</li>
           <li>Vendor-neutral · <a href="data/">open CSV/JSON + raw meshes</a></li>
           <li>0.4&nbsp;mm nozzle · 0.2&nbsp;mm layer · PLA</li>
           <li>Hard-fail cap at 39 if not watertight</li>
@@ -95,7 +95,7 @@
       <div class="grid-3">
         <article class="card feature">
           <h3>Not the only printability test</h3>
-          <p>PrintCheck, 3dtoolwiki, Topoheal and Meshy’s own benchmark also grade AI meshes. Our angle: locked prompts, one FDM Bambu/Orca profile, open CSV/JSON, and a weekly re-run.</p>
+          <p>PrintCheck, 3dtoolwiki, Topoheal and Meshy’s own benchmark also grade AI meshes. Our angle: locked prompts, one FDM Bambu/Orca profile, open CSV/JSON, and a planned weekly re-run.</p>
         </article>
         <article class="card feature">
           <h3>One promise</h3>
@@ -103,7 +103,7 @@
         </article>
         <article class="card feature">
           <h3>Compare before you buy credits</h3>
-          <p>Weekly scores per generator, by email on Fridays or via <a href="feed.xml">RSS</a>. Head-to-head pages are planned once a second generator is scored.</p>
+          <p>Scores per generator as they land, by email on Fridays or via <a href="feed.xml">RSS</a>. Head-to-head pages are planned once a second generator is scored.</p>
         </article>
       </div>
     </section>
@@ -169,7 +169,7 @@
       <div>
         <a class="brand" href="./">Print<span>Ready</span> AI</a>
         <p class="muted" style="margin-top:12px;font-size:14px;max-width:28rem">
-          Vendor-neutral weekly printability benchmark for AI 3D generators. First real scores: Hunyuan3D-2 on locked prompts T01–T06.
+          Vendor-neutral printability benchmark for AI 3D generators. First real scores: Hunyuan3D-2 on locked prompts T01–T06.
         </p>
         <p class="muted" style="margin-top:8px;font-size:12px;max-width:28rem">Privacy: cookieless page-view and link-click counts only (page, link, referrer site). No cookies. Newsletter email (if you sign up) is handled by Kit with double opt-in.</p>
       </div>
@@ -182,9 +182,8 @@
         </ul>
       </div>
       <div>
-        <h3>Status</h3>
+        <h3>Source</h3>
         <ul>
-          <li>Live on GitHub Pages</li>
           <li><a href="https://basileion.github.io/printready/">basileion.github.io/printready</a></li>
           <li><a href="https://github.com/Basileion/printready">Source on GitHub</a></li>
         </ul>

@@ -1,6 +1,6 @@
 # PrintReady AI
 
-> Weekly benchmark that scores AI text-to-3D and image-to-3D generators on printability (watertight, manifold, wall thickness, hollow skin, bed contact, real tree supports, slicer success) — not looks. Rubric v0.2 scores dated 2026-10-31 (America/New_York); first scores 2026-10-30.
+> Benchmark that scores AI text-to-3D and image-to-3D generators on printability (watertight, manifold, wall thickness, hollow skin, bed contact, real tree supports, slicer success) — not looks. Rubric v0.2 scores dated 2026-10-31 (America/New_York); first scores 2026-10-30.
 
 ## Key pages
 - [Home](https://basileion.github.io/printready/)
@@ -27,3 +27,5 @@
 ## Full dump
 - [llms-full.txt](https://basileion.github.io/printready/llms-full.txt)
 - [Scorecard updates feed (Atom)](https://basileion.github.io/printready/feed.xml): new generator scores as they publish
+
+- Scores are slicer- and geometry-measured (OrcaSlicer 2.4.2 + trimesh); nothing has been physically printed yet (2026-10-31).

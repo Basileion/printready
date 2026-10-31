@@ -34,7 +34,23 @@ BANNED = [
     r"added weekly",
     r"which generators need that cleanup and which don",
 ]
-OPS_TEXT = re.compile(r"\b(programmatic|built to compound|GEO|SEO)\b|Live \u00b7 GitHub Pages")
+OPS_TEXT = re.compile(r"\b(programmatic|built to compound|GEO|SEO)\b|Live \u00b7 GitHub Pages|Live on GitHub Pages")
+
+
+PROMISE = re.compile(r"affiliate pick|X-vs-Y|#1 generator", re.I)
+
+
+def promise_errors():
+    import csv as _c
+    gens = {r.get("generator") for r in _c.DictReader(open(SITE / "data" / "scores.csv"))}
+    if len(gens) >= 2:
+        return []
+    errs = []
+    for f in SITE.rglob("*.html"):
+        t = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", f.read_text(errors="ignore"), flags=re.S | re.I)
+        for m in PROMISE.finditer(re.sub(r"<[^>]+>", " ", t)):
+            errs.append(f"{f.relative_to(SITE)} promises '{m.group(0)}' but scores.csv has <2 generators")
+    return errs
 
 
 def ops_text_errors():
@@ -128,7 +144,7 @@ def main():
     if not scored:
         print("lint_claims: no generators found in site/data/scores.csv", file=sys.stderr)
         return 1
-    errors = ops_text_errors()
+    errors = ops_text_errors() + promise_errors()
     texts = []
     for rel, ctx, text, err in contexts():
         if text:
