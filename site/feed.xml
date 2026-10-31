@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>PrintReady AI: scorecard updates</title>
+  <subtitle>Weekly print-readiness scores for AI text/image-to-3D generators. Raw output, locked prompts, OrcaSlicer + trimesh.</subtitle>
+  <link rel="self" href="https://basileion.github.io/printready/feed.xml" />
+  <link rel="alternate" href="https://basileion.github.io/printready/" />
+  <id>https://basileion.github.io/printready/</id>
+  <updated>2026-10-31T05:45:00Z</updated>
+  <author><name>PrintReady AI</name></author>
+  <entry>
+    <title>Open data: CSV/JSON scores and raw Hunyuan3D-2 meshes (CC BY 4.0)</title>
+    <link rel="alternate" href="https://basileion.github.io/printready/data/" />
+    <id>https://basileion.github.io/printready/data/#2026-10-30</id>
+    <updated>2026-10-30T21:42:00Z</updated>
+    <summary>Every score is downloadable as CSV/JSON, with the gzipped raw meshes, reference images and SHA256SUMS so anyone can re-check the numbers.</summary>
+  </entry>
+  <entry>
+    <title>First real AI scores: Hunyuan3D-2 on prompts T01-T06</title>
+    <link rel="alternate" href="https://basileion.github.io/printready/scorecard/" />
+    <id>https://basileion.github.io/printready/scorecard/#2026-10-30-hunyuan3d2</id>
+    <updated>2026-10-30T20:40:00Z</updated>
+    <summary>Hunyuan3D-2 raw meshes scored with OrcaSlicer 2.4.2 (Bambu Lab A1, 0.20 mm, PLA) and trimesh. See the scorecard for watertight, slice and per-prompt results.</summary>
+  </entry>
+</feed>

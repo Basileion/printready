@@ -1,0 +1,67 @@
+{
+  "id": "n04_intersecting_tets",
+  "source": "samples/n04_intersecting_tets.stl",
+  "scored_at": "2026-10-30T14:55:57.158018-04:00",
+  "timezone_note": "America/New_York (box-local)",
+  "normalize_longest_mm": 50.0,
+  "applied_scale": 1.7857142857142858,
+  "extents_mm": [
+    50.0,
+    50.0,
+    50.0
+  ],
+  "faces": 8,
+  "vertices": 8,
+  "checks": {
+    "watertight": true,
+    "is_volume": true,
+    "is_manifold": true,
+    "nonmanifold_edge_count": 0,
+    "self_intersection_count": 1,
+    "broken_faces": 0,
+    "thin_wall_min_mm": 8.24786098842322,
+    "slice_success": true,
+    "print_time_s": 7042,
+    "support_volume_mm3": 0.0,
+    "filament_mm3": 10880.0
+  },
+  "slice": {
+    "attempted": true,
+    "success": true,
+    "returncode": 0,
+    "gcode_path": "/tmp/pr_slice_5daln2_1/slice_out/plate_1.gcode",
+    "stderr_tail": "5\norientation:-0.7071 -0.0000 -0.7071, cost:2209.2,\t0.0,\t0.0,\t0.0,\t0.0,\t0.0,\t5755.5\norientation:-0.0000 -0.7071 -0.7071, cost:2209.2,\t0.0,\t0.0,\t0.0,\t0.0,\t0.0,\t5755.5\norientation: 0.7071 -0.0000 -0.7071, cost:2209.2,\t0.0,\t0.0,\t0.0,\t0.0,\t0.0,\t5755.5\norientation:-0.0000  0.7071 -0.7071, cost:2209.2,\t0.0,\t0.0,\t0.0,\t0.0,\t0.0,\t5755.5\norientation:-0.0000 -0.0000 -1.0000, cost:4418.5,\t0.0,\t0.0,\t0.0,\t0.0,\t0.0,\t11404.5\nbest: 0.577350 -0.577350 -0.577350, costs:1104.6,\t1656.9,\t1104.6,\t162.8,\t0.0,\t0.0,\t0.9\n"
+  },
+  "score": {
+    "score": 90.0,
+    "partial": {
+      "watertight": 20,
+      "manifold": 15,
+      "nonmanifold_edges": 10,
+      "self_intersections": 0.0,
+      "thin_walls": 10,
+      "slice_success": 20,
+      "print_time": 5,
+      "support_volume": 10
+    },
+    "hard_fail": false,
+    "weights": {
+      "watertight": 20,
+      "manifold": 15,
+      "nonmanifold_edges": 10,
+      "self_intersections": 10,
+      "thin_walls": 10,
+      "slice_success": 20,
+      "print_time": 5,
+      "support_volume": 10
+    }
+  },
+  "preview_png": "/workspace/printready/renders/n04_intersecting_tets.png",
+  "slicer": {
+    "name": "OrcaSlicer",
+    "version": "2.4.2",
+    "machine": "Bambu Lab A1 0.4 nozzle.json",
+    "process": "0.20mm Standard @BBL A1.json",
+    "filament": "Generic PLA @BBL A1.json"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "scored_at": "2026-10-30T16:31:31.576042-04:00",
+  "results": [
+    {
+      "id": "T02",
+      "score": 39.0,
+      "hard_fail": true,
+      "watertight": false,
+      "slice": true
+    }
+  ]
+}

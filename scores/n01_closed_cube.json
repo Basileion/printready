@@ -1,0 +1,67 @@
+{
+  "id": "n01_closed_cube",
+  "source": "samples/n01_closed_cube.stl",
+  "scored_at": "2026-10-30T14:56:27.030240-04:00",
+  "timezone_note": "America/New_York (box-local)",
+  "normalize_longest_mm": 50.0,
+  "applied_scale": 2.5,
+  "extents_mm": [
+    50.0,
+    50.0,
+    50.0
+  ],
+  "faces": 12,
+  "vertices": 8,
+  "checks": {
+    "watertight": true,
+    "is_volume": true,
+    "is_manifold": true,
+    "nonmanifold_edge_count": 0,
+    "self_intersection_count": 0,
+    "broken_faces": 0,
+    "thin_wall_min_mm": 50.0,
+    "slice_success": true,
+    "print_time_s": 19288,
+    "support_volume_mm3": 0.0,
+    "filament_mm3": 35130.0
+  },
+  "slice": {
+    "attempted": true,
+    "success": true,
+    "returncode": 0,
+    "gcode_path": "/tmp/pr_slice_knux3tt2/slice_out/plate_1.gcode",
+    "stderr_tail": "\norientation:-0.7071  0.7071 -0.0000, cost:5000.0,\t0.0,\t0.0,\t0.0,\t0.0,\t0.0,\t12891.3\norientation:-0.7071 -0.0000 -0.7071, cost:5000.0,\t0.0,\t0.0,\t0.0,\t0.0,\t0.0,\t12891.3\norientation:-0.0000 -0.7071 -0.7071, cost:5000.0,\t0.0,\t0.0,\t0.0,\t0.0,\t0.0,\t12891.3\norientation: 0.7071 -0.0000 -0.7071, cost:5000.0,\t0.0,\t0.0,\t0.0,\t0.0,\t0.0,\t12891.3\norientation:-0.0000  0.7071 -0.7071, cost:5000.0,\t0.0,\t0.0,\t0.0,\t0.0,\t0.0,\t12891.3\nbest:-0.000000 -0.000000  1.000000, costs:0.0,\t3750.0,\t2500.0,\t244.9,\t0.0,\t0.0,\t0.0\n"
+  },
+  "score": {
+    "score": 100.0,
+    "partial": {
+      "watertight": 20,
+      "manifold": 15,
+      "nonmanifold_edges": 10,
+      "self_intersections": 10,
+      "thin_walls": 10,
+      "slice_success": 20,
+      "print_time": 5,
+      "support_volume": 10
+    },
+    "hard_fail": false,
+    "weights": {
+      "watertight": 20,
+      "manifold": 15,
+      "nonmanifold_edges": 10,
+      "self_intersections": 10,
+      "thin_walls": 10,
+      "slice_success": 20,
+      "print_time": 5,
+      "support_volume": 10
+    }
+  },
+  "preview_png": "/workspace/printready/renders/n01_closed_cube.png",
+  "slicer": {
+    "name": "OrcaSlicer",
+    "version": "2.4.2",
+    "machine": "Bambu Lab A1 0.4 nozzle.json",
+    "process": "0.20mm Standard @BBL A1.json",
+    "filament": "Generic PLA @BBL A1.json"
+  }
+}

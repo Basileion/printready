@@ -20,3 +20,4 @@
 
 ## Full dump
 - [llms-full.txt](https://basileion.github.io/printready/llms-full.txt)
+- [Scorecard updates feed (Atom)](https://basileion.github.io/printready/feed.xml): new generator scores as they publish
