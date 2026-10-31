@@ -45,7 +45,7 @@ rows="\n".join(f"""          <tr>
             <td>{e(r['free'])}</td>
             <td>{e(r['per_model'])}<br><small>{e(r['basis'])}</small></td>
             <td>{e(r['license'])}</td>
-            <td><a href="{e(r['source'])}" rel="nofollow noopener">pricing page</a></td>
+            <td><a href="{e(r['source'])}" rel="nofollow noopener">{"license" if "LICENSE" in r["source"] else "pricing page"}</a></td>
           </tr>""" for r in ROWS)
 title="What it costs to get a printable AI 3D model (2026 prices) — PrintReady AI"
 desc=f"Plan prices, free-tier limits, cost per model and commercial-use terms for AI 3D generators, copied from each vendor's pricing page on {CHECKED}. Only Hunyuan3D-2 is scored for printability so far; the paid tools are queued."
