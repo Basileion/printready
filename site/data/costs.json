@@ -1,6 +1,6 @@
 {
- "checked_et": "2026-10-31",
- "note": "Plan prices copied from each vendor's pricing page. Cost per model = vendor allowance ÷ price, NOT cost per printable model; scored so far: Hunyuan3D-2, Hunyuan3D-2.1 and Meshy 6 Lite (free plan, not flagship 7.1).",
+ "checked_et": "2026-11-06",
+ "note": "Plan prices copied from each vendor's pricing page. Cost per model = vendor allowance ÷ price, NOT cost per printable model; scored so far: Hunyuan3D-2, Hunyuan3D-2.1 and Meshy 6 Lite (free plan, not flagship 7.1). free_dl answers 'can I download on free?'. Tripo free exports re-checked 2026-11-06 (15, H2.5 only). MakeIt3D added 2026-11-06 from makeit3d.app/pricing.",
  "license": "CC BY 4.0",
  "rows": [
   {
@@ -8,77 +8,117 @@
    "status": "Scored: 5 of 6 watertight",
    "entry": "$0 (public Hugging Face Space or self-hosted GPU)",
    "free": "Free; the public Space is rate-limited",
+   "free_dl": "Yes — free mesh download on the public Space (rate-limited); self-host $0",
    "per_model": "$0 on the public Space (what we used)",
    "basis": "Our own run: 6 locked prompts, 0 credits spent",
    "license": "Tencent Hunyuan 3D 2.0 Community License: royalty-free, but not licensed in the EU, UK or South Korea",
    "source": "https://huggingface.co/tencent/Hunyuan3D-2/blob/main/LICENSE",
-   "scored": true
+   "scored": true,
+   "checked": "2026-10-31"
+  },
+  {
+   "tool": "Hunyuan3D-2.1 (Tencent, open weights)",
+   "status": "Scored: 6 of 6 watertight (plate was input artifact)",
+   "entry": "$0 (public Hugging Face Space or self-hosted GPU)",
+   "free": "Free; the public Space is rate-limited (ZeroGPU)",
+   "free_dl": "Yes — free mesh download on the public Space (rate-limited); self-host $0",
+   "per_model": "$0 on the public Space (what we used)",
+   "basis": "Our own run: 6 locked prompts, 0 credits spent; matted re-test T01/T04/T05/T06",
+   "license": "Tencent Hunyuan 3D 2.1 Community License: royalty-free, but not licensed in the EU, UK or South Korea",
+   "source": "https://huggingface.co/tencent/Hunyuan3D-2.1",
+   "scored": true,
+   "checked": "2026-10-31"
   },
   {
    "tool": "Meshy",
    "status": "Scored: Meshy 6 Lite free plan (not flagship 7.1); T01 99.5 … T05 39",
    "entry": "Pro $20/mo ($10 first month for new users); 1,000 credits, up to 100 assets",
    "free": "100 credits/month (20 per Meshy 7.1 image-to-3D, the default), low queue priority. Free plan: 10 untextured Meshy 6 Lite downloads/month (help.meshy.ai). Meshy 6/7/7.1 (the default) and textured models need Pro to download — our 2026-10-31 free-account test used Meshy 7.1 and hit that Pro paywall. Pro: unlimited",
+   "free_dl": "Yes, limited — 10 untextured Meshy 6 Lite downloads/mo; 7.x/textured need Pro",
    "per_model": "About $0.20 per asset at $20 ($0.10 in the $10 first month)",
    "basis": "Vendor's 'up to 100 assets' ÷ price; not print success",
    "license": "Free: CC BY 4.0 (sell with credit to Meshy). Paid: you own the assets",
    "source": "https://www.meshy.ai/pricing",
-   "scored": true
+   "scored": true,
+   "checked": "2026-10-31"
   },
   {
    "tool": "Tripo",
    "status": "Queued, not scored yet",
    "entry": "Pro $20/mo billed annually ($240/yr); 3,000 credits ≈ 200 models",
-   "free": "200 credits/month ≈ 13 models, limited exports",
+   "free": "200 credits/month ≈ 13 models; free exports capped at 15 (H2.5 only)",
+   "free_dl": "Yes, limited — 15 exports, H2.5 only (not newer models)",
    "per_model": "$0.16 per model (vendor's own figure, annual Pro)",
    "basis": "Vendor-stated; not print success",
    "license": "Free: public models, non-commercial use. Pro: private, commercial use",
    "source": "https://www.tripo3d.ai/pricing",
-   "scored": false
+   "scored": false,
+   "checked": "2026-11-06"
   },
   {
    "tool": "Rodin (Hyper3D)",
    "status": "Queued, not scored yet",
    "entry": "Creator $30/mo, or $24/mo billed yearly ($288); about 60 models",
    "free": "Generate and preview free; pay by result when you confirm; 10 private assets",
+   "free_dl": "Preview free; pay on confirm / limited private assets",
    "per_model": "About $0.50 per model at $30/mo ($0.40 yearly)",
    "basis": "Vendor's 'about 60 models' ÷ price; not print success",
    "license": "Paid plans: unlimited export and any use. Free: no 'any use' grant listed",
    "source": "https://hyper3d.ai/pricing",
-   "scored": false
+   "scored": false,
+   "checked": "2026-10-31"
   },
   {
    "tool": "Hitem3D (Hi3D)",
    "status": "Queued, not scored yet",
    "entry": "Pro $19.90/mo, 1,000 credits/month (new users: $9.95/mo for the first year, $119.40 billed annually)",
    "free": "100 trial credits, lifetime; vendor says 'try up to 7 models'",
+   "free_dl": "Yes, trial — ~7 models (100 trial credits)",
    "per_model": "About $0.20 per v2.1 geometry model at $19.90 (about $0.10 on the first-year offer)",
    "basis": "1,000 credits ÷ 10 credits per v2.1 geometry model; v3.0 Quality = 30 credits; not print success",
    "license": "Not stated on the pricing page",
    "source": "https://www.hitem3d.ai/pricing",
-   "scored": false
+   "scored": false,
+   "checked": "2026-10-31"
   },
   {
    "tool": "Bambu MakerLab Image to 3D (MakerWorld)",
    "status": "Route to the engines above, not scored separately",
    "entry": "No plan: credit packs from $3 for 350 credits (1,000 for $8); credits never expire",
    "free": "2 free Image to 3D generations per account, shared across engines; they don't refill",
+   "free_dl": "Yes, 2 free gens/account (no refill), then credits",
    "per_model": "About $0.21 (Tripo 3.1 or Hitem3D 2.1, 24 credits), $0.24 (Hunyuan 3D 3.1, 28) or $0.39 (Meshy 6 or Rodin Gen-2, 45) per generation on the $3 pack",
    "basis": "Credits per generation from MakerWorld's credit guide × $3/350; charged at generation start, system failures refunded; not print success",
    "license": "MakerWorld: the engine provider's terms decide for Image to 3D output; check the engine you pick",
    "source": "https://makerworld.com/en/makerlab-credit-full-guide",
-   "scored": false
+   "scored": false,
+   "checked": "2026-10-31"
   },
   {
    "tool": "PrintPal",
    "status": "Not queued yet (added to the watch list 2026-10-31)",
    "entry": "Pro $10/mo ($8/mo billed annually); 200 generations/month",
    "free": "10 photo-to-3D generations/month, Draft quality, STL + OBJ export",
+   "free_dl": "Yes — 10 Draft/mo with STL+OBJ export",
    "per_model": "About $0.05 per generation at $10",
    "basis": "Vendor's 200 generations ÷ price; not print success",
    "license": "Free: personal, non-commercial. Pro/Studio: sell prints and files",
    "source": "https://printpal.io/3dgenerator",
-   "scored": false
+   "scored": false,
+   "checked": "2026-10-31"
+  },
+  {
+   "tool": "MakeIt3D",
+   "status": "Not queued yet (added 2026-11-06)",
+   "entry": "Light ~$20/mo (30 credits ≈ 30 Quick or 10 Precise); Heavy $50/mo (300 credits). One-time credit packs from $8",
+   "free": "Free plan exists; free & credit-pack gens go to a community gallery under CC BY-NC 4.0. Light/Heavy: private models + commercial license. Refund-if-not-good (vendor: every refund requested granted)",
+   "free_dl": "Yes — free/packs download STL/3MF/OBJ/GLB (gallery, CC BY-NC); Light/Heavy private + commercial",
+   "per_model": "About $0.66/credit on Light; $0.17 on Heavy; packs $0.50–$0.80/credit. Quick=1 credit (~80s); Precise=3 credits (~2 min)",
+   "basis": "Vendor pricing page ÷ credits; not print success",
+   "license": "Free & credit packs: personal/CC BY-NC (gallery). Light/Heavy: commercial license included",
+   "source": "https://makeit3d.app/pricing",
+   "scored": false,
+   "checked": "2026-11-06"
   }
  ]
 }

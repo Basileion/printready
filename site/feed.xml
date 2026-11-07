@@ -5,8 +5,15 @@
   <link rel="self" href="https://basileion.github.io/printready/feed.xml" />
   <link rel="alternate" href="https://basileion.github.io/printready/" />
   <id>https://basileion.github.io/printready/</id>
-  <updated>2026-10-31T21:55:00Z</updated>
+  <updated>2026-11-07T04:45:00Z</updated>
   <author><name>PrintReady AI</name></author>
+  <entry>
+    <title>Hunyuan3D-2 vs Hunyuan3D-2.1 compare page + Free downloads? column</title>
+    <link rel="alternate" href="https://basileion.github.io/printready/compare/hunyuan3d-2-vs-2-1/" />
+    <id>https://basileion.github.io/printready/compare/hunyuan3d-2-vs-2-1/#2026-11-06</id>
+    <updated>2026-11-07T04:45:00Z</updated>
+    <summary>New evergreen compare: Hunyuan3D-2 vs 2.1 on the same 6 locked prompts (main-table means ~82.2 vs ~83.2; 5/6 vs 6/6 watertight). Discloses the 2.1 ground-plate re-test (matted RGBA: T01 86.6, T04 98.2, T05 72.2, T06 95.6) and that printable ≠ matches prompt (T03 96.7 wrong shape). /costs now has a Free downloads? column (queued Tripo: 15 exports H2.5 only; Meshy 10 Lite/mo) plus a MakeIt3D row from makeit3d.app/pricing (checked 2026-11-06; MakeIt3D not scored yet).</summary>
+  </entry>
   <entry>
     <title>Correction: the Hunyuan3D-2.1 &quot;ground plate&quot; was our input artifact (re-tested)</title>
     <link rel="alternate" href="https://basileion.github.io/printready/scorecard/#h21-h" />
