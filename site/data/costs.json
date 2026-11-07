@@ -1,6 +1,6 @@
 {
  "checked_et": "2026-11-07",
- "note": "Plan prices copied from each vendor's pricing page. Cost per model = vendor allowance ÷ price, NOT cost per printable model; scored so far: Hunyuan3D-2, Hunyuan3D-2.1 and Meshy 6 Lite (free plan, not flagship 7.1). free_dl answers 'can I download on free?'. 2026-11-07: added Hunyuan 3D 3.1 hosted/MakerLab row (Tencent Cloud billing + MakerWorld credit guide); re-checked Meshy Pro $20, Tripo, Rodin Creator $30/$24, MakerLab packs, MakeIt3D Light/Heavy. Hitem3D and PrintPal left at 2026-10-31 (pricing pages JS-heavy / not re-verified this run).",
+ "note": "Plan prices copied from each vendor's pricing page. Cost per model = vendor allowance ÷ price, NOT cost per printable model; scored so far: Hunyuan3D-2, Hunyuan3D-2.1, Meshy 6 Lite (free plan, not flagship 7.1) and Tripo H2.5 (free export). free_dl answers 'can I download on free?'. 2026-11-07: added Hunyuan 3D 3.1 hosted/MakerLab row (Tencent Cloud billing + MakerWorld credit guide); re-checked Meshy Pro $20, Tripo, Rodin Creator $30/$24, MakerLab packs, MakeIt3D Light/Heavy. Hitem3D and PrintPal left at 2026-10-31 (pricing pages JS-heavy / not re-verified this run).",
  "license": "CC BY 4.0",
  "rows": [
   {
@@ -57,7 +57,7 @@
   },
   {
    "tool": "Tripo",
-   "status": "Queued, not scored yet",
+   "status": "Scored: Tripo H2.5 free export (not newer paid models); mean ~26.2; 0/6 watertight; 6/6 hard-fail",
    "entry": "Pro $20/mo billed annually ($240/yr); 3,000 credits ≈ 200 models",
    "free": "200 credits/month ≈ 13 models; free exports capped at 15 (H2.5 only)",
    "free_dl": "Yes, limited — 15 exports, H2.5 only (not newer models)",
@@ -65,7 +65,7 @@
    "basis": "Vendor-stated; not print success",
    "license": "Free: public models, non-commercial use. Pro: private, commercial use",
    "source": "https://www.tripo3d.ai/pricing",
-   "scored": false,
+   "scored": true,
    "checked": "2026-11-07"
   },
   {

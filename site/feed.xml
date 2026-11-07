@@ -5,8 +5,15 @@
   <link rel="self" href="https://basileion.github.io/printready/feed.xml" />
   <link rel="alternate" href="https://basileion.github.io/printready/" />
   <id>https://basileion.github.io/printready/</id>
-  <updated>2026-11-07T09:45:00Z</updated>
+  <updated>2026-11-07T10:00:00Z</updated>
   <author><name>PrintReady AI</name></author>
+  <entry>
+    <title>Tripo H2.5 free-export scores + Meshy-vs-Tripo printability head-to-head</title>
+    <link rel="alternate" href="https://basileion.github.io/printready/compare/meshy-vs-tripo/" />
+    <id>https://basileion.github.io/printready/compare/meshy-vs-tripo/#2026-11-07-scored</id>
+    <updated>2026-11-07T10:00:00Z</updated>
+    <summary>Tripo H2.5 free export (not newer paid models) scored on locked T01–T06: T01 29.3, T02 18.4, T03 23.2, T04 29.8, T05 25.0, T06 31.5; mean ~26.2; 0/6 watertight; 6/6 hard-fail; 6/6 sliced. /compare/meshy-vs-tripo/ upgraded from docs-only to printability head-to-head vs Meshy 6 Lite free plan (mean ~77.9; 6/6 watertight; T05 slice hard-fail). Matches prompt? blank for Tripo pending human review. Closes RT-20261107-02 / RT-110 residual / RT-70 Tripo half. Open CSV + gzipped meshes.</summary>
+  </entry>
   <entry>
     <title>Prompt pack v0.2 (T07 thin-sword + T08 mini) + Hunyuan 3D 3.1 costs row</title>
     <link rel="alternate" href="https://basileion.github.io/printready/methodology/#prompt-pack" />

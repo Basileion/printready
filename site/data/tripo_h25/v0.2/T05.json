@@ -1,0 +1,81 @@
+{
+ "id": "T05",
+ "source": "meshes/tripo_h25/T05.glb.gz (gunzip; sha256 in SHA256SUMS)",
+ "rubric": "0.2",
+ "scored_at": "2026-11-07T04:54:53.882686-05:00",
+ "normalize_longest_mm": 50.0,
+ "extents_mm_z_up": [
+  50.0,
+  16.98,
+  32.38
+ ],
+ "faces": 502863,
+ "export_padding_faces": 49,
+ "checks": {
+  "up_axis_declared": "Y",
+  "scored_pose": "Y-up (declared)",
+  "watertight": false,
+  "is_manifold": false,
+  "nonmanifold_edge_count": 124,
+  "self_intersection_count": 0,
+  "body_count": 1,
+  "wall_thickness_p5_mm": null,
+  "wall_thickness_median_mm": null,
+  "volume_mm3": null,
+  "hull_volume_mm3": 16433.9,
+  "hull_fill_pct": null,
+  "overhang_area_mm2": 187.0,
+  "overhang_pct": 2.17,
+  "bed_contact_mm2": 696.7,
+  "overhang_pct_by_axis_pose_info": {
+   "+X": 1.48,
+   "-X": 1.5,
+   "+Y": 2.17,
+   "-Y": 9.96,
+   "+Z": 36.98,
+   "-Z": 37.77
+  },
+  "bed_contact_mm2_v01_raw_z_up_info": 68.2,
+  "slice_success": true,
+  "print_time_s": 2696,
+  "support_volume_mm3": 823.4,
+  "extruded_volume_mm3": 1799.1,
+  "support_share_pct": 45.8
+ },
+ "score": {
+  "rubric": "0.2",
+  "score": 25.0,
+  "hard_fail": true,
+  "partial": {
+   "watertight": 0.0,
+   "manifold": 0.0,
+   "nonmanifold_edges": 0.0,
+   "self_intersections": 10.0,
+   "wall_thickness_p5": 0.0,
+   "slice_success": 5,
+   "tree_support": 0.0,
+   "hull_fill": 0.0,
+   "bed_contact": 10.0,
+   "print_time": 0.0
+  },
+  "weights": {
+   "watertight": 20,
+   "manifold": 15,
+   "nonmanifold_edges": 10,
+   "self_intersections": 10,
+   "wall_thickness_p5": 10,
+   "slice_success": 5,
+   "tree_support": 10,
+   "hull_fill": 10,
+   "bed_contact": 10,
+   "print_time": 0
+  }
+ },
+ "slice": {
+  "orient": "off (declared pose)",
+  "supports": "tree(auto), 45 deg",
+  "process": "0.20mm Standard @BBL A1 - tree supports.json",
+  "returncode": 0,
+  "stderr_tail": ""
+ }
+}

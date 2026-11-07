@@ -31,7 +31,7 @@ ROWS = [
       free_dl="Yes, limited — 10 untextured Meshy 6 Lite downloads/mo; 7.x/textured need Pro",
       per_model="About $0.20 per asset at $20 ($0.10 in the $10 first month)", basis="Vendor's 'up to 100 assets' ÷ price; not print success",
       license="Free: CC BY 4.0 (sell with credit to Meshy). Paid: you own the assets", source="https://www.meshy.ai/pricing", checked="2026-11-07"),
- dict(tool="Tripo", status="Queued, not scored yet", scored=False,
+ dict(tool="Tripo", status="Scored: Tripo H2.5 free export (not newer paid models); mean ~26.2; 0/6 watertight; 6/6 hard-fail", scored=True,
       entry="Pro $20/mo billed annually ($240/yr); 3,000 credits ≈ 200 models", free="200 credits/month ≈ 13 models; free exports capped at 15 (H2.5 only)",
       free_dl="Yes, limited — 15 exports, H2.5 only (not newer models)",
       per_model="$0.16 per model (vendor's own figure, annual Pro)", basis="Vendor-stated; not print success",
@@ -65,7 +65,7 @@ ROWS = [
 FIELDS = ["tool","status","entry","free","free_dl","per_model","basis","license","source"]
 (SITE/"data"/"costs.json").write_text(json.dumps({
     "checked_et": PAGE_CHECKED,
-    "note": "Plan prices copied from each vendor's pricing page. Cost per model = vendor allowance ÷ price, NOT cost per printable model; scored so far: Hunyuan3D-2, Hunyuan3D-2.1 and Meshy 6 Lite (free plan, not flagship 7.1). free_dl answers 'can I download on free?'. 2026-11-07: added Hunyuan 3D 3.1 hosted/MakerLab row (Tencent Cloud billing + MakerWorld credit guide); re-checked Meshy Pro $20, Tripo, Rodin Creator $30/$24, MakerLab packs, MakeIt3D Light/Heavy. Hitem3D and PrintPal left at 2026-10-31 (pricing pages JS-heavy / not re-verified this run).",
+    "note": "Plan prices copied from each vendor's pricing page. Cost per model = vendor allowance ÷ price, NOT cost per printable model; scored so far: Hunyuan3D-2, Hunyuan3D-2.1, Meshy 6 Lite (free plan, not flagship 7.1) and Tripo H2.5 (free export). free_dl answers 'can I download on free?'. 2026-11-07: added Hunyuan 3D 3.1 hosted/MakerLab row (Tencent Cloud billing + MakerWorld credit guide); re-checked Meshy Pro $20, Tripo, Rodin Creator $30/$24, MakerLab packs, MakeIt3D Light/Heavy. Hitem3D and PrintPal left at 2026-10-31 (pricing pages JS-heavy / not re-verified this run).",
     "license": "CC BY 4.0",
     "rows": [{k: r[k] for k in FIELDS+["scored","checked"]} for r in ROWS]
 }, indent=1, ensure_ascii=False)+"\n")
@@ -84,7 +84,7 @@ rows="\n".join(f"""          <tr>
             <td><a href="{e(r['source'])}" rel="nofollow noopener">{"license" if "LICENSE" in r["source"] or "Hunyuan3D-2.1" in r["source"] else ("credit guide" if "makerworld" in r["source"] else ("billing doc" if "tencentcloud.com" in r["source"] else "pricing page"))}</a></td>
           </tr>""" for r in ROWS)
 title="What it costs to get a printable AI 3D model (2026 prices) — PrintReady AI"
-desc=f"Plan prices, free-tier limits, free downloads, cost per model and commercial-use terms for AI 3D generators, copied from each vendor's pricing page (page rebuilt {PAGE_CHECKED}). Scored for printability so far: Hunyuan3D-2, Hunyuan3D-2.1 and Meshy 6 Lite (Meshy free plan; not flagship 7.1). Queued/watch (not scored yet): Hunyuan 3D 3.1 hosted/MakerLab, Tripo (free exports 15, H2.5 only), Rodin, Hitem3D, MakeIt3D, Meshy 7.1."
+desc=f"Plan prices, free-tier limits, free downloads, cost per model and commercial-use terms for AI 3D generators, copied from each vendor's pricing page (page rebuilt {PAGE_CHECKED}). Scored for printability so far: Hunyuan3D-2, Hunyuan3D-2.1 and Meshy 6 Lite (Meshy free plan; not flagship 7.1). Queued/watch (not scored yet): Hunyuan 3D 3.1 hosted/MakerLab, Rodin, Hitem3D, MakeIt3D, Meshy 7.1. Tripo H2.5 free export is scored (mean ~26.2; 0/6 watertight)."
 ld={"@context":"https://schema.org","@type":"Dataset","name":"AI 3D generator plan prices and licenses for 3D printing","url":"https://basileion.github.io/printready/costs/","description":desc,"dateModified":PAGE_CHECKED,"license":"https://creativecommons.org/licenses/by/4.0/","creator":{"@type":"Organization","name":"PrintReady AI","url":"https://basileion.github.io/printready/"},"distribution":[{"@type":"DataDownload","encodingFormat":"text/csv","contentUrl":"https://basileion.github.io/printready/data/costs.csv"},{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://basileion.github.io/printready/data/costs.json"}]}
 page=f"""<!doctype html>
 <html lang="en" data-product="printready" data-theme="light">
@@ -133,7 +133,7 @@ page=f"""<!doctype html>
     <h1>What it costs to get a printable AI 3D model</h1>
     <ul class="lede" style="margin:8px 0 16px">
       <li>Is it worth paying for credits? Here is what each plan costs, what the free tier gives you, <strong>whether you can download on free</strong>, and whether you can sell prints.</li>
-      <li><strong>Cost per model below is the vendor's allowance divided by the price.</strong> It is not cost per <em>printable</em> model. Printability scores so far: Hunyuan3D-2, Hunyuan3D-2.1 and <a href="../scorecard/#m6l-h" data-grow="scorecard">Meshy 6 Lite</a> (free plan, not flagship 7.1; 6 of 6 watertight, T05 slice hard-fail). Head-to-head: <a href="../compare/hunyuan3d-2-vs-2-1/">Hunyuan3D-2 vs 2.1</a>. Hunyuan 3D 3.1 (hosted/MakerLab), Tripo, Rodin, Hitem3D, MakeIt3D and Meshy 7.1 are queued/watch (not scored) for the same locked prompts.</li>
+      <li><strong>Cost per model below is the vendor's allowance divided by the price.</strong> It is not cost per <em>printable</em> model. Printability scores so far: Hunyuan3D-2, Hunyuan3D-2.1, <a href="../scorecard/#m6l-h" data-grow="scorecard">Meshy 6 Lite</a> (free plan, not flagship 7.1; 6 of 6 watertight, T05 slice hard-fail) and <a href="../scorecard/#th25-h" data-grow="scorecard">Tripo H2.5</a> (free export; mean ~26.2; 0 of 6 watertight; 6 of 6 hard-fail). Head-to-head: <a href="../compare/meshy-vs-tripo/">Meshy vs Tripo</a> · <a href="../compare/hunyuan3d-2-vs-2-1/">Hunyuan3D-2 vs 2.1</a>. Hunyuan 3D 3.1 (hosted/MakerLab), Rodin, Hitem3D, MakeIt3D and Meshy 7.1 are queued/watch (not scored) for the same locked prompts.</li>
       <li>Free downloads (short version): Hunyuan Space yes; Meshy 10 Lite/mo; Tripo <strong>15 exports, H2.5 only</strong>; Hitem3D ~7 trial; MakerLab 2 free; PrintPal 10 Draft STL; MakeIt3D free/packs yes (CC BY-NC gallery).</li>
       <li>Selling on Etsy or MakerWorld? Free tiers of Tripo and PrintPal are non-commercial; Meshy's free tier is CC BY 4.0 (credit Meshy); MakeIt3D free/packs are CC BY-NC. Read the license link before you sell.</li>
       <li>Own a Bambu printer? MakerWorld's MakerLab Image to 3D runs Tripo, Hitem3D, Hunyuan 3D, Meshy and Rodin with 2 free generations per account, then roughly $0.21 to $0.39 per generation on the $3 credit pack, with no subscription.</li>
@@ -152,7 +152,7 @@ page=f"""<!doctype html>
     <div class="band" style="margin-top:32px" id="get-scores">
       <div>
         <h2>Before you buy credits: get the scores first</h2>
-        <p>We email you when Meshy 7.1, Tripo, Hitem3D, Rodin, MakeIt3D or TRELLIS printability scores land, so you can see which generator gives printable files before you pay.</p>
+        <p>We email you when Meshy 7.1, Hitem3D, Rodin, MakeIt3D or TRELLIS printability scores land, so you can see which generator gives printable files before you pay.</p>
       </div>
       <div style="display:grid;gap:10px;min-width:min(100%,18rem)">
         <form class="form" style="max-width:none;display:flex;flex-wrap:wrap;gap:8px;align-items:stretch" action="https://app.kit.com/forms/10124123/subscriptions" method="post" aria-label="Get an email when new printability scores land">
