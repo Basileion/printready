@@ -6,6 +6,7 @@
 - [Home](https://basileion.github.io/printready/)
 - [Scorecard: Hunyuan3D-2, Hunyuan3D-2.1, Meshy 6 Lite + test meshes](https://basileion.github.io/printready/scorecard/)
 - [Compare: Hunyuan3D-2 vs Hunyuan3D-2.1 (same 6 prompts)](https://basileion.github.io/printready/compare/hunyuan3d-2-vs-2-1/)
+- [Compare: Meshy 6 Lite vs Hunyuan3D-2.1 (same 6 prompts)](https://basileion.github.io/printready/compare/meshy-6-lite-vs-hunyuan3d-2-1/)
 - [Free STL/OBJ/GLB printability checker (runs in your browser, nothing uploaded)](https://basileion.github.io/printready/check/)
 - [Methodology](https://basileion.github.io/printready/methodology/)
 - [Open data: CSV/JSON scores + raw meshes, CC BY 4.0](https://basileion.github.io/printready/data/)
@@ -24,6 +25,7 @@
 - Other AI-mesh printability benchmarks exist (PrintCheck, 3dtoolwiki, Topoheal, Meshy's own benchmark). PrintReady AI's focus: locked prompts, one FDM Bambu A1 / OrcaSlicer PLA profile, open CC BY data, planned weekly re-runs (one run so far, Oct 30-31, 2026). Meshy's built-in printability check covers Meshy output only.
 - 2026-10-31 (rubric v0.2): Hunyuan3D-2.1 (tencent/Hunyuan3D-2.1 Space) scores T01 81.7, T02 83.2, T03 96.7, T04 81.6, T05 73.8, T06 82.3; 6 of 6 watertight, 0 hard fails; a thin square plate under T01, T04, T05, T06 was an input artifact (the Space's built-in background removal kept the off-white image frame); re-test with locally matted RGBA input, same seed/settings: plate gone on all 4, T01 86.6, T04 98.2, T05 72.2, T06 95.6 (correction 2026-10-31).
 - 2026-10-31 (rubric v0.2): Meshy 6 Lite (Meshy free plan, untextured image-to-3D, 60 free credits, $0 — not flagship Meshy 7.1) scores T01 99.5, T02 80.5, T03 80.0, T04 81.2, T05 39.0, T06 86.9; 6 of 6 watertight; T05 slice hard-fail (Orca exit 156). Mean ~77.9 trails Hunyuan3D-2 (~82.3) and Hunyuan3D-2.1 (~83.2). First cross-vendor comparison.
+- 2026-11-07 compare page: Meshy 6 Lite (free plan, not 7.1) vs Hunyuan3D-2.1 on locked prompts T01–T06 — means ~77.9 (6/6 watertight; T05 slice hard-fail) vs ~83.2 (6/6 watertight, 0 hard fails). Meshy T01 99.5 nearly ties Hunyuan3D-2. HY2.1 plate re-test and printable ≠ matches prompt disclosed. https://basileion.github.io/printready/compare/meshy-6-lite-vs-hunyuan3d-2-1/
 - 2026-11-06 compare page: Hunyuan3D-2 vs Hunyuan3D-2.1 on locked prompts T01–T06 — main-table means ~82.2 (5/6 watertight) vs ~83.2 (6/6). HY2.1 main scores for T01/T04/T05/T06 included a Space-rembg ground plate (input artifact); matted re-test scores T01 86.6, T04 98.2, T05 72.2, T06 95.6. Printable ≠ matches prompt (HY2.1 T03 scored 96.7 but wrong shape). https://basileion.github.io/printready/compare/hunyuan3d-2-vs-2-1/
 - Limits as of 2026-10-31: three generators, two vendors scored (Hunyuan3D-2, Hunyuan3D-2.1, Meshy 6 Lite free; 6 prompts each); Meshy 7.1, Tripo, Rodin, TRELLIS and Hitem3D are queued; print time not scored yet; the free file checker at /check/ runs geometry checks only (no slicing, no wall thickness).
 
