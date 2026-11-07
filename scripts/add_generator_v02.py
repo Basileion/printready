@@ -34,6 +34,11 @@ for jf in sorted((ROOT / "scores" / key / "v0.2").glob("T0*.json")):
         "faces": j["faces"], "export_padding_faces": j["export_padding_faces"], "scored_at": j["scored_at"],
         "mesh": f"meshes/{key}/{pid}.glb.gz", "mesh_sha256": sha,
     })
+# Preserve Matches prompt? columns if present; new generators start blank until human review.
+for r in new:
+    for c in ("matches_prompt", "matches_prompt_note", "matches_prompt_reviewed_et"):
+        if c in fields:
+            r.setdefault(c, "")
 rows += new
 with open(D / "scores.csv", "w", newline="") as f:
     w = csv.DictWriter(f, fieldnames=fields); w.writeheader(); w.writerows(rows)

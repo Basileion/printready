@@ -150,3 +150,11 @@ input:disabled, .btn:disabled{opacity:.55; cursor:not-allowed}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition:none!important; animation:none!important}
 }
+
+/* Matches prompt? column (disclosed human review; not in 100-pt rubric) */
+.match{display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap;text-transform:lowercase}
+.match-yes{background:var(--ds-pos-soft);color:var(--ds-pos)}
+.match-partial{background:var(--ds-warn-soft);color:var(--ds-warn)}
+.match-no{background:var(--ds-neg-soft);color:var(--ds-neg)}
+tr.match-flag-no{background:color-mix(in srgb, var(--ds-neg-soft) 55%, transparent)}
+tr.match-flag-partial{background:color-mix(in srgb, var(--ds-warn-soft) 35%, transparent)}

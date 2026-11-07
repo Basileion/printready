@@ -1,6 +1,6 @@
 {
  "dataset": "PrintReady AI benchmark",
- "version": "2026-10-31",
+ "version": "2026-11-07",
  "rubric": "0.2",
  "weights": {
   "watertight": 20,
@@ -54,7 +54,10 @@
    "export_padding_faces": 512138,
    "scored_at": "2026-10-31T06:41:01.584111-04:00",
    "mesh": "meshes/hunyuan3d2/T01.glb.gz",
-   "mesh_sha256": "1976aa20e3de0b8eff88d1b4592348e3d2e721abcd4623c85ced432319ee8237"
+   "mesh_sha256": "1976aa20e3de0b8eff88d1b4592348e3d2e721abcd4623c85ced432319ee8237",
+   "matches_prompt": "yes",
+   "matches_prompt_note": "Clear mug with C-handle; matches requested object",
+   "matches_prompt_reviewed_et": "2026-11-07"
   },
   {
    "generator": "Hunyuan3D-2",
@@ -83,7 +86,10 @@
    "export_padding_faces": 182526,
    "scored_at": "2026-10-31T06:41:09.211858-04:00",
    "mesh": "meshes/hunyuan3d2/T02.glb.gz",
-   "mesh_sha256": "3c782ececed9d86449c8612b2985aaef85e5d12afdeecb0e3f73865f37f0c30b"
+   "mesh_sha256": "3c782ececed9d86449c8612b2985aaef85e5d12afdeecb0e3f73865f37f0c30b",
+   "matches_prompt": "yes",
+   "matches_prompt_note": "Recognizable fox on four legs with bushy tail",
+   "matches_prompt_reviewed_et": "2026-11-07"
   },
   {
    "generator": "Hunyuan3D-2",
@@ -112,7 +118,10 @@
    "export_padding_faces": 337344,
    "scored_at": "2026-10-31T06:41:28.766732-04:00",
    "mesh": "meshes/hunyuan3d2/T03.glb.gz",
-   "mesh_sha256": "fb7bd1887789ded8856cea47175ef736de88b9bfca14701f798e2534d59b5234"
+   "mesh_sha256": "fb7bd1887789ded8856cea47175ef736de88b9bfca14701f798e2534d59b5234",
+   "matches_prompt": "yes",
+   "matches_prompt_note": "Flat hexagonal nut with center hole (threads soft but correct object)",
+   "matches_prompt_reviewed_et": "2026-11-07"
   },
   {
    "generator": "Hunyuan3D-2",
@@ -141,7 +150,10 @@
    "export_padding_faces": 368170,
    "scored_at": "2026-10-31T06:41:37.039753-04:00",
    "mesh": "meshes/hunyuan3d2/T04.glb.gz",
-   "mesh_sha256": "0c03cb566f7d467b9b1742802fba0f849bbc1086fb09436896a111fa5b5fb58f"
+   "mesh_sha256": "0c03cb566f7d467b9b1742802fba0f849bbc1086fb09436896a111fa5b5fb58f",
+   "matches_prompt": "yes",
+   "matches_prompt_note": "Phone stand with lip/slot; correct object",
+   "matches_prompt_reviewed_et": "2026-11-07"
   },
   {
    "generator": "Hunyuan3D-2",
@@ -170,7 +182,10 @@
    "export_padding_faces": 4,
    "scored_at": "2026-10-31T06:41:41.172795-04:00",
    "mesh": "meshes/hunyuan3d2/T05.glb.gz",
-   "mesh_sha256": "880043a086d688eb26ee2a4f16a1de6ee3f107732c9512efc9a635253aa89982"
+   "mesh_sha256": "880043a086d688eb26ee2a4f16a1de6ee3f107732c9512efc9a635253aa89982",
+   "matches_prompt": "partial",
+   "matches_prompt_note": "Desk organizer recognizable but many wire slots + tall back, not 3 vertical card slots",
+   "matches_prompt_reviewed_et": "2026-11-07"
   },
   {
    "generator": "Hunyuan3D-2",
@@ -199,7 +214,10 @@
    "export_padding_faces": 962096,
    "scored_at": "2026-10-31T06:42:01.711051-04:00",
    "mesh": "meshes/hunyuan3d2/T06.glb.gz",
-   "mesh_sha256": "5881e061f3416b4cf27f64a48e80cfa9bc43e237c590d1d72a14b56479853fce"
+   "mesh_sha256": "5881e061f3416b4cf27f64a48e80cfa9bc43e237c590d1d72a14b56479853fce",
+   "matches_prompt": "yes",
+   "matches_prompt_note": "Cylindrical planter with rim; correct object",
+   "matches_prompt_reviewed_et": "2026-11-07"
   },
   {
    "generator": "Hunyuan3D-2.1",
@@ -228,7 +246,10 @@
    "export_padding_faces": 0,
    "scored_at": "2026-10-31T12:42:06.998016-04:00",
    "mesh": "meshes/hunyuan3d21/T01.glb.gz",
-   "mesh_sha256": "b4856673a3f531e4e700e99037ad8822d5743ceb246994a96f471a8df33cd94f"
+   "mesh_sha256": "b4856673a3f531e4e700e99037ad8822d5743ceb246994a96f471a8df33cd94f",
+   "matches_prompt": "partial",
+   "matches_prompt_note": "Mug present but fused to thin square ground plate (input artifact on published thumb)",
+   "matches_prompt_reviewed_et": "2026-11-07"
   },
   {
    "generator": "Hunyuan3D-2.1",
@@ -257,7 +278,10 @@
    "export_padding_faces": 0,
    "scored_at": "2026-10-31T12:43:13.602224-04:00",
    "mesh": "meshes/hunyuan3d21/T02.glb.gz",
-   "mesh_sha256": "96dc6f695100f435951d94236c8720df381e7b239f63c7b47a6147ef0318a3c8"
+   "mesh_sha256": "96dc6f695100f435951d94236c8720df381e7b239f63c7b47a6147ef0318a3c8",
+   "matches_prompt": "yes",
+   "matches_prompt_note": "Recognizable fox on four legs; no plate",
+   "matches_prompt_reviewed_et": "2026-11-07"
   },
   {
    "generator": "Hunyuan3D-2.1",
@@ -286,7 +310,10 @@
    "export_padding_faces": 0,
    "scored_at": "2026-10-31T12:42:11.643454-04:00",
    "mesh": "meshes/hunyuan3d21/T03.glb.gz",
-   "mesh_sha256": "c1db0ea287c05d70fb8b51d1de05e52e683716610a54108f84872e19d95cdcd8"
+   "mesh_sha256": "c1db0ea287c05d70fb8b51d1de05e52e683716610a54108f84872e19d95cdcd8",
+   "matches_prompt": "no",
+   "matches_prompt_note": "Long hex prism / coupling, not a flat M8 nut",
+   "matches_prompt_reviewed_et": "2026-11-07"
   },
   {
    "generator": "Hunyuan3D-2.1",
@@ -315,7 +342,10 @@
    "export_padding_faces": 0,
    "scored_at": "2026-10-31T12:43:17.577909-04:00",
    "mesh": "meshes/hunyuan3d21/T04.glb.gz",
-   "mesh_sha256": "abd174122480b870c3b0678ab737891d1e2f160fdd2be716c7378f1f6f5ecb9d"
+   "mesh_sha256": "abd174122480b870c3b0678ab737891d1e2f160fdd2be716c7378f1f6f5ecb9d",
+   "matches_prompt": "partial",
+   "matches_prompt_note": "Phone stand present but fused to ground plate",
+   "matches_prompt_reviewed_et": "2026-11-07"
   },
   {
    "generator": "Hunyuan3D-2.1",
@@ -344,7 +374,10 @@
    "export_padding_faces": 0,
    "scored_at": "2026-10-31T12:42:16.439732-04:00",
    "mesh": "meshes/hunyuan3d21/T05.glb.gz",
-   "mesh_sha256": "216812f9739a2d957d2c50db3754bf8450229bd9ae482502e09eba936bf1d7e8"
+   "mesh_sha256": "216812f9739a2d957d2c50db3754bf8450229bd9ae482502e09eba936bf1d7e8",
+   "matches_prompt": "partial",
+   "matches_prompt_note": "Simplified 3-groove slab on ground plate; not a clear 3-slot card holder",
+   "matches_prompt_reviewed_et": "2026-11-07"
   },
   {
    "generator": "Hunyuan3D-2.1",
@@ -373,7 +406,10 @@
    "export_padding_faces": 0,
    "scored_at": "2026-10-31T12:42:20.494319-04:00",
    "mesh": "meshes/hunyuan3d21/T06.glb.gz",
-   "mesh_sha256": "30dcdddb7b9a9cd19775ffed74a25aef7d98c33e068d1bf37265544a90110a65"
+   "mesh_sha256": "30dcdddb7b9a9cd19775ffed74a25aef7d98c33e068d1bf37265544a90110a65",
+   "matches_prompt": "partial",
+   "matches_prompt_note": "Planter present but fused to ground plate",
+   "matches_prompt_reviewed_et": "2026-11-07"
   },
   {
    "generator": "Meshy 6 Lite",
@@ -402,7 +438,10 @@
    "export_padding_faces": 0,
    "scored_at": "2026-10-31T14:50:52.884905-04:00",
    "mesh": "meshes/meshy6lite/T01.glb.gz",
-   "mesh_sha256": "73c067af4714e90aeac2d136c0a0b991cc4c6543a1800c3b9f93a0e9af7a1d56"
+   "mesh_sha256": "73c067af4714e90aeac2d136c0a0b991cc4c6543a1800c3b9f93a0e9af7a1d56",
+   "matches_prompt": "yes",
+   "matches_prompt_note": "Clear mug with handle; matches requested object",
+   "matches_prompt_reviewed_et": "2026-11-07"
   },
   {
    "generator": "Meshy 6 Lite",
@@ -431,7 +470,10 @@
    "export_padding_faces": 0,
    "scored_at": "2026-10-31T14:50:55.360456-04:00",
    "mesh": "meshes/meshy6lite/T02.glb.gz",
-   "mesh_sha256": "cee062447ab5af7a4e6b2fca70f262a57de68d45546fbc01c76fb679fc8e163a"
+   "mesh_sha256": "cee062447ab5af7a4e6b2fca70f262a57de68d45546fbc01c76fb679fc8e163a",
+   "matches_prompt": "yes",
+   "matches_prompt_note": "Recognizable fox on four legs",
+   "matches_prompt_reviewed_et": "2026-11-07"
   },
   {
    "generator": "Meshy 6 Lite",
@@ -460,7 +502,10 @@
    "export_padding_faces": 0,
    "scored_at": "2026-10-31T14:51:03.576215-04:00",
    "mesh": "meshes/meshy6lite/T03.glb.gz",
-   "mesh_sha256": "14a4dfb92ffc8bd4531e935ccd8defd6c5a10f2addac3e5538897774d20ef90f"
+   "mesh_sha256": "14a4dfb92ffc8bd4531e935ccd8defd6c5a10f2addac3e5538897774d20ef90f",
+   "matches_prompt": "no",
+   "matches_prompt_note": "Tall stacked hex coupler, not a flat M8 nut",
+   "matches_prompt_reviewed_et": "2026-11-07"
   },
   {
    "generator": "Meshy 6 Lite",
@@ -489,7 +534,10 @@
    "export_padding_faces": 0,
    "scored_at": "2026-10-31T14:51:06.400388-04:00",
    "mesh": "meshes/meshy6lite/T04.glb.gz",
-   "mesh_sha256": "e0893888e9c04d560e3a3b092ba00b0ede419dd98245008c2f0ec0e9d0bfacb6"
+   "mesh_sha256": "e0893888e9c04d560e3a3b092ba00b0ede419dd98245008c2f0ec0e9d0bfacb6",
+   "matches_prompt": "yes",
+   "matches_prompt_note": "Phone stand with slot; correct object",
+   "matches_prompt_reviewed_et": "2026-11-07"
   },
   {
    "generator": "Meshy 6 Lite",
@@ -518,7 +566,10 @@
    "export_padding_faces": 0,
    "scored_at": "2026-10-31T14:51:08.952831-04:00",
    "mesh": "meshes/meshy6lite/T05.glb.gz",
-   "mesh_sha256": "bb2ee33271a9ca8217a34c0c43ff950adb98e881219f43f26a15a441c26c4d46"
+   "mesh_sha256": "bb2ee33271a9ca8217a34c0c43ff950adb98e881219f43f26a15a441c26c4d46",
+   "matches_prompt": "partial",
+   "matches_prompt_note": "Wire file rack with inserted sheet, not 3 vertical business-card slots",
+   "matches_prompt_reviewed_et": "2026-11-07"
   },
   {
    "generator": "Meshy 6 Lite",
@@ -547,7 +598,21 @@
    "export_padding_faces": 0,
    "scored_at": "2026-10-31T14:51:12.400606-04:00",
    "mesh": "meshes/meshy6lite/T06.glb.gz",
-   "mesh_sha256": "d4783755d7684c9873103290a3d57a2da7348344fb008722026d6318fdb6c9b6"
+   "mesh_sha256": "d4783755d7684c9873103290a3d57a2da7348344fb008722026d6318fdb6c9b6",
+   "matches_prompt": "partial",
+   "matches_prompt_note": "Planter recognizable but floating artifacts + multi-body (5 bodies)",
+   "matches_prompt_reviewed_et": "2026-11-07"
   }
- ]
+ ],
+ "matches_prompt": {
+  "field": "matches_prompt",
+  "values": [
+   "yes",
+   "partial",
+   "no"
+  ],
+  "method": "Disclosed human review vs locked FLUX.1-schnell reference (seed 1234) and the published scorecard thumb. Not part of the 100-pt printability rubric.",
+  "reviewed_et": "2026-11-07",
+  "note": "Means on the scorecard remain printability-only (geometry + slicer). Rows with matches_prompt=no are excluded from any best/highest claim copy."
+ }
 }

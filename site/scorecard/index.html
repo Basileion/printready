@@ -22,7 +22,7 @@
   <meta name="twitter:title" content="Hunyuan3D-2, 2.1 & Meshy 6 Lite: printability on 6 locked prompts — PrintReady AI" />
   <meta name="twitter:description" content="Rubric v0.2 (2026-10-31), 6 locked prompts. Hunyuan3D-2: T01 98.2 … T05 26.9. Hunyuan3D-2.1: 6 of 6 watertight (ground plate on 4 was an input artifact, re-tested). Meshy 6 Lite (free plan, not flagship 7.1): T01 99.5, T02 80.5, T03 80.0, T04 81.2, T05 39.0, T06 86.9; 6 of 6 watertight, T05 slice hard-fail. First cross-vendor comparison." />
   <meta name="twitter:image" content="https://basileion.github.io/printready/img/og.png" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "PrintReady scorecard: Hunyuan3D-2, Hunyuan3D-2.1, Meshy 6 Lite + test meshes", "url": "https://basileion.github.io/printready/scorecard/", "description": "Rubric v0.2 (2026-10-31), 6 locked prompts. Hunyuan3D-2: T01 98.2 … T05 26.9. Hunyuan3D-2.1: 6 of 6 watertight (ground plate on 4 was an input artifact, re-tested). Meshy 6 Lite (free plan, not flagship 7.1): T01 99.5, T02 80.5, T03 80.0, T04 81.2, T05 39.0, T06 86.9; 6 of 6 watertight, T05 slice hard-fail. First cross-vendor comparison.", "isPartOf": {"@id": "https://basileion.github.io/printready/#website"}, "dateModified": "2026-10-31"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "PrintReady scorecard: Hunyuan3D-2, Hunyuan3D-2.1, Meshy 6 Lite + test meshes", "url": "https://basileion.github.io/printready/scorecard/", "description": "Rubric v0.2 (2026-10-31), 6 locked prompts. Hunyuan3D-2: T01 98.2 … T05 26.9. Hunyuan3D-2.1: 6 of 6 watertight (ground plate on 4 was an input artifact, re-tested). Meshy 6 Lite (free plan, not flagship 7.1): T01 99.5, T02 80.5, T03 80.0, T04 81.2, T05 39.0, T06 86.9; 6 of 6 watertight, T05 slice hard-fail. First cross-vendor comparison.", "isPartOf": {"@id": "https://basileion.github.io/printready/#website"}, "dateModified": "2026-11-07"}</script>
   <script src="../js/grow.js" defer></script>
 </head>
 <body>
@@ -48,6 +48,7 @@
     <h1>Scorecard</h1>
     <p class="muted" style="margin:0 0 16px">Got your own mesh? <a href="../check/">Check your STL, OBJ or GLB free in your browser</a>: watertight, non-manifold edges, parts and bed contact with the same definitions as rubric v0.2. Nothing is uploaded.</p>
     <section aria-labelledby="real-h" style="margin:8px 0 48px">
+      <p class="notice" role="note" style="margin:0 0 12px;max-width:48rem"><strong>Matches prompt?</strong> is a disclosed human call (reviewed 2026-11-07 ET) against the locked FLUX reference — <em>not</em> part of the 100-pt printability rubric. Means below are printability-only. Across 18 scored rows: <strong>9 yes · 7 partial · 2 no</strong>. Rows marked <span class="match match-no">no</span> (wrong object) are excluded from any “best / highest” claim. Flagship case: Hunyuan3D-2.1 T03 scored <strong>96.7</strong> but is a long hex prism, not a flat nut.</p>
       <p class="eyebrow">Rubric v0.2 · re-scored 2026-10-31 ET (first scored 2026-10-30)</p>
       <h2 id="real-h">Hunyuan3D-2: 1 of 6 score 100 on rubric v0.2 (5 of 6 on v0.1)</h2>
       <ul class="lede" style="margin:8px 0 16px">
@@ -61,7 +62,7 @@
         <table>
           <thead>
             <tr>
-              <th scope="col">Preview</th><th scope="col">Prompt</th><th scope="col">Generator</th><th scope="col" class="num">Score v0.2</th><th scope="col" class="num">v0.1</th>
+              <th scope="col">Preview</th><th scope="col">Prompt</th><th scope="col">Generator</th><th scope="col" class="num">Score v0.2</th><th scope="col">Matches prompt?</th><th scope="col" class="num">v0.1</th>
               <th scope="col">Watertight</th><th scope="col" class="num">Tree support</th><th scope="col" class="num">Bed contact mm²</th><th scope="col" class="num">Hull fill</th><th scope="col" class="num">Wall p5 mm</th><th scope="col" class="num">Est. time (n/a pts)</th>
             </tr>
           </thead>
@@ -71,7 +72,8 @@
             <td>T01 · Coffee mug with handle</td>
             <td><span class="tag">Hunyuan3D-2</span></td>
             <td class="num"><span class="score score-ok">98.2</span></td>
-            <td class="num muted">100</td>
+            <td><span class="match match-yes" title="Clear mug with C-handle; matches requested object">yes</span></td>
+                        <td class="num muted">100</td>
             <td>yes</td>
             <td class="num">8.9%</td>
             <td class="num">317.8</td>
@@ -84,7 +86,8 @@
             <td>T02 · Low-poly fox figurine</td>
             <td><span class="tag">Hunyuan3D-2</span></td>
             <td class="num"><span class="score score-mid">86.9</span></td>
-            <td class="num muted">100</td>
+            <td><span class="match match-yes" title="Recognizable fox on four legs with bushy tail">yes</span></td>
+                        <td class="num muted">100</td>
             <td>yes</td>
             <td class="num">24.3%</td>
             <td class="num">21.6</td>
@@ -97,7 +100,8 @@
             <td>T03 · M8 hex nut with threads</td>
             <td><span class="tag">Hunyuan3D-2</span></td>
             <td class="num"><span class="score score-mid">89.8</span></td>
-            <td class="num muted">100</td>
+            <td><span class="match match-yes" title="Flat hexagonal nut with center hole (threads soft but correct object)">yes</span></td>
+                        <td class="num muted">100</td>
             <td>yes</td>
             <td class="num">23.3%</td>
             <td class="num">38.8</td>
@@ -110,7 +114,8 @@
             <td>T04 · Phone stand with slot</td>
             <td><span class="tag">Hunyuan3D-2</span></td>
             <td class="num"><span class="score score-ok">100</span></td>
-            <td class="num muted">100</td>
+            <td><span class="match match-yes" title="Phone stand with lip/slot; correct object">yes</span></td>
+                        <td class="num muted">100</td>
             <td>yes</td>
             <td class="num">3.5%</td>
             <td class="num">612.3</td>
@@ -118,12 +123,13 @@
             <td class="num">1.823</td>
             <td class="num">1h 28m</td>
           </tr>
-          <tr>
+          <tr class="match-flag-partial">
             <td><img class="thumb" src="../img/hy2_T05.png" alt="Hunyuan3D-2 output for T05: 3-slot business card holder" width="56" height="56" loading="lazy" /></td>
             <td>T05 · 3-slot business card holder</td>
             <td><span class="tag">Hunyuan3D-2</span></td>
             <td class="num"><span class="score score-bad">26.9</span></td>
-            <td class="num muted">39</td>
+            <td><span class="match match-partial" title="Desk organizer recognizable but many wire slots + tall back, not 3 vertical card slots">partial</span></td>
+                        <td class="num muted">39</td>
             <td>no</td>
             <td class="num">53.8%</td>
             <td class="num">49</td>
@@ -136,7 +142,8 @@
             <td>T06 · Planter pot with drainage hole</td>
             <td><span class="tag">Hunyuan3D-2</span></td>
             <td class="num"><span class="score score-ok">91.7</span></td>
-            <td class="num muted">100</td>
+            <td><span class="match match-yes" title="Cylindrical planter with rim; correct object">yes</span></td>
+                        <td class="num muted">100</td>
             <td>yes</td>
             <td class="num">30%</td>
             <td class="num">133</td>
@@ -153,7 +160,7 @@
     <section aria-labelledby="h21-h" style="margin:8px 0 48px">
       <p class="eyebrow">Rubric v0.2 · scored 2026-10-31 ET · second generator</p>
       <h2 id="h21-h">Hunyuan3D-2.1: 6 of 6 watertight. The &ldquo;ground plate&rdquo; was our input artifact, not the model</h2>
-      <p class="muted" style="margin:0 0 12px">Dedicated compare pages: <a href="../compare/hunyuan3d-2-vs-2-1/">Hunyuan3D-2 vs Hunyuan3D-2.1</a> · <a href="../compare/meshy-6-lite-vs-hunyuan3d-2-1/">Meshy 6 Lite vs Hunyuan3D-2.1</a> (means, per-prompt table, plate re-test, printable ≠ matches prompt).</p>
+      <p class="muted" style="margin:0 0 12px">Dedicated compare pages: <a href="../compare/hunyuan3d-2-vs-2-1/">Hunyuan3D-2 vs Hunyuan3D-2.1</a> · <a href="../compare/meshy-6-lite-vs-hunyuan3d-2-1/">Meshy 6 Lite vs Hunyuan3D-2.1</a> (means, per-prompt table, plate re-test, Matches prompt? column now live on this scorecard).</p>
       <figure style="margin:8px 0 16px">
         <img src="../img/hy2_vs_hy21_T01-T06.png" alt="Side-by-side shaded renders in the glTF Y-up pose, prompts T01 to T06. Top row Hunyuan3D-2: mug, fox, hex nut standing on edge, phone stand, card holder, planter. Bottom row Hunyuan3D-2.1: the mug, phone stand, card holder and planter each sit on a thin square plate; the fox has no plate; the nut is a long hex prism lying on its side." width="1230" height="400" loading="lazy" style="width:100%;height:auto;border:1px solid var(--line,#ddd);border-radius:8px" />
         <figcaption class="muted" style="font-size:13px">Same FLUX.1-schnell reference images (seed 1234), same settings. Renders of the raw GLBs in the glTF Y-up pose used for scoring.</figcaption>
@@ -165,7 +172,7 @@
       <ul class="lede" style="margin:8px 0 16px">
         <li>Scores (original run): T01 81.7, T02 83.2, T03 96.7, T04 81.6, T05 73.8, T06 82.3. <strong>6/6</strong> watertight single bodies, <strong>0</strong> hard fails, <strong>6/6</strong> sliced.</li>
         <li><strong>Correction 2026-10-31 (re-tested):</strong> the thin square plate under T01, T04, T05 and T06 came from our input, not from Hunyuan3D-2.1. Our reference images are off-white with soft shadows, and the Space&rsquo;s built-in background removal left the image frame in. Re-run with the same seed and settings, but with the background removed locally first (rembg isnet-general-use, RGBA input, Space removal off): the plate is gone on all 4. Re-test scores: T01 86.6 (was 81.7), T04 98.2 (was 81.6), T05 72.2 (was 73.8), T06 95.6 (was 82.3); all 4 watertight single bodies, wall p5 0.52&ndash;2.71&nbsp;mm. The table below still shows the original run (built-in removal) so every generator keeps the same protocol; a full re-run of all generators with matted inputs is planned. <a href="../data/hunyuan3d21_matted/v0.2/T01.json">Re-test JSON</a>, <a href="../data/meshes/hunyuan3d21_matted/SHA256SUMS">meshes</a>, <a href="../data/refs_rgba/T01.png">matted refs</a>, <a href="../data/retests.csv">retests.csv</a>.</li>
-        <li>T03 came out as a long hex prism lying on its side, not a flat nut; it still scores highest here (96.7), because the rubric checks printability, not whether the shape matches the prompt.</li>
+        <li>T03 came out as a long hex prism lying on its side, not a flat nut; printability score 96.7 is high, but <strong>Matches prompt? = no</strong> (see column). Printability means stay geometric-only; wrong-shape rows are excluded from “best” claims.</li>
         <li>Raw output, no repair: same reference images → <a href="https://huggingface.co/spaces/tencent/Hunyuan3D-2.1">tencent/Hunyuan3D-2.1</a> public Space, shape model hunyuan3d-dit-v2-1 (seed 1234, 30 steps, guidance 5.0, octree 256), shape only.</li>
         <li>Hunyuan3D-2 and 2.1 are open-source Tencent models. <a href="#m6l-h">Meshy 6 Lite</a> (free plan) is the first cross-vendor comparison below. Flagship Meshy 7.1 is not scored (Pro download). Tripo, Hitem3D, Rodin and TRELLIS are queued.</li>
       </ul>
@@ -173,17 +180,18 @@
         <table>
           <thead>
             <tr>
-              <th scope="col">Preview</th><th scope="col">Prompt</th><th scope="col">Generator</th><th scope="col" class="num">Score v0.2</th><th scope="col" class="num">v0.1</th>
+              <th scope="col">Preview</th><th scope="col">Prompt</th><th scope="col">Generator</th><th scope="col" class="num">Score v0.2</th><th scope="col">Matches prompt?</th><th scope="col" class="num">v0.1</th>
               <th scope="col">Watertight</th><th scope="col" class="num">Tree support</th><th scope="col" class="num">Bed contact mm²</th><th scope="col" class="num">Hull fill</th><th scope="col" class="num">Wall p5 mm</th><th scope="col" class="num">Est. time (n/a pts)</th>
             </tr>
           </thead>
           <tbody>
-          <tr>
+          <tr class="match-flag-partial">
             <td><img class="thumb" src="../img/hy21_T01.png" alt="Hunyuan3D-2.1 output for T01: Coffee mug with handle, on a thin square plate (input artifact from background removal; see re-test)" width="56" height="56" loading="lazy" /></td>
             <td>T01 · Coffee mug with handle</td>
             <td><span class="tag">Hunyuan3D-2.1</span></td>
             <td class="num"><span class="score score-mid">81.7</span></td>
-            <td class="num muted">—</td>
+            <td><span class="match match-partial" title="Mug present but fused to thin square ground plate (input artifact on published thumb)">partial</span></td>
+                        <td class="num muted">—</td>
             <td>yes</td>
             <td class="num">5.1%</td>
             <td class="num">2485.4</td>
@@ -196,7 +204,8 @@
             <td>T02 · Low-poly fox figurine</td>
             <td><span class="tag">Hunyuan3D-2.1</span></td>
             <td class="num"><span class="score score-mid">83.2</span></td>
-            <td class="num muted">—</td>
+            <td><span class="match match-yes" title="Recognizable fox on four legs; no plate">yes</span></td>
+                        <td class="num muted">—</td>
             <td>yes</td>
             <td class="num">29.3%</td>
             <td class="num">13.4</td>
@@ -204,12 +213,13 @@
             <td class="num">1.942</td>
             <td class="num">50m</td>
           </tr>
-          <tr>
+          <tr class="match-flag-no">
             <td><img class="thumb" src="../img/hy21_T03.png" alt="Hunyuan3D-2.1 output for T03: M8 hex nut with threads, a long hex prism lying on its side" width="56" height="56" loading="lazy" /></td>
-            <td>T03 · M8 hex nut with threads</td>
+            <td>T03 · M8 hex nut with threads<br><small class="muted">printable ≠ matches prompt</small></td>
             <td><span class="tag">Hunyuan3D-2.1</span></td>
             <td class="num"><span class="score score-ok">96.7</span></td>
-            <td class="num muted">—</td>
+            <td><span class="match match-no" title="Long hex prism / coupling, not a flat M8 nut">no</span></td>
+                        <td class="num muted">—</td>
             <td>yes</td>
             <td class="num">9.9%</td>
             <td class="num">67.8</td>
@@ -217,12 +227,13 @@
             <td class="num">2.437</td>
             <td class="num">50m</td>
           </tr>
-          <tr>
+          <tr class="match-flag-partial">
             <td><img class="thumb" src="../img/hy21_T04.png" alt="Hunyuan3D-2.1 output for T04: Phone stand with slot, on a thin square plate (input artifact from background removal; see re-test)" width="56" height="56" loading="lazy" /></td>
             <td>T04 · Phone stand with slot</td>
             <td><span class="tag">Hunyuan3D-2.1</span></td>
             <td class="num"><span class="score score-mid">81.6</span></td>
-            <td class="num muted">—</td>
+            <td><span class="match match-partial" title="Phone stand present but fused to ground plate">partial</span></td>
+                        <td class="num muted">—</td>
             <td>yes</td>
             <td class="num">0%</td>
             <td class="num">2488</td>
@@ -230,12 +241,13 @@
             <td class="num">0.289</td>
             <td class="num">23m</td>
           </tr>
-          <tr>
+          <tr class="match-flag-partial">
             <td><img class="thumb" src="../img/hy21_T05.png" alt="Hunyuan3D-2.1 output for T05: 3-slot business card holder, on a thin square plate (input artifact from background removal; see re-test)" width="56" height="56" loading="lazy" /></td>
             <td>T05 · 3-slot business card holder</td>
             <td><span class="tag">Hunyuan3D-2.1</span></td>
             <td class="num"><span class="score score-mid">73.8</span></td>
-            <td class="num muted">—</td>
+            <td><span class="match match-partial" title="Simplified 3-groove slab on ground plate; not a clear 3-slot card holder">partial</span></td>
+                        <td class="num muted">—</td>
             <td>yes</td>
             <td class="num">26.6%</td>
             <td class="num">2482.4</td>
@@ -243,12 +255,13 @@
             <td class="num">0.3</td>
             <td class="num">30m</td>
           </tr>
-          <tr>
+          <tr class="match-flag-partial">
             <td><img class="thumb" src="../img/hy21_T06.png" alt="Hunyuan3D-2.1 output for T06: Planter pot with drainage hole, on a thin square plate (input artifact from background removal; see re-test)" width="56" height="56" loading="lazy" /></td>
             <td>T06 · Planter pot with drainage hole</td>
             <td><span class="tag">Hunyuan3D-2.1</span></td>
             <td class="num"><span class="score score-mid">82.3</span></td>
-            <td class="num muted">—</td>
+            <td><span class="match match-partial" title="Planter present but fused to ground plate">partial</span></td>
+                        <td class="num muted">—</td>
             <td>yes</td>
             <td class="num">0%</td>
             <td class="num">2482.5</td>
@@ -271,7 +284,7 @@
       </figure>
       <ul class="lede" style="margin:8px 0 16px">
         <li>Scores: T01 99.5, T02 80.5, T03 80.0, T04 81.2, T05 39.0, T06 86.9. <strong>6/6</strong> watertight, <strong>5/6</strong> sliced. T05 is watertight but OrcaSlicer returned exit 156 (hard-fail cap 39).</li>
-        <li>Vs Hunyuan on the same prompts: T01 nearly matches Hunyuan3D-2 (99.5 vs 98.2). Mean score ~77.9 trails Hunyuan3D-2 (~82.3) and Hunyuan3D-2.1 (~83.2). Higher tree-support share on T02–T04 and T06 (30–43%).</li>
+        <li>Vs Hunyuan on the same prompts: T01 nearly matches Hunyuan3D-2 (99.5 vs 98.2). Printability-only mean ~77.9 trails Hunyuan3D-2 (~82.3) and Hunyuan3D-2.1 (~83.2); those means include wrong-shape rows (Meshy T03 and HY2.1 T03 = <span class="match match-no">no</span>). Higher tree-support share on T02–T04 and T06 (30–43%).</li>
         <li>Multi-body outputs: T01 has 2 bodies; T06 has 5. Fox (T02) has only 5.3&nbsp;mm² bed contact. Nut (T03) wall p5 is 0.324&nbsp;mm (under the 0.4&nbsp;mm bar).</li>
         <li>Raw output, no repair: same reference PNGs → Meshy free account, image-to-3D, Meshy 6 Lite, untextured, 60 free credits ($0). This is <strong>not</strong> Meshy 7.1 (the default; free downloads of 7.x need Pro).</li>
         <li>Cross-vendor at last: open-source Tencent Hunyuan vs Meshy's free Lite model. Head-to-head: <a href="../compare/meshy-6-lite-vs-hunyuan3d-2-1/">Meshy 6 Lite vs Hunyuan3D-2.1</a>. Flagship Meshy 7.1, Tripo, Hitem3D, Rodin and TRELLIS are queued.</li>
@@ -280,7 +293,7 @@
         <table>
           <thead>
             <tr>
-              <th scope="col">Preview</th><th scope="col">Prompt</th><th scope="col">Generator</th><th scope="col" class="num">Score v0.2</th><th scope="col" class="num">v0.1</th>
+              <th scope="col">Preview</th><th scope="col">Prompt</th><th scope="col">Generator</th><th scope="col" class="num">Score v0.2</th><th scope="col">Matches prompt?</th><th scope="col" class="num">v0.1</th>
               <th scope="col">Watertight</th><th scope="col" class="num">Tree support</th><th scope="col" class="num">Bed contact mm²</th><th scope="col" class="num">Hull fill</th><th scope="col" class="num">Wall p5 mm</th><th scope="col" class="num">Est. time (n/a pts)</th>
             </tr>
           </thead>
@@ -290,7 +303,8 @@
             <td>T01 · Coffee mug with handle</td>
             <td><span class="tag">Meshy 6 Lite</span></td>
             <td class="num"><span class="score score-ok">99.5</span></td>
-            <td class="num muted">—</td>
+            <td><span class="match match-yes" title="Clear mug with handle; matches requested object">yes</span></td>
+                        <td class="num muted">—</td>
             <td>yes</td>
             <td class="num">6.6%</td>
             <td class="num">954.7</td>
@@ -303,7 +317,8 @@
             <td>T02 · Low-poly fox figurine</td>
             <td><span class="tag">Meshy 6 Lite</span></td>
             <td class="num"><span class="score score-mid">80.5</span></td>
-            <td class="num muted">—</td>
+            <td><span class="match match-yes" title="Recognizable fox on four legs">yes</span></td>
+                        <td class="num muted">—</td>
             <td>yes</td>
             <td class="num">33.4%</td>
             <td class="num">5.3</td>
@@ -311,12 +326,13 @@
             <td class="num">1.077</td>
             <td class="num">42m</td>
           </tr>
-          <tr>
+          <tr class="match-flag-no">
             <td><img class="thumb" src="../img/m6l_T03.png" alt="Meshy 6 Lite output for T03: M8 hex nut with threads" width="56" height="56" loading="lazy" /></td>
-            <td>T03 · M8 hex nut with threads</td>
+            <td>T03 · M8 hex nut with threads<br><small class="muted">printable ≠ matches prompt</small></td>
             <td><span class="tag">Meshy 6 Lite</span></td>
             <td class="num"><span class="score score-mid">80.0</span></td>
-            <td class="num muted">—</td>
+            <td><span class="match match-no" title="Tall stacked hex coupler, not a flat M8 nut">no</span></td>
+                        <td class="num muted">—</td>
             <td>yes</td>
             <td class="num">43.4%</td>
             <td class="num">183.7</td>
@@ -329,7 +345,8 @@
             <td>T04 · Phone stand with slot</td>
             <td><span class="tag">Meshy 6 Lite</span></td>
             <td class="num"><span class="score score-mid">81.2</span></td>
-            <td class="num muted">—</td>
+            <td><span class="match match-yes" title="Phone stand with slot; correct object">yes</span></td>
+                        <td class="num muted">—</td>
             <td>yes</td>
             <td class="num">32.9%</td>
             <td class="num">685.7</td>
@@ -337,12 +354,13 @@
             <td class="num">0.463</td>
             <td class="num">51m</td>
           </tr>
-          <tr>
+          <tr class="match-flag-partial">
             <td><img class="thumb" src="../img/m6l_T05.png" alt="Meshy 6 Lite output for T05: 3-slot business card holder (slice failed)" width="56" height="56" loading="lazy" /></td>
             <td>T05 · 3-slot business card holder</td>
             <td><span class="tag">Meshy 6 Lite</span></td>
             <td class="num"><span class="score score-bad">39.0</span></td>
-            <td class="num muted">—</td>
+            <td><span class="match match-partial" title="Wire file rack with inserted sheet, not 3 vertical business-card slots">partial</span></td>
+                        <td class="num muted">—</td>
             <td>yes</td>
             <td class="num">—</td>
             <td class="num">584.7</td>
@@ -350,12 +368,13 @@
             <td class="num">0.141</td>
             <td class="num">—</td>
           </tr>
-          <tr>
+          <tr class="match-flag-partial">
             <td><img class="thumb" src="../img/m6l_T06.png" alt="Meshy 6 Lite output for T06: Planter pot with drainage hole (5 bodies)" width="56" height="56" loading="lazy" /></td>
             <td>T06 · Planter pot with drainage hole</td>
             <td><span class="tag">Meshy 6 Lite</span></td>
             <td class="num"><span class="score score-mid">86.9</span></td>
-            <td class="num muted">—</td>
+            <td><span class="match match-partial" title="Planter recognizable but floating artifacts + multi-body (5 bodies)">partial</span></td>
+                        <td class="num muted">—</td>
             <td>yes</td>
             <td class="num">30.8%</td>
             <td class="num">35.6</td>
@@ -473,6 +492,7 @@
       † Slicer can still emit G-code for some broken meshes; hard-fail cap still applies when not watertight.<br />
       ‡ Watertight is measured after dropping index-degenerate export-padding faces common in Space GLB exports.<br />
       Also scored (not shown with thumbs): pd_cylinder 100, pd_icosphere 89.1 on v0.2 (both 100 on v0.1). Round controls lose bed-contact points in v0.2 because a sphere or torus has no flat base.<br />
+      Matches prompt? (yes/partial/no): disclosed human review 2026-11-07 ET vs locked FLUX ref + published thumb; not in the 100-pt rubric. CSV: <a href="../data/matches_prompt.csv">matches_prompt.csv</a> / columns on <a href="../data/scores.csv">scores.csv</a>.<br />
       Hunyuan3D-2, Hunyuan3D-2.1 and Meshy 6 Lite rows: meshes normalized to 50&nbsp;mm longest edge, rotated from glTF Y-up to Z-up, auto-orient off; OrcaSlicer 2.4.2, Bambu Lab A1 0.4&nbsp;mm, 0.20&nbsp;mm Standard + tree(auto) supports at 45°, Generic PLA. Tree support = support extrusion ÷ all extrusion. v0.1 history: <a href="../data/scores_v0.1.csv">scores_v0.1.csv</a>.
     </p>
 

@@ -22,7 +22,7 @@
   <meta name="twitter:title" content="Methodology — PrintReady AI" />
   <meta name="twitter:description" content="How PrintReady Score v0.2 is calculated: watertight, manifold, wall thickness, hollow skin, bed contact, real tree-support volume and slice success, in the declared up-axis." />
   <meta name="twitter:image" content="https://basileion.github.io/printready/img/og.png" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"PrintReady AI Methodology","url":"https://basileion.github.io/printready/methodology/","description":"How PrintReady Score (0–100, rubric v0.2) is calculated, including weights, hard-fail rules, slicer profile and the rubric change log.","isPartOf":{"@id":"https://basileion.github.io/printready/#website"},"dateModified":"2026-10-31"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"PrintReady AI Methodology","url":"https://basileion.github.io/printready/methodology/","description":"How PrintReady Score (0–100, rubric v0.2) is calculated, including weights, hard-fail rules, slicer profile and the rubric change log.","isPartOf":{"@id":"https://basileion.github.io/printready/#website"},"dateModified":"2026-11-07"}</script>
   <script src="../js/grow.js" defer></script>
 </head>
 <body>
@@ -91,6 +91,7 @@
     <p><strong>Issue we found (fixed in v0.2):</strong> v0.1 took every mesh with Z as up, but glTF files use Y-up. On 5 of 6 prompts the Y-up pose has more bed contact (phone stand: 612 vs 6.9&nbsp;mm²), so some v0.1 slices were likely of a model on its side. T05 is not a closed volume, so fill and wall are blank. Raw values: <a href="../data/diagnostics_v2.json">diagnostics_v2.json</a>.</p>
     <h3 id="changelog">Rubric change log</h3>
     <ul>
+      <li><strong>2026-11-07</strong>: Matches prompt? column (yes/partial/no) added to scorecard + open data as a disclosed human review vs the locked FLUX ref. Not part of the 100-pt rubric. Closes RT-20261031-106 / RT-20261107-04.</li>
       <li><strong>2026-10-31 · v0.2</strong>: slice success 20 → 5. Support volume now comes from a real OrcaSlicer tree(auto) slice (v0.1 sliced with supports off, so every mesh got 10/10). Print time 5 → n/a until a weekly median exists. New: hull fill 10, bed contact 10; thin walls now use ray p5. Meshes are scored and sliced in their declared up-axis (glTF Y-up) with auto-orient off. All 6 Hunyuan3D-2 prompts re-scored:
         <ul><li>T01 Coffee mug: 100 → <strong>98.2</strong></li>
 <li>T02 Fox figurine: 100 → <strong>86.9</strong></li>
@@ -115,6 +116,16 @@
 
     <h2>Export padding (not holes)</h2>
     <p>Some generator Space GLB exports include large numbers of index-degenerate, zero-area filler triangles. Those are reported as <strong>export padding</strong> and removed before watertight and manifold checks. They are not treated as holes.</p>
+
+    
+    <h2 id="matches-prompt">Matches prompt? (disclosed human call, not in the 100-pt rubric)</h2>
+    <p>Since 2026-11-07 the scorecard and open data include a <strong>Matches prompt?</strong> column: <code>yes</code> / <code>partial</code> / <code>no</code>. It is a disclosed human review of the published thumb against the locked FLUX.1-schnell reference for that prompt (seed 1234). It is <em>not</em> part of the 100-pt printability rubric and does not change any printability score.</p>
+    <ul>
+      <li><strong>yes</strong> — clearly the requested object</li>
+      <li><strong>partial</strong> — recognizable but major defects (missing handle, ground plate, sideways, wrong proportions, wrong slot count, multi-body debris)</li>
+      <li><strong>no</strong> — clearly the wrong object (e.g. long hex prism instead of a flat M8 nut)</li>
+    </ul>
+    <p>Printability means on compare pages and the scorecard stay geometric/slicer-only. Rows with <code>matches_prompt=no</code> are excluded from any “best / highest” claim copy. Flagship honesty case: Hunyuan3D-2.1 T03 scored 96.7 but is <code>no</code>. Data: <a href="../data/matches_prompt.csv">matches_prompt.csv</a> and columns on <a href="../data/scores.csv">scores.csv</a>.</p>
 
     <h2>What we do not score (yet)</h2>
     <p><strong>Nothing has been physically printed yet.</strong> Every number comes from OrcaSlicer 2.4.2 and trimesh geometry checks on the Bambu A1 / PLA profile, not from real prints. A pass means the slicer and geometry checks pass, not that a print succeeded.</p>

@@ -1,0 +1,19 @@
+generator,prompt_id,matches_prompt,matches_prompt_note,matches_prompt_reviewed_et,printability_score
+Hunyuan3D-2,T01,yes,Clear mug with C-handle; matches requested object,2026-11-07,98.2
+Hunyuan3D-2,T02,yes,Recognizable fox on four legs with bushy tail,2026-11-07,86.9
+Hunyuan3D-2,T03,yes,Flat hexagonal nut with center hole (threads soft but correct object),2026-11-07,89.8
+Hunyuan3D-2,T04,yes,Phone stand with lip/slot; correct object,2026-11-07,100.0
+Hunyuan3D-2,T05,partial,"Desk organizer recognizable but many wire slots + tall back, not 3 vertical card slots",2026-11-07,26.9
+Hunyuan3D-2,T06,yes,Cylindrical planter with rim; correct object,2026-11-07,91.7
+Hunyuan3D-2.1,T01,partial,Mug present but fused to thin square ground plate (input artifact on published thumb),2026-11-07,81.7
+Hunyuan3D-2.1,T02,yes,Recognizable fox on four legs; no plate,2026-11-07,83.2
+Hunyuan3D-2.1,T03,no,"Long hex prism / coupling, not a flat M8 nut",2026-11-07,96.7
+Hunyuan3D-2.1,T04,partial,Phone stand present but fused to ground plate,2026-11-07,81.6
+Hunyuan3D-2.1,T05,partial,Simplified 3-groove slab on ground plate; not a clear 3-slot card holder,2026-11-07,73.8
+Hunyuan3D-2.1,T06,partial,Planter present but fused to ground plate,2026-11-07,82.3
+Meshy 6 Lite,T01,yes,Clear mug with handle; matches requested object,2026-11-07,99.5
+Meshy 6 Lite,T02,yes,Recognizable fox on four legs,2026-11-07,80.5
+Meshy 6 Lite,T03,no,"Tall stacked hex coupler, not a flat M8 nut",2026-11-07,80.0
+Meshy 6 Lite,T04,yes,Phone stand with slot; correct object,2026-11-07,81.2
+Meshy 6 Lite,T05,partial,"Wire file rack with inserted sheet, not 3 vertical business-card slots",2026-11-07,39.0
+Meshy 6 Lite,T06,partial,Planter recognizable but floating artifacts + multi-body (5 bodies),2026-11-07,86.9
