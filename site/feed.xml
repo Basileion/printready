@@ -5,8 +5,15 @@
   <link rel="self" href="https://basileion.github.io/printready/feed.xml" />
   <link rel="alternate" href="https://basileion.github.io/printready/" />
   <id>https://basileion.github.io/printready/</id>
-  <updated>2026-11-07T13:30:00Z</updated>
+  <updated>2026-11-07T13:45:00Z</updated>
   <author><name>PrintReady AI</name></author>
+  <entry>
+    <title>Matches prompt? filled for T07/T08 + T06 drainage-hole relabel (RT-70)</title>
+    <link rel="alternate" href="https://basileion.github.io/printready/scorecard/#t07t08-h" />
+    <id>https://basileion.github.io/printready/scorecard/#matches-t07t08-t06-2026-11-07</id>
+    <updated>2026-11-07T13:45:00Z</updated>
+    <summary>Human Matches prompt? review filled for pack v0.2 T07/T08 on Hunyuan3D-2 &amp; 2.1: HY2 T07 yes; HY2 T08 / HY2.1 T07 / HY2.1 T08 partial (display base / ground plate vs “no base”). RT-20261107-70: T06 planter labels without the requested center drainage hole relabeled yes→partial (Hunyuan3D-2 + Tripo H2.5); Meshy / HY2.1 notes updated. Across 28 reviewed rows: 12 yes · 14 partial · 2 no. Caveat: HY2.1 T07/T08 scored with Space ground-plate input artifact; matted re-test queued. Printability scores unchanged.</summary>
+  </entry>
   <entry>
     <title>Correction 2026-11-07: scorer bug understated Tripo watertightness</title>
     <link rel="alternate" href="https://basileion.github.io/printready/methodology/#correction-2026-11-07" />
@@ -19,14 +26,14 @@
     <link rel="alternate" href="https://basileion.github.io/printready/scorecard/#t07t08-h" />
     <id>https://basileion.github.io/printready/scorecard/#t07t08-2026-11-07</id>
     <updated>2026-11-07T11:40:00Z</updated>
-    <summary>First pack v0.2 thin-feature scores (RT-20261107-03). Same FLUX seed-1234 refs → public Spaces. Hunyuan3D-2: T07 74.0 (wall p5 0.68 mm; 85% tree support; 0.1 mm² bed), T08 90.0. Hunyuan3D-2.1: T07 70.0 (wall 0.228 mm fail; hull 1.7% hollow-skin), T08 78.8 (wall 0.291 mm). All 4 watertight + sliced. Matches prompt? blank pending human review. T01–T06 means unchanged. Meshy/Tripo/TRELLIS T07–T08 still queued. Open CSV + gzipped meshes + JSON.</summary>
+    <summary>First pack v0.2 thin-feature scores (RT-20261107-03). Same FLUX seed-1234 refs → public Spaces. Hunyuan3D-2: T07 74.0 (wall p5 0.68 mm; 85% tree support; 0.1 mm² bed), T08 90.0. Hunyuan3D-2.1: T07 70.0 (wall 0.228 mm fail; hull 1.7% hollow-skin), T08 78.8 (wall 0.291 mm). All 4 watertight + sliced. Matches prompt? later filled 2026-11-07 (see newer entry). T01–T06 means unchanged. Meshy/Tripo/TRELLIS T07–T08 still queued. Open CSV + gzipped meshes + JSON.</summary>
   </entry>
   <entry>
     <title>Tripo H2.5 Matches prompt? review: 4 yes, 2 partial</title>
     <link rel="alternate" href="https://basileion.github.io/printready/scorecard/#th25-h" />
     <id>https://basileion.github.io/printready/scorecard/#th25-matches-2026-11-07</id>
     <updated>2026-11-07T10:45:00Z</updated>
-    <summary>Disclosed human review of Tripo H2.5 free-export meshes vs the locked prompts (not in the 100-pt rubric): T01 yes, T02 yes, T03 partial (hex nut with bore, ~2x M8 thickness), T04 yes, T05 partial (3 front pockets, not 3 vertical slots), T06 yes. No Tripo row is a wrong object (0 no). [Corrected 2026-11-07: this entry first said Tripo's geometry was broken; that came from a scorer bug — corrected: 5/6 watertight, mean ~78.3.] All 24 reviewed rows: 13 yes, 9 partial, 2 no. Note: no scored T06 planter (any generator) has a center drainage hole.</summary>
+    <summary>Disclosed human review of Tripo H2.5 free-export meshes vs the locked prompts (not in the 100-pt rubric): T01 yes, T02 yes, T03 partial (hex nut with bore, ~2x M8 thickness), T04 yes, T05 partial (3 front pockets, not 3 vertical slots), T06 later relabeled partial (missing drainage hole; RT-20261107-70). No Tripo row is a wrong object (0 no). [Corrected 2026-11-07: this entry first said Tripo's geometry was broken; that came from a scorer bug — corrected: 5/6 watertight, mean ~78.3.] Later count across 28 reviewed rows: 12 yes, 14 partial, 2 no.</summary>
   </entry>
   <entry>
     <title>Tripo H2.5 free-export scores + Meshy-vs-Tripo printability head-to-head</title>
@@ -54,7 +61,7 @@
     <link rel="alternate" href="https://basileion.github.io/printready/scorecard/" />
     <id>https://basileion.github.io/printready/scorecard/#matches-prompt-2026-11-07</id>
     <updated>2026-11-07T06:45:00Z</updated>
-    <summary>Scorecard + open data now include a disclosed Matches prompt? human review (yes/partial/no, reviewed 2026-11-07 ET vs locked FLUX refs). Not part of the 100-pt printability rubric. Across 24 rows: 13 yes, 9 partial, 2 no. Flagship: Hunyuan3D-2.1 T03 scored 96.7 but Matches prompt? = no (long hex prism). Printability means stay geometric-only; no-match rows excluded from best/highest claims. CSV: data/matches_prompt.csv + columns on scores.csv. Closes RT-20261031-106 / RT-20261107-04.</summary>
+    <summary>Scorecard + open data now include a disclosed Matches prompt? human review (yes/partial/no, reviewed 2026-11-07 ET vs locked FLUX refs). Not part of the 100-pt printability rubric. Initially 24 rows: 13 yes, 9 partial, 2 no (later 28 rows / 12·14·2 after T07/T08 fill + T06 relabel). Flagship: Hunyuan3D-2.1 T03 scored 96.7 but Matches prompt? = no (long hex prism). Printability means stay geometric-only; no-match rows excluded from best/highest claims. CSV: data/matches_prompt.csv + columns on scores.csv. Closes RT-20261031-106 / RT-20261107-04.</summary>
   </entry>
   <entry>
     <title>Meshy 6 Lite vs Hunyuan3D-2.1 compare page (first cross-vendor head-to-head)</title>

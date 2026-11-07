@@ -215,8 +215,8 @@
    "scored_at": "2026-10-31T06:42:01.711051-04:00",
    "mesh": "meshes/hunyuan3d2/T06.glb.gz",
    "mesh_sha256": "5881e061f3416b4cf27f64a48e80cfa9bc43e237c590d1d72a14b56479853fce",
-   "matches_prompt": "yes",
-   "matches_prompt_note": "Cylindrical planter with rim; correct object",
+   "matches_prompt": "partial",
+   "matches_prompt_note": "Cylindrical planter with rim; missing requested center drainage hole",
    "matches_prompt_reviewed_et": "2026-11-07"
   },
   {
@@ -408,7 +408,7 @@
    "mesh": "meshes/hunyuan3d21/T06.glb.gz",
    "mesh_sha256": "30dcdddb7b9a9cd19775ffed74a25aef7d98c33e068d1bf37265544a90110a65",
    "matches_prompt": "partial",
-   "matches_prompt_note": "Planter present but fused to ground plate",
+   "matches_prompt_note": "Planter present but fused to ground plate; missing requested center drainage hole",
    "matches_prompt_reviewed_et": "2026-11-07"
   },
   {
@@ -600,7 +600,7 @@
    "mesh": "meshes/meshy6lite/T06.glb.gz",
    "mesh_sha256": "d4783755d7684c9873103290a3d57a2da7348344fb008722026d6318fdb6c9b6",
    "matches_prompt": "partial",
-   "matches_prompt_note": "Planter recognizable but floating artifacts + multi-body (5 bodies)",
+   "matches_prompt_note": "Planter recognizable but floating artifacts + multi-body (5 bodies); missing requested center drainage hole",
    "matches_prompt_reviewed_et": "2026-11-07"
   },
   {
@@ -631,9 +631,9 @@
    "scored_at": "2026-11-07T06:37:57.699241-05:00",
    "mesh": "meshes/hunyuan3d2/T07.glb.gz",
    "mesh_sha256": "ee853d10a79e3da26e56e421c0198abd649c8ce592ce1ec0bfc40de75bcf237d",
-   "matches_prompt": "",
-   "matches_prompt_note": "",
-   "matches_prompt_reviewed_et": ""
+   "matches_prompt": "yes",
+   "matches_prompt_note": "upright sword, no base; extra second crossguard mid-grip (cosmetic)",
+   "matches_prompt_reviewed_et": "2026-11-07"
   },
   {
    "generator": "Hunyuan3D-2",
@@ -663,9 +663,9 @@
    "scored_at": "2026-11-07T06:38:17.405355-05:00",
    "mesh": "meshes/hunyuan3d2/T08.glb.gz",
    "mesh_sha256": "c256b9b9db9c6c37d9dc2210fdf2f5d06729ac9804123bb4b4a87a6227e94243",
-   "matches_prompt": "",
-   "matches_prompt_note": "",
-   "matches_prompt_reviewed_et": ""
+   "matches_prompt": "partial",
+   "matches_prompt_note": "warrior + raised sword arm correct, but has a round display base (\"no base\" violated)",
+   "matches_prompt_reviewed_et": "2026-11-07"
   },
   {
    "generator": "Hunyuan3D-2.1",
@@ -695,9 +695,9 @@
    "scored_at": "2026-11-07T06:38:24.242353-05:00",
    "mesh": "meshes/hunyuan3d21/T07.glb.gz",
    "mesh_sha256": "222d603815926a07e069b9727f705be66eacb0862e8e14f55004dbbde654b313",
-   "matches_prompt": "",
-   "matches_prompt_note": "",
-   "matches_prompt_reviewed_et": ""
+   "matches_prompt": "partial",
+   "matches_prompt_note": "sword correct, but sits on a flat ground plate (\"no base\" violated)",
+   "matches_prompt_reviewed_et": "2026-11-07"
   },
   {
    "generator": "Hunyuan3D-2.1",
@@ -727,9 +727,9 @@
    "scored_at": "2026-11-07T06:38:27.752515-05:00",
    "mesh": "meshes/hunyuan3d21/T08.glb.gz",
    "mesh_sha256": "3b67e2507e4728bd746da0c8cebd350b6c00acbc4b3349882e1333f68f6d8a45",
-   "matches_prompt": "",
-   "matches_prompt_note": "",
-   "matches_prompt_reviewed_et": ""
+   "matches_prompt": "partial",
+   "matches_prompt_note": "warrior + sword correct, but on a large flat ground plate",
+   "matches_prompt_reviewed_et": "2026-11-07"
   },
   {
    "generator": "Tripo H2.5 (free export)",
@@ -919,8 +919,8 @@
    "scored_at": "2026-11-07T07:18:50.826732-05:00",
    "mesh": "meshes/tripo_h25/T06.glb.gz",
    "mesh_sha256": "8fe799fbe16470c4fb4abdb85806529380591c25959258f8a986e05db39b6f6d",
-   "matches_prompt": "yes",
-   "matches_prompt_note": "Cylindrical planter with rim; correct object (no center drainage hole, same as every scored T06)",
+   "matches_prompt": "partial",
+   "matches_prompt_note": "Cylindrical planter with rim; missing requested center drainage hole",
    "matches_prompt_reviewed_et": "2026-11-07"
   }
  ],
