@@ -35,7 +35,15 @@ a:hover{color:var(--ds-ink)}
 .nav-links{display:flex; gap:var(--ds-s4); flex-wrap:wrap; align-items:center; list-style:none; margin:0; padding:0}
 .nav-links a{color:var(--ds-ink-2); text-decoration:none; font-size:var(--ds-t-sm); font-weight:500; min-height:36px; display:inline-flex; align-items:center}
 .nav-links a[aria-current=page]{color:var(--ds-acc)}
-@media (max-width:600px){.nav-links{column-gap:14px; row-gap:0}}
+.nl-short{display:none}
+@media (max-width:600px){
+  /* RT-20261107-06: one-row nav at 390px (was 2 rows); scrolls instead of wrapping if a device is narrower */
+  .nav{row-gap:4px; padding:var(--ds-s2,8px) 0}
+  .nav-links{flex-wrap:nowrap; column-gap:10px; row-gap:0; overflow-x:auto; max-width:100%; -webkit-overflow-scrolling:touch; scrollbar-width:none}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-links a{font-size:12.5px; white-space:nowrap; min-height:44px}
+  .nl-long{display:none} .nl-short{display:inline}
+}
 .pill{
   display:inline-flex; align-items:center; gap:6px; padding:4px 10px;
   border-radius:999px; background:var(--ds-warn-soft); color:var(--ds-warn);
