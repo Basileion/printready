@@ -5,8 +5,15 @@
   <link rel="self" href="https://basileion.github.io/printready/feed.xml" />
   <link rel="alternate" href="https://basileion.github.io/printready/" />
   <id>https://basileion.github.io/printready/</id>
-  <updated>2026-11-07T08:40:00Z</updated>
+  <updated>2026-11-07T09:45:00Z</updated>
   <author><name>PrintReady AI</name></author>
+  <entry>
+    <title>Prompt pack v0.2 (T07 thin-sword + T08 mini) + Hunyuan 3D 3.1 costs row</title>
+    <link rel="alternate" href="https://basileion.github.io/printready/methodology/#prompt-pack" />
+    <id>https://basileion.github.io/printready/methodology/#prompt-pack-v0.2-2026-11-07</id>
+    <updated>2026-11-07T09:45:00Z</updated>
+    <summary>Prompt pack bumped to v0.2 (2026-11-07 ET): unscored core T07/T08 rewritten to thin-feature VOC (miniature thin sword; 28 mm warrior with thin sword arm). T01–T06 scores unchanged; T07/T08 not scored yet on any generator. Scorecard Queued note + methodology #prompt-pack. /costs adds Hunyuan 3D 3.1 hosted/MakerLab watch row (not scored; Tencent Cloud billing + MakerWorld credit guide); re-checked Meshy Pro $20 and queued Tripo / queued Rodin / MakerLab / MakeIt3D checked dates 2026-11-07. Queued Hitem3D and PrintPal left at 2026-10-31 (pricing pages not re-verified this run). Partial RT-20261107-03 + RT-20261107-05.</summary>
+  </entry>
   <entry>
     <title>Meshy vs Tripo compare page (docs + Meshy 6 Lite scores; Tripo queued)</title>
     <link rel="alternate" href="https://basileion.github.io/printready/compare/meshy-vs-tripo/" /> <!-- Tripo queued -->

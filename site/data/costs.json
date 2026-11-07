@@ -1,6 +1,6 @@
 {
- "checked_et": "2026-11-06",
- "note": "Plan prices copied from each vendor's pricing page. Cost per model = vendor allowance ÷ price, NOT cost per printable model; scored so far: Hunyuan3D-2, Hunyuan3D-2.1 and Meshy 6 Lite (free plan, not flagship 7.1). free_dl answers 'can I download on free?'. Tripo free exports re-checked 2026-11-06 (15, H2.5 only). MakeIt3D added 2026-11-06 from makeit3d.app/pricing.",
+ "checked_et": "2026-11-07",
+ "note": "Plan prices copied from each vendor's pricing page. Cost per model = vendor allowance ÷ price, NOT cost per printable model; scored so far: Hunyuan3D-2, Hunyuan3D-2.1 and Meshy 6 Lite (free plan, not flagship 7.1). free_dl answers 'can I download on free?'. 2026-11-07: added Hunyuan 3D 3.1 hosted/MakerLab row (Tencent Cloud billing + MakerWorld credit guide); re-checked Meshy Pro $20, Tripo, Rodin Creator $30/$24, MakerLab packs, MakeIt3D Light/Heavy. Hitem3D and PrintPal left at 2026-10-31 (pricing pages JS-heavy / not re-verified this run).",
  "license": "CC BY 4.0",
  "rows": [
   {
@@ -30,6 +30,19 @@
    "checked": "2026-10-31"
   },
   {
+   "tool": "Hunyuan 3D 3.1 (Tencent hosted / MakerLab engine)",
+   "status": "Not scored yet (watch list; MakerLab + Tencent Cloud API)",
+   "entry": "Tencent Cloud API: prepaid from $15 / 1,000 credits ($0.015/cr; 1-year packs); postpaid $0.02/cr. Also via MakerLab Image to 3D (28 credits/gen)",
+   "free": "API: one-time 200 trial credits/user (1 year, deducted first). MakerLab: 2 free Image to 3D gens/account shared across engines (no monthly refill). Consumer-web free daily gens not re-verified this run (login wall).",
+   "free_dl": "MakerLab: Yes, 2 free gens/account then credits. Tencent API: after trial, prepaid/postpaid — download via console (not a free Space like 2.x)",
+   "per_model": "API prepaid ≈ $0.375 Normal textured (25 cr) / $0.225 Geometry (15 cr); postpaid ≈ $0.50 / $0.30. MakerLab ≈ $0.24 on $3/350 pack (28 cr)",
+   "basis": "Tencent Cloud billing doc (Professional Normal 25 / Geometry 15 / +10 multi-view|PBR|face-count) + MakerWorld credit guide; not print success",
+   "license": "Hosted: Tencent Cloud / platform ToS (open-weights 2.x community license does not cover hosted 3.1)",
+   "source": "https://www.tencentcloud.com/document/product/1281/74121",
+   "scored": false,
+   "checked": "2026-11-07"
+  },
+  {
    "tool": "Meshy",
    "status": "Scored: Meshy 6 Lite free plan (not flagship 7.1); T01 99.5 … T05 39",
    "entry": "Pro $20/mo ($10 first month for new users); 1,000 credits, up to 100 assets",
@@ -40,7 +53,7 @@
    "license": "Free: CC BY 4.0 (sell with credit to Meshy). Paid: you own the assets",
    "source": "https://www.meshy.ai/pricing",
    "scored": true,
-   "checked": "2026-10-31"
+   "checked": "2026-11-07"
   },
   {
    "tool": "Tripo",
@@ -53,7 +66,7 @@
    "license": "Free: public models, non-commercial use. Pro: private, commercial use",
    "source": "https://www.tripo3d.ai/pricing",
    "scored": false,
-   "checked": "2026-11-06"
+   "checked": "2026-11-07"
   },
   {
    "tool": "Rodin (Hyper3D)",
@@ -66,7 +79,7 @@
    "license": "Paid plans: unlimited export and any use. Free: no 'any use' grant listed",
    "source": "https://hyper3d.ai/pricing",
    "scored": false,
-   "checked": "2026-10-31"
+   "checked": "2026-11-07"
   },
   {
    "tool": "Hitem3D (Hi3D)",
@@ -92,7 +105,7 @@
    "license": "MakerWorld: the engine provider's terms decide for Image to 3D output; check the engine you pick",
    "source": "https://makerworld.com/en/makerlab-credit-full-guide",
    "scored": false,
-   "checked": "2026-10-31"
+   "checked": "2026-11-07"
   },
   {
    "tool": "PrintPal",
@@ -118,7 +131,7 @@
    "license": "Free & credit packs: personal/CC BY-NC (gallery). Light/Heavy: commercial license included",
    "source": "https://makeit3d.app/pricing",
    "scored": false,
-   "checked": "2026-11-06"
+   "checked": "2026-11-07"
   }
  ]
 }

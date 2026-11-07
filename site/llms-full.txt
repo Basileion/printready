@@ -97,3 +97,14 @@ Disclosed human review of each published thumb against the locked FLUX.1-schnell
 - Price facts checked 2026-10-31 (Meshy 6 Lite free plan is scored on the scorecard; Meshy 7.1, Tripo, Rodin, Hitem3D and MakerLab engines are queued): MakerLab Image to 3D on MakerWorld gives 2 free generations per account, then 24 credits (Tripo AI 3.1 or Hitem3D 2.1), 28 (Hunyuan 3D 3.1) or 45 (Meshy 6 or Rodin Gen-2) at $3 per 350 credits, about $0.21, $0.24 or $0.39 per generation; Meshy free tier: 100 credits/mo + 10 untextured Meshy 6 Lite downloads/mo; Meshy 6/7/7.1 and textured models need Pro to download (our 2026-10-31 free-account test used 7.1 and hit the Pro paywall); Hitem3D (queued) Pro is $19.90/mo for 1,000 credits ($9.95/mo first year for new users) and its free tier is 100 trial credits, 'up to 7 models'.
 
 Disclosure (2026-10-31): scores are slicer- and geometry-measured (OrcaSlicer 2.4.2 + trimesh); nothing has been physically printed yet.
+
+## Prompt pack v0.2 (2026-11-07 ET) — thin-feature prompts not scored yet
+- Pack version: v0.2. Scored prompts remain T01–T06 only.
+- T07 (new, unscored): A miniature fantasy sword standing upright, thin blade under 1.5mm thick at 32mm tall scale, solid hilt, 3D printable, no base
+- T08 (new, unscored): A 28mm scale fantasy warrior miniature, separate thin sword arm pose, solid single body preferred, 3D printable, no base
+- Prior v0.1 T07 (torus chain) and T08 (XYZ cube) were never scored on any generator; replaced before first score (RT-20261107-03 partial).
+
+## Costs: Hunyuan 3D 3.1 hosted / MakerLab (2026-11-07, not scored)
+- Tencent Cloud API prepaid from $15/1,000 credits ($0.015/cr); postpaid $0.02/cr; Professional Normal 25 credits (~$0.375 prepaid), Geometry 15 (~$0.225); one-time 200 trial credits.
+- MakerLab Image to 3D: Hunyuan 3D 3.1 = 28 credits ≈ $0.24 on $3/350 pack; 2 free gens/account shared across engines.
+- Sources: https://www.tencentcloud.com/document/product/1281/74121 and https://makerworld.com/en/makerlab-credit-full-guide. Not printability-scored.

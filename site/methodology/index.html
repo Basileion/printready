@@ -91,6 +91,7 @@
     <p><strong>Issue we found (fixed in v0.2):</strong> v0.1 took every mesh with Z as up, but glTF files use Y-up. On 5 of 6 prompts the Y-up pose has more bed contact (phone stand: 612 vs 6.9&nbsp;mm²), so some v0.1 slices were likely of a model on its side. T05 is not a closed volume, so fill and wall are blank. Raw values: <a href="../data/diagnostics_v2.json">diagnostics_v2.json</a>.</p>
     <h3 id="changelog">Rubric change log</h3>
     <ul>
+      <li><strong>2026-11-07</strong>: Prompt pack <strong>v0.2</strong> — core T07/T08 rewritten (before any score) to thin-feature VOC: T07 miniature fantasy sword (thin blade &lt;1.5&nbsp;mm at ~32&nbsp;mm tall / 50&nbsp;mm longest-edge normalize), T08 28&nbsp;mm-scale warrior with thin sword-arm pose. Prior v0.1 T07 (torus chain) and T08 (XYZ cube) were never scored. T01–T06 unchanged. Not scored yet on any generator. Partial RT-20261107-03.</li>
       <li><strong>2026-11-07</strong>: Matches prompt? column (yes/partial/no) added to scorecard + open data as a disclosed human review vs the locked FLUX ref. Not part of the 100-pt rubric. Closes RT-20261031-106 / RT-20261107-04.</li>
       <li><strong>2026-10-31 · v0.2</strong>: slice success 20 → 5. Support volume now comes from a real OrcaSlicer tree(auto) slice (v0.1 sliced with supports off, so every mesh got 10/10). Print time 5 → n/a until a weekly median exists. New: hull fill 10, bed contact 10; thin walls now use ray p5. Meshes are scored and sliced in their declared up-axis (glTF Y-up) with auto-orient off. All 6 Hunyuan3D-2 prompts re-scored:
         <ul><li>T01 Coffee mug: 100 → <strong>98.2</strong></li>
@@ -127,12 +128,20 @@
     </ul>
     <p>Printability means on compare pages and the scorecard stay geometric/slicer-only. Rows with <code>matches_prompt=no</code> are excluded from any “best / highest” claim copy. Flagship honesty case: Hunyuan3D-2.1 T03 scored 96.7 but is <code>no</code>. Data: <a href="../data/matches_prompt.csv">matches_prompt.csv</a> and columns on <a href="../data/scores.csv">scores.csv</a>.</p>
 
+    <h2 id="prompt-pack">Prompt pack (v0.2)</h2>
+    <p>Locked text-to-3D core prompts live in the repo <code>PROMPTS.md</code>. Phase-1 scores use <strong>T01–T06 only</strong>. Pack <strong>v0.2</strong> (2026-11-07 ET) adds thin-feature cases that are <em>not scored yet</em>:</p>
+    <ul>
+      <li><strong>T07</strong> — miniature fantasy sword, thin blade under 1.5&nbsp;mm at ~32&nbsp;mm tall scale (≈28–32&nbsp;mm after 50&nbsp;mm longest-edge normalize), solid hilt, no base</li>
+      <li><strong>T08</strong> — 28&nbsp;mm-scale fantasy warrior miniature, separate thin sword-arm pose, solid single body preferred, no base</li>
+    </ul>
+    <p class="muted">Do not treat any published score as covering T07/T08 until a scorecard section says so.</p>
+
     <h2>What we do not score (yet)</h2>
     <p><strong>Nothing has been physically printed yet.</strong> Every number comes from OrcaSlicer 2.4.2 and trimesh geometry checks on the Bambu A1 / PLA profile, not from real prints. A pass means the slicer and geometry checks pass, not that a print succeeded.</p>
     <p>Texture beauty, game-engine retopo, multi-color painting, or “looks cool on Sketchfab.” Those are someone else’s leaderboard.</p>
 
     <h2>Authority &amp; freshness</h2>
-    <p>Prompt pack versioned (v0.1). Rubric v0.2 re-score dated <strong>2026-10-31</strong> (America/New_York); first scores 2026-10-30. Raw meshes, hashes and per-prompt JSON are published on the <a href="../data/">open data page</a> so anyone can re-score.</p>
+    <p>Prompt pack versioned (<strong>v0.2</strong> as of 2026-11-07 ET; T01–T06 unchanged from v0.1; T07/T08 rewritten to thin-feature / minis VOC and <em>not scored yet</em>). Rubric v0.2 re-score dated <strong>2026-10-31</strong> (America/New_York); first scores 2026-10-30. Raw meshes, hashes and per-prompt JSON are published on the <a href="../data/">open data page</a> so anyone can re-score.</p>
 
     <p style="margin-top:32px"><a class="btn btn-ghost" href="../scorecard/">View sample scorecard</a></p>
   </main>

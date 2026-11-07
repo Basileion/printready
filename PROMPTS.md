@@ -1,7 +1,11 @@
-# PrintReady AI — Benchmark Prompt Pack v0.1
+# PrintReady AI — Benchmark Prompt Pack v0.2
 
 Locked pack for phase-1 pipeline dry-runs. Core 10 never rotate; extended 10 rotate quarterly.  
 Scale target after generation: longest bbox edge = **50 mm** (documented in PLAN.md).
+
+### Pack changelog
+- **v0.2 (2026-11-07 ET):** Rewrote unscored core prompts **T07** and **T08** to thin-feature / minis VOC cases (thin sword + 28 mm warrior). T01–T06 unchanged and remain the only prompts scored so far. Prior v0.1 T07 (torus chain) and T08 (XYZ cube) were **never scored on any generator**, so replacing them before first score is intentional (RT-20261107-03). Extended T09–T20 unchanged.
+- **v0.1 (2026-10-30):** Initial locked pack.
 
 ---
 
@@ -17,8 +21,8 @@ Scale target after generation: longest bbox edge = **50 mm** (documented in PLAN
 | T04 | `A phone stand with a slot for a phone, minimal modern design, solid plastic` | Slot walls / thin sections |
 | T05 | `A desktop business card holder with three vertical slots, solid, printable` | Repeated thin walls |
 | T06 | `A small planter pot with drainage hole in the bottom center, cylindrical` | Intentional hole vs accidental holes |
-| T07 | `A interlocking chain of three torus links, solid metal look, printable as one piece` | Self-intersections / inseparable topology |
-| T08 | `A calibration XYZ 20mm cube with embossed X Y Z letters on faces` | Emboss depth / manifold lettering |
+| T07 | `A miniature fantasy sword standing upright, thin blade under 1.5mm thick at 32mm tall scale, solid hilt, 3D printable, no base` | Thin blade (~28–32 mm tall when normalized to 50 mm longest edge) — VOC thin-weapon fail |
+| T08 | `A 28mm scale fantasy warrior miniature, separate thin sword arm pose, solid single body preferred, 3D printable, no base` | Multi-part / thin limbs mini — VOC minis fail |
 | T09 | `A wall hook with a flat mounting plate and two screw holes, sturdy` | Holes + flat plate warping cues |
 | T10 | `A articulated flexible dragon with segmented body, print-in-place joints` | Joint clearances / fused vs loose |
 
@@ -70,7 +74,7 @@ Use public-domain / self-shot photos only. Store references under `samples/image
 1. Submit each prompt once per generator per week (no cherry-picking retries except documented vendor failures).
 2. Download mesh-only when possible (textures ignored for print score).
 3. Convert to STL via trimesh; normalize scale; run `pipeline/score_mesh.py`.
-4. Archive prompt pack version string in week JSON (`prompt_pack: v0.1`).
+4. Archive prompt pack version string in week JSON (`prompt_pack: v0.2`).
 
 ---
 
