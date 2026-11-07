@@ -5,8 +5,15 @@
   <link rel="self" href="https://basileion.github.io/printready/feed.xml" />
   <link rel="alternate" href="https://basileion.github.io/printready/" />
   <id>https://basileion.github.io/printready/</id>
-  <updated>2026-11-07T13:45:00Z</updated>
+  <updated>2026-11-07T14:45:00Z</updated>
   <author><name>PrintReady AI</name></author>
+  <entry>
+    <title>Re-test: Hunyuan3D-2.1 T07/T08 without the ground plate</title>
+    <link rel="alternate" href="https://basileion.github.io/printready/scorecard/#t07t08-h" />
+    <id>https://basileion.github.io/printready/methodology/#retest-t07t08-2026-11-07</id>
+    <updated>2026-11-07T14:45:00Z</updated>
+    <summary>HY2.1 T07/T08 had been scored with a ground plate that came from our input (Space background removal on off-white refs). Re-run with locally matted input, same seed/settings: plate gone. T07 sword 70.0 (unchanged; wall p5 0.379 mm, still too thin), T08 mini 89.4 (was 78.8; 3 separate bodies). Main table keeps the original run for protocol parity; rows in data/retests.csv.</summary>
+  </entry>
   <entry>
     <title>Matches prompt? filled for T07/T08 + T06 drainage-hole relabel (RT-70)</title>
     <link rel="alternate" href="https://basileion.github.io/printready/scorecard/#t07t08-h" />
