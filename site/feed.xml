@@ -5,8 +5,15 @@
   <link rel="self" href="https://basileion.github.io/printready/feed.xml" />
   <link rel="alternate" href="https://basileion.github.io/printready/" />
   <id>https://basileion.github.io/printready/</id>
-  <updated>2026-11-07T10:45:00Z</updated>
+  <updated>2026-11-07T11:40:00Z</updated>
   <author><name>PrintReady AI</name></author>
+  <entry>
+    <title>Thin-feature T07/T08 scored on Hunyuan3D-2 &amp; 2.1</title>
+    <link rel="alternate" href="https://basileion.github.io/printready/scorecard/#t07t08-h" />
+    <id>https://basileion.github.io/printready/scorecard/#t07t08-2026-11-07</id>
+    <updated>2026-11-07T11:40:00Z</updated>
+    <summary>First pack v0.2 thin-feature scores (RT-20261107-03). Same FLUX seed-1234 refs → public Spaces. Hunyuan3D-2: T07 74.0 (wall p5 0.68 mm; 85% tree support; 0.1 mm² bed), T08 90.0. Hunyuan3D-2.1: T07 70.0 (wall 0.228 mm fail; hull 1.7% hollow-skin), T08 78.8 (wall 0.291 mm). All 4 watertight + sliced. Matches prompt? blank pending human review. T01–T06 means unchanged. Meshy/Tripo/TRELLIS T07–T08 still queued. Open CSV + gzipped meshes + JSON.</summary>
+  </entry>
   <entry>
     <title>Tripo H2.5 Matches prompt? review: 4 yes, 2 partial</title>
     <link rel="alternate" href="https://basileion.github.io/printready/scorecard/#th25-h" />

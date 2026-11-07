@@ -103,11 +103,12 @@ Disclosed human review of each published thumb against the locked FLUX.1-schnell
 
 Disclosure (2026-10-31): scores are slicer- and geometry-measured (OrcaSlicer 2.4.2 + trimesh); nothing has been physically printed yet.
 
-## Prompt pack v0.2 (2026-11-07 ET) — thin-feature prompts not scored yet
+## Prompt pack v0.2 (2026-11-07 ET) — thin-feature T07/T08 scored on Hunyuan3D-2 & 2.1
 - Pack version: v0.2. Scored prompts remain T01–T06 only.
-- T07 (new, unscored): A miniature fantasy sword standing upright, thin blade under 1.5mm thick at 32mm tall scale, solid hilt, 3D printable, no base
-- T08 (new, unscored): A 28mm scale fantasy warrior miniature, separate thin sword arm pose, solid single body preferred, 3D printable, no base
-- Prior v0.1 T07 (torus chain) and T08 (XYZ cube) were never scored on any generator; replaced before first score (RT-20261107-03 partial).
+- T07: A miniature fantasy sword standing upright, thin blade under 1.5mm thick at 32mm tall scale, solid hilt, 3D printable, no base
+- T08: A 28mm scale fantasy warrior miniature, separate thin sword arm pose, solid single body preferred, 3D printable, no base
+- Scores 2026-11-07 ET (Matches prompt? blank pending review): Hunyuan3D-2 T07 74.0 / T08 90.0; Hunyuan3D-2.1 T07 70.0 / T08 78.8. HY2.1 T07 wall p5 0.228 mm + hull 1.7% = thin-blade VOC. Meshy/Tripo/TRELLIS T07–T08 queued.
+- Prior v0.1 T07 (torus chain) and T08 (XYZ cube) were never scored; replaced before first score (RT-20261107-03).
 
 ## Costs: Hunyuan 3D 3.1 hosted / MakerLab (2026-11-07, not scored)
 - Tencent Cloud API prepaid from $15/1,000 credits ($0.015/cr); postpaid $0.02/cr; Professional Normal 25 credits (~$0.375 prepaid), Geometry 15 (~$0.225); one-time 200 trial credits.
