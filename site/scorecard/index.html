@@ -48,7 +48,7 @@
     <h1>Scorecard</h1>
     <p class="muted" style="margin:0 0 16px">Got your own mesh? <a href="../check/">Check your STL, OBJ or GLB free in your browser</a>: watertight, non-manifold edges, parts and bed contact with the same definitions as rubric v0.2. Nothing is uploaded.</p>
     <section aria-labelledby="real-h" style="margin:8px 0 48px">
-      <p class="notice" role="note" style="margin:0 0 12px;max-width:48rem"><strong>Matches prompt?</strong> is a disclosed human call (reviewed 2026-11-07 ET) against the locked FLUX reference — <em>not</em> part of the 100-pt printability rubric. Means below are printability-only. Across 18 human-reviewed rows (Tripo H2.5 Matches prompt? blank pending review): <strong>9 yes · 7 partial · 2 no</strong>. Rows marked <span class="match match-no">no</span> (wrong object) are excluded from any “best / highest” claim. Flagship case: Hunyuan3D-2.1 T03 scored <strong>96.7</strong> but is a long hex prism, not a flat nut.</p>
+      <p class="notice" role="note" style="margin:0 0 12px;max-width:48rem"><strong>Matches prompt?</strong> is a disclosed human call (reviewed 2026-11-07 ET) against the locked FLUX reference — <em>not</em> part of the 100-pt printability rubric. Means below are printability-only. Across 24 human-reviewed rows (incl. Tripo H2.5): <strong>13 yes · 9 partial · 2 no</strong>. Rows marked <span class="match match-no">no</span> (wrong object) are excluded from any “best / highest” claim. Flagship case: Hunyuan3D-2.1 T03 scored <strong>96.7</strong> but is a long hex prism, not a flat nut.</p>
       <p class="eyebrow">Rubric v0.2 · re-scored 2026-10-31 ET (first scored 2026-10-30)</p>
       <h2 id="real-h">Hunyuan3D-2: 1 of 6 score 100 on rubric v0.2 (5 of 6 on v0.1)</h2>
       <ul class="lede" style="margin:8px 0 16px">
@@ -396,7 +396,7 @@
         <li>Vs Meshy 6 Lite on the same prompts: Meshy mean ~77.9 (6/6 watertight) beats Tripo H2.5 free export by a wide margin. Head-to-head: <a href="../compare/meshy-vs-tripo/">Meshy vs Tripo</a>.</li>
         <li>Non-manifold edges on every mesh (6–124). Wall p5 / hull fill not scored when not watertight. Multi-body: T03 has 2 bodies; T04 has 8.</li>
         <li>Raw output, no repair: same FLUX.1-schnell reference PNGs → Tripo free account, image-to-3D, <strong>H2.5–Legacy</strong>, texture off, free export ($0). This is <strong>not</strong> a newer paid Tripo model — free exports are H2.5 only (15/mo).</li>
-        <li>Matches prompt? blank pending human review (not in the 100-pt rubric).</li>
+        <li>Matches prompt? (disclosed human review 2026-11-07 ET, not in the 100-pt rubric): 4 yes, 2 partial (T03 nut ~2x M8 thickness; T05 pockets, not 3 vertical slots), 0 no.</li>
       </ul>
       <div class="table-wrap" role="region" aria-label="Tripo H2.5 PrintReady scores" tabindex="0">
         <table>
@@ -412,7 +412,7 @@
             <td>T01 · Coffee mug with handle</td>
             <td><span class="tag">Tripo H2.5</span></td>
             <td class="num"><span class="score score-bad">29.3</span></td>
-            <td class="muted">—</td>
+            <td><span class="match match-yes" title="Mug with clear C-handle; matches requested object">yes</span></td>
             <td class="num muted">—</td>
             <td>no</td>
             <td class="num">7.2%</td>
@@ -426,7 +426,7 @@
             <td>T02 · Low-poly fox figurine</td>
             <td><span class="tag">Tripo H2.5</span></td>
             <td class="num"><span class="score score-bad">18.4</span></td>
-            <td class="muted">—</td>
+            <td><span class="match match-yes" title="Recognizable fox on four legs with tail">yes</span></td>
             <td class="num muted">—</td>
             <td>no</td>
             <td class="num">31.3%</td>
@@ -435,12 +435,12 @@
             <td class="num">—</td>
             <td class="num">1h 21m</td>
           </tr>
-          <tr>
+          <tr class="match-flag-partial">
             <td><img class="thumb" src="../img/th25_T03.png" alt="Tripo H2.5 free export for T03: M8 hex nut with threads (2 bodies)" width="56" height="56" loading="lazy" /></td>
             <td>T03 · M8 hex nut with threads</td>
             <td><span class="tag">Tripo H2.5</span></td>
             <td class="num"><span class="score score-bad">23.2</span></td>
-            <td class="muted">—</td>
+            <td><span class="match match-partial" title="Hex nut with center bore, but about as deep as it is wide (~2x M8 nut thickness)">partial</span></td>
             <td class="num muted">—</td>
             <td>no</td>
             <td class="num">21.1%</td>
@@ -454,7 +454,7 @@
             <td>T04 · Phone stand with slot</td>
             <td><span class="tag">Tripo H2.5</span></td>
             <td class="num"><span class="score score-bad">29.8</span></td>
-            <td class="muted">—</td>
+            <td><span class="match match-yes" title="Phone stand with slot (model includes a phone in the slot); correct object">yes</span></td>
             <td class="num muted">—</td>
             <td>no</td>
             <td class="num">20.5%</td>
@@ -463,12 +463,12 @@
             <td class="num">—</td>
             <td class="num">1h 41m</td>
           </tr>
-          <tr>
+          <tr class="match-flag-partial">
             <td><img class="thumb" src="../img/th25_T05.png" alt="Tripo H2.5 free export for T05: 3-slot business card holder" width="56" height="56" loading="lazy" /></td>
             <td>T05 · 3-slot business card holder</td>
             <td><span class="tag">Tripo H2.5</span></td>
             <td class="num"><span class="score score-bad">25.0</span></td>
-            <td class="muted">—</td>
+            <td><span class="match match-partial" title="Angled holder with 3 front pockets plus a loose leaning sheet, not 3 vertical card slots">partial</span></td>
             <td class="num muted">—</td>
             <td>no</td>
             <td class="num">45.8%</td>
@@ -482,7 +482,7 @@
             <td>T06 · Planter pot with drainage hole</td>
             <td><span class="tag">Tripo H2.5</span></td>
             <td class="num"><span class="score score-bad">31.5</span></td>
-            <td class="muted">—</td>
+            <td><span class="match match-yes" title="Cylindrical planter with rim; correct object (no center drainage hole, same as every scored T06)">yes</span></td>
             <td class="num muted">—</td>
             <td>no</td>
             <td class="num">15.6%</td>

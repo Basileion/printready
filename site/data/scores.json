@@ -631,9 +631,9 @@
    "scored_at": "2026-11-07T04:54:09.745306-05:00",
    "mesh": "meshes/tripo_h25/T01.glb.gz",
    "mesh_sha256": "1a70e365958c21baebb3e3b83eebb36a035a9a4d38ce89d6347b8ee5d4fa1b51",
-   "matches_prompt": "",
-   "matches_prompt_note": "",
-   "matches_prompt_reviewed_et": ""
+   "matches_prompt": "yes",
+   "matches_prompt_note": "Mug with clear C-handle; matches requested object",
+   "matches_prompt_reviewed_et": "2026-11-07"
   },
   {
    "generator": "Tripo H2.5 (free export)",
@@ -663,9 +663,9 @@
    "scored_at": "2026-11-07T04:54:19.387218-05:00",
    "mesh": "meshes/tripo_h25/T02.glb.gz",
    "mesh_sha256": "3dc329b05ca557c7f42a547e2ded0e311cdf7452414e413d011db062fa707c92",
-   "matches_prompt": "",
-   "matches_prompt_note": "",
-   "matches_prompt_reviewed_et": ""
+   "matches_prompt": "yes",
+   "matches_prompt_note": "Recognizable fox on four legs with tail",
+   "matches_prompt_reviewed_et": "2026-11-07"
   },
   {
    "generator": "Tripo H2.5 (free export)",
@@ -695,9 +695,9 @@
    "scored_at": "2026-11-07T04:54:32.561597-05:00",
    "mesh": "meshes/tripo_h25/T03.glb.gz",
    "mesh_sha256": "f12197fda7c97a5577d387e2e6cc647db55b62d8cd9345def99662b29c9d7bb8",
-   "matches_prompt": "",
-   "matches_prompt_note": "",
-   "matches_prompt_reviewed_et": ""
+   "matches_prompt": "partial",
+   "matches_prompt_note": "Hex nut with center bore, but about as deep as it is wide (~2x M8 nut thickness)",
+   "matches_prompt_reviewed_et": "2026-11-07"
   },
   {
    "generator": "Tripo H2.5 (free export)",
@@ -727,9 +727,9 @@
    "scored_at": "2026-11-07T04:54:43.677496-05:00",
    "mesh": "meshes/tripo_h25/T04.glb.gz",
    "mesh_sha256": "b0f060374f1dd6a0899055d7cd5c6d6ace1e83fbbd036a9b5b02d92ffb9364bf",
-   "matches_prompt": "",
-   "matches_prompt_note": "",
-   "matches_prompt_reviewed_et": ""
+   "matches_prompt": "yes",
+   "matches_prompt_note": "Phone stand with slot (model includes a phone in the slot); correct object",
+   "matches_prompt_reviewed_et": "2026-11-07"
   },
   {
    "generator": "Tripo H2.5 (free export)",
@@ -759,9 +759,9 @@
    "scored_at": "2026-11-07T04:54:53.882686-05:00",
    "mesh": "meshes/tripo_h25/T05.glb.gz",
    "mesh_sha256": "2bbd44f00c082a53f84505bf1686294a73565e7ee0b077b86466cdadd8f1acf1",
-   "matches_prompt": "",
-   "matches_prompt_note": "",
-   "matches_prompt_reviewed_et": ""
+   "matches_prompt": "partial",
+   "matches_prompt_note": "Angled holder with 3 front pockets plus a loose leaning sheet, not 3 vertical card slots",
+   "matches_prompt_reviewed_et": "2026-11-07"
   },
   {
    "generator": "Tripo H2.5 (free export)",
@@ -791,9 +791,9 @@
    "scored_at": "2026-11-07T04:55:03.304191-05:00",
    "mesh": "meshes/tripo_h25/T06.glb.gz",
    "mesh_sha256": "8fe799fbe16470c4fb4abdb85806529380591c25959258f8a986e05db39b6f6d",
-   "matches_prompt": "",
-   "matches_prompt_note": "",
-   "matches_prompt_reviewed_et": ""
+   "matches_prompt": "yes",
+   "matches_prompt_note": "Cylindrical planter with rim; correct object (no center drainage hole, same as every scored T06)",
+   "matches_prompt_reviewed_et": "2026-11-07"
   }
  ],
  "matches_prompt": {

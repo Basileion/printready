@@ -5,14 +5,21 @@
   <link rel="self" href="https://basileion.github.io/printready/feed.xml" />
   <link rel="alternate" href="https://basileion.github.io/printready/" />
   <id>https://basileion.github.io/printready/</id>
-  <updated>2026-11-07T10:00:00Z</updated>
+  <updated>2026-11-07T10:45:00Z</updated>
   <author><name>PrintReady AI</name></author>
+  <entry>
+    <title>Tripo H2.5 Matches prompt? review: 4 yes, 2 partial</title>
+    <link rel="alternate" href="https://basileion.github.io/printready/scorecard/#th25-h" />
+    <id>https://basileion.github.io/printready/scorecard/#th25-matches-2026-11-07</id>
+    <updated>2026-11-07T10:45:00Z</updated>
+    <summary>Disclosed human review of Tripo H2.5 free-export meshes vs the locked prompts (not in the 100-pt rubric): T01 yes, T02 yes, T03 partial (hex nut with bore, ~2x M8 thickness), T04 yes, T05 partial (3 front pockets, not 3 vertical slots), T06 yes. Tripo's low scores come from broken geometry (0/6 watertight), not wrong objects. All 24 reviewed rows: 13 yes, 9 partial, 2 no. Note: no scored T06 planter (any generator) has a center drainage hole.</summary>
+  </entry>
   <entry>
     <title>Tripo H2.5 free-export scores + Meshy-vs-Tripo printability head-to-head</title>
     <link rel="alternate" href="https://basileion.github.io/printready/compare/meshy-vs-tripo/" />
     <id>https://basileion.github.io/printready/compare/meshy-vs-tripo/#2026-11-07-scored</id>
     <updated>2026-11-07T10:00:00Z</updated>
-    <summary>Tripo H2.5 free export (not newer paid models) scored on locked T01–T06: T01 29.3, T02 18.4, T03 23.2, T04 29.8, T05 25.0, T06 31.5; mean ~26.2; 0/6 watertight; 6/6 hard-fail; 6/6 sliced. /compare/meshy-vs-tripo/ upgraded from docs-only to printability head-to-head vs Meshy 6 Lite free plan (mean ~77.9; 6/6 watertight; T05 slice hard-fail). Matches prompt? blank for Tripo pending human review. Closes RT-20261107-02 / RT-110 residual / RT-70 Tripo half. Open CSV + gzipped meshes.</summary>
+    <summary>Tripo H2.5 free export (not newer paid models) scored on locked T01–T06: T01 29.3, T02 18.4, T03 23.2, T04 29.8, T05 25.0, T06 31.5; mean ~26.2; 0/6 watertight; 6/6 hard-fail; 6/6 sliced. /compare/meshy-vs-tripo/ upgraded from docs-only to printability head-to-head vs Meshy 6 Lite free plan (mean ~77.9; 6/6 watertight; T05 slice hard-fail). Matches prompt? for Tripo reviewed in a later update (4 yes, 2 partial). Closes RT-20261107-02 / RT-110 residual / RT-70 Tripo half. Open CSV + gzipped meshes.</summary>
   </entry>
   <entry>
     <title>Prompt pack v0.2 (T07 thin-sword + T08 mini) + Hunyuan 3D 3.1 costs row</title>
@@ -33,7 +40,7 @@
     <link rel="alternate" href="https://basileion.github.io/printready/scorecard/" />
     <id>https://basileion.github.io/printready/scorecard/#matches-prompt-2026-11-07</id>
     <updated>2026-11-07T06:45:00Z</updated>
-    <summary>Scorecard + open data now include a disclosed Matches prompt? human review (yes/partial/no, reviewed 2026-11-07 ET vs locked FLUX refs). Not part of the 100-pt printability rubric. Across 18 rows: 9 yes, 7 partial, 2 no. Flagship: Hunyuan3D-2.1 T03 scored 96.7 but Matches prompt? = no (long hex prism). Printability means stay geometric-only; no-match rows excluded from best/highest claims. CSV: data/matches_prompt.csv + columns on scores.csv. Closes RT-20261031-106 / RT-20261107-04.</summary>
+    <summary>Scorecard + open data now include a disclosed Matches prompt? human review (yes/partial/no, reviewed 2026-11-07 ET vs locked FLUX refs). Not part of the 100-pt printability rubric. Across 24 rows: 13 yes, 9 partial, 2 no. Flagship: Hunyuan3D-2.1 T03 scored 96.7 but Matches prompt? = no (long hex prism). Printability means stay geometric-only; no-match rows excluded from best/highest claims. CSV: data/matches_prompt.csv + columns on scores.csv. Closes RT-20261031-106 / RT-20261107-04.</summary>
   </entry>
   <entry>
     <title>Meshy 6 Lite vs Hunyuan3D-2.1 compare page (first cross-vendor head-to-head)</title>

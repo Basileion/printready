@@ -76,12 +76,12 @@ Both open-weights Tencent. Main-table means on rubric v0.2, same 6 locked prompt
 
 ## Tripo H2.5 (free export; scored 2026-11-07 ET)
 Not a newer paid Tripo model — free exports are H2.5 only (15/mo). Same locked FLUX refs → image-to-3D → H2.5–Legacy, texture off, free export ($0).
-Scores (rubric v0.2): T01 29.3, T02 18.4, T03 23.2, T04 29.8, T05 25.0, T06 31.5. Mean ~26.2. 0/6 watertight, 6/6 hard-fail, 6/6 sliced. Matches prompt? blank pending human review.
+Scores (rubric v0.2): T01 29.3, T02 18.4, T03 23.2, T04 29.8, T05 25.0, T06 31.5. Mean ~26.2. 0/6 watertight, 6/6 hard-fail, 6/6 sliced. Matches prompt? (human review 2026-11-07 ET): T01 yes, T02 yes, T03 partial (~2x M8 thickness), T04 yes, T05 partial, T06 yes.
 Open data: https://basileion.github.io/printready/data/scores.csv · meshes under data/meshes/tripo_h25/
 
 ## Compare: Meshy vs Tripo (published 2026-11-07; printability head-to-head)
 URL: https://basileion.github.io/printready/compare/meshy-vs-tripo/
-Buyer query page. Free downloads? Meshy free plan: 10 untextured Meshy 6 Lite/mo (CC BY 4.0 sell-with-credit; checked 2026-10-31). Tripo free: 15 exports, H2.5 only, non-commercial (checked 2026-11-06). Entry paid both ~$20/mo. Printability on locked T01–T06 (rubric v0.2): Meshy 6 Lite free plan (not flagship 7.1) mean ~77.9 (6/6 watertight; T05 slice hard-fail 39.0) vs Tripo H2.5 free export mean ~26.2 (0/6 watertight; 6/6 hard-fail; 6/6 sliced; T01 29.3, T02 18.4, T03 23.2, T04 29.8, T05 25.0, T06 31.5). Not newer paid Tripo models. Matches prompt? Meshy T03 = no; Tripo blank pending human review. Costs CSV: https://basileion.github.io/printready/data/costs.csv. Scores CSV: https://basileion.github.io/printready/data/scores.csv.
+Buyer query page. Free downloads? Meshy free plan: 10 untextured Meshy 6 Lite/mo (CC BY 4.0 sell-with-credit; checked 2026-10-31). Tripo free: 15 exports, H2.5 only, non-commercial (checked 2026-11-06). Entry paid both ~$20/mo. Printability on locked T01–T06 (rubric v0.2): Meshy 6 Lite free plan (not flagship 7.1) mean ~77.9 (6/6 watertight; T05 slice hard-fail 39.0) vs Tripo H2.5 free export mean ~26.2 (0/6 watertight; 6/6 hard-fail; 6/6 sliced; T01 29.3, T02 18.4, T03 23.2, T04 29.8, T05 25.0, T06 31.5). Not newer paid Tripo models. Matches prompt? Meshy T03 = no; Tripo 4 yes, 2 partial (T03 ~2x M8 thickness, T05 pockets not slots), 0 no. Costs CSV: https://basileion.github.io/printready/data/costs.csv. Scores CSV: https://basileion.github.io/printready/data/scores.csv.
 
 ## Compare: Meshy 6 Lite vs Hunyuan3D-2.1 (published 2026-11-07)
 URL: https://basileion.github.io/printready/compare/meshy-6-lite-vs-hunyuan3d-2-1/
@@ -90,7 +90,7 @@ First cross-vendor head-to-head. Rubric v0.2 means on the same 6 locked prompts:
 
 ## Matches prompt? (2026-11-07)
 
-Disclosed human review of each published thumb against the locked FLUX.1-schnell reference (seed 1234). Values: yes / partial / no. Not part of the 100-pt printability rubric. Across 18 scored rows: 9 yes, 7 partial, 2 no.
+Disclosed human review of each published thumb against the locked FLUX.1-schnell reference (seed 1234). Values: yes / partial / no. Not part of the 100-pt printability rubric. Across 24 scored rows: 13 yes, 9 partial, 2 no.
 - Hunyuan3D-2.1 T03 = no (long hex prism; printability 96.7)
 - Meshy 6 Lite T03 = no (tall stacked hex coupler; printability 80.0)
 - Printability means stay geometric/slicer-only; rows with matches_prompt=no are excluded from any best/highest claim.
