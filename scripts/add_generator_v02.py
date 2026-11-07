@@ -35,10 +35,12 @@ for jf in sorted((ROOT / "scores" / key / "v0.2").glob("T0*.json")):
         "mesh": f"meshes/{key}/{pid}.glb.gz", "mesh_sha256": sha,
     })
 # Preserve Matches prompt? columns if present; new generators start blank until human review.
+# Re-scoring keeps the human review (RT-20261107-68 re-score must not wipe Matches prompt?).
+prev = {r["prompt_id"]: r for r in old if r["generator"] == label}
 for r in new:
     for c in ("matches_prompt", "matches_prompt_note", "matches_prompt_reviewed_et"):
         if c in fields:
-            r.setdefault(c, "")
+            r.setdefault(c, prev.get(r["prompt_id"], {}).get(c, ""))
 rows += new
 with open(D / "scores.csv", "w", newline="") as f:
     w = csv.DictWriter(f, fieldnames=fields); w.writeheader(); w.writerows(rows)

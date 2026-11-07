@@ -57,7 +57,7 @@
   },
   {
    "tool": "Tripo",
-   "status": "Scored: Tripo H2.5 free export (not newer paid models); mean ~26.2; 0/6 watertight; 6/6 hard-fail",
+   "status": "Scored: Tripo H2.5 free export (not newer paid models); mean ~78.3; 5/6 watertight; 1/6 hard-fail (T04)",
    "entry": "Pro $20/mo billed annually ($240/yr); 3,000 credits ≈ 200 models",
    "free": "200 credits/month ≈ 13 models; free exports capped at 15 (H2.5 only)",
    "free_dl": "Yes, limited — 15 exports, H2.5 only (not newer models)",

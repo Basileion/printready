@@ -151,6 +151,63 @@ def contexts():
             yield p.relative_to(ROOT), name, p.read_text(encoding="utf-8"), None
 
 
+LABEL_ALIASES = {  # scores.csv generator label -> regex used in copy
+    "Hunyuan3D-2": r"Hunyuan3D-2(?![.\d])(?! vs)",
+    "Hunyuan3D-2.1": r"Hunyuan3D-2\.1|HY2\.1",
+    "Meshy 6 Lite": r"Meshy(?: 6 Lite)?",
+    "Tripo H2.5 (free export)": r"Tripo(?: H2\.5)?",
+}
+CORRECTION = re.compile(r"correct|first (?:said|showed|published|reported)|misreport|earlier|was wrong|were wrong|bug", re.I)
+
+
+def watertight_count_errors():
+    """RT-20261107-68: any 'k/6 watertight' / 'k of 6 watertight' attributed to a generator must match scores.csv."""
+    wt = {}
+    for r in csv.DictReader(open(SITE / "data" / "scores.csv")):
+        if r["prompt_id"] in ("T01", "T02", "T03", "T04", "T05", "T06"):
+            wt.setdefault(r["generator"], 0)
+            wt[r["generator"]] += r["watertight"] == "True"
+    errs = []
+    files = [*SITE.rglob("*.html"), SITE / "llms.txt", SITE / "llms-full.txt", SITE / "feed.xml"]
+    alias_any = "|".join(f"(?:{a})" for a in LABEL_ALIASES.values())
+    for f in files:
+        if not f.exists():
+            continue
+        txt = strip_tags(f.read_text(encoding="utf-8"))
+        for sent in re.split(r"(?<=[.!?])\s+|\n+", txt):
+            if CORRECTION.search(sent):
+                continue
+            for label, rx in LABEL_ALIASES.items():
+                if label not in wt:
+                    continue
+                for m in re.finditer(rf"(?:{rx})((?:(?!{alias_any}| vs\b).){{0,45}}?)\b(\d)(?:/| of )6 watertight", sent):
+                    if int(m.group(2)) != wt[label]:
+                        errs.append(f"{f.relative_to(SITE)}: '{label}' cited as {m.group(2)}/6 watertight, scores.csv has {wt[label]}/6: {' '.join(sent.split())[:140]}")
+    return errs
+
+
+def mesh_cleanup_guard_errors():
+    """RT-20261107-68 regression guard: raw is_watertight True must never become False after cleanup.
+    Runs locally (needs trimesh + gens/ meshes); CI without them prints a skip note."""
+    try:
+        import trimesh  # noqa: F401
+    except Exception:
+        print("lint_claims: mesh cleanup guard skipped (no trimesh; run with tools/score-venv/bin/python)")
+        return []
+    if not (ROOT / "gens").exists():
+        print("lint_claims: mesh cleanup guard skipped (no gens/ meshes)")
+        return []
+    sys.path.insert(0, str(ROOT / "pipeline" / "tests"))
+    import test_cleanup_never_breaks_watertight as t
+    try:
+        t.test_synthetic_sliver()
+        n = t.test_real_glbs()
+        print(f"lint_claims: mesh cleanup guard OK ({n} watertight meshes stay watertight)")
+        return []
+    except AssertionError as e:
+        return [f"mesh cleanup guard FAILED: {e}"]
+
+
 def main():
     scored = scored_generators()
     if not scored:
@@ -174,6 +231,9 @@ def main():
                 errors.append(f"{rel} [{ctx}] names unscored {unscored} without queued/next qualifier: "
                               f"{' '.join(sent.split())[:160]}")
     errors += rubric_errors(texts)
+    errors += watertight_count_errors()
+    if "--no-mesh" not in sys.argv:
+        errors += mesh_cleanup_guard_errors()
     if errors:
         print("lint_claims FAILED (scored: %s)" % ", ".join(sorted(scored)))
         for e in errors:

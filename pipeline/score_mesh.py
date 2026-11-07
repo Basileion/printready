@@ -51,32 +51,36 @@ def load_mesh(path: Path) -> trimesh.Trimesh:
 
 
 def drop_export_padding(mesh: trimesh.Trimesh) -> tuple[trimesh.Trimesh, dict[str, int]]:
-    """Drop index-degenerate / zero-area faces common in Space GLB exports.
+    """Drop index-degenerate faces (export padding) common in Space GLB exports.
 
     These are padding triangles (duplicate vertex indices), not holes. Leaving
     them in makes trimesh report is_watertight=False even when the real surface
     is a closed single body. Report the count as export_padding, not as defects.
+
+    Correction 2026-11-07 (RT-20261107-68): only INDEX-degenerate faces are
+    dropped. Zero-AREA slivers with three distinct vertex indices are part of
+    the closed surface; dropping them tore holes in watertight Tripo exports.
+    Guard: cleanup must never turn a watertight mesh into a non-watertight one.
     """
     before = int(len(mesh.faces))
-    # Prefer trimesh nondegenerate mask (index-degenerate + zero-area)
-    try:
-        mask = mesh.nondegenerate_faces()
-        removed = int((~mask).sum()) if hasattr(mask, "sum") else 0
-    except Exception:
-        f = mesh.faces
-        mask = ~((f[:, 0] == f[:, 1]) | (f[:, 1] == f[:, 2]) | (f[:, 0] == f[:, 2]))
-        removed = before - int(mask.sum())
+    raw_watertight = bool(mesh.is_watertight)
+    f = mesh.faces
+    mask = ~((f[:, 0] == f[:, 1]) | (f[:, 1] == f[:, 2]) | (f[:, 0] == f[:, 2]))
+    removed = before - int(mask.sum())
+    cleaned = mesh
     if removed:
-        mesh = mesh.copy()
-        mesh.update_faces(mask)
-        mesh.remove_unreferenced_vertices()
-        # process() also merges/dedups safely on cleaned topology
+        cleaned = mesh.copy()
+        cleaned.update_faces(mask)
+        cleaned.remove_unreferenced_vertices()
         try:
-            mesh.process(validate=False)
+            cleaned.process(validate=False)
         except Exception:
             pass
-    after = int(len(mesh.faces))
-    return mesh, {
+    if raw_watertight and not cleaned.is_watertight:
+        cleaned = mesh  # regression guard: never break a closed mesh
+    after = int(len(cleaned.faces))
+    assert not (raw_watertight and not cleaned.is_watertight), "cleanup broke a watertight mesh"
+    return cleaned, {
         "faces_before": before,
         "faces_after": after,
         "export_padding_faces": int(before - after),
