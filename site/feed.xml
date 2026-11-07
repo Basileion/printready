@@ -5,8 +5,15 @@
   <link rel="self" href="https://basileion.github.io/printready/feed.xml" />
   <link rel="alternate" href="https://basileion.github.io/printready/" />
   <id>https://basileion.github.io/printready/</id>
-  <updated>2026-11-07T06:45:00Z</updated>
+  <updated>2026-11-07T08:40:00Z</updated>
   <author><name>PrintReady AI</name></author>
+  <entry>
+    <title>Meshy vs Tripo compare page (docs + Meshy 6 Lite scores; Tripo queued)</title>
+    <link rel="alternate" href="https://basileion.github.io/printready/compare/meshy-vs-tripo/" /> <!-- Tripo queued -->
+    <id>https://basileion.github.io/printready/compare/meshy-vs-tripo/#2026-11-07</id><!-- Tripo queued -->
+    <updated>2026-11-07T08:40:00Z</updated>
+    <summary>Docs-only evergreen compare for the #1 buyer query (Tripo queued). Free downloads? Meshy 10 Lite/mo (CC BY 4.0) vs queued Tripo 15 exports H2.5-only (non-commercial). Printability: Meshy 6 Lite free plan (not 7.1) mean ~77.9 on T01–T06 (6/6 watertight; T05 slice hard-fail 39.0); Tripo queued — not scored yet; H2.5 free-export scores promised on the same locked prompts. Matches prompt? already live (Meshy T03 = no). Costs checked queued Tripo 2026-11-06, Meshy 2026-10-31. Closes RT-20261107-02 docs half / RT-110 residual partial. Live URL (Tripo queued): https://basileion.github.io/printready/compare/meshy-vs-tripo/</summary>
+  </entry>
   <entry>
     <title>Matches prompt? column on the scorecard (yes / partial / no)</title>
     <link rel="alternate" href="https://basileion.github.io/printready/scorecard/" />
@@ -19,7 +26,7 @@
     <link rel="alternate" href="https://basileion.github.io/printready/compare/meshy-6-lite-vs-hunyuan3d-2-1/" />
     <id>https://basileion.github.io/printready/compare/meshy-6-lite-vs-hunyuan3d-2-1/#2026-11-07</id>
     <updated>2026-11-07T05:45:00Z</updated>
-    <summary>Evergreen compare: free-plan Meshy 6 Lite (not 7.1) mean ~77.9 (6/6 watertight; T05 slice hard-fail 39.0) vs open-weights Hunyuan3D-2.1 mean ~83.2 (6/6 watertight, 0 hard fails) on the same 6 locked prompts. Meshy T01 99.5 nearly ties Hunyuan3D-2. Discloses HY2.1 plate re-test and printable ≠ matches prompt (T03). Tripo still unscored — no Meshy-vs-Tripo page yet.</summary>
+    <summary>Evergreen compare: free-plan Meshy 6 Lite (not 7.1) mean ~77.9 (6/6 watertight; T05 slice hard-fail 39.0) vs open-weights Hunyuan3D-2.1 mean ~83.2 (6/6 watertight, 0 hard fails) on the same 6 locked prompts. Meshy T01 99.5 nearly ties Hunyuan3D-2. Discloses HY2.1 plate re-test and printable ≠ matches prompt (T03). Tripo still unscored (queued); docs-only Meshy-vs-Tripo compare now live at /compare/meshy-vs-tripo/.</summary>
   </entry>
   <entry>
     <title>Hunyuan3D-2 vs Hunyuan3D-2.1 compare page + Free downloads? column</title>

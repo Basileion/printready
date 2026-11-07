@@ -56,7 +56,7 @@
         <li>v0.2 slices with real <strong>tree supports</strong> in the glTF <strong>Y-up</strong> pose: the fox needs 24.3% of its plastic as support, the planter 30%. The nut stands on its edge as delivered (38.8&nbsp;mm² bed contact). <a href="../methodology/#changelog">Rubric change log</a>.</li>
         <li>Space GLB exports include many index-degenerate zero-area padding triangles. The scorer drops those as <em>export padding</em> before watertight checks (not counted as holes).</li>
         <li>Raw output, no repair: locked prompts T01–T06 → FLUX.1-schnell reference (seed 1234) → Hunyuan3D-2 public Space (seed 1234, 30 steps).</li>
-        <li>Also scored on the same prompts: <a href="#h21-h">Hunyuan3D-2.1</a> and <a href="#m6l-h">Meshy 6 Lite</a> (Meshy free plan; not flagship 7.1). <a href="../compare/hunyuan3d-2-vs-2-1/">HY2 vs 2.1</a> · <a href="../compare/meshy-6-lite-vs-hunyuan3d-2-1/">Meshy vs HY2.1</a>. Tripo, Hitem3D, Rodin, MakeIt3D and TRELLIS are queued.</li>
+        <li>Also scored on the same prompts: <a href="#h21-h">Hunyuan3D-2.1</a> and <a href="#m6l-h">Meshy 6 Lite</a> (Meshy free plan; not flagship 7.1). <a href="../compare/hunyuan3d-2-vs-2-1/">HY2 vs 2.1</a> · <a href="../compare/meshy-6-lite-vs-hunyuan3d-2-1/">Meshy vs HY2.1</a> · <a href="../compare/meshy-vs-tripo/">Meshy vs Tripo</a> (docs; Tripo queued). Tripo, Hitem3D, Rodin, MakeIt3D and TRELLIS are queued for scores.</li>
       </ul>
       <div class="table-wrap" role="region" aria-label="Hunyuan3D-2 PrintReady scores" tabindex="0">
         <table>
@@ -160,7 +160,7 @@
     <section aria-labelledby="h21-h" style="margin:8px 0 48px">
       <p class="eyebrow">Rubric v0.2 · scored 2026-10-31 ET · second generator</p>
       <h2 id="h21-h">Hunyuan3D-2.1: 6 of 6 watertight. The &ldquo;ground plate&rdquo; was our input artifact, not the model</h2>
-      <p class="muted" style="margin:0 0 12px">Dedicated compare pages: <a href="../compare/hunyuan3d-2-vs-2-1/">Hunyuan3D-2 vs Hunyuan3D-2.1</a> · <a href="../compare/meshy-6-lite-vs-hunyuan3d-2-1/">Meshy 6 Lite vs Hunyuan3D-2.1</a> (means, per-prompt table, plate re-test, Matches prompt? column now live on this scorecard).</p>
+      <p class="muted" style="margin:0 0 12px">Dedicated compare pages: <a href="../compare/hunyuan3d-2-vs-2-1/">Hunyuan3D-2 vs Hunyuan3D-2.1</a> · <a href="../compare/meshy-6-lite-vs-hunyuan3d-2-1/">Meshy 6 Lite vs Hunyuan3D-2.1</a> · <a href="../compare/meshy-vs-tripo/">Meshy vs Tripo</a> (docs + Meshy 6 Lite scores; Tripo queued).</p>
       <figure style="margin:8px 0 16px">
         <img src="../img/hy2_vs_hy21_T01-T06.png" alt="Side-by-side shaded renders in the glTF Y-up pose, prompts T01 to T06. Top row Hunyuan3D-2: mug, fox, hex nut standing on edge, phone stand, card holder, planter. Bottom row Hunyuan3D-2.1: the mug, phone stand, card holder and planter each sit on a thin square plate; the fox has no plate; the nut is a long hex prism lying on its side." width="1230" height="400" loading="lazy" style="width:100%;height:auto;border:1px solid var(--line,#ddd);border-radius:8px" />
         <figcaption class="muted" style="font-size:13px">Same FLUX.1-schnell reference images (seed 1234), same settings. Renders of the raw GLBs in the glTF Y-up pose used for scoring.</figcaption>
@@ -287,7 +287,7 @@
         <li>Vs Hunyuan on the same prompts: T01 nearly matches Hunyuan3D-2 (99.5 vs 98.2). Printability-only mean ~77.9 trails Hunyuan3D-2 (~82.3) and Hunyuan3D-2.1 (~83.2); those means include wrong-shape rows (Meshy T03 and HY2.1 T03 = <span class="match match-no">no</span>). Higher tree-support share on T02–T04 and T06 (30–43%).</li>
         <li>Multi-body outputs: T01 has 2 bodies; T06 has 5. Fox (T02) has only 5.3&nbsp;mm² bed contact. Nut (T03) wall p5 is 0.324&nbsp;mm (under the 0.4&nbsp;mm bar).</li>
         <li>Raw output, no repair: same reference PNGs → Meshy free account, image-to-3D, Meshy 6 Lite, untextured, 60 free credits ($0). This is <strong>not</strong> Meshy 7.1 (the default; free downloads of 7.x need Pro).</li>
-        <li>Cross-vendor at last: open-source Tencent Hunyuan vs Meshy's free Lite model. Head-to-head: <a href="../compare/meshy-6-lite-vs-hunyuan3d-2-1/">Meshy 6 Lite vs Hunyuan3D-2.1</a>. Flagship Meshy 7.1, Tripo, Hitem3D, Rodin and TRELLIS are queued.</li>
+        <li>Cross-vendor at last: open-source Tencent Hunyuan vs Meshy's free Lite model. Head-to-head: <a href="../compare/meshy-6-lite-vs-hunyuan3d-2-1/">Meshy 6 Lite vs Hunyuan3D-2.1</a> · <a href="../compare/meshy-vs-tripo/">Meshy vs Tripo</a> (docs; Tripo queued). Flagship Meshy 7.1, Tripo, Hitem3D, Rodin and TRELLIS are queued for scores.</li>
       </ul>
       <div class="table-wrap" role="region" aria-label="Meshy 6 Lite PrintReady scores" tabindex="0">
         <table>
@@ -499,6 +499,7 @@
     <div class="band" style="margin-top:48px">
       <div>
         <h2>Queued: Meshy 7.1, Tripo, Hitem3D, Rodin, TRELLIS</h2>
+      <p class="muted">Docs-only <a href="../compare/meshy-vs-tripo/">Meshy vs Tripo</a> compare is live (printability: Meshy 6 Lite scored; Tripo queued).</p>
         <p>Meshy 6 Lite (free) is scored above. Same locked prompts for the rest, same slicer profile, raw output before any repair. Get Friday scores by email, or follow with no account.</p>
       </div>
       <div style="display:grid;gap:10px;min-width:min(100%,18rem)">

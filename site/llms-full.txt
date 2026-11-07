@@ -73,9 +73,14 @@ URL: https://basileion.github.io/printready/compare/hunyuan3d-2-vs-2-1/
 Both open-weights Tencent. Main-table means on rubric v0.2, same 6 locked prompts: Hunyuan3D-2 ~82.2 (5/6 watertight; T05 hard-fail 26.9) vs Hunyuan3D-2.1 ~83.2 (6/6 watertight). HY2.1 main-table T01/T04/T05/T06 included a thin ground plate from Space background removal on off-white refs (wall ~0.29 mm, hull fill ~7%); correction re-test with local matted RGBA removed the plate on 4/4 (T01 86.6, T04 98.2, T05 72.2, T06 95.6). Main scorecard table unchanged (same protocol). Printable ≠ matches prompt: HY2.1 T03 scored 96.7 but was a hex prism / wrong shape. Matches prompt? column now live on the scorecard (T03 = no).
 
 
+
+## Compare: Meshy vs Tripo (published 2026-11-07, docs-only; Tripo queued / not scored yet)
+URL (Tripo queued): https://basileion.github.io/printready/compare/meshy-vs-tripo/
+Buyer query page. Free downloads? Meshy free plan: 10 untextured Meshy 6 Lite/mo (CC BY 4.0 sell-with-credit; checked 2026-10-31). Queued Tripo free: 15 exports, H2.5 only, non-commercial (checked 2026-11-06). Entry paid both ~$20/mo. Printability: Meshy 6 Lite free plan (not flagship 7.1) mean ~77.9 on locked T01–T06 (6/6 watertight; T05 slice hard-fail 39.0); Tripo queued — not scored yet. Promised: Tripo H2.5 free-export scores on the same locked prompts will fill the printability column when run. Matches prompt? already live on the scorecard (Meshy T03 = no). Costs CSV: https://basileion.github.io/printready/data/costs.csv. Scores CSV: https://basileion.github.io/printready/data/scores.csv.
+
 ## Compare: Meshy 6 Lite vs Hunyuan3D-2.1 (published 2026-11-07)
 URL: https://basileion.github.io/printready/compare/meshy-6-lite-vs-hunyuan3d-2-1/
-First cross-vendor head-to-head. Rubric v0.2 means on the same 6 locked prompts: free-plan Meshy 6 Lite (not flagship 7.1) ~77.9 (6/6 watertight; T05 slice hard-fail 39.0, Orca exit 156) vs open-weights Hunyuan3D-2.1 ~83.2 (6/6 watertight, 0 hard fails). Meshy T01 scored 99.5 and nearly ties Hunyuan3D-2 (98.2). HY2.1 main-table T01/T04/T05/T06 included a Space-rembg ground plate (input artifact); matted re-test T01 86.6, T04 98.2, T05 72.2, T06 95.6. Printable ≠ matches prompt: HY2.1 T03 scored 96.7 but was a hex prism / wrong shape. Tripo is queued (not yet scored) — no Meshy-vs-Tripo page yet.
+First cross-vendor head-to-head. Rubric v0.2 means on the same 6 locked prompts: free-plan Meshy 6 Lite (not flagship 7.1) ~77.9 (6/6 watertight; T05 slice hard-fail 39.0, Orca exit 156) vs open-weights Hunyuan3D-2.1 ~83.2 (6/6 watertight, 0 hard fails). Meshy T01 scored 99.5 and nearly ties Hunyuan3D-2 (98.2). HY2.1 main-table T01/T04/T05/T06 included a Space-rembg ground plate (input artifact); matted re-test T01 86.6, T04 98.2, T05 72.2, T06 95.6. Printable ≠ matches prompt: HY2.1 T03 scored 96.7 but was a hex prism / wrong shape. Tripo is queued (not yet scored). Docs-only Meshy-vs-Tripo compare now live: https://basileion.github.io/printready/compare/meshy-vs-tripo/ (printability: Meshy 6 Lite scored; Tripo queued).
 
 
 ## Matches prompt? (2026-11-07)
